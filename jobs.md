@@ -11,3 +11,11 @@ c2fo
 Capitol One
 OpenLane
 Robinhood
+H&R
+rivian
+vanguard 
+intel 
+nvidia
+tmobile 
+oracle
+Epic

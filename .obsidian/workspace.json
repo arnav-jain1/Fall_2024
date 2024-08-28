@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_658/daily_assignments/0-8-27.md",
+                "file": "jobs.md",
                 "mode": "source",
                 "source": false
               }
@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_658/daily_assignments/0-8-27.md",
+                "file": "jobs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_658/daily_assignments/0-8-27.md",
+                "file": "jobs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_658/daily_assignments/0-8-27.md"
+                "file": "jobs.md"
               }
             }
           }
@@ -175,11 +175,11 @@
   },
   "active": "64c53b38b8efd714",
   "lastOpenFiles": [
+    "EECS_658/daily_assignments/0-8-27.md",
     "EECS_658/submissions/0-8-27.pdf",
     "EECS_658/daily_assignments/1-8-29.md",
     "EECS_658/submissions/1-8-29.pdf",
     "EECS_658/submissions",
-    "EECS_658/daily_assignments/0-8-27.md",
     "jobs.md",
     "EECS_658/daily_assignments",
     "EECS_658",

@@ -1,8 +1,6 @@
 Texas instruments (talk to Keith Sanders) keith.sanders@ti.com
-Salesforce
 Southwest
 AT&T
-Nokia
 CBOE
 c2fo
 Capitol One

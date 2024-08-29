@@ -32,6 +32,18 @@
             }
           },
           {
+            "id": "0ac7d5cb5330a7c0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "EECS 510/8-29.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "35c5ddd6eddc83c0",
             "type": "leaf",
             "state": {
@@ -46,7 +58,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -112,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "jobs.md",
+                "file": "EECS 510/8-29.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +141,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "jobs.md",
+                "file": "EECS 510/8-29.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +164,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "jobs.md"
+                "file": "EECS 510/8-29.md"
               }
             }
           }
@@ -173,11 +185,13 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "64c53b38b8efd714",
+  "active": "0ac7d5cb5330a7c0",
   "lastOpenFiles": [
+    "jobs.md",
+    "EECS 510/8-29.md",
+    "EECS 510",
     "EECS_678/8-28.md",
     "EECS_678/Pasted image 20240828143500.png",
-    "jobs.md",
     "EECS 565",
     "EECS_658/daily_assignments/0-8-27.md",
     "EECS_658/submissions/0-8-27.pdf",

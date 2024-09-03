@@ -1,0 +1,43 @@
+fold 1 samples: 75
+fold 2 samples: 75
+-------------------------Naive Bayes Classifier-------------------------
+----------------Training on fold 1 and testing on fold 2----------------
+Accuracy on fold 2: 0.9200
+Overall Accuracy: 0.9600
+
+Confusion Matrix:
+[[50  0  0]
+ [ 0 47  3]
+ [ 0  3 47]]
+
+Classification Report:
+                 precision    recall  f1-score   support
+
+    Iris-setosa       1.00      1.00      1.00        50
+Iris-versicolor       0.94      0.94      0.94        50
+ Iris-virginica       0.94      0.94      0.94        50
+
+       accuracy                           0.96       150
+      macro avg       0.96      0.96      0.96       150
+   weighted avg       0.96      0.96      0.96       150
+
+----------------Training on fold 2 and testing on fold 1----------------
+Accuracy on fold 1: 0.9733
+Overall Accuracy: 0.9533333333333334
+
+Confusion Matrix:
+[[50  0  0]
+ [ 0 47  3]
+ [ 0  4 46]]
+
+Classification Report:
+                 precision    recall  f1-score   support
+
+    Iris-setosa       1.00      1.00      1.00        50
+Iris-versicolor       0.92      0.94      0.93        50
+ Iris-virginica       0.94      0.92      0.93        50
+
+       accuracy                           0.95       150
+      macro avg       0.95      0.95      0.95       150
+   weighted avg       0.95      0.95      0.95       150
+

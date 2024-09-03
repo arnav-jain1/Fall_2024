@@ -1,0 +1,35 @@
+a. accuracy
+Train fold 1: (50+47+47)/150 = .96
+Train fold 2: (50 + 47 + 46)/143 = .953333
+
+b. precision
+Train fold 1: 
+    Setosa:     50 / 50 = 1
+    Versicolor: 47 / 50 = .94
+    virginica:  47 / 50 = .94
+Train fold 2: 
+    Setosa:     50 / 50 = 1
+    Versicolor: 47 / 51 = ~.92
+    virginica:  46 / 49 = ~.94
+
+c. recall
+Train fold 1: 
+    Setosa:     50 / 50 = 1
+    Versicolor: 47 / 50 = .94
+    virginica:  47 / 50 = .94
+Train fold 2: 
+    Setosa:     50 / 50 = 1
+    Versicolor: 47 / 50 = .94
+    virginica:  46 / 50 = .92
+
+d. F1score
+Train fold 1: 
+    Setosa:     2 * (1 * 1)/(1 + 1) = 1
+    Versicolor: 2 * (0.94 * 0.94) / (0.94 + 0.94) = 0.94
+    virginica:  2 * (0.94 * 0.94) / (0.94 + 0.94) = 0.94
+Train fold 2: 
+    Setosa:     2 * (1 * 1)/(1 + 1) = 1
+    Versicolor: 2 * (0.92 * 0.94) / (0.92 + 0.94) ≈ 0.93
+    virginica:  2 * (0.94 * 0.92) / (0.94 + 0.92) ≈ 0.93
+
+All of these numbers match

@@ -3,5 +3,6 @@
   "obsidian-git",
   "terminal",
   "highlightr-plugin",
-  "colored-text"
+  "colored-text",
+  "obsidian-tikzjax"
 ]

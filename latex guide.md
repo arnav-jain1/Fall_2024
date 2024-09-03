@@ -40,6 +40,7 @@ Note: For new line latex use \$\$ to surround the equation
 - Subset: `\subset` renders as $\subset$
 - Superset: `\supset` renders as $\supset$
 - Equivalent: `\equiv` renders as $\equiv$
+- Right arrow: `\rightarrow` renders as $\rightarrow$
 - Implies: `\Rightarrow` renders as $\Rightarrow$
 - If and Only If (Iff): `\Leftrightarrow` renders as $\Leftrightarrow$
 - Infinity: `$\infty$` renders as $\infty$ 
@@ -97,3 +98,5 @@ a & b \\
 c & d
 \end{matrix}
 $$
+## Other
+- Space: `\space` renders as $\space$ 

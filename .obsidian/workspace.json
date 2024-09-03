@@ -37,14 +37,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "latex guide.md",
+                "file": "EECS 510/8-29.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -171,13 +171,13 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "0ac7d5cb5330a7c0",
+  "active": "541f4c490bd4928b",
   "lastOpenFiles": [
+    "latex guide.md",
+    "jobs.md",
+    "EECS 510/8-29.md",
     "EECS 662/7-29.md",
     "EECS 565/Lec 1.md",
-    "latex guide.md",
-    "EECS 510/8-29.md",
-    "jobs.md",
     "EECS_678/!intro.md",
     "EECS 662",
     "EECS 510",

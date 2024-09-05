@@ -1,0 +1,44 @@
+# OS services for user
+- User interface- Almost all OS have some sort of UI
+	- CLI
+	- GUI
+	- Touch screen
+- Program execution- load in memory and a run a program
+	- End it, normally or with error
+- IO operations: interact with IO safely and effeciently 
+- File system manipulation: provide access to mass storage
+	- make, del, read, write dir/files
+	- search file info
+	- permission management
+- Interprocess communication- exchange info among processes 
+	- shared memory, POSIX (standard for design of UNIX OS)
+	- message parsing, Microkernel, OS, RPC, COBRA
+- Error detection: aware of possible errors
+	- CPU and memory (power, fault)
+	- IO (network connection, wire faulty)
+	- user program (seg fault, div by 0)
+# OS Services for efficient system operation
+- resource allocation: provide access to shared resources in multiuser system
+	- CPU cycles, main memory, file storage, IO
+- Accounting: keep track of system resource usage
+	- For cost accounting and usage stats
+- Protection and security
+	- Ensure access to system resources is controlled (protection)
+	- Prevent outsiders from accessing system (security)
+	- auth, file perms, address space restrictions
+- ![[Pasted image 20240905141328.png]]
+
+# Sys call
+- Program interface to services in the OS
+	- Request kernel mode service from the OS
+	- Written in C/C++ usually (high level systems languages)
+- Accessed by programs via API (high level) 
+	- Simpler interface
+	- Reduces coupling because syscalls are dependant on the system so the application is more portable
+		- POSIX API (all unix)
+		- Win 32/64 for windows (why there is a 32 and 64bit)
+	- Implemented via trap
+		- Register contains syscall number
+		- syscall allows for the control to be transferred to the terminal fast
+	- 
+- 

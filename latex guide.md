@@ -100,3 +100,4 @@ c & d
 $$
 ## Other
 - Space: `\space` renders as $\space$ 
+- Text: `\text{stuff}` renders as $\text{stuff}$ 

@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS 662/7-29.md",
+                "file": "EECS 662/First language.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS 662/7-29.md",
+                "file": "EECS 662/First language.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS 662/7-29.md",
+                "file": "EECS 662/First language.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS 662/7-29.md"
+                "file": "EECS 662/First language.md"
               }
             }
           }
@@ -173,6 +173,16 @@
   },
   "active": "0ac7d5cb5330a7c0",
   "lastOpenFiles": [
+    "EECS 662/7-29.md",
+    "EECS 662/First language.md",
+    "latex guide.md",
+    "EECS_678/2-Services.md",
+    "EECS_678/Pasted image 20240905141328.png",
+    "EECS_678/1- Intro.md",
+    "EECS_678/Pasted image 20240905135350.png",
+    "EECS_678/Pasted image 20240905134342.png",
+    "EECS_678/Pasted image 20240905133245.png",
+    "EECS 662/proj0/p0.hs~",
     "EECS 662/proj0/p0.hs",
     "EECS 662/proj0",
     "EECS_658/ArnavJain_Assignment1.zip",
@@ -184,25 +194,18 @@
     "EECS_658/ArnavJain_Assignment1/manual.txt",
     "EECS_658/ArnavJain_Assignment1/Rubric 1.docx",
     "EECS_658/ArnavJain_Assignment1/iris.csv",
-    "EECS_658/ArnavJain_Assignment1/CheckVersions.py",
-    "EECS_658/ArnavJain_Assignment1/NBClassifier.py.gz",
     "EECS 510/8-29.md",
     "EECS 510/Pasted image 20240905090132.png",
     "EECS 510/Pasted image 20240905084314.png",
     "EECS 510/Pasted image 20240905080651.png",
     "EECS 510/Pasted image 20240905080628.png",
-    "EECS 510/Pasted image 20240905080545.png",
-    "EECS 662/7-29.md",
     "EECS 565/Lec 1.md",
     "EECS_658/daily_assignments/3-9-5.md",
     "EECS_658/daily_assignments/2-9-3.md",
-    "latex guide.md",
     "EECS_658/daily_assignments/1-8-29.md",
     "EECS_658/daily_assignments/0-8-27.md",
     "jobs.md",
     "EECS_678/!intro.md",
-    "EECS_678/8-28.md",
-    "EECS_678/Pasted image 20240828143500.png",
     "README.md"
   ]
 }

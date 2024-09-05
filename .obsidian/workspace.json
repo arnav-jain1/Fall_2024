@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS 510/8-29.md",
+                "file": "EECS 662/7-29.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS 510/8-29.md",
+                "file": "EECS 662/7-29.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS 510/8-29.md",
+                "file": "EECS 662/7-29.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS 510/8-29.md"
+                "file": "EECS 662/7-29.md"
               }
             }
           }
@@ -173,11 +173,16 @@
   },
   "active": "0ac7d5cb5330a7c0",
   "lastOpenFiles": [
-    "latex guide.md",
+    "EECS 662/haskell.hs",
+    "EECS 565/Lec 1.md",
+    "EECS_658/daily_assignments/3-9-5.md",
+    "EECS_658/daily_assignments/3-9-5.pdf",
+    "EECS_658/daily_assignments/2-9-3.md",
+    "EECS_658/submissions/2-9-3.pdf",
     "EECS 510/8-29.md",
+    "latex guide.md",
     "EECS_658/daily_assignments/1-8-29.md",
     "EECS_658/daily_assignments/0-8-27.md",
-    "EECS 565/Lec 1.md",
     "EECS 662/7-29.md",
     "jobs.md",
     "EECS_678/!intro.md",
@@ -191,7 +196,6 @@
     "EECS_658/submissions",
     "EECS_658/daily_assignments",
     "EECS_658",
-    "README.md",
-    "EECS_678"
+    "README.md"
   ]
 }

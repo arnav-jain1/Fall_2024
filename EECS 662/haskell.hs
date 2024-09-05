@@ -4,18 +4,17 @@ data AE where
     Nat :: Int -> AE
     Plus :: AE -> AE -> AE
     Minus :: AE -> AE -> AE
-    deriving (show)
 
 eval::AE-> Maybe Int
 eval (Nat x) = Just x
-eval (Plus l r) = case (eval l)
+eval (Plus l r) = case (eval l) of
                     (Nothing) -> Nothing
-                    (Just l') -> case (eval r)
-                                    (Just r') -> (Just l'+r')
+                    (Just l') -> case (eval r) of
                                     Nothing -> Nothing
-eval (Minus l r) = case (eval l)
+                                    (Just r') -> Just (l'+ r')
+eval (Minus l r) = case (eval l) of
                     Nothing -> Nothing
-                    (Just l') -> case (eval r)
+                    (Just l') -> case (eval r) of
                                 Nothing -> Nothing
-                                (Just r') -> if l'>=r' then (Just l'-r') else Nothing
+                                (Just r') -> if l'>=r' then Just (l'-r') else Nothing
 

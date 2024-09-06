@@ -40,5 +40,79 @@
 	- Implemented via trap
 		- Register contains syscall number
 		- syscall allows for the control to be transferred to the terminal fast
-	- 
-- 
+Example for copying 
+![[Pasted image 20240905230502.png]]
+
+![[Pasted image 20240905230524.png]]
+printf calls write syscall
+![[Pasted image 20240905230617.png]]
+
+### Passing params
+Pass additional info thru registers or stack (2)
+1. Pass parms in registers 
+	- simple, fastest, limit to 3
+2. store args in a block on the stack and location is passed thru registers
+3. params pushed on stack by program and popped off by OS
+1 is hardly used because limit to 3, other 2 dont have a limit
+
+### types of sys calls
+- Process control
+	- create/terminate process, get/set attributes, wait/signal event, allocate/free memory
+	- Everything for C code
+- File management
+	- create, read, del, write, reposition, file attributes
+- Device management 
+	- request, release, read, write, reposition, device attr
+- Info maintanance 
+	- get/set time/date, get/set process/file/device attributes
+- Communication
+	- create/delete connection, send/recieve messages 
+- Protection
+	- set/get file/device perms, allow/deny sys resources
+![[Pasted image 20240905232353.png]]
+
+### Sys programs
+User-level utility programs that come with the OS
+	Makes it easier to m<mark style="background: #FFB8EBA6;"></mark>ake and execute jobs
+	Not part of *kernel*
+Sys programs are one of:
+	File manipulation 
+		mkdir, cp, rm, lpr, ls, ln, etc.
+	status information 
+		date, time, du, df, top, ps, etc.
+	file modification 
+		editors such as vi and emacs, find, grep, etc.
+	programming lang support
+		compilers, assemblers, debuggers, such as gcc, masm, gdb, perl, java, etc.
+	program loading and execution 
+		id
+	communication 
+		ssh, mail, write, ftp
+	application programs
+![[Pasted image 20240905232901.png]]
+
+### OS design
+Design
+	Type of system: batch, time-shared, amt of users, distributed, real time, embedded
+	User goals: convenience, ease of use, reliable, safe, fast
+	sys goals: ease of design, implementation, maintanance, flexible, reliable, error-free, effecient
+Mechanism 
+	Policy: what to do
+	Mechanism: how to do it?
+Implementation:
+	high level lang: easier, faster to write, easy to debug, portable
+	Assembly: more effecient 
+### Structure
+OS needs to be modular, maintaibible, sustainable, 
+Simple strcuture: 
+	Characteristics
+		Monolithic
+		Poor seperation between interfaces and levels of functionality 
+		Ill suited design, difficult to maintain and extend
+	Reasons:
+		Growth beyond original scope and vision 
+		lack of neccessary hardware features when designing
+		Guided by hardware constraints
+	MS DOS
+	![[Pasted image 20240906000610.png]]
+		

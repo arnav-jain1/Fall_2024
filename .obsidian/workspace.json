@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS 662/First language.md",
+                "file": "EECS_678/2-Services.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS 662/First language.md",
+                "file": "EECS_678/2-Services.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS 662/First language.md",
+                "file": "EECS_678/2-Services.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS 662/First language.md"
+                "file": "EECS_678/2-Services.md"
               }
             }
           }
@@ -173,9 +173,16 @@
   },
   "active": "0ac7d5cb5330a7c0",
   "lastOpenFiles": [
-    "EECS 662/7-29.md",
+    "EECS_678/Pasted image 20240906000610.png",
+    "EECS_678/Pasted image 20240905232901.png",
+    "EECS_678/Pasted image 20240905232353.png",
+    "EECS_678/Pasted image 20240905230617.png",
+    "EECS_678/Pasted image 20240905230524.png",
+    "EECS_678/Pasted image 20240905230502.png",
     "EECS 662/First language.md",
+    "jobs.md",
     "latex guide.md",
+    "EECS 662/7-29.md",
     "EECS_678/2-Services.md",
     "EECS_678/Pasted image 20240905141328.png",
     "EECS_678/1- Intro.md",
@@ -189,22 +196,16 @@
     "EECS_658/ziCyw3OT",
     "EECS_658/ArnavJain_Assignment1/NBClassifier.txt",
     "EECS_658/ArnavJain_Assignment1/check_versions.png",
-    "EECS_658/ArnavJain_Assignment1/NBClassifier.png",
     "EECS_658/ArnavJain_Assignment1/NBClassifier.py",
     "EECS_658/ArnavJain_Assignment1/manual.txt",
     "EECS_658/ArnavJain_Assignment1/Rubric 1.docx",
     "EECS_658/ArnavJain_Assignment1/iris.csv",
     "EECS 510/8-29.md",
-    "EECS 510/Pasted image 20240905090132.png",
-    "EECS 510/Pasted image 20240905084314.png",
-    "EECS 510/Pasted image 20240905080651.png",
-    "EECS 510/Pasted image 20240905080628.png",
     "EECS 565/Lec 1.md",
     "EECS_658/daily_assignments/3-9-5.md",
     "EECS_658/daily_assignments/2-9-3.md",
     "EECS_658/daily_assignments/1-8-29.md",
     "EECS_658/daily_assignments/0-8-27.md",
-    "jobs.md",
     "EECS_678/!intro.md",
     "README.md"
   ]

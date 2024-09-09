@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS 565/L3-classic_crypto.md",
+                "file": "EECS_678/1- Intro.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS 565/L3-classic_crypto.md",
+                "file": "EECS_678/1- Intro.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS 565/L3-classic_crypto.md",
+                "file": "EECS_678/1- Intro.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS 565/L3-classic_crypto.md"
+                "file": "EECS_678/1- Intro.md"
               }
             }
           }
@@ -173,9 +173,9 @@
   },
   "active": "0ac7d5cb5330a7c0",
   "lastOpenFiles": [
+    "EECS 565/L3-classic_crypto.md",
     "EECS 565/Pasted image 20240906120223.png",
     "EECS 565/L2.md",
-    "EECS 565/L3-classic_crypto.md",
     "EECS 565/Pasted image 20240906111917.png",
     "EECS_678/2-Services.md",
     "EECS_678/Pasted image 20240906000610.png",
@@ -191,7 +191,6 @@
     "EECS_678/Pasted image 20240905141328.png",
     "EECS_678/1- Intro.md",
     "EECS_678/Pasted image 20240905135350.png",
-    "EECS_678/Pasted image 20240905134342.png",
     "EECS 662/proj0/p0.hs~",
     "EECS 662/proj0/p0.hs",
     "EECS 662/proj0",

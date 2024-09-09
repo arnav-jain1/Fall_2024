@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_658/daily_assignments/4-9-10.md",
+                "file": "jobs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_658/daily_assignments/4-9-10.md",
+                "file": "jobs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_658/daily_assignments/4-9-10.md"
+                "file": "jobs.md"
               }
             }
           }

@@ -90,7 +90,9 @@ Sys programs are one of:
 		ssh, mail, write, ftp
 	application programs
 ![[Pasted image 20240905232901.png]]
-
+Linker links multiple files together to make an executable
+Loader then loads the program into memory to run
+# NOTE END FOR QUIZ
 ### OS design
 Design
 	Type of system: batch, time-shared, amt of users, distributed, real time, embedded
@@ -115,4 +117,29 @@ Simple strcuture:
 		Guided by hardware constraints
 	MS DOS
 	![[Pasted image 20240906000610.png]]
+	The application program (you) can access the drivers and lower levels
+Traditional UNIX architecture:
+	![[Pasted image 20240909142222.png]]
+Layered:
+	OS is divided into modular layers
+	Upper layers use the functions that run in the lower layers
+	Pros:
+		 More modular, extensible, maintainable
+		 Hides info! (higher level does not see what goes on in the lower level)
+		 Simple to contruct, debug, and verify (if upper level throws bug look at the function it uses)
+	Cons:
+		Less effecient 
+		It is harder to seperate functionality cleanly
+	![[Pasted image 20240909142552.png]]
+	The user can only access the layer beneath it
+Microkernel:
+	Make the kernel as small as possible by moving functionality into the user space
+	Communicate between user modules (itself) using message parsing
+	Pros:
+		Easier to extend (just add more user level drivers)
+		Easier to move to new architectures since the kernel itself is so small
+		More reliable and secure (again since kernel is as small as possible)
+	Cons:
+		No consensus for services that should stay in the kernel and not
+		Performance overhead because user talks to kernel (lots of context switching)
 		

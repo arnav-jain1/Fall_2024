@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS 662/7-29.md",
+                "file": "jobs.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS 662/7-29.md",
+                "file": "jobs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS 662/7-29.md",
+                "file": "jobs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS 662/7-29.md"
+                "file": "jobs.md"
               }
             }
           }
@@ -160,10 +160,10 @@
   },
   "active": "892e784c50d96927",
   "lastOpenFiles": [
+    "EECS 662/7-29.md",
     "EECS 662/First language.md",
     "EECS_565/proj1/parallel.py~",
     "EECS_565/proj1/parallel.py",
-    "EECS 662/7-29.md",
     "latex guide.md",
     "jobs.md",
     "EECS_678/2-Services.md",

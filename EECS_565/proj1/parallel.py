@@ -40,24 +40,45 @@ def process_key_combination(key_comb, ciphertext, keyLength, firstWordLength):
     # Join the key and return it with the decrypted message
     return (word, "".join(key_comb))
 
-# The ciphertext cracker function
 def cracker(ciphertext, keyLength, firstWordLength):
-    # Get all the key combinations from the key length 
+    if keyLength >= 8:
+        raise ValueError("Key length 8 or greater is not supported")
+
     letters = 'abcdefghijklmnopqrstuvwxyz'
-    key_combinations = itertools.product(letters, repeat=keyLength)
     
-    # Create a partial function with fixed arguments for each thread to run, the first arg is the function, the rest are args to the function itself (without key_comb which comes from later)
-    process_func = partial(process_key_combination,
-                           ciphertext=ciphertext, 
-                           keyLength=keyLength, 
-                           firstWordLength=firstWordLength)
+    if keyLength == 7:
+        # Generate combinations of length 6
+        base_combinations = list(itertools.product(letters, repeat=6))
+        
+        # Function to process each base combination
+        def process_base_comb(base_comb):
+            results = []
+            for letter in letters:
+                full_comb = base_comb + (letter,)
+                result = process_key_combination(full_comb, ciphertext, keyLength, firstWordLength)
+                if result is not None:
+                    results.append(result)
+            return results
+        
+        # Use multiprocessing to process base combinations
+        with multiprocessing.Pool() as pool:
+            all_results = pool.map(process_base_comb, base_combinations)
+        
+        # Flatten the list of results
+        return [item for sublist in all_results for item in sublist]
     
-    # use all of the cpu threads to try each key comb
-    with multiprocessing.Pool() as pool:
-        results = pool.map(process_func, key_combinations)
-    
-    # Return all the results that are not none
-    return [result for result in results if result is not None]
+    else:
+        # Original logic for key lengths < 7
+        key_combinations = itertools.product(letters, repeat=keyLength)
+        process_func = partial(process_key_combination,
+                               ciphertext=ciphertext, 
+                               keyLength=keyLength, 
+                               firstWordLength=firstWordLength)
+        
+        with multiprocessing.Pool() as pool:
+            results = pool.map(process_func, key_combinations)
+        
+        return [result for result in results if result is not None]
 
 # Test the cracker and time it
 if __name__ == "__main__":

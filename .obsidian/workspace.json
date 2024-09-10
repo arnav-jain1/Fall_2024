@@ -8,36 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "64c53b38b8efd714",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "jobs.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "0ac7d5cb5330a7c0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "EECS_678/2-Services.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "892e784c50d96927",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_658/daily_assignments/5-9-12.md",
+                "file": "EECS 662/7-29.md",
                 "mode": "source",
                 "source": false
               }
@@ -55,8 +31,7 @@
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -122,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_658/daily_assignments/5-9-12.md",
+                "file": "EECS 662/7-29.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_658/daily_assignments/5-9-12.md",
+                "file": "EECS 662/7-29.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_658/daily_assignments/5-9-12.md"
+                "file": "EECS 662/7-29.md"
               }
             }
           }
@@ -185,6 +160,14 @@
   },
   "active": "892e784c50d96927",
   "lastOpenFiles": [
+    "EECS 662/First language.md",
+    "EECS_565/proj1/parallel.py~",
+    "EECS_565/proj1/parallel.py",
+    "EECS 662/7-29.md",
+    "latex guide.md",
+    "jobs.md",
+    "EECS_678/2-Services.md",
+    "EECS_658/daily_assignments/5-9-12.md",
     "EECS_565/proj1/paralell.py~",
     "EECS_565/proj1/paralell.py",
     "EECS_565/proj1/task1.py~",
@@ -197,14 +180,9 @@
     "EECS_565/L3-classic_crypto.md",
     "EECS_565/L2.md",
     "EECS_565",
-    "EECS_658/submissions/5-9-12.pdf",
-    "EECS_678/2-Services.md",
-    "EECS_658/daily_assignments/5-9-12.md",
     "EECS_678/Pasted image 20240906000610.png",
     "EECS_678/Pasted image 20240909142552.png",
     "EECS_678/Pasted image 20240909142222.png",
-    "jobs.md",
-    "EECS_658/submissions/4-9-10.pdf",
     "EECS_678/1- Intro.md",
     "EECS_658/daily_assignments/4-9-10.md",
     "EECS 565/L3-classic_crypto.md",
@@ -214,10 +192,6 @@
     "EECS_678/Pasted image 20240905232901.png",
     "EECS_678/Pasted image 20240905232353.png",
     "EECS_678/Pasted image 20240905230617.png",
-    "EECS 662/First language.md",
-    "latex guide.md",
-    "EECS 662/7-29.md",
-    "EECS 662/proj0/p0.hs~",
     "EECS 510/8-29.md",
     "EECS_658/daily_assignments/3-9-5.md",
     "EECS_658/daily_assignments/2-9-3.md",

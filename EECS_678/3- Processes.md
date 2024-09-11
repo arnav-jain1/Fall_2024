@@ -26,3 +26,13 @@ Process states:
 - ready: waiting to be processed by CPU
 - Terminated: Done
 ![[Pasted image 20240911143809.png]]
+
+# Context switch
+Process of storing and restoring the state (*context*) of CPU so that multiple processes can share a CPU
+	Time shared, multiprogramming env
+	*Context* represented in PCB
+	Save current process then restore the next process
+	Switching from user <-> kernel is a mode switch
+Overhead because no other work is done when switching
+
+![[Pasted image 20240911165905.png]]

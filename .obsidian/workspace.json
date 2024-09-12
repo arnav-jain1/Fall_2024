@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_678/3- Processes.md",
+                "file": "EECS_678/2-Services.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_678/3- Processes.md",
+                "file": "EECS_678/2-Services.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_678/3- Processes.md",
+                "file": "EECS_678/2-Services.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_678/3- Processes.md"
+                "file": "EECS_678/2-Services.md"
               }
             }
           }
@@ -173,6 +173,8 @@
   },
   "active": "39e79a7372bbbcde",
   "lastOpenFiles": [
+    "EECS_565/proj1/output.png",
+    "EECS_678/3- Processes.md",
     "EECS_678/Pasted image 20240911165905.png",
     "EECS_678/debuggers/valgrind_output.txt",
     "EECS_678/debuggers/bugs_output.txt",
@@ -188,7 +190,6 @@
     "EECS_678/Pasted image 20240911142409.png",
     "EECS_678/Pasted image 20240911141904.png",
     "EECS_565/L4-Classic Crypto 2.md",
-    "EECS_678/3- Processes.md",
     "EECS_565/Pasted image 20240911114724.png",
     "EECS_565/Pasted image 20240911113142.png",
     "EECS_565/Pasted image 20240911112007.png",
@@ -203,7 +204,6 @@
     "EECS_565/Pasted image 20240906120223.png",
     "EECS_565/Pasted image 20240906111917.png",
     "EECS_565/L2.md",
-    "EECS_678/Pasted image 20240906000610.png",
     "EECS_678/1- Intro.md",
     "EECS_658/daily_assignments/4-9-10.md",
     "EECS 565/L3-classic_crypto.md",

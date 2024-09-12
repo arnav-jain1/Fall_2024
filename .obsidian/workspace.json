@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_678/2-Services.md",
+                "file": "EECS 510/9-12.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_678/2-Services.md",
+                "file": "EECS 510/9-12.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_678/2-Services.md",
+                "file": "EECS 510/9-12.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_678/2-Services.md"
+                "file": "EECS 510/9-12.md"
               }
             }
           }
@@ -173,6 +173,8 @@
   },
   "active": "39e79a7372bbbcde",
   "lastOpenFiles": [
+    "EECS_678/2-Services.md",
+    "EECS 510/9-12.md",
     "EECS_565/proj1/output.png",
     "EECS_678/3- Processes.md",
     "EECS_678/Pasted image 20240911165905.png",
@@ -199,10 +201,8 @@
     "jobs.md",
     "EECS 662/7-29.md",
     "EECS 662/First language.md",
-    "EECS_678/2-Services.md",
     "EECS_658/daily_assignments/5-9-12.md",
     "EECS_565/Pasted image 20240906120223.png",
-    "EECS_565/Pasted image 20240906111917.png",
     "EECS_565/L2.md",
     "EECS_678/1- Intro.md",
     "EECS_658/daily_assignments/4-9-10.md",

@@ -99,4 +99,67 @@ $[x\rightarrow v]t$ = replaces all free instances of $x$ in $t$ with $v$
 - $[x \rightarrow 5]\text{x + bind x=10 in x}$ == 5 + bind x = 10
 
 Inference rule for bind
-$$\frac{a \Downarrow v_{a}\qquad [i \rightarrow v_{a}s\Downarrow v_{s}]}{\text{bind i = a in s} \Downarrow v_{s}}$$
+$$\frac{a \Downarrow v_{a}\qquad [i \rightarrow v_{a}]s\Downarrow v_{s}}{\text{bind i = a in s} \Downarrow v_{s}}\text{BindE}$$ 
+assume a = $v_{a}$ 
+Substitute $v_{a}$ for i in the body of bind which evaluates to $v_{s}$
+So the result is $v_{s}$ 
+
+Inference Rules Identifiers 
+$$\frac{}{x \Downarrow \bot}\text{IDE}$$
+- Evaluating an identifier means the identifier was not replaced
+<mark style="background: #FF5582A6;">- No bind defined the indentifier of it would no longer be there</mark>
+```
+bind x = 3 in y
+== y
+== BOOM
+
+Parsed to by abstract syntax below to
+Bind (("x") (Nat 3) (Id "y") ) 
+Identifier, value, scope
+```
+
+Abstract syntax
+```haskell
+data AE where 
+	Nat :: Int -> AE
+	ID :: String -> AE
+	Plus :: AE->AE->AE
+	Minus :: AE->AE->AE
+	Bind :: String -> AE -> AE -> AE
+	-- String is the name of the identifier, first AE is the value, second is the scope
+	deriving (Show, Eq)
+```
+
+
+Evaluation
+```haskell
+eval::AE -> Maybe AE
+eval (Nat x) = Just (Nat x)
+eval (Id s) = Nothing
+eval (Plus l r) = do { (Nat x) <- eval l;
+					   (Nat y) <- eval r;
+					   Just (Nat (x + y)) }
+eval (Minus l r) do { (Nat x) <- eval l;
+					  (Nat y) <- eval r;
+					  if x >= y then Just (Nat(x - y)) else Nothing }
+eval (Bind i a b) do { v <- eval a; 
+						b' <- (subst i v b);
+						(eval b')}
+```
+For this we need to subst
+```haskell
+subst :: String -> BAE -> BAE -> BAE
+subst x v (Nat x) = (Nat x)
+-- Below if x the var is equal to x' in the scope, return v. if it is different then return the previous thing
+subst x v (Id x') = if x=x' then v else (Id x')
+subst x v (Plus l r) = (Plus (subst x v l) (subst x v r))
+subst x v (Plus l r) = (Minus (subst x v l) (subst x v r))
+-- Plus and minus same way because if there is an issue its in the arguments
+subst x v (Bind x' v' t') = if x=x' then 
+							(Bind x' (subst x v v') t') 
+							else
+							(Bind x' (subst x v v') (subst x v t')) 
+```
+
+The issue with this is that you walk through all of your code down and back up with each bind
+This is a reference interpreter, it does what the code is supposed to do, but is not necessarily how to do it 

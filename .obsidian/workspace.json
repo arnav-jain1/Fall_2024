@@ -37,14 +37,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS 510/9-12.md",
+                "file": "EECS 662/7-29.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ec0c1e2d1f9aad63",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "EECS 662/First language.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -110,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS 510/9-12.md",
+                "file": "EECS 662/First language.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS 510/9-12.md",
+                "file": "EECS 662/First language.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS 510/9-12.md"
+                "file": "EECS 662/First language.md"
               }
             }
           }
@@ -171,10 +183,13 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "39e79a7372bbbcde",
+  "active": "ec0c1e2d1f9aad63",
   "lastOpenFiles": [
-    "EECS_678/2-Services.md",
+    "EECS 662/7-29.md",
+    "EECS 662/First language.md",
+    "latex guide.md",
     "EECS 510/9-12.md",
+    "EECS_678/2-Services.md",
     "EECS_565/proj1/output.png",
     "EECS_678/3- Processes.md",
     "EECS_678/Pasted image 20240911165905.png",
@@ -197,10 +212,7 @@
     "EECS_565/Pasted image 20240911112007.png",
     "EECS_565/Pasted image 20240911111709.png",
     "EECS_565/L3-classic_crypto.md",
-    "latex guide.md",
     "jobs.md",
-    "EECS 662/7-29.md",
-    "EECS 662/First language.md",
     "EECS_658/daily_assignments/5-9-12.md",
     "EECS_565/Pasted image 20240906120223.png",
     "EECS_565/L2.md",

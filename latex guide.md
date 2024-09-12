@@ -68,6 +68,7 @@ Note: For new line latex use \$\$ to surround the equation
 - Gamma: `\gamma` renders as $\gamma$, etc.
 - Pi: `\pi` renders as $\pi$
 - Theta: `\theta` renders as $\theta$
+- Theta: `\Theta` renders as $\Theta$
 - Lambda: `\lambda` renders as $\lambda$
 - Sigma: `\sigma` renders as $\sigma$
 - lowercase omega: `\omega` renders as $\omega$
@@ -100,4 +101,7 @@ c & d
 $$
 ## Other
 - Space: `\space` renders as $\space$ 
+- Tab: `\quad` renders as $\quad$
 - Text: `\text{stuff}` renders as $\text{stuff}$ 
+- Bot: `\bot` renders as $\bot$
+- 

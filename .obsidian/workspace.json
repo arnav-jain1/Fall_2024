@@ -25,38 +25,36 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "latex guide.md",
+                "file": "EECS_678/3- Processes.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "39e79a7372bbbcde",
+            "id": "f137f9622474e60c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "EECS 662/7-29.md",
-                "mode": "source",
-                "source": false
+                "file": "EECS_678/Pasted image 20240913142209.png"
               }
             }
           },
           {
-            "id": "ec0c1e2d1f9aad63",
+            "id": "a994682a75dc750b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS 662/First language.md",
+                "file": "EECS_565/L5-Symmetric Encryption.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -122,7 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS 662/First language.md",
+                "file": "EECS_678/3- Processes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +137,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS 662/First language.md",
+                "file": "EECS_678/3- Processes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS 662/First language.md"
+                "file": "EECS_678/3- Processes.md"
               }
             }
           }
@@ -183,38 +181,39 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "ec0c1e2d1f9aad63",
+  "active": "b7343d8cedd9f75b",
   "lastOpenFiles": [
-    "EECS 662/7-29.md",
-    "EECS 662/First language.md",
+    "EECS_678/Pasted image 20240913142209.png",
+    "EECS_678/3- Processes.md",
+    "EECS_678/Pasted image 20240913142228.png",
+    "EECS_565/L5-Symmetric Encryption.md",
     "latex guide.md",
+    "EECS 662/7-29.md",
+    "EECS_565/proj1/proj1.tar.gz",
+    "EECS_565/proj1/report.txt~",
+    "EECS_565/proj1/report.txt",
+    "EECS_565/proj1/task2.py~",
+    "EECS_565/proj1/task1.py~",
+    "EECS_565/proj1/task2.py",
+    "EECS_565/proj1/paralell.py~",
+    "EECS_565/proj1/parallel.py~",
+    "EECS_565/proj1/cpythontest.c",
+    "EECS_565/proj1/cpythontest.pyx~",
+    "Pasted image 20240913113321.png",
+    "Pasted image 20240913111920.png",
+    "Pasted image 20240913111558.png",
+    "Pasted image 20240913111312.png",
+    "Pasted image 20240913111043.png",
+    "EECS_565/L4-Classic Crypto 2.md",
+    "EECS 662/First language.md",
     "EECS 510/9-12.md",
     "EECS_678/2-Services.md",
     "EECS_565/proj1/output.png",
-    "EECS_678/3- Processes.md",
     "EECS_678/Pasted image 20240911165905.png",
-    "EECS_678/debuggers/valgrind_output.txt",
-    "EECS_678/debuggers/bugs_output.txt",
-    "EECS_678/debuggers/bugs",
-    "EECS_678/debuggers/debuggers.tar.gz",
-    "EECS_678/debuggers/submit",
-    "EECS_678/debuggers/report.txt~",
-    "EECS_678/debuggers/report.txt",
-    "EECS_678/debuggers/valgrind_test.c~",
-    "EECS_678/debuggers/4913",
-    "EECS_678/debuggers/bugs.c~",
     "EECS_678/Pasted image 20240911143809.png",
-    "EECS_678/Pasted image 20240911142409.png",
-    "EECS_678/Pasted image 20240911141904.png",
-    "EECS_565/L4-Classic Crypto 2.md",
-    "EECS_565/Pasted image 20240911114724.png",
-    "EECS_565/Pasted image 20240911113142.png",
-    "EECS_565/Pasted image 20240911112007.png",
-    "EECS_565/Pasted image 20240911111709.png",
     "EECS_565/L3-classic_crypto.md",
     "jobs.md",
     "EECS_658/daily_assignments/5-9-12.md",
-    "EECS_565/Pasted image 20240906120223.png",
     "EECS_565/L2.md",
     "EECS_678/1- Intro.md",
     "EECS_658/daily_assignments/4-9-10.md",

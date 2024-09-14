@@ -36,3 +36,44 @@ Process of storing and restoring the state (*context*) of CPU so that multiple p
 Overhead because no other work is done when switching
 
 ![[Pasted image 20240911165905.png]]
+The process scheduler decides which process to run
+	Goal is to max utilization in multiprogramming OS
+	Provides illusion of each process owning the system in timeshared OS
+Terminology:
+	Job queue: all processes in system
+	Ready queue: all processes in memory waiting to be executed
+	device queue: set of processes waiting for IO device
+Processes can move between queues
+![[Pasted image 20240913142209.png]]
+
+![[Pasted image 20240913142228.png]]
+
+Systems with huge job queue can have multiple schedulers
+Long term scheduler
+	Selects processes to be brought into ready queue (memory)
+	Controls degree of multiprogramming
+	Controls the mix of CPU bound and IO bound processes
+	more time to make selection, so called less frequently
+	Only in very specialized cases like cluster nodes
+Short term scheduler
+
+## Process creation
+Process can make other processes
+	OS has *primordial* process
+	creating process is *parent* while created process is *child*
+		If parent dies before child, the child process becomes an *orphan* 
+	Processes IDed by process identifier PID 
+Resource sharing options
+	1. Parent and child shares resources 
+	2. Children share subset of parent process resources
+	3. Parent and child doesn't share resources (Unix)
+Execution options
+	1. Parent and child run together (unix)
+	2. Parent waits till children finishes 
+	Parent process has to collect the child process status when the child process is finish
+		If it doesn't collect it, the child process becomes a zombie process
+	If Parent process finishes first, it will either be orphaned or zombied
+	All the parent's responsibility is to collect the status of the child when done
+Address space options
+	1. child duplicate of parent
+	2. child has a program loaded into it by exec

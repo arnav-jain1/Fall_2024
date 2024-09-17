@@ -79,6 +79,22 @@ rounds = 16
 Same structure as encryption
 Use the round keys in reverse order
 
+#### Study questions
+1. What is the block size and key size used in DES?
+2. How many rounds does the DES algorithm use in its main encryption process?
+4. In the Feistel structure used by DES, what happens to the right half of the data in each round?
+5. What is the purpose of the initial and final permutations in DES?
+6. Describe the main components of the F-function in DES.
+<mark style="background: #FF5582A6;">7. How does the key schedule in DES work? How many round keys are generated?</mark>
+8. Why is it possible to use the same algorithm for both encryption and decryption in DES?
+9. What is the significance of the S-boxes in DES?
+10. How does DES achieve diffusion and confusion, two important principles in cryptography?
+11. What is the main security weakness of DES in modern times?
+12. In the Feistel structure, how do changes in the input propagate through the rounds?
+13. How does Triple DES address some of the weaknesses of standard DES?
+14. Explain why the Feistel structure allows for the F-function to be non-invertible.
+15. How would you modify the DES algorithm to create a block cipher with a larger block size but keeping the same basic structure?
+16. Compare and contrast the Feistel structure used in DES with the substitution-permutation network used in AES.
 # Cryptanalysis of DES
 Brute force:
 	Need to try all possible keys (56 bits so $2^{56}$)

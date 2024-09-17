@@ -1,0 +1,11 @@
+1. Based on the results, LDA performed the best
+
+WHile linear regression performed really well, it was also assisted with the fact that all data was clipped between 0 and 2. It also likely didn't do as well because LDA is more meant for classification while linear regression is generally known as a predictive measure
+Polynomial regression with degree 2 performed well but had higher variablity between folds likely meaning it overfit
+Polynomial regression with degree of 3 likely performed poorly because a polynomial of degree 3 was too complex for this dataset thus overfitting the data
+Baysian performed well but didn't score the top. This might be because it assumes feature independance which is likely not the case for this dataset
+K nearest neighbors performed well but not well enough which is due to the fact that the decision boundries that it created were simply not as well made as the ones in LDA
+Like the polynomial regression, QDA likely overfit since it had access to quadratic decision boundries
+
+
+Overall, LDA did the best due to various factors such as the data being linear in nature, and the fact that it was designed for classification.

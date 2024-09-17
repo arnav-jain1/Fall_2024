@@ -163,3 +163,106 @@ subst x v (Bind x' v' t') = if x=x' then
 
 The issue with this is that you walk through all of your code down and back up with each bind
 This is a reference interpreter, it does what the code is supposed to do, but is not necessarily how to do it 
+
+Old way 
+```
+eval bind x = 5 in 
+		bind y = 6 in 
+			x + y
+== bind y=6 in 5+y
+== 5+6
+== 11
+```
+New
+```
+eval bind x = 5 in       [("x", 5)]
+		bind y = 6 in    [("y", 6), ("x", 5)]
+			x + y        [("y", 6), ("x", 5)]
+== 5 + 6
+== 11
+```
+Environment: list of vars and respective values in the scope
+
+Bind and plus are fundamentally different
+	Bind manipulates environment while plus manipulates vars in an environment
+
+ ```haskell
+	 eval (Bind "x" (Num 5)              [("x", (Num 5))]
+		 (Bind "y" (Num 6)               [("y", (Num 6)), ("x", (Num 5))]
+			 (Plus (Id "x") Id ("y"))))  [("y", (Num 6)), ("x", (Num 5))]
+== (Plus (Num 5) (Num 6))
+== 5 + 6
+== 11
+```
+ 
+ ```haskell
+	 eval (Bind "x" (Num 5)              [("x", (Num 5))]
+		 (Bind "x" (Num 6)               [("x", (Num 6)), ("x", (Num 5))]
+			 (Plus (Id "x") Id ("x"))))  [("x", (Num 6)), ("x", (Num 5))]
+== (Plus (Num 6) (Num 6))
+== 6 + 6
+== 12
+```
+
+The environment is a *stack* so make sure you push the variables 
+
+ ```haskell
+ eval (Bind "x" (Num 5)              [("x", (Num 5))]
+	 (Bind "x" (Num 6)               [("x", (Num 6)), ("x", (Num 5))]
+		 (Plus (Num 6) Id ("y"))))  Error!
+== (Plus (Num 6) (Num 6))
+== Nothing
+```
+
+```haskell 
+eval (Bind "x" (Num 5)                     [("x", (Num 5))]
+	(Plus (ID "x")                         [("x", (Num 5))]
+			(Bind "x" (Num 6)              [("x", (Num 6))("x", (Num 5))] 
+				(Plus (Id "x") (Id "x")))))
+== (Plus (Num 5) (Plus (Num 5) (Num 6)))
+== (Plus (Num 5) 12)
+== 17
+```
+
+```haskell
+eval (Bind "x" (Num 5) 
+		(Plus                            [("x", (Num 5))]
+			(Bind "x" (Num 6)            [("x", (Num 6)), ("x", (Num 5))]
+				(Plus (Id "x") (Id "x")) [("x", (Num 6)), ("x", (Num 5))]
+			(Id "x")
+== 
+eval (Bind "x" (Num 5) 
+		(Plus 12 (Id "x")))              [("x", (Num 5))]
+== 17
+```
+
+No more new inference rules because logic wasn't changed just speed was
+
+To test, give all possible values OR do an inductive proof
+
+ This is how you make an environment, this says env will be a list of pairs of strings and BAE
+Takes something of type A, pairs of As,Bs and returns Maybe type of B
+x:xs adds x to the front of xs. Pattern matches with non empty list 
+ ```haskell
+Type Env = [(String, BAE)]
+lookup :: A -> [(A,B)] -> Maybe B
+x:xs
+```
+New eval
+
+```haskell 
+eval :: Env -> BAE -> Maybe BAE
+eval _ (Num n) = Just (Num n)
+eval e (Plus l r) = do { (num l') <- (eval e l) ; 
+						 (num r') <- (eval e r) ;
+						 Just (l' +  r')
+					   }
+eval e (Minus l r) = do { (num l') <- (eval e l) ; 
+						 (num r') <- (eval e r) ;
+						 if r' <= l' then Just (l' -r') else Nothing
+					   }
+eval e (Bind x a s) = do { a' <- eval e a; 
+						   eval (x,a'):e s;
+					   }
+
+```

@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_510/9-17-Regular Grammars.md",
+                "file": "EECS_510/8-29.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_510/9-17-Regular Grammars.md",
+                "file": "EECS_510/8-29.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_510/9-17-Regular Grammars.md",
+                "file": "EECS_510/8-29.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_510/9-17-Regular Grammars.md"
+                "file": "EECS_510/8-29.md"
               }
             }
           }
@@ -173,9 +173,11 @@
   },
   "active": "a994682a75dc750b",
   "lastOpenFiles": [
+    "EECS_510/9-17-Regular Grammars.md",
+    "EECS_678/signals/signals.c~",
+    "EECS_678/signals/4913",
     "EECS_565/L5-Symmetric Encryption.md",
     "EECS_510/9-12.md",
-    "EECS_510/9-17-Regular Grammars.md",
     "EECS_565/L6- Symmetric Encryption 2.md",
     "EECS_678/signals/signals",
     "EECS_678/signals/signals.c",
@@ -199,8 +201,6 @@
     "EECS_658/ArnavJain_Assignment2.zip",
     "EECS_658/zi2CsAZL",
     "EECS_658/ArnavJain_Assignment2/output.pdf",
-    "EECS_658/ArnavJain_Assignment2/lu1309241n5i.tmp",
-    "EECS_658/ArnavJain_Assignment2/report.txt~",
     "EECS_658/daily_assignments/6-9-17.md",
     "EECS_662/First language.md",
     "EECS_662/7-29.md",
@@ -217,7 +217,6 @@
     "EECS_658/daily_assignments/5-9-12.md",
     "EECS_565/L2.md",
     "EECS_678/1- Intro.md",
-    "EECS_658/daily_assignments/4-9-10.md",
-    "EECS 565/L3-classic_crypto.md"
+    "EECS_658/daily_assignments/4-9-10.md"
   ]
 }

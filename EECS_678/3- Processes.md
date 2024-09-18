@@ -84,3 +84,13 @@ UNIX examples
 Parent waits for its child to finish
 ![[Pasted image 20240917175545.png]]
 
+## Process termination
+Process ends after the last statement executes
+	The process itself can explicitly call **exit()** but if it doesn't, then the OS implicitly calls it.
+	Child can then pass it's return status to the parent that collects it using **wait()**
+	Resources are then dealloc by OS
+Parent can terminate the child process explicitly using **abort()**
+	Like if child is using too many resources or is not needed
+Is parent exits then:
+	The child will be assigned a new parent by the OS and can run independently  (Unix)
+	Might not be the case for other OS

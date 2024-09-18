@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_678/3- Processes.md",
+                "file": "jobs.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_678/3- Processes.md",
+                "file": "jobs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_678/3- Processes.md",
+                "file": "jobs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_678/3- Processes.md"
+                "file": "jobs.md"
               }
             }
           }
@@ -160,10 +160,13 @@
   },
   "active": "c16f6b98593e0bc7",
   "lastOpenFiles": [
+    "latex guide.md",
+    "README.md",
+    "EECS_678/3- Processes.md",
+    "jobs.md",
     "EECS_678/Pasted image 20240917175545.png",
     "EECS_678/2-Services.md",
     "EECS_678/1- Intro.md",
-    "EECS_678/3- Processes.md",
     "EECS_510/9-17-Regular Grammars.md",
     "EECS_510/Pasted image 20240917164438.png",
     "EECS_510/Pasted image 20240917163527.png",
@@ -177,8 +180,6 @@
     "EECS_510/9-12.md",
     "EECS_662/First language.md",
     "EECS_510/hw1.md",
-    "EECS_510/Pasted image 20240917141438.png",
-    "latex guide.md",
     "EECS_662/7-29.md",
     "EECS_510/8-29.md",
     "EECS_678/signals/signals.c~",
@@ -198,7 +199,6 @@
     "EECS_658/zi2CsAZL",
     "EECS_658/ArnavJain_Assignment2/output.pdf",
     "EECS_658/daily_assignments/6-9-17.md",
-    "jobs.md",
     "EECS 662/7-29.md",
     "EECS_565/L4-Classic Crypto 2.md",
     "EECS 662/First language.md",

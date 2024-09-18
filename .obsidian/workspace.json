@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_510/9-17-Regular Grammars.md",
+                "file": "EECS_678/3- Processes.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_510/9-17-Regular Grammars.md",
+                "file": "EECS_678/3- Processes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_510/9-17-Regular Grammars.md",
+                "file": "EECS_678/3- Processes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_510/9-17-Regular Grammars.md"
+                "file": "EECS_678/3- Processes.md"
               }
             }
           }
@@ -160,6 +160,11 @@
   },
   "active": "c16f6b98593e0bc7",
   "lastOpenFiles": [
+    "EECS_678/Pasted image 20240917175545.png",
+    "EECS_678/2-Services.md",
+    "EECS_678/1- Intro.md",
+    "EECS_678/3- Processes.md",
+    "EECS_510/9-17-Regular Grammars.md",
     "EECS_510/Pasted image 20240917164438.png",
     "EECS_510/Pasted image 20240917163527.png",
     "EECS_510/Pasted image 20240917163402.png",
@@ -170,11 +175,9 @@
     "EECS_510/Pasted image 20240917161754.png",
     "EECS_510/Pasted image 20240917161716.png",
     "EECS_510/9-12.md",
-    "EECS_510/9-17-Regular Grammars.md",
     "EECS_662/First language.md",
     "EECS_510/hw1.md",
     "EECS_510/Pasted image 20240917141438.png",
-    "EECS_510/Pasted image 20240917141359.png",
     "latex guide.md",
     "EECS_662/7-29.md",
     "EECS_510/8-29.md",
@@ -195,16 +198,13 @@
     "EECS_658/zi2CsAZL",
     "EECS_658/ArnavJain_Assignment2/output.pdf",
     "EECS_658/daily_assignments/6-9-17.md",
-    "EECS_678/3- Processes.md",
     "jobs.md",
     "EECS 662/7-29.md",
     "EECS_565/L4-Classic Crypto 2.md",
     "EECS 662/First language.md",
     "EECS 510/9-12.md",
-    "EECS_678/2-Services.md",
     "EECS_565/L3-classic_crypto.md",
     "EECS_658/daily_assignments/5-9-12.md",
-    "EECS_565/L2.md",
-    "EECS_678/1- Intro.md"
+    "EECS_565/L2.md"
   ]
 }

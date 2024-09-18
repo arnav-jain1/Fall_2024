@@ -99,6 +99,9 @@ The next step is to eliminate q0 by making a path from qs to q1 that contains a\
 ![[Pasted image 20240917164438.png]]
 So the table is now 1 * 1 = 1
 
-| path                                        | expr           |     |
-| ------------------------------------------- | -------------- | --- |
-| $q_{s} \rightarrow q_{1} \rightarrow q_{f}$ | a\*b(b+aa\*b)* |     |
+| path                                        | expr           |
+| ------------------------------------------- | -------------- |
+| $q_{s} \rightarrow q_{1} \rightarrow q_{f}$ | a\*b(b+aa\*b)* |
+This simplifies down to (a+b)\*b aka must end in a b
+
+state-bypass and elimination technique: Recording all paths and then eleminating the node associated with it (what we just did)

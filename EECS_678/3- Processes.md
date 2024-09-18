@@ -77,3 +77,10 @@ Execution options
 Address space options
 	1. child duplicate of parent
 	2. child has a program loaded into it by exec
+UNIX examples
+	Fork system call will create a new process
+	Exec will replace the process' memory space with a new program
+
+Parent waits for its child to finish
+![[Pasted image 20240917175545.png]]
+

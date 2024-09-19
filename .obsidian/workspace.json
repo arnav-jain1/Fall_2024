@@ -20,6 +20,18 @@
             }
           },
           {
+            "id": "f37225c417b090ff",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "EECS_565/L7-asymmetric encryption.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "44400b95a1531f4c",
             "type": "leaf",
             "state": {
@@ -31,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -97,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_678/3- Processes.md",
+                "file": "EECS_565/L7-asymmetric encryption.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_678/3- Processes.md",
+                "file": "EECS_565/L7-asymmetric encryption.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_678/3- Processes.md"
+                "file": "EECS_565/L7-asymmetric encryption.md"
               }
             }
           }
@@ -158,8 +171,13 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "c16f6b98593e0bc7",
+  "active": "f37225c417b090ff",
   "lastOpenFiles": [
+    "EECS_565/Pasted image 20240919133818.png",
+    "EECS_565/Pasted image 20240919133815.png",
+    "EECS_565/Pasted image 20240919131859.png",
+    "EECS_678/3- Processes.md",
+    "EECS_565/L7-asymmetric encryption.md",
     "EECS_678/Pasted image 20240918173407.png",
     "EECS_662/First language.md",
     "EECS_678/signals/3097021-signals-lab.tar.gz",
@@ -170,7 +188,6 @@
     "jobs.md",
     "latex guide.md",
     "README.md",
-    "EECS_678/3- Processes.md",
     "EECS_678/Pasted image 20240917175545.png",
     "EECS_678/2-Services.md",
     "EECS_678/1- Intro.md",
@@ -181,9 +198,6 @@
     "EECS_510/Pasted image 20240917163123.png",
     "EECS_510/Pasted image 20240917162739.png",
     "EECS_510/Pasted image 20240917162601.png",
-    "EECS_510/Pasted image 20240917162556.png",
-    "EECS_510/Pasted image 20240917161754.png",
-    "EECS_510/Pasted image 20240917161716.png",
     "EECS_510/9-12.md",
     "EECS_510/hw1.md",
     "EECS_510/8-29.md",
@@ -204,7 +218,6 @@
     "EECS_565/L4-Classic Crypto 2.md",
     "EECS 662/First language.md",
     "EECS 510/9-12.md",
-    "EECS_565/L3-classic_crypto.md",
-    "EECS_658/daily_assignments/5-9-12.md"
+    "EECS_565/L3-classic_crypto.md"
   ]
 }

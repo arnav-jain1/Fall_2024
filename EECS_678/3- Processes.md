@@ -94,3 +94,35 @@ Parent can terminate the child process explicitly using **abort()**
 Is parent exits then:
 	The child will be assigned a new parent by the OS and can run independently  (Unix)
 	Might not be the case for other OS
+
+#### Sidenote: Chrome
+Chrome is mutliple processes 
+	Browser: Manages UI 
+	Renderer: Renders web pages
+	Tabs: each tab is own process
+Good because makes it harder to crash
+Bad because more utilization
+
+## Inter process communication
+How to communicate within the same system 
+	Needed to share info, speed up computation, more modular, convenient 
+
+Producer makes the info and consumer process the info
+This needs to be synchronized though because consumer needs producer to be finished first
+
+Abstraction models
+	Unbounded buffer: no (practical) limit on size of buffer
+	bounded buffer: limit on size of buffer
+
+## IPC models
+Shared memory:
+	Memory 2 process is shared and can be read/written to 
+	Fast, convinient 
+Message parsing
+	Send and receive messages
+	Messages not overwritten so no conflicts
+	Slower but better for multiple computers
+	Easier to implement 
+	Typically used for smaller amounts of data
+![[Pasted image 20240918173407.png]]
+

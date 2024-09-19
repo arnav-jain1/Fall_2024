@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_662/7-29.md",
+                "file": "EECS_678/3- Processes.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_662/7-29.md",
+                "file": "EECS_678/3- Processes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_662/7-29.md",
+                "file": "EECS_678/3- Processes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_662/7-29.md"
+                "file": "EECS_678/3- Processes.md"
               }
             }
           }
@@ -160,6 +160,13 @@
   },
   "active": "c16f6b98593e0bc7",
   "lastOpenFiles": [
+    "EECS_678/Pasted image 20240918173407.png",
+    "EECS_662/First language.md",
+    "EECS_678/signals/3097021-signals-lab.tar.gz",
+    "EECS_678/signals/3097021-signals-lab",
+    "EECS_678/signals/test.c~",
+    "EECS_678/signals/test.c",
+    "EECS_662/7-29.md",
     "jobs.md",
     "latex guide.md",
     "README.md",
@@ -178,9 +185,7 @@
     "EECS_510/Pasted image 20240917161754.png",
     "EECS_510/Pasted image 20240917161716.png",
     "EECS_510/9-12.md",
-    "EECS_662/First language.md",
     "EECS_510/hw1.md",
-    "EECS_662/7-29.md",
     "EECS_510/8-29.md",
     "EECS_678/signals/signals.c~",
     "EECS_678/signals/4913",
@@ -190,21 +195,16 @@
     "EECS_678/signals/signals.c",
     "EECS_678/signals/Makefile",
     "EECS_678/signals",
-    "EECS_678/eecs678-lab2-signals.tar.gz",
     "EECS_565/L6- Cryptanalysis of DES.md",
     "L6- Cryptanalysis of DES.md",
     "EECS_658/daily_assignments/0-8-27.md",
     "EECS_658/daily_assignments/7-9-19.md",
-    "EECS_658/ArnavJain_Assignment2.zip",
-    "EECS_658/zi2CsAZL",
-    "EECS_658/ArnavJain_Assignment2/output.pdf",
     "EECS_658/daily_assignments/6-9-17.md",
     "EECS 662/7-29.md",
     "EECS_565/L4-Classic Crypto 2.md",
     "EECS 662/First language.md",
     "EECS 510/9-12.md",
     "EECS_565/L3-classic_crypto.md",
-    "EECS_658/daily_assignments/5-9-12.md",
-    "EECS_565/L2.md"
+    "EECS_658/daily_assignments/5-9-12.md"
   ]
 }

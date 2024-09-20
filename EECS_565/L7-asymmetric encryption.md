@@ -36,3 +36,11 @@ The initialization buffer is loaded with {A,B,C,D} and the message is split into
 ![[Pasted image 20240919133818.png]]
 
 ### HMAC
+$$hmac(k,M) = h(k_{2}||h(k_{1}||M))$$ M is the message
+Divide the message into blocks *b(512 usually) and then pad the last one
+k is the secret key*, Pad K with 0s to left to make it the same size as the block (new key is called $K^{+}$)
+Then apply ipad and opad to the new $K^{+}$ to get $k_{1}$ and $k_{2}$
+	Ipad = 36 = 00110110
+	opad = 5c = 01011100
+Final output is a hash taht is n bits long
+![[Pasted image 20240919135414.png]]

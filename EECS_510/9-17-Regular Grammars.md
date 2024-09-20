@@ -105,3 +105,16 @@ So the table is now 1 * 1 = 1
 This simplifies down to (a+b)\*b aka must end in a b
 
 state-bypass and elimination technique: Recording all paths and then eleminating the node associated with it (what we just did)
+
+# NFA to grammar 
+![[Pasted image 20240920100710.png]]
+Take this NFA and change q0 -> S, q1 -> X, q2 -> Y, and q3 -> Z
+What would the grammar be for it? 
+S -> 0S | 1S | 1X
+X -> 0Y | 1Y 
+Y -> 0Z | 1Z
+Z -> $\lambda$ 
+so generating 11101 it would be 
+S -> 1S -> 11S -> 111X -> 1110Y -> 11101Z -> 11101
+
+This is called **right linear grammar** where there is at most ONE var on the right side of the expression and is the rightmost symbol (ex 0S, S is right most and there is only 1)

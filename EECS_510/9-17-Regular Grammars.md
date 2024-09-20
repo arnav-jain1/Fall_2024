@@ -118,3 +118,79 @@ so generating 11101 it would be
 S -> 1S -> 11S -> 111X -> 1110Y -> 11101Z -> 11101
 
 This is called **right linear grammar** where there is at most ONE var on the right side of the expression and is the rightmost symbol (ex 0S, S is right most and there is only 1)
+
+Process:
+	1. Remove all jail states
+	2. For each transition, make a grammer rule like so: 
+		1. Place the "from" var on the left side
+		2. Make a string on the right by adding the char output and then the state var
+	3. For the accepting state, include $\lambda$
+
+You can also turn the grammer back into automata
+You can also have >1 char 
+
+Gramamr:
+	S -> aX | bY | $\lambda$ 
+	X -> aS | bZ 
+	Y -> aZ | bS
+	z -> aY | bX
+respective dfa
+![[Pasted image 20240920132325.png]]
+
+
+## Left Linear grammar
+Generate the strings backwards (right to left) so you have to traverse the machine backwards
+
+Final states:
+	Accepting state becomes final state and vice versa
+	Multiple accepting states become 1 via lamda
+
+![[Pasted image 20240920133027.png]]
+Y will be start and S will be end
+Y -> Xa
+X -> Saa | Xb
+S -> $\lambda$ 
+You can simplify it and remove the S entirely 
+
+Generate aabbba
+Y -> Xa -> Xba -> Xbba -> Xbbba -> Saabbba (or just aabbba) -> aabbba
+
+
+## Converting left to right
+Right grammar
+C -> Bb
+B -> Aa
+A -> Bab | $\lambda$ 
+
+So the first step is to convert this into N/DFA
+
+A has the lambda that means it's the start state 
+Nothing has C meaning its the final state
+![[Pasted image 20240920134210.png]]
+Then we can convert this into a left linear grammar
+A -> aB
+B -> bC | abA
+C -> $\lambda$ (again C optional)
+You ***cannot*** mix the rules
+
+
+Make a left Linear for missing one of the letters of the alphabet
+	((a+b)* + (b+c)* + (a+c)\*)
+First draw the NFA
+![[Pasted image 20240920135252.png]]
+Then 
+Make it so there is only one accepting state
+![[Pasted image 20240920135309.png]]
+From there, write the grammar
+F ->X$\lambda$ | Y$\lambda$ | Z$\lambda$ | W$\lambda$
+Y -> Yb | Ya | Xa | Xb
+Z -> Za | Zc | Xa | Xc
+W -> Wb | Wc | Xb | Xc
+X -> $\lambda$
+
+Which simplifies to: 
+
+F -> $\lambda$ | Y | Z | W
+Y -> Yb | Ya | a | b
+Z -> Za | Zc | a | c
+W -> Wb | Wc | b | c

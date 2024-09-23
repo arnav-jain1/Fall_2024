@@ -194,3 +194,47 @@ F -> $\lambda$ | Y | Z | W
 Y -> Yb | Ya | a | b
 Z -> Za | Zc | a | c
 W -> Wb | Wc | b | c
+
+# How do we know if the lang is a "regular lang"
+Must be able to:
+	preserve the "regularness" of a language (???)
+	Develop algorithms for answering questions about regular languages
+	Show that non regular languages exist
+
+A set is closed under an operation if when the result of the operation being applied to any two elements remains in the set
+
+Need to know when this property does not hold
+
+Regular expressions are easy, either they are empty ($\phi$) or infinite with the Kleene Star
+
+Automata is more complex
+1. Convert to a regex
+	1. If it accepts anything its not empty
+	2. If there is a * then it's infinite
+2. Eye ball it
+	1. depth-first traversal
+	2. Look for path from start to accepting
+	3. Language is empty if there is no accepting
+3. Brute force
+	1. Try all possibilities (computer)
+
+Cycle:
+![[Pasted image 20240920153907.png]]
+4 possible states so p=4
+The machine wants strings that are multiples of 4 (4n)
+A singular cycle is $(a + b)^{4}$ 
+
+The number of states in a path is |string| + 1 (extra cause of start state)
+so if the string is "aaaa" then the number of states touched is 5 and since p is 4, then 5>p so there must have been at lewast one cycle
+
+To check for emptyness we need to check for strings of length 0 to p 
+
+##### Def
+To determine by brute force if a DFA can accept any string, try all possible strings in $\sum^{*}$ (the alphabet)  within the range\[0,p] 
+
+
+If a DFA accepts a string length of >=p, we know there has to be a cycle in the accepting path meaning the language is infinite. 
+Since no cycle can have more than p states, we only need to test lengths from \[p,2p-1]. If there is a string in this range, then the language is infinite
+
+##### Def
+To determine by brute force if the language of the finite automation is finite, test all strings in $\sum^{+}$ with lengths in \[p,2p-1] for acceptance 

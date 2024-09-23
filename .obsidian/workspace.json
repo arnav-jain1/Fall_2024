@@ -20,18 +20,6 @@
             }
           },
           {
-            "id": "f37225c417b090ff",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "EECS_510/9-17-Regular Grammars.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "44400b95a1531f4c",
             "type": "leaf",
             "state": {
@@ -56,7 +44,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -122,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_510/9-17-Regular Grammars.md",
+                "file": "EECS_662/First language.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_510/9-17-Regular Grammars.md",
+                "file": "EECS_662/First language.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_510/9-17-Regular Grammars.md"
+                "file": "EECS_662/First language.md"
               }
             }
           }
@@ -183,10 +171,16 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "f37225c417b090ff",
+  "active": "d8732ff57379a525",
   "lastOpenFiles": [
-    "EECS_510/9-12.md",
+    "EECS_658/daily_assignments/8-9-24.md",
+    "EECS_658/submissions/8-9-24.pdf",
+    "EECS_658/daily_assignments/9-9-26.md",
+    "EECS_658/submissions/9-9-26.pdf",
+    "EECS_678/3- Processes.md",
+    "EECS_510/hw1.md",
     "EECS_510/9-17-Regular Grammars.md",
+    "EECS_510/9-12.md",
     "EECS_510/Pasted image 20240920153907.png",
     "EECS_510/Pasted image 20240920135309.png",
     "EECS_510/Pasted image 20240920135252.png",
@@ -194,14 +188,12 @@
     "EECS_510/Pasted image 20240920133027.png",
     "EECS_510/Pasted image 20240920132325.png",
     "EECS_510/Pasted image 20240920100710.png",
-    "EECS_510/hw1.md",
     "EECS_662/Second.md",
     "EECS_662/First language.md",
     "EECS_565/L7-asymmetric encryption.md",
     "EECS_565/Pasted image 20240919135414.png",
     "EECS_565/Pasted image 20240919133818.png",
     "EECS_565/Pasted image 20240919133815.png",
-    "EECS_678/3- Processes.md",
     "EECS_678/signals/3097021-signals-lab.tar.gz",
     "EECS_678/signals/3097021-signals-lab",
     "EECS_678/signals/test.c~",
@@ -219,16 +211,12 @@
     "EECS_565/L6- Symmetric Encryption 2.md",
     "EECS_678/signals/signals",
     "EECS_678/signals/signals.c",
-    "EECS_678/signals/Makefile",
-    "EECS_678/signals",
     "EECS_565/L6- Cryptanalysis of DES.md",
     "L6- Cryptanalysis of DES.md",
     "EECS_658/daily_assignments/0-8-27.md",
     "EECS_658/daily_assignments/7-9-19.md",
     "EECS_658/daily_assignments/6-9-17.md",
     "EECS 662/7-29.md",
-    "EECS_565/L4-Classic Crypto 2.md",
-    "EECS 662/First language.md",
-    "EECS 510/9-12.md"
+    "EECS_565/L4-Classic Crypto 2.md"
   ]
 }

@@ -230,8 +230,9 @@ so if the string is "aaaa" then the number of states touched is 5 and since p is
 To check for emptyness we need to check for strings of length 0 to p 
 
 ##### Def
-To determine by brute force if a DFA can accept any string, try all possible strings in $\sum^{*}$ (the alphabet)  within the range\[0,p] 
+To determine by brute force if a DFA can accept any string, try all possible strings in $\sum^{*}$ (the alphabet)  within the range\[0,p] (determines emptyness)
 
+Let there be a regular language L that accepts at least one string
 
 If a DFA accepts a string length of >=p, we know there has to be a cycle in the accepting path meaning the language is infinite. 
 Since no cycle can have more than p states, we only need to test lengths from \[p,2p-1]. If there is a string in this range, then the language is infinite

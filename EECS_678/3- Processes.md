@@ -111,8 +111,8 @@ Producer makes the info and consumer process the info
 This needs to be synchronized though because consumer needs producer to be finished first
 
 Abstraction models
-	Unbounded buffer: no (practical) limit on size of buffer
-	bounded buffer: limit on size of buffer
+	Unbounded buffer: no (practical) limit on size of buffer so producer can produce how much every they want 
+	bounded buffer: limit on size of buffer, producer cant produce more until buffer is freed a little
 
 ## IPC models
 Shared memory:
@@ -126,3 +126,83 @@ Message parsing
 	Typically used for smaller amounts of data
 ![[Pasted image 20240918173407.png]]
 
+Message parsing can also be used for client-server communication 
+2 operations: send and receive (a message)
+If P and Q want to communicate, they need to first establish a link before exchanging messages
+Implementation issues:
+	How to establish a link?
+	Can a link work with >2 processes
+	How many links between communicating processes (1 for 2, 2 for 2)
+	Max capacity of a link? (how many/how big of messages)
+	is the message length fixed or variable size? 
+	Is the link unidirectional or bidirectional 
+
+### Naming
+Direct
+	Message must be named directly (aka send(Q, message) and recieve(P, message))
+	There is exactly ONE link between exactly TWO processes and it is established automatically
+	Issue: Process IDs are hard coded
+
+Indirect:
+	Messages are sent to and recieved from ports (mailboxes)
+		send(A, message) puts the message in mailbox/port A
+		recieve(A, message) receives from mailbox A
+	Each mailbox has a unique ID
+	Processes can only communicate if they share a mailbox 
+	Allows for many processes, many links, bi/unidirectional but may need syncronization
+	Mailbox in address space or kernel
+
+Syncronization issue:
+	Message receiving/sending is either blocking (sync) or nonblocking (async)
+	**Blocking send**: Sender cannot continue until successfully sent (so if the buffer is full, it won't do anything until it is able to send it). ensures the message was recieved
+	**Blocking recieve**: Cannot continue until successfully recieved
+	**Non-blocking send**: Sends the message and then continues
+	**Non-blocking recieve**: recieves the message or null and then continues
+Buffer: queue of messages 
+	0 capacity: Sender always blocked until reciever gets the message, very strict synchronization 
+	Unbounded capicty: impractical but means senders will never block 
+	Bounded capacity: At some point the sender will block because there will be no space
+
+## Modes
+
+Pipes, FIFOs (named pipes), message queues, shared memory, and sockets
+
+### Pipes
+Most important (like | in command line for output of one command becomes input of second)
+Most basic form of IPC
+Way for two processes to communicate ONLY in a parent-child relationship (because unnmaed)
+![[Pasted image 20240923180905.png]]
+(fd is a file descriptor fd\[0] is receive while fd\[1] is send
+Only one direction, you write from one end and then read from the other
+
+Issues:
+	Unidirectional
+	Only constructed in parent-child or child-child relationship
+		Only exist until the process exists so if the process terminates early, data might be lost
+		AUtomatically deleted when process ends
+	Must be controlled by same OS (cant be used over a network)
+	Data only FIFO
+	
+fd0 is stdin, fd1 is stdout and fd2 is stderr so when you create a new pipe. the file descriptors for reading for the pipe is fd3 and writing is fd4
+
+When you create a fork after already making file descriptors, the child gets the same one so then the child can write to it and the parent can read from it
+
+What does | do? 
+	example: /bin/ps -ef | /bin/more
+		Create a process to run `ps ef`
+		Create a process to run `more`
+		Create a pipe from `ps ef` to `more`
+		The stdout of `ps ef` is redirected into the pipe
+		The stdin of `more` is the output of the pipe
+
+## FIFO (named pipes)
+Pipes with a name
+More powerful than anonymous (regular) pipes
+	No parent-sibling relationship needed
+	Bidirectional 
+	Can persist after process terminates
+Characteristics:
+	Appear as regular files
+	half duplex
+	communication must be on same machine
+	

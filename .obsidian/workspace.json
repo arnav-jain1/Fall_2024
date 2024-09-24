@@ -43,8 +43,7 @@
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_662/First language.md",
+                "file": "EECS_678/3- Processes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +126,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_662/First language.md",
+                "file": "EECS_678/3- Processes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_662/First language.md"
+                "file": "EECS_678/3- Processes.md"
               }
             }
           }
@@ -171,8 +170,10 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "d8732ff57379a525",
+  "active": "c16f6b98593e0bc7",
   "lastOpenFiles": [
+    "EECS_678/Pasted image 20240923180905.png",
+    "EECS_662/First language.md",
     "EECS_658/daily_assignments/8-9-24.md",
     "EECS_658/submissions/8-9-24.pdf",
     "EECS_658/daily_assignments/9-9-26.md",
@@ -189,7 +190,6 @@
     "EECS_510/Pasted image 20240920132325.png",
     "EECS_510/Pasted image 20240920100710.png",
     "EECS_662/Second.md",
-    "EECS_662/First language.md",
     "EECS_565/L7-asymmetric encryption.md",
     "EECS_565/Pasted image 20240919135414.png",
     "EECS_565/Pasted image 20240919133818.png",

@@ -239,3 +239,52 @@ Since no cycle can have more than p states, we only need to test lengths from \[
 
 ##### Def
 To determine by brute force if the language of the finite automation is finite, test all strings in $\sum^{+}$ with lengths in \[p,2p-1] for acceptance 
+
+Let there be a regular language L that accepts some string s
+and 
+$$|s| \ge p$$
+where p is the number of states in the minimized DFA
+
+By the pigeonhole principal, we know that there must be a cycle in the accepting path. 
+
+
+Let the cycle be called y
+Let the stuff before the cycle be called x
+Let the stuff after the cycle be called z
+So then the string s = xyz (z can be empty)
+
+Let the language be ab(ba)\*b
+x = ab
+y = ba
+z = varies but must end in b
+
+| **String** | **Partitions** | z           | **String length** |
+| ---------- | -------------- | ----------- | ----------------- |
+| abb        | xb             | b           | 3                 |
+| ab(ba)b    | xyb            | b           | 5                 |
+| ab(baba)b  | $xy^{2}b$      | $y^{b}=bab$ | 7                 |
+![[Pasted image 20240924200841.png]]
+Note: 
+	ab _ b is not looped
+	All strings except abb is length of 5 or more
+	if string length is at least p (3), there is a cycle
+	$|xy| \le 5$  
+
+## Def Pumping theorem
+Pumping theorem: For any infinite language *L* there is a positive number *p* such that for every string *s* where $s \in L$ and $|s| \ge p$ we can write the string as $s=xyz$  and the following hold:
+	$|y| > 0$ 
+	$|xy| \le p$  
+	$xy^{*}z \in L$ 
+- p = # states in DFA
+- y is non empty because the cycle has at least one edge
+- Kleene star on y in 3rd point means we can chose y 0 to inf number of times and still reach accepting state
+
+Why is pumpability important? 
+	Helps prove whether language is regular or not
+	If infinite language does not satisfy the theorem, it is not regular (Proves irregular not regular)
+	Only needs one string to prove irregularity
+
+Example
+Show $a^{n}b^{n}$ is not regular
+Well for ab you need 3 states, for aabb you need 5, for aaabbb you need 7, etc.
+So a machine with finite number of states cannot display this expression but we need to prove this 

@@ -288,3 +288,30 @@ Example
 Show $a^{n}b^{n}$ is not regular
 Well for ab you need 3 states, for aabb you need 5, for aaabbb you need 7, etc.
 So a machine with finite number of states cannot display this expression but we need to prove this 
+
+##### Proof
+Split $a^{p}b^{p}$ into 3 parts xyz (we dont know what p is but some properties must be true)
+- $|xy| \le p$ 
+- Must know y must appear within the first p symbols (because it represents a cycle)
+- y = aS
+Pumping y:
+- Number of aS changes 
+- Number of bS does not
+- Not part of the language therefore not regular
+
+##### better way
+Steps:
+1. Suppose L is regular
+2. know that pumping constant *p* exists for L
+3. Chose a string in the language *w*
+4. Look at all decompositions of w into xyz so that
+	1. $|xy| \le p$
+	2. $|y| \ge 1$ 
+5. Chose i so that $xy^{i}z \notin L$ 
+
+Let L be regular therefore some p exists for L
+Let $w = a^{n}b^{n}$ 
+$x=a^{j}\quad y=a^{k} \quad z=a^{p-k-j}b^{p}$   
+So by the pumping theorem we know that $|y| \ge 1 \Rightarrow k \ge 1$ and $j+k\le p$ 
+so then $w=a^{j}a^{ki}a^{p-k-j}b^{p} = a^{p+ki-k}b^{p}$  (j cancels) then, since amount of a = amount of b, $p+ki-k = p \Rightarrow ki-k = 0 \Rightarrow ki = k \Rightarrow i =1$ 
+This means that any value other than 1 for i in $xy^{i}z$ means that the string is not in L therefore it is not a regular langauge.

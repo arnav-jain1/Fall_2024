@@ -20,17 +20,17 @@ may look like mult, but actually concatenation
 $a^{3}$ works and is just aaa but $a^{n}$ where n is a var is not a regex because unknown
 
 ## Rules
-| rule                        | desc                         |
-| --------------------------- | -------------------------- |
-| r + s = s + r               | *union* is commuta           |
-| (r+s)+t = r+(s+t)           | Assoc                        |
-| r + r = r                   | Union is id                  |
-| r + $\phi$ = r              | Union identity   s $   hi$   |
-| (rs)t = r(st)               | Concat is      c      e      |
-| $\lambda$r = r$\lambda$ = r | Concat iden  ity is  lambda  |
-| r$\phi$ = $\phi$r = $\phi                                  |
-| r(s+t)=rs + rt                                             |
-| $(r^{*})^  Kleene star is idempotent idempotent idempotent |
+| rule                                                       | desc                        |
+| ---------------------------------------------------------- | --------------------------- |
+| r + s = s + r                                              | *union* is commuta          |
+| (r+s)+t = r+(s+t)                                          | Assoc                       |
+| r + r = r                                                  | Union is id                 |
+| r + $\phi$ = r                                             | Union identity   s $   hi$  |
+| (rs)t = r(st)                                              | Concat is      c      e     |
+| $\lambda$r = r$\lambda$ = r                                | Concat iden  ity is  lambda |
+| r$\phi$ = $\phi$r = $\phi                                  |                             |
+| r(s+t)=rs + rt                                             |                             |
+| $(r^{*})^  Kleene star is idempotent idempotent idempotent |                             |
 
 ## Character classes:
 groups of letters in brackets represent set of any letter:

@@ -17,6 +17,11 @@ int main()
    * forking any children
    */
 
+  int p1[2], p2[2];
+
+  pipe(p1);
+  pipe(p2);
+
   pid_1 = fork();
   if (pid_1 == 0) { 
     /* process a */ 
@@ -33,7 +38,7 @@ int main()
     /* read contents of file and write it out to a pipe */
     while ((rsize = read(rfd, buf, BSIZE)) > 0) {
       /* XXX - this should write to a pipe - not to stdout */
-      write(STDOUT_FILENO, buf, rsize);
+      write(p1[1], buf, rsize);
     }
 
     close(rfd);
@@ -50,8 +55,8 @@ int main()
     /* read from pipe and write out contents to the terminal */
 
     /* XXX - this should read from a pipe - not from stdin */
-    while ((rsize = read(STDIN_FILENO, buf, BSIZE)) > 0) {
-      write(STDOUT_FILENO, buf, rsize);
+    while ((rsize = read(p1[0], buf, BSIZE)) > 0) {
+      write(p2[1], buf, rsize);
     }
 #endif
 
@@ -68,6 +73,11 @@ int main()
     fprintf(stderr, "Process 2 encountered an error. ERROR%d", errno);
     return EXIT_FAILURE;
   }
+
+  close(p1[0]);
+  close(p1[1]);
+  close(p2[0]);
+  close(p2[1]);
 
   return 0;
 }

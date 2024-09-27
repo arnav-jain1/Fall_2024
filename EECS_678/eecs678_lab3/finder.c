@@ -39,12 +39,23 @@ int main(int argc, char *argv[])
 
   pid_1 = fork();
   if (pid_1 == 0) {
-      char buff[BSIZE];
+      char* buff[BSIZE];
       bzero(buff, BSIZE);
-      dup2(p1[1], 1);
-      const char* args[] = {"$1", "-name", "'x'.[h]", NULL};
-      execl(FIND_EXEC,  *args, buff);
+      sprintf((char *) buff, "%s %s -name \'*\'.[h]", FIND_EXEC, argv[1]);
 
+      dup2(p1[1], STDOUT_FILENO);
+      close(p2[0]);
+      close(p2[1]);
+      close(p3[0]);
+      close(p3[1]);
+      close(p4[0]);
+      close(p4[1]);
+
+      close(p1[0]);
+      close(p1[1]);
+
+
+      execl(BASH_EXEC,  BASH_EXEC, "-c", buff, NULL);
     /* First Child */
 
     //STEP 2
@@ -61,6 +72,24 @@ int main(int argc, char *argv[])
 
   pid_2 = fork();
   if (pid_2 == 0) {
+      char* buff[BSIZE];
+      bzero(buff, BSIZE);
+      sprintf((char *) buff, "%s %s -c %s", XARGS_EXEC, GREP_EXEC, argv[2]);
+
+      dup2(p2[1], STDOUT_FILENO);
+      dup2(p1[0], STDIN_FILENO);
+      close(p1[0]);
+      close(p1[1]);
+      close(p3[0]);
+      close(p3[1]);
+      close(p4[0]);
+      close(p4[1]);
+
+
+      close(p2[0]);
+      close(p2[1]);
+
+      execl(BASH_EXEC,  BASH_EXEC, "-c", buff, NULL);
     /* Second Child */
 
     //STEP 4
@@ -77,6 +106,24 @@ int main(int argc, char *argv[])
 
   pid_3 = fork();
   if (pid_3 == 0) {
+      char* buff[BSIZE];
+      bzero(buff, BSIZE);
+      sprintf((char *) buff, "%s -t : +1.0 -2.0 --numeric --reverse", SORT_EXEC);
+
+      dup2(p3[1], STDOUT_FILENO);
+      dup2(p2[0], STDIN_FILENO);
+      close(p1[0]);
+      close(p1[1]);
+      close(p2[0]);
+      close(p2[1]);
+      close(p4[0]);
+      close(p4[1]);
+
+      close(p3[0]);
+      close(p3[1]);
+
+
+      execl(BASH_EXEC,  BASH_EXEC, "-c", buff, NULL);
     /* Third Child */
 
     //STEP 6
@@ -93,6 +140,21 @@ int main(int argc, char *argv[])
 
   pid_4 = fork();
   if (pid_4 == 0) {
+      char* buff[BSIZE];
+      bzero(buff, BSIZE);
+      sprintf((char *) buff, "%s --lines=%s", HEAD_EXEC, argv[3]);
+      dup2(p3[0], STDIN_FILENO);
+      close(p1[0]);
+      close(p1[1]);
+      close(p2[0]);
+      close(p2[1]);
+      close(p3[0]);
+      close(p3[1]);
+
+      close(p4[0]);
+      close(p4[1]);
+
+      execl(BASH_EXEC,  BASH_EXEC, "-c", buff, NULL);
     /* Fourth Child */
 
     //STEP 8
@@ -105,6 +167,16 @@ int main(int argc, char *argv[])
 
     exit(0);
   }
+
+
+  close(p1[0]);
+  close(p1[1]);
+  close(p2[0]);
+  close(p2[1]);
+  close(p3[0]);
+  close(p3[1]);
+  close(p4[0]);
+  close(p4[1]);
 
   if ((waitpid(pid_1, &status, 0)) == -1) {
     fprintf(stderr, "Process 1 encountered an error. ERROR%d", errno);

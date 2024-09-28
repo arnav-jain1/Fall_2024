@@ -131,6 +131,7 @@ Cipher feedback mode:
 	The previous ciphertext is encrypted and then used to XOR the new plain text
 	Block manipulation is harder, Parallel processing in decryption, error propagates 
 Output feedback mode:
+	The previous subkey is 
 <mark style="background: #FF5582A6;">	Ask how this is different</mark>
 
 

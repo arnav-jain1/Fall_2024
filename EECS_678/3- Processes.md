@@ -205,4 +205,64 @@ Characteristics:
 	Appear as regular files
 	half duplex
 	communication must be on same machine
+
+## Message Queues
+Linux uses indirect communication or mailboxes
+There can be multiple processes with queues (sychronization may be needed)
+Processes can use any number of queues (each queue is unique)
+Capacity of the link is initialized by the system (can be overridden by user)
+Each message has a length which is specified in send and receive calls
+Each process can send and recieve calls from the same queue
+
+Message queues is how Linux sends and receives messages
+msgget: Create a new message queue
+msgsnd: Send a message to the queue
+	struct msg_buf { long mtype; char mtext\[]}
+	Non blocking unless queue is full
+msgrcv: Receive message from queue (mtype to get specific messages)
+msgctl: Control operations for the queue (like terminating)
+
+## Memory sharing
+multiple Processes can utilize the same chunk of memory
+Implementation principles:
+	Name unique (system wide) or anonymous 
+	Specifying permissions (read, write, execute)
+	Dealing with race conditions (atomic or synchronized access)
+	Most thread level communication is from shared memory
+Example:
+	shmget: create shared memory segment 
+		Requires size and returns identifier
+		Same access perms as files
+	shmat: attach shared memory segment
+		Must for every process that wants to access it
+		Identified by segment id
+	shmdt: Detach shared memory
+	shmtcl: Control operations (like removing)
+## Unix sockets
+Sockets:
+	End point for communication 
+	Two way communication pipe
+	Variety of domains like the internet
+Unix domain sockets:
+	Communication between processes on same Unix system
+	Special file in the system
+Mostly for client-server programming
+	Client sends a request for info (like API calls)
+	server waits for requests then does the request and sends info (updates, output) to client
+Modes:
+	Connection-based: TCP
+		Heavyweight, makes sure that the packets are in order with none lost
+		Slow
+	Connection-less: UDP
+		Faster, does not care for order/drops
+Syscalls:
+	socket(): make the Unix socket
+		int socket(int domain, int type, int protocol)
+	bind(): Assign an address to a socket int bind(int sockfd, ... \*addr, adderlen)
+		A file. also what you connect to when you go to a website
+	listen(): listen to incoming client requests
+		int listen(int sockfd, int backlog)
+	accept(): Create a new connected socket
+	recv(): Receive messages from socket (message placed in buf)
+	close(): Closes the connection
 	

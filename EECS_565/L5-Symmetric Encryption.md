@@ -104,7 +104,7 @@ Attacker intercepts q plaintext cipher pairs encrypted with the same key K
 Attacker tries all possible keys that are k bits long that satisifies $E(K_{i}, M_{i}) = C_{i}$ 
 How many tries?
 	$P(key = K_{j}) = 1/2^{k}$ k = number of bits
-	Average number of attempts $2^{k-1}, k = 56 \Rightarrow 2^{56}$  
+	Average number of attempts $2^{k-1}, k = 56 \Rightarrow 2^{55}$  
 In 1999 it was possible to do it in <24hrs with distributed machines
 
 

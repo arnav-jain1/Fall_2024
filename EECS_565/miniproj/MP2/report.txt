@@ -1,0 +1,32 @@
+Test 1:
+
+openssl enc -aes-256-cbc -nosalt -in plain.txt -a -k test1234
+
+*** WARNING : deprecated key derivation used.
+Using -iter or -pbkdf2 would be better.
+phGOjtBEx5G8B/Q1XUBIymwj8N7AlVXkGU4sosthf3oe8qTujlciC/shHqnJWXAp
+vAxqcKoXabCBnVr9igsE4nAWsatvSiZcGRKPCRVn2A0X+AsRf0Y8FGJGtilHr6YZ
+mrzsVfrFyOEiD59OY6G9jg==
+
+
+Test 2:
+
+
+openssl enc -camellia-256-cbc -nosalt -in plain.txt -a -k test1234 
+
+*** WARNING : deprecated key derivation used.
+Using -iter or -pbkdf2 would be better.
+N9KEFhbqz4DnkzOFKqp7uaAqm6F19i8m9qyzFXksDEcZ5bAZWWiQkgP3CZeokgB8
+WOvmpPcQgYeaW2lVyQcQZyQrON4gUK5uMV+Xo0FVAiLUAyVmOTkdC8cCPX8oJmvO
+4Fhs0H/RwQO9cRASTGYkrQ==
+
+
+
+Test 3:
+openssl enc -chacha20 -nosalt -in plain.txt -a -k test1234                    
+
+*** WARNING : deprecated key derivation used.
+Using -iter or -pbkdf2 would be better.
+y2KCIZUR8WkeTousTSK8hn5tA4FsmYGYn8deaNrD7L2yVDSBxhsp6IlMgN9JohZA
+rArFBPudZfmlzohNOvYh6wSDXQ46bYhK9tCOVGoR8TxGexvukaoPONiBvEh7bE5d
+U+A=

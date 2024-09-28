@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_678/3- Processes.md",
+                "file": "EECS_510/9-17-Regular Grammars.md",
                 "mode": "source",
                 "source": false
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_678/3- Processes.md",
+                "file": "EECS_510/9-17-Regular Grammars.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_678/3- Processes.md",
+                "file": "EECS_510/9-17-Regular Grammars.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_678/3- Processes.md"
+                "file": "EECS_510/9-17-Regular Grammars.md"
               }
             }
           }
@@ -197,40 +197,42 @@
   },
   "active": "ec3407242029993f",
   "lastOpenFiles": [
+    "EECS_565/miniproj/MP2/cbc.bmp",
+    "EECS_565/miniproj/MP2/data",
+    "EECS_565/miniproj/MP2/file2",
+    "EECS_565/miniproj/MP2/header",
+    "EECS_565/miniproj/MP2/new.bmp",
+    "EECS_565/miniproj/MP2/ecb.bmp",
+    "EECS_565/miniproj/MP2/aes-256-ecb-pic.bmp~",
+    "EECS_565/miniproj/MP2/4913",
+    "EECS_565/miniproj/MP2/aes-256-ecb-pic.bmp",
+    "EECS_565/miniproj/MP2/report.txt~",
+    "EECS_565/miniproj/MP2/aes256.txt",
+    "EECS_565/miniproj/MP2/report.txt",
+    "EECS_565/miniproj/MP1/task2.py",
+    "EECS_565/miniproj/MP1/task1.py",
+    "EECS_565/miniproj/MP1/output.png",
+    "EECS_565/MP1/output.png",
+    "EECS_565/MP2/output.png",
+    "EECS_565/miniproj/MP2/pic_original.bmp",
+    "EECS_565/MP2/pic_original.bmp",
+    "EECS_678/3- Processes.md",
+    "Untitled.md",
     "EECS_565/L6- Symmetric Encryption 2.md",
     "EECS_565/L7-asymmetric encryption.md",
     "EECS_565/L5-Symmetric Encryption.md",
     "EECS_565/L4-Classic Crypto 2.md",
     "EECS_565/L6- Cryptanalysis of DES.md",
-    "EECS_678/eecs678_lab3/tmp2",
-    "EECS_678/eecs678_lab3/tmp1",
-    "EECS_678/eecs678_lab3/finder.c~",
-    "EECS_678/eecs678_lab3/finder",
-    "EECS_678/eecs678_lab3/Makefile~",
-    "EECS_678/eecs678_lab3/pipe.c~",
-    "EECS_678/eecs678_lab3/pipe",
-    "EECS_678/eecs678_lab3/4913",
     "EECS_565/L8-part 1.md",
     "EECS_565/Pasted image 20240926204942.png",
     "latex guide.md",
     "EECS_662/First language.md",
     "EECS_510/9-17-Regular Grammars.md",
     "EECS_510/Pasted image 20240924200841.png",
-    "EECS_678/3- Processes.md",
-    "EECS_678/Pasted image 20240923180905.png",
     "EECS_658/daily_assignments/8-9-24.md",
-    "EECS_658/submissions/8-9-24.pdf",
     "EECS_658/daily_assignments/9-9-26.md",
-    "EECS_658/submissions/9-9-26.pdf",
     "EECS_510/hw1.md",
     "EECS_510/9-12.md",
-    "EECS_510/Pasted image 20240920153907.png",
-    "EECS_510/Pasted image 20240920135309.png",
-    "EECS_510/Pasted image 20240920135252.png",
-    "EECS_510/Pasted image 20240920134210.png",
-    "EECS_510/Pasted image 20240920133027.png",
-    "EECS_510/Pasted image 20240920132325.png",
-    "EECS_510/Pasted image 20240920100710.png",
     "EECS_662/Second.md",
     "EECS_662/7-29.md",
     "jobs.md",
@@ -240,7 +242,6 @@
     "EECS_510/8-29.md",
     "L6- Cryptanalysis of DES.md",
     "EECS_658/daily_assignments/0-8-27.md",
-    "EECS_658/daily_assignments/7-9-19.md",
-    "EECS_658/daily_assignments/6-9-17.md"
+    "EECS_658/daily_assignments/7-9-19.md"
   ]
 }

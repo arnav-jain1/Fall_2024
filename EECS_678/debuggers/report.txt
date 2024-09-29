@@ -1,5 +1,0 @@
-The first issue was the uninitialized variable, this was easy to solve as I just gave it the value of 0
-Defenitely lost was a pointer to a pointer. This pointer was malloced and then the thing it pointed to was malloced as well. I had to first free the thing defenitely lost was pointing to before freeing def lost otherwise the pointer being pointed to would have been impossible to access and been indirectly lost
-
-After that freeing still reachable was pretty simple
-Then possible lost was malloced then incremented by 4 and free needs the start of the block to dealloc so I had to decrement it by 4 then free it.

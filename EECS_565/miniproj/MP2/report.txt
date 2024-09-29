@@ -1,3 +1,6 @@
+Task 1:
+Part 1:
+
 Test 1:
 
 openssl enc -aes-256-cbc -nosalt -in plain.txt -a -k test1234
@@ -30,3 +33,143 @@ Using -iter or -pbkdf2 would be better.
 y2KCIZUR8WkeTousTSK8hn5tA4FsmYGYn8deaNrD7L2yVDSBxhsp6IlMgN9JohZA
 rArFBPudZfmlzohNOvYh6wSDXQ46bYhK9tCOVGoR8TxGexvukaoPONiBvEh7bE5d
 U+A=
+
+
+
+Part 2:
+I used: 
+openssl enc -aes-256-ecb -nosalt -in pic_original.bmp -out ecb_enc.txt -k test123
+to encrypt the file. After that, I used the following commands to extract the header and swap the header
+head -c 54 pic_original.bmp > header 
+tail -c +55 ecb_enc.txt > data
+cat header data > new.bmp
+The new image is like a noisy, fried version of the original. You can still kind of make out the shapes in the original image but the colors are all wack. The dimentions and the overall size of the image file are the same as well. Overall, not the best because you can still get a general idea of the original
+The image is renamed to ecb.bmp if you want to look at it.
+
+I then tried the CBC cipher:
+openssl enc -aes-256-cbc -nosalt -in pic_original.bmp -out cbc_enc.txt -k test123
+with the same commands to get the header
+The new image is like random RGB pixels like tv static. The size of this image (185kb) is the same as the original image and the dimentions are the same as well. It is impossible to get any idea of the original image from this image, at least to the human eye.
+The image is renamed to cbc.bmp if you would like to view it
+
+Task 2:
+
+Question 2:
+
+ECB:
+openssl enc -aes-256-ecb -nosalt -a -in plain.txt -k test1234
+
+*** WARNING : deprecated key derivation used.
+Using -iter or -pbkdf2 would be better.
+Gax7kkX7OCf7TJL6KY+Zf9aXqA40e0Gp0Sj+IP96g8pkhcsoj0SeFOCE+OUcUSYL
+tl9OOGumcp8PsReYKBg3a0gyFmadnDuv4MBbaZm/C2jwC639qvv3Yr8E1i55aZiE
+KQyzSuH8wS8PUlCv4nFLBg==
+
+Requires padding because it divides the input into blocks and all the blocks need to be a fixed size so if the last block isn't the right size, it is padded
+
+
+CBC:
+openssl enc -aes-256-cbc -nosalt -a -in plain.txt -k test1234
+
+*** WARNING : deprecated key derivation used.
+Using -iter or -pbkdf2 would be better.
+phGOjtBEx5G8B/Q1XUBIymwj8N7AlVXkGU4sosthf3oe8qTujlciC/shHqnJWXAp
+vAxqcKoXabCBnVr9igsE4nAWsatvSiZcGRKPCRVn2A0X+AsRf0Y8FGJGtilHr6YZ
+mrzsVfrFyOEiD59OY6G9jg==
+
+Requires padding for the same reason as ECB
+
+
+CFB:
+openssl enc -aes-256-cfb -nosalt -a -in plain.txt -k test1234
+
+*** WARNING : deprecated key derivation used.
+Using -iter or -pbkdf2 would be better.
+pXxSBMmyeBh1E42kLXMIDRDY8FiPgG+DrukD4Cn3YEGaKwo2OHW7d0Nb9vxxhks7
+alZOOBIvZN3UI8FTOiM0mxY1tVowhITAKpyc4OjY6PXaP//l12U0qlqCQSBdSxiA
+syY=
+
+No padding because the data is processed byte by byte instead of seperated into blocks
+
+
+OFB:
+openssl enc -aes-256-ofb -nosalt -a -in plain.txt -k test1234
+
+*** WARNING : deprecated key derivation used.
+Using -iter or -pbkdf2 would be better.
+pXxSBMmyeBh1E42kLXMIDSANHg0nvPV2m3ngd0JtD5r5I5nUHBfHy0czcl2IfBDz
+3sQ/1ywDEHZKSy0tcIy42CpcbRlImTQziKlRYAxwe+27w5QQNX73fGvUl6r/92LD
+uZ8=
+
+No padding for the same reason as CFB
+
+
+Task 2: All output files located in task 2 folder
+
+Command for encryption:
+openssl enc -aes-128-cbc -nosalt -in 5bytes.txt -out 5byte_enc.txt -
+openssl enc -aes-128-cbc -nosalt -in 10bytes.txt -out 10byte_enc.txt
+openssl enc -aes-128-cbc -nosalt -in 16bytes.txt -out 16byte_enc.txt
+
+File sizes:
+wc -c 5bytes.txt:
+5 5bytes.txt
+
+wc -c 10byte_enc.txt 
+16 10byte_enc.txt
+
+wc -c 16byte_enc.txt 
+32 16byte_enc.txt
+
+Decrypted file output:
+openssl enc -aes-128-cbc -d -nopad -nosalt -in 5byte_enc.txt -out 5dec.txt -k test123
+openssl enc -aes-128-cbc -d -nopad -nosalt -in 10byte_enc.txt -out 10dec.txt -k test123
+openssl enc -aes-128-cbc -d -nopad -nosalt -in 16byte_enc.txt -out 16dec.txt -k test123
+
+xxd 5dec.txt 
+00000000: 3132 3334 350b 0b0b 0b0b 0b0b 0b0b 0b0b  12345...........
+xxd 10dec.txt
+00000000: 3031 3233 3435 3637 3839 0606 0606 0606  0123456789......
+xxd 16dec.txt 
+00000000: 3031 3233 3435 3637 3839 3132 3334 3536  0123456789123456
+00000010: 1010 1010 1010 1010 1010 1010 1010 1010  ................
+
+Task 3:
+Encryption:
+openssl enc -aes-128-cbc -nosalt -in f2.txt -out cbc.txt -k test123 
+openssl enc -aes-128-ecb -nosalt -in f2.txt -out ecb.txt -k test123
+openssl enc -aes-128-cfb -nosalt -in f2.txt -out cfb.txt -k test123
+openssl enc -aes-128-ofb -nosalt -in f2.txt -out ofb.txt -k test123
+
+To see the change, go to the task3 folder and the name of the file is {encryption type}.png
+The 56th bit has been changed to 56
+
+The decryption is in decrypt.sh
+
+ECB: Same row (block) corrupted but no more
+CBC: the bits after the changed byte on the same row and the same bit on the next row are corrupted
+CFB: The row with the changed bit is corrupted and the row after is also corrupted and the row after that it becomes more coherent and after that it eventually comes back completely
+OFB: Only the bit that was changed was corrupted. rest everything is perfect
+
+OFB does not propogate at all. ECB changes the same block with no propogation. CBC propogates only for the next block. CFB propogates for 2 blocks before returning
+
+
+Task 4:
+
+I ran
+openssl enc -aes-128-cbc -k test123 -iv "0000000000000000" -nosalt -a -in text.txt -out iv1.txt 
+openssl enc -aes-128-cbc -k test123 -iv "1111111111111111" -nosalt -a -in text.txt -out iv2.txt 
+openssl enc -aes-128-cbc -k test123 -iv "0000000000000000" -nosalt -a -in text.txt -out ivsame.txt 
+
+diff iv1.txt iv2.txt
+diff iv1.txt ivsame.txt
+
+This showed that iv1 and iv2 files were completely different while iv1 and ivsame were the exact same. It needs to be unique so that outside people can't discover any information (like whether the message being sent is the same or not) the text
+
+
+After decrypting the message in decrypt.py, the original message was:
+Order: Launch a missile!
+
+There is a screenshot of the output in the task4 folder
+
+so to answer the question, NO! If the same IV is used the ofb becomes insecure. For cfb, the first block becomes insecure because the first block uses the IV while the rest use the ciphertext from the previous block. This will make the first block crackable the rest will be secure which is still not good.

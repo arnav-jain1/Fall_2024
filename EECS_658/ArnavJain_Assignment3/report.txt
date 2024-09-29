@@ -1,0 +1,46 @@
+Part 1:
+
+Based on the results, LDA performed the best along with Neural Network
+
+While linear regression performed really well, it was also assisted with the fact that all data was clipped between 0 and 2. 
+It also likely didn't do as well because LDA is more meant for classification while linear regression is generally known as a predictive measure.
+
+Polynomial regression with degree 2 performed well but had higher variablity between folds likely meaning it overfit
+Polynomial regression with degree of 3 likely performed poorly because a polynomial of degree 3 was too complex for this dataset thus overfitting the data
+
+Baysian performed well but didn't score the top. This might be because it assumes feature independance which is likely not the case for this dataset
+
+K nearest neighbors performed well but not well enough which is due to the fact that the decision boundries that it created were simply not as well made as the ones in LDA
+
+Like the polynomial regression, QDA performed fairly well but had higher variablity and likely overfit since it had access to quadratic decision boundries
+
+Linear SVC performed pretty well but not as good as LDA and neural network. 
+This might be because there is some overlap between between the classes causing it to struggle a little bit. 
+
+Decision trees are notorious for overfitting and the small dataset (150 samples) certainly doesn't help. Nevertheless they performed pretty well due to the simplicity of the data but also probably struggled with the overlap
+
+Random forest and extra trees generally perform well on these types of datasets but they need quite a bit of hyperparam tuning to get just right which they are currently lacking.
+They also are based off decision trees which like bigger datasets so they may perform better with more data. Overall though they performed pretty well, just with a bit more variability (which is common with these types of models) and with more tuning they could probably perform better.
+
+
+
+
+Overall, LDA did the best due to various factors such as the data being linear in nature, and the fact that it was designed for classification.
+Neural network also did pretty well mainly because they are much more complex and can pick up on these types of latent variables. The training was also stopped before overfitting (their biggest problem). The data was also regularized by default making it better for the neural net to learn on
+
+
+
+
+
+
+Part 2:
+
+a) no
+b) 80%
+c) 1437
+d) 360
+e) 64
+f) 64
+g) 10
+h) 0,1,2,3,4,5,6,7,8,9
+

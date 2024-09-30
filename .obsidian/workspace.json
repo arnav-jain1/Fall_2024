@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_565/L7-asymmetric encryption.md",
+                "file": "EECS_678/1- Intro.md",
                 "mode": "source",
                 "source": false
               }
@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_565/L7-asymmetric encryption.md",
+                "file": "EECS_678/1- Intro.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_565/L7-asymmetric encryption.md",
+                "file": "EECS_678/1- Intro.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_565/L7-asymmetric encryption.md"
+                "file": "EECS_678/1- Intro.md"
               }
             }
           }
@@ -185,6 +185,10 @@
   },
   "active": "cad105d6c27b72cc",
   "lastOpenFiles": [
+    "EECS_678/!questions.md",
+    "EECS_678/1- Intro.md",
+    "EECS_678/2-Services.md",
+    "EECS_565/L7-asymmetric encryption.md",
     "EECS_678/labs/eecs678_lab4/thread-1.c~",
     "EECS_678/labs/eecs678_lab4/thread1",
     "EECS_678/labs/eecs678_lab4/shared_memory3.c~",
@@ -195,7 +199,6 @@
     "EECS_678/labs/eecs678_lab4/fifo_producer.c~",
     "EECS_678/labs/eecs678_lab4/fork",
     "EECS_678/labs/eecs678_lab4/mfork.c~",
-    "EECS_678/labs/eecs678_lab4/mfork",
     "EECS_658/daily_assignments/10-10-3.md",
     "EECS_658/daily_assignments/10-10-1.md",
     "Untitled 1.md",
@@ -211,7 +214,6 @@
     "EECS_565/MP2/pic_original.bmp",
     "EECS_678/3- Processes.md",
     "EECS_565/L6- Symmetric Encryption 2.md",
-    "EECS_565/L7-asymmetric encryption.md",
     "EECS_565/L5-Symmetric Encryption.md",
     "EECS_565/L4-Classic Crypto 2.md",
     "EECS_565/L6- Cryptanalysis of DES.md",
@@ -227,8 +229,6 @@
     "EECS_662/7-29.md",
     "jobs.md",
     "README.md",
-    "EECS_678/2-Services.md",
-    "EECS_678/1- Intro.md",
     "EECS_510/8-29.md",
     "L6- Cryptanalysis of DES.md"
   ]

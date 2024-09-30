@@ -73,15 +73,22 @@ printf calls write syscall
 - Use gdb to trace execution 
 	- Break points to check program state
 - Can also check assembly instructions using -s
-- You move the syscall number to the right register
+- You move the syscall number to the right register (each syscall has its own number)
+- 450 total
+- Sys call table:
+	- listing of all sys calls with their number
+	- Used by kernel to start the right routine
+- Sys calls are more expensive due to mode switch and context switch
 
 ### Passing params
 Pass additional info thru registers or stack (2)
 1. Pass parms in registers 
-	- simple, fastest, limit to 3
+	- simple, fastest, limit to 6 on x86-64, rest on stack
 2. store args in a block on the stack and location is passed thru registers
+	- x86-32 
 3. params pushed on stack by program and popped off by OS
 1 is hardly used because limit to 3, other 2 dont have a limit
+Combination most common
 
 ### types of sys calls
 - Process control
@@ -120,7 +127,7 @@ Sys programs are one of:
 ![[Pasted image 20240905232901.png]]
 Linker links multiple files together to make an executable
 Loader then loads the program into memory to run
-# NOTE END FOR QUIZ
+# NOTE END FOR EXAM
 ### OS design
 Design
 	Type of system: batch, time-shared, amt of users, distributed, real time, embedded

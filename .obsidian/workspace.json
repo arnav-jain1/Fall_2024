@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_662/First language.md",
+                "file": "EECS_662/2- First language.md",
                 "mode": "source",
                 "source": false
               }
@@ -49,14 +49,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_678/2-Services.md",
+                "file": "EECS_662/3- type checking.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8d3e9790c3f12239",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "EECS_662/Functions and Optimizers.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -122,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_678/2-Services.md",
+                "file": "EECS_662/Functions and Optimizers.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_678/2-Services.md",
+                "file": "EECS_662/Functions and Optimizers.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_678/2-Services.md"
+                "file": "EECS_662/Functions and Optimizers.md"
               }
             }
           }
@@ -183,13 +195,17 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "cad105d6c27b72cc",
+  "active": "8d3e9790c3f12239",
   "lastOpenFiles": [
-    "EECS_678/labs/eecs678_lab3/finder",
+    "EECS_662/3- type checking.md",
+    "EECS_662/2- First language.md",
+    "EECS_662/Functions and Optimizers.md",
+    "EECS_662/1- Intro.md",
+    "EECS_678/2-Services.md",
     "EECS_678/labs/eecs678_lab3/tmp2",
     "EECS_678/labs/eecs678_lab3/tmp1",
+    "EECS_678/labs/eecs678_lab3/finder",
     "EECS_678/1- Intro.md",
-    "EECS_678/2-Services.md",
     "EECS_565/miniproj/MP2/report.txt~",
     "EECS_678/!questions.md",
     "EECS_565/L7-asymmetric encryption.md",
@@ -199,7 +215,6 @@
     "EECS_678/labs/eecs678_lab4/shared_memory3",
     "EECS_678/labs/eecs678_lab4/fifo_consumer.c~",
     "EECS_678/labs/eecs678_lab4/fifo_producer",
-    "EECS_678/labs/eecs678_lab4/fifo_consumer",
     "EECS_658/daily_assignments/10-10-3.md",
     "EECS_658/daily_assignments/10-10-1.md",
     "Untitled 1.md",
@@ -221,13 +236,10 @@
     "EECS_565/L8-part 1.md",
     "EECS_565/Pasted image 20240926204942.png",
     "latex guide.md",
-    "EECS_662/First language.md",
     "EECS_658/daily_assignments/8-9-24.md",
     "EECS_658/daily_assignments/9-9-26.md",
     "EECS_510/hw1.md",
     "EECS_510/9-12.md",
-    "EECS_662/Second.md",
-    "EECS_662/7-29.md",
     "jobs.md",
     "README.md",
     "EECS_510/8-29.md"

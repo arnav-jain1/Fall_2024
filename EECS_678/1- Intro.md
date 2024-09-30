@@ -190,6 +190,24 @@ Responsible for
 Depends on distance from CPU
 Movement can be implicit or explicit
 ![[Pasted image 20240905134342.png]]
+## IO Subsystem
+One purpose of OS is to hide pecularities of hardware devices for the user
+IO subsystem responsible for:
+	Memory management of IO:
+		Buffering
+		caching 
+		spooling
+		drivers
+Protection:
+	Controlling access to processes/users 
+	Distinguish what users can do what
+	user identities include (user ID, security ID), one per user
+		Determines what user can access what files
+	groupID allows a group of users to be defined and have their perms collectively managed
+	Privilege escalation allows users to change IDs to have more access (or less)
+Security:
+	Defense of system against external and internal attacks
+	DDOS, worms, viruses, etc
 
 # Summary
 OS is a layer between hardware and user

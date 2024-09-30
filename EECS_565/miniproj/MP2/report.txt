@@ -106,14 +106,24 @@ No padding for the same reason as CFB
 
 Task 2: All output files located in task 2 folder
 
+File sizes (before encrypt):
+wc -c 5bytes.txt:
+5 5bytes.txt
+
+wc -c 10bytes.txt 
+10 10bytes.txt
+
+wc -c 16bytes.txt 
+16 16bytes.txt
+
 Command for encryption:
 openssl enc -aes-128-cbc -nosalt -in 5bytes.txt -out 5byte_enc.txt -
 openssl enc -aes-128-cbc -nosalt -in 10bytes.txt -out 10byte_enc.txt
 openssl enc -aes-128-cbc -nosalt -in 16bytes.txt -out 16byte_enc.txt
 
-File sizes:
-wc -c 5bytes.txt:
-5 5bytes.txt
+File sizes (after encrypt):
+wc -c 5byte_enc.txt:
+16 5byte_enc.txt
 
 wc -c 10byte_enc.txt 
 16 10byte_enc.txt

@@ -17,6 +17,7 @@
 	- CPU and memory (power, fault)
 	- IO (network connection, wire faulty)
 	- user program (seg fault, div by 0)
+
 # OS Services for efficient system operation
 - resource allocation: provide access to shared resources in multiuser system
 	- CPU cycles, main memory, file storage, IO
@@ -27,25 +28,52 @@
 	- Prevent outsiders from accessing system (security)
 	- auth, file perms, address space restrictions
 - ![[Pasted image 20240905141328.png]]
+OS sits between hardware and user program
+Blue part is the OS
+ISA is how the OS interacts with hardware
+
+Kernel is everything below the syscall layer and has a higher privilege 
 
 # Sys call
-- Program interface to services in the OS
-	- Request kernel mode service from the OS
-	- Written in C/C++ usually (high level systems languages)
+- Only way to access hardware
+- Program interface so that users can use services in the OS
+	- Implemented as part of the kernel
+	- Request kernel mode service from the OS (higher priv, must switch)
+	- Written in C/C++ usually (high level systems languages for performance and hardware access)
 - Accessed by programs via API (high level) 
-	- Simpler interface
+	- Simpler interface, written as libraries like libc
 	- Reduces coupling because syscalls are dependant on the system so the application is more portable
 		- POSIX API (all unix)
 		- Win 32/64 for windows (why there is a 32 and 64bit)
 	- Implemented via trap
 		- Register contains syscall number
 		- syscall allows for the control to be transferred to the terminal fast
-Example for copying 
+- Why syscall has high overhead
+	- Switch between user to privileged mode
+	- Inturrupt mechanism 
+	- save and restore registers
+	- Actual example: get_id (user level) vs get_pid (system level)
+		- Loop this and run it with the time command
+		- Syscall one takes longer
+	- Still faster than interrupt
+Example for copying :
+	Getting input from keyboard (file name)
+	Creating a new file
+	OPening the old file
+	Reading old file and writing to new file
+	Abort on error
 ![[Pasted image 20240905230502.png]]
 
 ![[Pasted image 20240905230524.png]]
 printf calls write syscall
 ![[Pasted image 20240905230617.png]]
+
+# Debugger  and preprocessor (not on slides)
+- Compile with -g flag 
+- Use gdb to trace execution 
+	- Break points to check program state
+- Can also check assembly instructions using -s
+- You move the syscall number to the right register
 
 ### Passing params
 Pass additional info thru registers or stack (2)

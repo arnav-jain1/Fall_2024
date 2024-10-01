@@ -10,7 +10,6 @@ data TABE where
   TNum :: TABE
   TBool :: TABE
   deriving (Show,Eq)
-
 data ABE where
   Num :: Int -> ABE
   Plus :: ABE -> ABE -> ABE
@@ -51,13 +50,16 @@ evalM (And l r) = do { Boolean l <- evalM l;
                        Boolean r <- evalM r;
                        Just ( Boolean (l && r))
                        }
-evalM (Leq l r) = do { Boolean l <- evalM l; 
-                       Boolean r <- evalM r;
+evalM (Leq l r) = do { Num l <- evalM l; 
+                       Num r <- evalM r;
                        Just ( Boolean (l <= r))
                        }
 evalM (IsZero x) = do { Num x' <- evalM x;
                         if x' == 0 then Just (Boolean True) else Just (Boolean False)
                       }
+evalM (If s l r) = do { Boolean s' <- evalM s;
+                        if s' then evalM l else evalM r
+                       }
 
 
 -- Replace this with your interpreter
@@ -65,8 +67,40 @@ evalM (IsZero x) = do { Num x' <- evalM x;
 -- Type Derivation Function
 
 typeofM :: ABE -> Maybe TABE
-typeofM _ = Nothing
+typeofM (Num a) = if a > 0 then Just TNum else Nothing
+typeofM (Boolean _) = Just TBool
+typeofM (Plus l r) = do { l' <- typeofM l;
+                          r' <- typeofM r;
+                          if l' == TNum && r' == TNum then Just TNum else Nothing 
+                        }
+typeofM (Minus l r) = do { l' <- typeofM l;
+                          r' <- typeofM r;
+                          if l' == TNum && r' == TNum then Just TNum else Nothing 
+                         }
 
+typeofM (Mult l r) = do { l' <- typeofM l;
+                          r' <- typeofM r;
+                          if l' == TNum && r' == TNum then Just TNum else Nothing 
+                         }
+typeofM (Div l r) = do { l' <- typeofM l;
+                          r' <- typeofM r;
+                          if l' == TNum && r' == TNum then Just TNum else Nothing 
+                       }
+typeofM (And l r) = do { l' <- typeofM l;
+                          r' <- typeofM r;
+                          if l' == TBool && r' == TBool then Just TNum else Nothing 
+                         }
+typeofM (Leq l r) = do { l' <- typeofM l;
+                          r' <- typeofM r;
+                          if l' == TNum && r' == TNum then Just TNum else Nothing 
+                       }
+typeofM (IsZero x) = do { x' <- typeofM x;
+                          if x' == TNum then Just TNum else Nothing 
+                       }
+typeofM (If s l r) = do { s' <- evalM s;
+                          s'' <- typeofM s';
+                        if s'' == TBool then Just TBool else Nothing
+                       }
 -- Combined interpreter
 
 evalTypeM :: ABE -> Maybe ABE

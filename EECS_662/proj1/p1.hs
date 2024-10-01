@@ -1,4 +1,7 @@
 {-# LANGUAGE GADTs, FlexibleContexts #-}
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+{-# HLINT ignore "Redundant ==" #-}
+{-# HLINT ignore "Redundant bracket" #-}
 
 -- Imports for Monads
 
@@ -35,7 +38,7 @@ evalM (Plus l r) = do { Num l' <- evalM l;
                       }
 evalM (Minus l r) = do { Num l' <- evalM l;
                         Num r' <- evalM r;
-                        if l' >= r' then Just ( Num (  l' + r')) else Nothing
+                        if l' >= r' then Just ( Num (  l' - r')) else Nothing
                       }
 evalM (Mult l r) = do { Num l' <- evalM l;
                         Num r' <- evalM r;
@@ -67,8 +70,8 @@ evalM (If s l r) = do { Boolean s' <- evalM s;
 -- Type Derivation Function
 
 typeofM :: ABE -> Maybe TABE
-typeofM (Num a) = if a > 0 then Just TNum else Nothing
-typeofM (Boolean _) = Just TBool
+typeofM (Num a) = if a >= 0 then Just TNum else Nothing
+typeofM (Boolean b) = if b == True || b == False then Just TBool else Nothing
 typeofM (Plus l r) = do { l' <- typeofM l;
                           r' <- typeofM r;
                           if l' == TNum && r' == TNum then Just TNum else Nothing 
@@ -78,9 +81,9 @@ typeofM (Minus l r) = do { l' <- typeofM l;
                           if l' == TNum && r' == TNum then Just TNum else Nothing 
                          }
 
-typeofM (Mult l r) = do { l' <- typeofM l;
-                          r' <- typeofM r;
-                          if l' == TNum && r' == TNum then Just TNum else Nothing 
+typeofM (Mult l r) = do { TNum <- typeofM l;
+                          TNum <- typeofM r;
+                          Just TNum
                          }
 typeofM (Div l r) = do { l' <- typeofM l;
                           r' <- typeofM r;
@@ -88,28 +91,121 @@ typeofM (Div l r) = do { l' <- typeofM l;
                        }
 typeofM (And l r) = do { l' <- typeofM l;
                           r' <- typeofM r;
-                          if l' == TBool && r' == TBool then Just TNum else Nothing 
+                          if l' == TBool && r' == TBool then Just TBool else Nothing 
                          }
 typeofM (Leq l r) = do { l' <- typeofM l;
                           r' <- typeofM r;
-                          if l' == TNum && r' == TNum then Just TNum else Nothing 
+                          if l' == TNum && r' == TNum then Just TBool else Nothing 
                        }
 typeofM (IsZero x) = do { x' <- typeofM x;
                           if x' == TNum then Just TNum else Nothing 
                        }
-typeofM (If s l r) = do { s' <- evalM s;
-                          s'' <- typeofM s';
-                        if s'' == TBool then Just TBool else Nothing
+typeofM (If s l r) = do { TBool <- typeofM s;
+                          l' <- typeofM l;
+                          r' <- typeofM r;
+                        if r' == l' then Just r' else Nothing
                        }
 -- Combined interpreter
 
 evalTypeM :: ABE -> Maybe ABE
-evalTypeM _ = Nothing
+evalTypeM a = do { a' <- typeofM a;
+                   evalM a
+                 }
 
 -- Optimizer
 
 optimize :: ABE -> ABE
-optimize e = e
+optimize (Num n) = Num n
+optimize (Boolean b) = Boolean b
+optimize (Plus l r) 
+  | optimize (l) == Num 0 = optimize r
+  | optimize (r) == Num 0 = optimize l
+  | otherwise = Plus (optimize l) (optimize r)
+optimize (Minus l r) 
+  | optimize (l) == Num 0 = optimize r
+  | optimize (r) == Num 0 = optimize l
+  | otherwise = Minus (optimize l) (optimize r)
+optimize (Mult l r) = (Mult (optimize l) (optimize r))
+optimize (Div l r) = (Div (optimize l) (optimize r))
+optimize (And l r) = And (optimize l) (optimize r)
+optimize (Leq l r) = Leq (optimize l) (optimize r)
+optimize (IsZero x) = IsZero (optimize x)
+optimize (If s l r) 
+  | optimize (s) == Boolean True = optimize l
+  | optimize (s) == Boolean False = optimize r
 
 evalOptM :: ABE -> Maybe ABE
-evalOptM _ = Nothing
+evalOptM s = evalM ( optimize s)
+-- Test cases for ABE Interpreter
+
+main :: IO ()
+main = do
+    putStrLn "Running tests for ABE Interpreter..."
+    
+    
+    -- Evaluation tests
+    testEvalOptim (Plus (Num 1) (Num 2)) (Just (Num 3))
+    testEvalOptim (Minus (Num 5) (Num 2)) (Just (Num 3))
+    testEvalOptim (Mult (Num 3) (Num 4)) (Just (Num 12))
+    testEvalOptim (Div (Num 10) (Num 2)) (Just (Num 5))
+    testEvalOptim (Div (Num 10) (Num 0)) Nothing
+    testEvalOptim (And (Boolean True) (Boolean False)) (Just (Boolean False))
+    testEvalOptim (Leq (Num 1) (Num 2)) (Just (Boolean True))
+    testEvalOptim (IsZero (Num 0)) (Just (Boolean True))
+    testEvalOptim (If (Boolean True) (Num 1) (Num 0)) (Just (Num 1))
+    
+    testEvalType (Plus (Num 1) (Num 2)) (Just (Num 3))
+    testEvalType (Minus (Num 5) (Num 2)) (Just (Num 3))
+    testEvalType (Mult (Num 3) (Num 4)) (Just (Num 12))
+    testEvalType (Div (Num 10) (Num 2)) (Just (Num 5))
+    testEvalType (Div (Num 10) (Num 0)) Nothing
+    testEvalType (And (Boolean True) (Boolean False)) (Just (Boolean False))
+    testEvalType (Leq (Num 1) (Num 2)) (Just (Boolean True))
+    testEvalType (IsZero (Num 0)) (Just (Boolean True))
+    testEvalType (If (Boolean True) (Num 1) (Num 0)) (Just (Num 1))
+
+    -- Type checking tests
+    testTypeOf (Num 5) (Just TNum)
+    testTypeOf (Boolean True) (Just TBool)
+    testTypeOf (Plus (Num 1) (Num 2)) (Just TNum)
+    testTypeOf (And (Boolean True) (Boolean False)) (Just TBool)
+    testTypeOf (Leq (Num 1) (Num 2)) (Just TBool)
+    testTypeOf (If (Boolean True) (Num 1) (Boolean False)) Nothing
+    
+    -- Optimization tests
+    testOptimize (Plus (Num 0) (Num 5)) (Num 5)
+    testOptimize (Minus (Num 5) (Num 0)) (Num 5)
+    testOptimize (If (Boolean True) (Num 1) (Num 0)) (Num 1)
+    
+    putStrLn "All tests completed."
+
+
+testEvalOptim :: ABE -> Maybe ABE -> IO ()
+testEvalOptim input expected = do
+    let result = evalOptM input
+    if result == expected
+        then putStrLn $ "PASS: Eval " ++ show input
+        else putStrLn $ "FAIL: Eval " ++ show input ++ "\n  Expected: " ++ show expected ++ "\n  Got: " ++ show result
+
+testEvalType :: ABE -> Maybe ABE -> IO ()
+testEvalType input expected = do
+    let result = evalTypeM input
+    if result == expected
+        then putStrLn $ "PASS: Eval " ++ show input
+        else putStrLn $ "FAIL: Eval " ++ show input ++ "\n  Expected: " ++ show expected ++ "\n  Got: " ++ show result
+
+testTypeOf :: ABE -> Maybe TABE -> IO ()
+testTypeOf input expected = do
+    let result = typeofM input
+    if result == expected
+        then putStrLn $ "PASS: TypeOf " ++ show input
+        else putStrLn $ "FAIL: TypeOf " ++ show input ++ "\n  Expected: " ++ show expected ++ "\n  Got: " ++ show result
+
+testOptimize :: ABE -> ABE -> IO ()
+testOptimize input expected = do
+    let result = optimize input
+    if result == expected
+        then putStrLn $ "PASS: Optimize " ++ show input
+        else putStrLn $ "FAIL: Optimize " ++ show input ++ "\n  Expected: " ++ show expected ++ "\n  Got: " ++ show result
+
+

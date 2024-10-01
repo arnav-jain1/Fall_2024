@@ -1,4 +1,4 @@
-Define eval:
+define eval:
 
 `eval` == `eval [("pi", (Num 3))]`
 

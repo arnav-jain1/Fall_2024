@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_662/Functions and Optimizers.md",
+                "file": "EECS_662/3- type checking.md",
                 "mode": "source",
                 "source": false
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_662/Functions and Optimizers.md",
+                "file": "EECS_662/3- type checking.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_662/Functions and Optimizers.md",
+                "file": "EECS_662/3- type checking.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_662/Functions and Optimizers.md"
+                "file": "EECS_662/3- type checking.md"
               }
             }
           }
@@ -197,9 +197,10 @@
   },
   "active": "8d3e9790c3f12239",
   "lastOpenFiles": [
+    "EECS_662/proj1/p1.hs~",
+    "EECS_662/Functions and Optimizers.md",
     "EECS_662/3- type checking.md",
     "EECS_662/2- First language.md",
-    "EECS_662/Functions and Optimizers.md",
     "EECS_662/1- Intro.md",
     "EECS_678/2-Services.md",
     "EECS_678/labs/eecs678_lab3/tmp2",
@@ -241,7 +242,6 @@
     "EECS_510/hw1.md",
     "EECS_510/9-12.md",
     "jobs.md",
-    "README.md",
-    "EECS_510/8-29.md"
+    "README.md"
   ]
 }

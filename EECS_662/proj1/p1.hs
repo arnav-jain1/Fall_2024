@@ -26,8 +26,41 @@ data ABE where
 
 -- Evaluation Functions
 
-evalM :: ABE -> (Maybe ABE)
-evalM _ = Nothing -- Replace this with your interpreter
+
+evalM :: ABE -> Maybe ABE
+evalM (Num n) = if n >= 0 then Just (Num n) else Nothing
+evalM (Boolean b) = if not b || b then Just (Boolean b) else Nothing
+evalM (Plus l r) = do { Num l' <- evalM l;
+                        Num r' <- evalM r;
+                        Just ( Num (  l' + r')) 
+                      }
+evalM (Minus l r) = do { Num l' <- evalM l;
+                        Num r' <- evalM r;
+                        if l' >= r' then Just ( Num (  l' + r')) else Nothing
+                      }
+evalM (Mult l r) = do { Num l' <- evalM l;
+                        Num r' <- evalM r;
+                        Just ( Num (  l' * r')) 
+                      }
+
+evalM (Div l r) = do { Num l' <- evalM l;
+                       Num r' <- evalM r;
+                       if r' == 0 then Nothing else Just ( Num (  l' `div` r')) 
+                      }
+evalM (And l r) = do { Boolean l <- evalM l; 
+                       Boolean r <- evalM r;
+                       Just ( Boolean (l && r))
+                       }
+evalM (Leq l r) = do { Boolean l <- evalM l; 
+                       Boolean r <- evalM r;
+                       Just ( Boolean (l <= r))
+                       }
+evalM (IsZero x) = do { Num x' <- evalM x;
+                        if x' == 0 then Just (Boolean True) else Just (Boolean False)
+                      }
+
+
+-- Replace this with your interpreter
 
 -- Type Derivation Function
 

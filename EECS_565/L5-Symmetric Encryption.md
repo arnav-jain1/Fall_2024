@@ -4,6 +4,12 @@ Shannon's theory: Perfect secrecy $\iff$ possible keys == possible plaintexts &&
 2 operations 
 1. Substitution (S-Box) for confusion 
 2. Permutation (P-Box) for diffusion
+### Block cipher
+Split input into blocks because it is hard to figure out block length 
+For block of n, there are $2^{n}$ permutations
+Vigenere is not a block cipher
+
+
 
 # DES
 Federal standard used for over 26 years
@@ -12,11 +18,6 @@ Crypto algorithm with:
 	Effecient
 	Open
 	Useful in many applications
-
-### Block cipher
-Split input into blocks because it is hard to figure out block length 
-For block of n, there are $2^{n}$ permutations
-Vigenere is not a block cipher
 
 
 DES is a Block Cipher
@@ -38,8 +39,6 @@ F function
 	Permutation with expansion 
 	S-Box and P-Box
 ![[Pasted image 20240913111312.png]]
-
-
 PermutatioN:
 	16 bits are used twice
 		These bits of plaintext affect more of ciphertext
@@ -112,7 +111,7 @@ In 1999 it was possible to do it in <24hrs with distributed machines
 Encrypt plaintext 3 times with 3 different keys
 	DES + DES^-1 + DES
 	Uses 2 or 3 keys (Key 1, then 2, then 1/3)
-Increases key length to 112 
+Increases key length to 112 (2x not 3x)
 	Weakness is that its slow
 
 ## Double DES

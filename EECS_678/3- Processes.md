@@ -10,30 +10,81 @@ Program
 	Programs become processes when loaded into memory
 	Same program executed multiple times are different processes
 ![[Pasted image 20240911141904.png]]
-Stack is automatic, local vars and is only there during the function
-Heap is for dynamically allocated data, explicit or implicit (depending on language), scope continues until deallocation
-Data: global and static data, allocated/deallocated on process creation/termination, scope is during execution
-Text: Program binary instructions (sequential instructions from assembly/C) with same properties as data
+Process address space:
+	Abstraction of memory resource for a project
+	4 segments:
+		Stack is automatic, local vars and is only there during the function activation and storing
+			Allocated when function is entered then dealloced when done
+			Unbounded recursion can caused stack overflow. 
+			Reaching outside of the allotted space on the stack will cause segfault
+			Stack size max: 8MB, can grow if neccessary 
+		Heap is for dynamically allocated data, explicit or implicit (depending on language), scope continues until deallocation. Can grow/shrink
+		Data: global and static data, allocated/deallocated on process creation/termination, scope is during execution. Automatically initialized to 0
+		Text: Program binary instructions (sequential instructions from assembly/C) with same properties as data
+	Using size ./program you can see how much for each
+	BSS is uninitialized global vars. dec is the sum and hex is the hex representation
+	![[Pasted image 20241001190907.png]]
 ![[Pasted image 20240911142409.png]]
 Data and text dont change. Stack moves down per function call and heap is for dynamic allocation
 
 There is a limit to how much space you are allowed on the stack (you can change it if you want
 
+Memory mangement responsibilities:
+	OS: Provide memory space for the process
+	Compiler: Manage stack allocation
+	Language runtime/memory allocator: Manage heap
+	Program: Determine how memory is used
+Memory management strats:
+	Explicit: Programmer handles
+	Implicit: Language handles (Python/garb collector)
+
+	
+
 Process states:
 - New: Process being created
+	- New -> ready: Process loaded into memory
+- ready: waiting to be processed by CPU (in memory)
+	- Ready -> Running: Scheduler dispatches process to CPU
 - running: instructions being executed
-- waiting: waiting for an interrupt
-- ready: waiting to be processed by CPU
-- Terminated: Done
+	- Running -> Terminated: Process completes execution
+	- Running -> Waiting: Process starts a blocking IO operation so waits till done
+	- Running -> ready: Time allotted (quantum) runs out
+- waiting: Process is blocked, waiting for the event
+	- Waiting -> ready: IO operation completes
+- Terminated: Finished executing, process cleanup occuring
 ![[Pasted image 20240911143809.png]]
+Time quantum:
+	Time sharing system:
+		Each process allotted fixed time on the CPU
+		Process interrupted and moved to ready if time expires (running -> ready)
+		Unused time is lost if the process reaches waiting early
+	Multiprocessing:
+		May not have running -> ready
+		Process continues till completion or waiting (IO)
+CPU: One core can run one process at a time, multicore can do multiple
+Memory allocation for ready processes: Address space allocated (including text, data, heap, stack) where heap and stack may be empty initiially
 
+### Process control block
+Representation maintained by OS for each process
+Has important info
+	Process state
+	Program counter
+	CPU registers
+	Scheduling info
+	Memory management info
+	Accounting info (CPU usage, time limit, etc)
+	IO information (Open files, devices in use)
+Important because it allows the OS to track and mange processes and enables context switching
+
+Implemented with **task_struct** in the linux kernel
 # Context switch
 Process of storing and restoring the state (*context*) of CPU so that multiple processes can share a CPU
 	Time shared, multiprogramming env
 	*Context* represented in PCB
 	Save current process then restore the next process
 	Switching from user <-> kernel is a mode switch
-Overhead because no other work is done when switching
+	*Updates accounting information and other PCB data*
+Overhead because no other work is done when switching (OS tries to minimize for effeciency)
 
 ![[Pasted image 20240911165905.png]]
 The process scheduler decides which process to run

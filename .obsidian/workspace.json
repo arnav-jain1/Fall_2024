@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_565/L6- Symmetric Encryption 2.md",
+                "file": "EECS_565/L7-asymmetric encryption.md",
                 "mode": "source",
                 "source": false
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_565/L6- Symmetric Encryption 2.md",
+                "file": "EECS_565/L7-asymmetric encryption.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -163,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_565/L6- Symmetric Encryption 2.md",
+                "file": "EECS_565/L7-asymmetric encryption.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_565/L6- Symmetric Encryption 2.md"
+                "file": "EECS_565/L7-asymmetric encryption.md"
               }
             }
           }
@@ -209,6 +209,7 @@
   },
   "active": "8d3e9790c3f12239",
   "lastOpenFiles": [
+    "EECS_565/L6- Symmetric Encryption 2.md",
     "EECS_565/L5-Symmetric Encryption.md",
     "EECS_565/L4-Classic Crypto 2.md",
     "EECS_565/L3-classic_crypto.md",
@@ -246,7 +247,6 @@
     "EECS_565/MP2/output.png",
     "EECS_565/miniproj/MP2/pic_original.bmp",
     "EECS_565/MP2/pic_original.bmp",
-    "EECS_565/L6- Symmetric Encryption 2.md",
     "EECS_565/L6- Cryptanalysis of DES.md",
     "EECS_565/L8-part 1.md",
     "latex guide.md",

@@ -55,7 +55,7 @@ AES has a state array of 4 byte cols
 2. Row based diffusion
 	Shift each byte in each row to the left cyclically (so 1st row = nothing, 2nd row = 1 byte to the left, 3rd row = 2 byte to the left etc)
 3.  Column based diffusion:
-	Each byte in each column mixxed up in some way
+	Each byte in each column mixed up in some way
 	Each byte in the column is given its own operation (which can vary) which is then XORed all together
 ![[Pasted image 20240916223332.png]]
 4. XOR the round key with the current state
@@ -91,6 +91,8 @@ No successful attacks *so far*
 	Resistant to differential cryptanalysis 
 	New attacks (timing attacks and side channel) based on implementaion
 
+Provable secure: ciphertext does not have enough info to infer plaintext
+Computational secure: Cost of breaking the cipher is more than the value of the encrypted data
 Only computational guarentee 
 	Not impossible just expensive and time consuming
 	Only brute forcable if there is no algorithm for it
@@ -107,20 +109,23 @@ If you split the text into chunks and use the same key for each chunk, then
 ### Mode of operations
 Ways to generate plaintext chunks and keys
 
-Electronic codebook mode: Each key for each chunk
+Electronic codebook mode (ECB): same key for each chunk
 	Not recommended to use for long plain texts
 	Pros:
 		Blocks can be processed at the same time (parallel processing)
 		If there is an error in one block, it won't affect the rest
-Cipher block chaining mode: Ciphertext of prev block XOR plaintext of curr block
-	1st input XORed with initialization vector
+	Cons: 
+		If input blocks are identicial, it can be known because ciphertext is identical
+Cipher block chaining mode (CBC): Ciphertext of prev block XOR plaintext of curr block
+	1st input XORed with initialization vector then encrypted. 
+	For rest, ciphertext of previous block is XORed with plaintext of current block then encrypted
 	![[Pasted image 20240916225954.png]]
 	traits:
 		No information leakage 
 		No ciphertext manipulation
 		Parallel processing in decryption only
-		Error propagation 
-Counter mode:
+		Error propagation in 2 blocks (eventually fixes itself)
+Counter mode (CTR):
 	Have a "counter" (chunk of incrementable text that is of same size as plaintext) and then encrpyt it. Then XOR it with plaintext
 	Traits:
 		No info leak

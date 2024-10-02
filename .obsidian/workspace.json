@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_565/L7-asymmetric encryption.md",
+                "file": "EECS_565/L8-part 1.md",
                 "mode": "source",
                 "source": false
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_565/L7-asymmetric encryption.md",
+                "file": "EECS_565/L8-part 1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -163,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_565/L7-asymmetric encryption.md",
+                "file": "EECS_565/L8-part 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_565/L7-asymmetric encryption.md"
+                "file": "EECS_565/L8-part 1.md"
               }
             }
           }
@@ -209,6 +209,7 @@
   },
   "active": "8d3e9790c3f12239",
   "lastOpenFiles": [
+    "EECS_565/L7-asymmetric encryption.md",
     "EECS_565/L6- Symmetric Encryption 2.md",
     "EECS_565/L5-Symmetric Encryption.md",
     "EECS_565/L4-Classic Crypto 2.md",
@@ -230,7 +231,6 @@
     "EECS_678/1- Intro.md",
     "EECS_565/miniproj/MP2/report.txt~",
     "EECS_678/!questions.md",
-    "EECS_565/L7-asymmetric encryption.md",
     "EECS_678/labs/eecs678_lab4/thread-1.c~",
     "EECS_678/labs/eecs678_lab4/thread1",
     "EECS_678/labs/eecs678_lab4/shared_memory3.c~",

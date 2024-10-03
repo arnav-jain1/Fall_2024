@@ -32,8 +32,9 @@ int main(int argc, char *argv[])
 
     // Question 4: What happens if the parent process is killed first? Uncomment the next two lines.
     // If this is uncommented, then the the child will have the same pid but will be orphaned, meaning its parent id will become 1
-    //sleep(4);
-    //printf("In Child: %d, Parent: %d\n", getpid(), getppid());
+    sleep(4);
+    printf("yeet\n");
+    printf("In Child: %d, Parent: %d\n", getpid(), getppid());
     
     // Question 2: What will be printed if this like is commented?
     // If the execlp is Commented, then the fprintf would print a string to the stderr
@@ -46,7 +47,7 @@ int main(int argc, char *argv[])
   }
   else {
     printf("In Parent: %d, Child id: %d\n", getpid(), ret);
-    // wait(&status);
+     /*wait(&status);*/
   }
 
   printf("Final statement from Process: %d\n", getpid());

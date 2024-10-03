@@ -49,19 +49,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_662/3- type checking.md",
+                "file": "EECS_678/3- Processes.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "8d3e9790c3f12239",
+            "id": "eefb9e3bf7afca0e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_565/L8-part 1.md",
+                "file": "4- Threads.md",
                 "mode": "source",
                 "source": false
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_565/L8-part 1.md",
+                "file": "4- Threads.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -163,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_565/L8-part 1.md",
+                "file": "4- Threads.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_565/L8-part 1.md"
+                "file": "4- Threads.md"
               }
             }
           }
@@ -207,22 +207,27 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "8d3e9790c3f12239",
+  "active": "eefb9e3bf7afca0e",
   "lastOpenFiles": [
+    "Pasted image 20241002144446.png",
+    "Pasted image 20241002144432.png",
+    "Pasted image 20241002142032.png",
+    "EECS_678/3- Processes.md",
+    "4- Threads.md",
+    "EECS_662/3- type checking.md",
+    "EECS_565/L8-part 1.md",
     "EECS_565/L7-asymmetric encryption.md",
     "EECS_565/L6- Symmetric Encryption 2.md",
     "EECS_565/L5-Symmetric Encryption.md",
     "EECS_565/L4-Classic Crypto 2.md",
     "EECS_565/L3-classic_crypto.md",
     "EECS_565/L2.md",
-    "EECS_678/3- Processes.md",
     "EECS_678/Pasted image 20241001190907.png",
     "EECS_678/2-Services.md",
     "EECS_662/Functions and Optimizers.md",
     "EECS_662/proj1/p1.hs~",
     "EECS_662/proj1/4913",
     "EECS_662/proj1/p1-parser.hs~",
-    "EECS_662/3- type checking.md",
     "EECS_662/2- First language.md",
     "EECS_662/1- Intro.md",
     "EECS_678/labs/eecs678_lab3/tmp2",
@@ -245,15 +250,10 @@
     "EECS_565/miniproj/MP1/output.png",
     "EECS_565/MP1/output.png",
     "EECS_565/MP2/output.png",
-    "EECS_565/miniproj/MP2/pic_original.bmp",
-    "EECS_565/MP2/pic_original.bmp",
     "EECS_565/L6- Cryptanalysis of DES.md",
-    "EECS_565/L8-part 1.md",
     "latex guide.md",
     "EECS_658/daily_assignments/8-9-24.md",
     "EECS_658/daily_assignments/9-9-26.md",
-    "EECS_510/hw1.md",
-    "EECS_510/9-12.md",
-    "jobs.md"
+    "EECS_510/hw1.md"
   ]
 }

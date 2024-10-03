@@ -126,19 +126,104 @@ data FBAE where
 ```
 
 ## Inference rules
-$$\frac{f\Downarrow (\lambda i . s) \quad a \Downarrow v_{a} \quad [i \rightarrow v_{a}]s\Downarrow v_{s}}{(f\space a) \Downarrow v_{s}}$$
+
+$$\frac{f\Downarrow (\lambda i . s) \quad a \Downarrow v_{a} \quad [i \rightarrow v_{a}]s\Downarrow v_{s}}{(f\space a) \Downarrow v_{s}}\text{Beta (function)}$$
+$$\frac{a \Downarrow v_{a} \quad [i \rightarrow v_{a}]s \Downarrow v_{s}}{\text{bind i = a in s} \Downarrow v_{s} }\text{Bind}$$ 
+<mark style="background: #FF5582A6;">Ask about the difference </mark>
+
+
+F evaluates to a lambda in the body
+a evaluates to va
+Substitute va for i in the body s which evals to vs
+
+
 This is strict (call by value)
 <mark style="background: #FF5582A6;">Substitute a for va</mark>
-VERY similar to bind (derived form)
+
+
+lambda is VERY similar to bind (derived form)
 ```
 bind i=a in s == ((lambda i in s) a)
 ```
 
+<mark style="background: #FFF3A3A6;">IMPORTANT (MIDTERM FINAL)</mark>
 Derived form:
 	Define a new concrete syntax
 	Define what the new syntax means in terms of existing language constructs
 	Safe way to extend new langs
 	Like GCC building itself
+
+# Church's lambda calculus
+(Basis of any functional language)
+
+Can represent any computable function 
+	Equivalent to turing machnines (Not proven but essentially)
+
+Turing machines are states (*imperative programming*)
+Lambda Calculus is functions (*Functional programming*)
+
+Turing machines won and are used for everything (Von Neumann) because RAM is state and you look for stuff in that state
+
+Concrete syntax
+```
+LC ::= | id
+	   | lambda id in LC
+	   | (LC LC)
+
+v ::= lambda id in LC
+```
+$$\frac{f\Downarrow (\lambda i . s) \quad [i \rightarrow a]s\Downarrow v_{s}}{(f\space a) \Downarrow v_{s}}\text{Beta (function)}$$
+This is similar but it is lazy eval/call by name because it evaluates a at run time
+	Not really common cause it can mess up order
+
+Can now do any computable function!! 
+
+
+### Examples:
+```
+(lambda x in x)
+```
+is this a value yes or no? Yes!
+
+```
+(lambda y in y)(lambda x in x)
+== [y->(lambda x in x)y ]
+== lambda x in x
+
+f= lambda y in y
+s= y
+i= y
+va = a = lambda x in x
+
+```
+
+```
+(lambda x in x x) 3
+== [x->3](x x)
+== (3 3)
+== !
+```
+3 applied to 3 didnt work
+
+```
+(lambda x in x x)(lambda y in y)
+== [x->lambda y in y](x x)
+== (lambda y in y)(lambda y in y)
+== [y->lambda y in y]y
+== lambda y in y
+```
+but this did because magic
+
+
+No numbers in lambda calculus
+
+```
+(lambda x in x x)(lambda y in y y)
+== [x ->lambda y in y y](x x)
+== (lambda y in y y)(lambda y in y y)
+== (lambda y in y y)(lambda y in y y) 
+```
+woah that's a loop!
 # Important defn
 First order functions: Cannot take other funcs as arguments 
 	C technically but func pointers exist

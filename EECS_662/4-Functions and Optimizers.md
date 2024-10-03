@@ -1,3 +1,11 @@
+# Important defn
+First order functions: Cannot take other funcs as arguments 
+	C technically but func pointers exist
+Higher order functions: Can take functions as args and can return functions
+First class functions: Funcs are values 
+
+
+# Optim
 Optimizers are important because they speed up code significantly
 ```haskell
 optimize :: BAE -> BAE
@@ -13,6 +21,7 @@ inc 3
 `3` is the actual parameter
 `inc 3` is an application of `inc` onto 3
 
+# Functions (lambda)
 ## Concrete syntax
 `lambda x in x + x`
 	Function over **formal parameter** x
@@ -224,9 +233,45 @@ No numbers in lambda calculus
 == (lambda y in y y)(lambda y in y y) 
 ```
 woah that's a loop!
-# Important defn
-First order functions: Cannot take other funcs as arguments 
-	C technically but func pointers exist
-Higher order functions: Can take functions as args and can return functions
-First class functions: Funcs are values 
+Also called $\Omega$ combinator
 
+## making it (Call by val)
+```haskell 
+evalM Lambda i s = Just (Lambda i s)
+evalM (Id _) = Nothing
+evalM App f a = do { (Lambda i s) <-  evalM f;
+					 va <- eval< a;
+					 evalM (subst va i s) }
+evalM Bind i a s = do { va <- evalM a
+						evalM (subst va i s) }
+
+
+
+evalM Bind i a s = evalM (App (Lambda i s) a)
+```
+
+### Small examples:
+```
+bind f = (lambda x in x) in (f 2)
+== [f->lambda x in x] (f 2)
+== (lambda x in x) 2
+== [x->2]x
+== 2
+```
+
+```
+bind n = 1 in 
+	bind f = (lambda x in x +n) in 
+		bind n = 2 in
+			f 1
+== bind f = (lambda x in x + 1) in
+	bind n = 2 in 
+		f 1	
+== bind n = 2 in
+	(lambda x in x + 1) 1
+== (lambda x in x + 1) 1
+== 2
+```
+
+
+Note: (f a) -> (App f a)

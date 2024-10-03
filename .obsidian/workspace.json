@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "4- Threads.md",
+                "file": "EECS_510/8-29.md",
                 "mode": "source",
                 "source": false
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "4- Threads.md",
+                "file": "EECS_510/8-29.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -163,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "4- Threads.md",
+                "file": "EECS_510/8-29.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "4- Threads.md"
+                "file": "EECS_510/8-29.md"
               }
             }
           }
@@ -209,11 +209,11 @@
   },
   "active": "eefb9e3bf7afca0e",
   "lastOpenFiles": [
-    "Pasted image 20241002144446.png",
-    "Pasted image 20241002144432.png",
-    "Pasted image 20241002142032.png",
-    "EECS_678/3- Processes.md",
     "4- Threads.md",
+    "Pasted image 20241002142032.png",
+    "Pasted image 20241002144432.png",
+    "Pasted image 20241002144446.png",
+    "EECS_678/3- Processes.md",
     "EECS_662/3- type checking.md",
     "EECS_565/L8-part 1.md",
     "EECS_565/L7-asymmetric encryption.md",
@@ -249,7 +249,6 @@
     "EECS_565/miniproj/MP2/aes-256-ecb-pic.bmp",
     "EECS_565/miniproj/MP1/output.png",
     "EECS_565/MP1/output.png",
-    "EECS_565/MP2/output.png",
     "EECS_565/L6- Cryptanalysis of DES.md",
     "latex guide.md",
     "EECS_658/daily_assignments/8-9-24.md",

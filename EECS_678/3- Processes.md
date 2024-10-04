@@ -110,7 +110,7 @@ Short term scheduler
 
 ## Process creation
 Process can make other processes
-	OS has *primordial* process
+	OS has *primordial* process (pid of 1)
 	creating process is *parent* while created process is *child*
 		If parent dies before child, the child process becomes an *orphan* 
 	Processes IDed by process identifier PID 
@@ -126,7 +126,7 @@ Execution options
 	If Parent process finishes first, it will either be orphaned or zombied
 	All the parent's responsibility is to collect the status of the child when done
 Address space options
-	1. child duplicate of parent
+	1. child duplicate of parent (duplicated but different address space, no shared memory)
 	2. child has a program loaded into it by exec
 UNIX examples
 	Fork system call will create a new process

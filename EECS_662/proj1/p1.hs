@@ -143,26 +143,55 @@ main = do
     putStrLn "Running tests for ABE Interpreter..."
     
     
-    -- Evaluation tests
+    -- Regular tests
     testEvalOptim (Plus (Num 1) (Num 2)) (Just (Num 3))
     testEvalOptim (Minus (Num 5) (Num 2)) (Just (Num 3))
     testEvalOptim (Mult (Num 3) (Num 4)) (Just (Num 12))
     testEvalOptim (Div (Num 10) (Num 2)) (Just (Num 5))
-    testEvalOptim (Div (Num 10) (Num 0)) Nothing
+    testEvalOptim (Div (Num 10) (Num 0)) Nothing -- Dive by 0
     testEvalOptim (And (Boolean True) (Boolean False)) (Just (Boolean False))
     testEvalOptim (Leq (Num 1) (Num 2)) (Just (Boolean True))
     testEvalOptim (IsZero (Num 0)) (Just (Boolean True))
     testEvalOptim (If (Boolean True) (Num 1) (Num 0)) (Just (Num 1))
+
+    -- Edge cases for arithmetic operations
+    testEvalOptim (Minus (Num 2) (Num 3)) Nothing  -- negative result
+    testEvalOptim (Div (Num 5) (Num 2)) (Just (Num 2))  -- int division
+
+    -- Edge cases for boolean operations
+    testEvalOptim (And (Boolean True) (Num 1)) Nothing  -- Type mismatch
+    testEvalOptim (Leq (Boolean False) (Boolean True)) Nothing  -- Type mismatch
+
+    -- Edge cases for IsZero
+    testEvalOptim (IsZero (Boolean True)) Nothing  -- Type mismatch
+    testEvalOptim (IsZero (Num (-1))) Nothing  -- Negative number
+
     
+    -- Same but for type 
     testEvalType (Plus (Num 1) (Num 2)) (Just (Num 3))
     testEvalType (Minus (Num 5) (Num 2)) (Just (Num 3))
     testEvalType (Mult (Num 3) (Num 4)) (Just (Num 12))
     testEvalType (Div (Num 10) (Num 2)) (Just (Num 5))
-    testEvalType (Div (Num 10) (Num 0)) Nothing
+    testEvalType (Div (Num 10) (Num 0)) Nothing -- div by 0
     testEvalType (And (Boolean True) (Boolean False)) (Just (Boolean False))
     testEvalType (Leq (Num 1) (Num 2)) (Just (Boolean True))
     testEvalType (IsZero (Num 0)) (Just (Boolean True))
     testEvalType (If (Boolean True) (Num 1) (Num 0)) (Just (Num 1))
+
+    -- Edge cases for arithmetic operations
+    testEvalType (Minus (Num 2) (Num 3)) Nothing  -- negative result
+    testEvalType (Div (Num 5) (Num 2)) (Just (Num 2))  -- int div
+
+    -- Edge cases for boolean operations
+    testEvalType (And (Boolean True) (Num 1)) Nothing  -- Type mismatch
+    testEvalType (Leq (Boolean False) (Boolean True)) Nothing  -- Type mismatch
+
+    -- Edge cases for IsZero
+    testEvalType (IsZero (Boolean True)) Nothing  -- Type mismatch
+    testEvalType (IsZero (Num (-1))) Nothing  -- Negative number
+
+    -- Mismatching if 
+    testEvalType (If (Boolean True) (Num 1) (Boolean False)) (Nothing)  -- Different types in branches
 
     -- Type checking tests
     testTypeOf (Num 5) (Just TNum)
@@ -171,12 +200,17 @@ main = do
     testTypeOf (And (Boolean True) (Boolean False)) (Just TBool)
     testTypeOf (Leq (Num 1) (Num 2)) (Just TBool)
     testTypeOf (If (Boolean True) (Num 1) (Boolean False)) Nothing
+    testTypeOf (Plus (Num 1) (Boolean True)) Nothing  -- Type mismatch
+    testTypeOf (If (Num 0) (Num 1) (Num 2)) Nothing  -- Non-boolean condition
+    testTypeOf (IsZero (Boolean False)) Nothing  -- Type mismatch
     
     -- Optimization tests
     testOptimize (Plus (Num 0) (Num 5)) (Num 5)
     testOptimize (Minus (Num 5) (Num 0)) (Num 5)
     testOptimize (If (Boolean True) (Num 1) (Num 0)) (Num 1)
-    
+    testOptimize (Plus (Num 0) (Plus (Num 0) (Num 5))) (Num 5)  -- Nested zero addition
+    testOptimize (Minus (Minus (Num 10) (Num 0)) (Num 0)) (Num 10)  -- Nested zero subtraction
+    testOptimize (If (Boolean True) (Plus (Num 1) (Num 2)) (Mult (Num 3) (Num 4))) (Plus (Num 1) (Num 2))  -- Optimization in If branches
     putStrLn "All tests completed."
 
 
@@ -184,15 +218,15 @@ testEvalOptim :: ABE -> Maybe ABE -> IO ()
 testEvalOptim input expected = do
     let result = evalOptM input
     if result == expected
-        then putStrLn $ "PASS: Eval " ++ show input
-        else putStrLn $ "FAIL: Eval " ++ show input ++ "\n  Expected: " ++ show expected ++ "\n  Got: " ++ show result
+        then putStrLn $ "PASS: EvalOptim " ++ show input
+        else putStrLn $ "FAIL: EvalOptim " ++ show input ++ "\n  Expected: " ++ show expected ++ "\n  Got: " ++ show result
 
 testEvalType :: ABE -> Maybe ABE -> IO ()
 testEvalType input expected = do
     let result = evalTypeM input
     if result == expected
-        then putStrLn $ "PASS: Eval " ++ show input
-        else putStrLn $ "FAIL: Eval " ++ show input ++ "\n  Expected: " ++ show expected ++ "\n  Got: " ++ show result
+        then putStrLn $ "PASS: EvalType " ++ show input
+        else putStrLn $ "FAIL: EvalType " ++ show input ++ "\n  Expected: " ++ show expected ++ "\n  Got: " ++ show result
 
 testTypeOf :: ABE -> Maybe TABE -> IO ()
 testTypeOf input expected = do

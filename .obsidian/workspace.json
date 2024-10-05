@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_678/4- Threads.md",
+                "file": "EECS_678/Exam Q.md",
                 "mode": "source",
                 "source": false
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_678/4- Threads.md",
+                "file": "EECS_678/Exam Q.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_678/4- Threads.md",
+                "file": "EECS_678/Exam Q.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_678/4- Threads.md"
+                "file": "EECS_678/Exam Q.md"
               }
             }
           }
@@ -197,9 +197,14 @@
   },
   "active": "b555efabddb954e7",
   "lastOpenFiles": [
-    "EECS_678/3- Processes.md",
     "EECS_678/4- Threads.md",
+    "EECS_678/Exam Q.md",
+    "Untitled.md",
+    "EECS_678/2-Services.md",
+    "EECS_678/Other.md",
     "EECS_678/4.1 Quiz answers.md",
+    "EECS_678/1- Intro.md",
+    "EECS_678/3- Processes.md",
     "EECS_678/Pasted image 20241004143815.png",
     "EECS_678/Pasted image 20241004143708.png",
     "EECS_678/Pasted image 20241004143614.png",
@@ -223,14 +228,12 @@
     "EECS_565/L5-Symmetric Encryption.md",
     "EECS_565/L3-classic_crypto.md",
     "EECS_565/L2.md",
-    "EECS_678/2-Services.md",
     "EECS_662/proj1/4913",
     "EECS_662/proj1/p1-parser.hs~",
     "EECS_662/1- Intro.md",
     "EECS_678/labs/eecs678_lab3/tmp2",
     "EECS_678/labs/eecs678_lab3/tmp1",
     "EECS_678/labs/eecs678_lab3/finder",
-    "EECS_678/1- Intro.md",
     "EECS_565/miniproj/MP2/report.txt~",
     "EECS_678/!questions.md",
     "EECS_678/labs/eecs678_lab4/thread-1.c~",
@@ -239,8 +242,6 @@
     "EECS_658/daily_assignments/10-10-3.md",
     "EECS_658/daily_assignments/10-10-1.md",
     "Untitled 1.md",
-    "EECS_510/9-17-Regular Grammars.md",
-    "EECS_565/L6- Cryptanalysis of DES.md",
-    "EECS_658/daily_assignments/8-9-24.md"
+    "EECS_510/9-17-Regular Grammars.md"
   ]
 }

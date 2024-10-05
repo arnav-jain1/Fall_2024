@@ -23,15 +23,28 @@ Threads can do all of this and are known as lightweight processes
 		Code and data shared so less communication overhead
 	Single address space for all threads
 
+Approaches to multiprogramming:
+	Monolithic process:
+		One program handles all objects
+		Bad for multicore, slow
+	Multiple processes:
+		High overhead (in a game, each object would be own process) 
+		Context switching would be a nightmare
+		Sharing data would be worse
 # Threads
 Lightweight process with:
 	Independent flow of control
 	but still shares resources with other sibling threads
 	Lives in the same context space as the process
+	parallel execution, uses multiple cores more effeciently
+Threads NOT protected from each other, can access entire address space
+Partitioning managed by OS/library not compiler
+	Created far enough to avoid conflicts (at least for now)
+
 Thread shared data:
 	Process instructions
-	most data (the global vars part of address space)
-	File descriptors 
+	most data (the global vars part of address space that are initialized to 0)
+	File descriptors (if one closes, closed for all)
 	signals and signal handlers 
 	current directory
 	user and group id
@@ -71,19 +84,22 @@ User level threads: Manges the thread at the user level
 		No syscall needed
 	Cons:
 		One blocked thread can cause all threads to be blocked
+		OS doesn't really know what is going on so it allots the same time and space
 		Popular before 2005 because CPUs were all single core, now if thread is blocked, kernel will only see one process so it is hard to take advantage of multiple cores
 Kernel level threads: Thread at kernel level
 	Pros: 
 		Removes disad of user level
+		supported by OS so individual thread scheduling
 	Cons:
 		More overhead because syscall needed (and context switch)
-		Provided by all OS (Mac, windows, linux)
+	Provided by all OS (Mac, windows, linux)
 
 # Multithreading models
 Many-to-one
 	Many user level threads mapped to a single kernel level thread
 	Bad because if one user thread is blocked, so is the rest of the threads
 	Bad for multicore CPUS
+	only used when OS doesnt support threads
 One to one model
 	Each user level thread has a kernel level thread
 	What pthreads is 

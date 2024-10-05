@@ -160,6 +160,7 @@ int main() {
 	}
 }
 ```
+Also, Multiple forks make a tree
 
 ## Process termination
 Process ends after the last statement executes
@@ -190,6 +191,7 @@ Bad because more utilization
 ## Inter process communication
 How to communicate within the same system 
 	Needed to share info, speed up computation, more modular, convenient 
+	Global vars does NOT work because entire address space is copied
 
 Producer makes the info and consumer process the info
 This needs to be synchronized though because consumer needs producer to be finished first
@@ -206,20 +208,24 @@ For transfer data, same task but seperate
 	Convencience 
 
 Shared memory:
-	Memory 2 process is shared and can be read/written to 
-	Fast, convinient 
+	Requires overwriting address space protection for one specific region
+	Processes can then read and write to it like it is malloced, memory address is shared
+	Memory address is shared and can be read/written to 
+	Fast, convinient  (sys call not needed for write/read)
+	Can potentially overwrite one's data, also requires synchronization
 Message parsing
-	Send and receive messages
+	Send and receive messages via queue (located in kernel space, involves copying data from user to kernel space)
 	Messages not overwritten so no conflicts
 	Slower but better for multiple computers
 	Easier to implement 
 	Typically used for smaller amounts of data
+	send() and recieve() (sys calls)
 ![[Pasted image 20240918173407.png]]
 
 Message parsing can also be used for client-server communication 
 2 operations: send and receive (a message)
 If P and Q want to communicate, they need to first establish a link before exchanging messages
-Implementation issues:
+Implementation issues (producers vs consumer):
 	How to establish a link?
 	Can a link work with >2 processes
 	How many links between communicating processes (1 for 2, 2 for 2)
@@ -231,7 +237,7 @@ Implementation issues:
 Direct
 	Message must be named directly (aka send(Q, message) and recieve(P, message))
 	There is exactly ONE link between exactly TWO processes and it is established automatically
-	Issue: Process IDs are hard coded
+	Issue: Process IDs are hard coded, so you need the PIDs which can change
 
 Indirect:
 	Messages are sent to and recieved from ports (mailboxes)
@@ -265,7 +271,13 @@ Way for two processes to communicate ONLY in a parent-child relationship (becaus
 (fd is a file descriptor fd\[0] is receive while fd\[1] is send
 Only one direction, you write from one end and then read from the other
 
-Issues:
+They are anonymous (no name)
+Only in related processes on the same OS
+Implemented in kernel
+Bounded capacity buffer
+Pipe *before* forking
+
+Issues/info:
 	Unidirectional
 	Only constructed in parent-child or child-child relationship
 		Only exist until the process exists so if the process terminates early, data might be lost
@@ -274,6 +286,7 @@ Issues:
 	Data only FIFO
 	
 fd0 is stdin, fd1 is stdout and fd2 is stderr so when you create a new pipe. the file descriptors for reading for the pipe is fd3 and writing is fd4
+read is 0 and write is 1
 
 When you create a fork after already making file descriptors, the child gets the same one so then the child can write to it and the parent can read from it
 
@@ -284,6 +297,11 @@ What does | do?
 		Create a pipe from `ps ef` to `more`
 		The stdout of `ps ef` is redirected into the pipe
 		The stdin of `more` is the output of the pipe
+
+File table:
+	OS has a table of all open files (inc stdin, stdout, stderr)
+	Each process has own fd table that points to entries in the OS fd table
+	Child gets copy of the parent table
 
 ## FIFO (named pipes)
 Pipes with a name

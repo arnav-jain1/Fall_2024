@@ -303,16 +303,21 @@ File table:
 	Each process has own fd table that points to entries in the OS fd table
 	Child gets copy of the parent table
 
+Process synch:
+	Pipes used to synchronize and control order of what to run. 
+	Since reading is blocking, you can make one process run after another by having the second process read and the first one write when done
 ## FIFO (named pipes)
 Pipes with a name
 More powerful than anonymous (regular) pipes
-	No parent-sibling relationship needed
+	No parent-sibling relationship needed (works with unrelated processes)
 	Bidirectional 
 	Can persist after process terminates
 Characteristics:
-	Appear as regular files
+	Appear as special files
 	half duplex
-	communication must be on same machine
+	communication must be on same machine and file system but more flexible
+
+Sender and receiver can't be the same (can't open read and write in same process)
 
 ## Message Queues
 Linux uses indirect communication or mailboxes

@@ -117,7 +117,7 @@ Process can make other processes
 Resource sharing options
 	1. Parent and child shares resources 
 	2. Children share subset of parent process resources
-	3. Parent and child doesn't share resources (Unix)
+	3. Parent and child doesn't share resources (Unix, exact duplicate)
 Execution options
 	1. Parent and child run together (unix)
 	2. Parent waits till children finishes 
@@ -125,24 +125,57 @@ Execution options
 		If it doesn't collect it, the child process becomes a zombie process
 	If Parent process finishes first, it will either be orphaned or zombied
 	All the parent's responsibility is to collect the status of the child when done
-Address space options
-	1. child duplicate of parent (duplicated but different address space, no shared memory)
-	2. child has a program loaded into it by exec
+Address space 
+	child duplicate of parent ( unix duplicated but different address space, no shared memory)
+	Text, data, stack, heap of the two processes are sperate but equal
+	child has a program loaded into it by exec, the rest gets overridden (if succeed)
+	The two address spaces have protection, cannot access each others
+	Note: registers also duplicated
 UNIX examples
 	Fork system call will create a new process
 	Exec will replace the process' memory space with a new program
 
 Parent waits for its child to finish
 ![[Pasted image 20240917175545.png]]
+Important notes when reading code:
+	If value is assigned to output of fork like int val = fork(); then, the parent will have the child PID for its value and the child will have 0
+		If it is -1, then it failed
+	If else block used to differenciate parent and child
+	Exec deletes the rest of the code (if succeed)
+	Wait is used to pause until completion to recieve the exit status
+	Parent can terminate without child being terminated (child parent becomes 1 or systemd)
+	Execution of child starts after the fork() call because register/Program counter
+	getpid() returns process id
+	getppid() returns parent procces id (1 if no parent cause systemd)
+	execution without wait() might lead to interleaved output
+```c
+int main() {
+	int val = fork();
+	if (val < 0) {
+		printf("Failed");
+	} else if (val == 0) {
+		printf("child");
+	} else if (val > 0) {
+		printf("Parent");	
+	}
+}
+```
 
 ## Process termination
 Process ends after the last statement executes
 	The process itself can explicitly call **exit()** but if it doesn't, then the OS implicitly calls it.
 	Child can then pass it's return status to the parent that collects it using **wait()**
-	Resources are then dealloc by OS
+	Resources are then dealloc by OS (**AFTER** process is done, not after function is done)
+Zombie process:
+	Processes that are done but exit status hasn't been collected
+	Remain in system till exit status collected
+	Only take up a small amount of system resources, so not the end of the world
 Parent can terminate the child process explicitly using **abort()**
 	Like if child is using too many resources or is not needed
+	Needs PID
+	No easy way to terminate all at once, individually is easier
 Is parent exits then:
+	Child becomes orphan process
 	The child will be assigned a new parent by the OS and can run independently  (Unix)
 	Might not be the case for other OS
 
@@ -150,7 +183,7 @@ Is parent exits then:
 Chrome is mutliple processes 
 	Browser: Manages UI 
 	Renderer: Renders web pages
-	Tabs: each tab is own process
+	Tabs: each tab is own process (same with plugins)
 Good because makes it harder to crash
 Bad because more utilization
 
@@ -166,6 +199,12 @@ Abstraction models
 	bounded buffer: limit on size of buffer, producer cant produce more until buffer is freed a little
 
 ## IPC models
+For transfer data, same task but seperate
+	Info sharing
+	Speed up computation (multicore)
+	Modularity
+	Convencience 
+
 Shared memory:
 	Memory 2 process is shared and can be read/written to 
 	Fast, convinient 

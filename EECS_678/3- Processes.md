@@ -312,22 +312,88 @@ More powerful than anonymous (regular) pipes
 	No parent-sibling relationship needed (works with unrelated processes)
 	Bidirectional 
 	Can persist after process terminates
+mkfifo to make a fifo
+open() blocks until a reader/writer is availible
+when writers close, read returns 0
 Characteristics:
-	Appear as special files
+	Appear as special files (not file table)
 	half duplex
 	communication must be on same machine and file system but more flexible
+	file is 0 bites big
+	Persists until deleted so make sure you delete it manually
 
 Sender and receiver can't be the same (can't open read and write in same process)
+Data retrieval is STRICTLY fifo
+Multiple recievers gets fuzzy
 
+```c
+#define FIFO_NAME "/tmp/myfifo"
+#define BUFFER_SIZE 256
+int main() {
+    int fd;
+    pid_t pid;
+    char buffer[BUFFER_SIZE];
+
+    // Create the named pipe (FIFO)
+    mkfifo(FIFO_NAME, 0666);
+
+    pid = fork();
+
+    if (pid == 0) {  // Child process (writer)
+        printf("Child: Opening FIFO for writing...\n");
+        fd = open(FIFO_NAME, O_WRONLY);
+        
+        const char *message = "Hello from child process!";
+        printf("Child: Writing message: %s\n", message);
+        write(fd, message, strlen(message) + 1);
+        
+        close(fd);
+        printf("Child: FIFO closed.\n");
+        exit(0);
+    } else {  // Parent process (reader)
+        printf("Parent: Opening FIFO for reading...\n");
+        fd = open(FIFO_NAME, O_RDONLY);
+
+        printf("Parent: Reading from FIFO...\n");
+        ssize_t bytes_read = read(fd, buffer, sizeof(buffer));
+        
+        if (bytes_read > 0) {
+            printf("Parent: Received message: %s\n", buffer);
+        } else if (bytes_read == 0) {
+            printf("Parent: End of file reached.\n");
+        } else {
+            perror("read");
+        }
+
+        close(fd);
+        printf("Parent: FIFO closed.\n");
+
+        // Wait for child to finish
+        wait(NULL);
+
+        // Remove the FIFO
+        unlink(FIFO_NAME);
+    }
+
+    return 0;
+}
+```
 ## Message Queues
+Aims to provide more control when sending to multiple receivers
+
 Linux uses indirect communication or mailboxes
 There can be multiple processes with queues (sychronization may be needed)
+
 Processes can use any number of queues (each queue is unique)
 Capacity of the link is initialized by the system (can be overridden by user)
 Each message has a length which is specified in send and receive calls
 Each process can send and recieve calls from the same queue
 
 Message queues is how Linux sends and receives messages
+	First 4/8 bytes is the message type
+	Rest is the content
+	Also need to provide the buffer and size
+
 msgget: Create a new message queue
 msgsnd: Send a message to the queue
 	struct msg_buf { long mtype; char mtext\[]}
@@ -335,22 +401,115 @@ msgsnd: Send a message to the queue
 msgrcv: Receive message from queue (mtype to get specific messages)
 msgctl: Control operations for the queue (like terminating)
 
+You have to specifiy the queueID 
+
+Note:
+	Limited security, as long as you have the queue ID you can access
+	Message removed when recieved
+	Created in kernel space, requires syscalls
+	May miss if not coordinated
+
+Can also create a key using ftok()
+Great for multiple senders/recievers, the type allows specific on who to recieve
+
+```C
+struct msg_buffer {
+    long msg_type;
+    char msg_text[MSG_SIZE];
+};
+
+void message_passing_example() {
+    int msgid;
+    struct msg_buffer message;
+    pid_t pid;
+
+    // Create message queue
+    msgid = msgget(IPC_PRIVATE, 0666 | IPC_CREAT);
+    if (msgid == -1) {
+        perror("msgget");
+        exit(1);
+    }
+
+    pid = fork();
+
+    if (pid < 0) {
+        perror("fork");
+        exit(1);
+    } else if (pid == 0) {  // Child process
+        message.msg_type = 1;
+        strcpy(message.msg_text, "Hello from child process!");
+        if (msgsnd(msgid, &message, sizeof(message.msg_text), 0) == -1) {
+            perror("msgsnd");
+            exit(1);
+        }
+        exit(0);
+    } else {  // Parent process
+        wait(NULL);
+        if (msgrcv(msgid, &message, sizeof(message.msg_text), 1, 0) == -1) {
+            perror("msgrcv");
+            exit(1);
+        }
+        printf("Message Passing: %s\n", message.msg_text);
+
+        // Remove message queue
+        msgctl(msgid, IPC_RMID, NULL);
+    }
+}
+```
 ## Memory sharing
-multiple Processes can utilize the same chunk of memory
+multiple Processes can utilize the same chunk of memory (Same OS only)
 Implementation principles:
 	Name unique (system wide) or anonymous 
-	Specifying permissions (read, write, execute)
+	Specifying permissions (read, write, not execute on linux)
 	Dealing with race conditions (atomic or synchronized access)
 	Most thread level communication is from shared memory
 Example:
 	shmget: create shared memory segment 
 		Requires size and returns identifier
 		Same access perms as files
-	shmat: attach shared memory segment
+	shmat: attach shared memory segment (returns void* so cast it)
 		Must for every process that wants to access it
 		Identified by segment id
 	shmdt: Detach shared memory
 	shmtcl: Control operations (like removing)
+Shared memory remains until removed (view using ipcs)
+```C
+void shared_memory_example() 
+{ 
+	int shmid; 
+	char *shared_memory; 
+	pid_t pid; // Create shared memory segment 
+	shmid = shmget(IPC_PRIVATE, SHM_SIZE, IPC_CREAT | 0666); 
+	// Attach shared memory segment 
+	shared_memory = (char *)shmat(shmid, NULL, 0); 
+	pid = fork(); 
+	if (pid == 0) { 
+		// Child process 
+		sprintf(shared_memory, "Hello from child process!"); 
+		
+		strcpy(shared_memory->message, "Hello from child process!");
+		shared_memory->message_ready = 1;
+		exit(0); 
+	} else { 
+		// Parent process 
+		wait(NULL); 
+		printf("Shared Memory: %s\n", shared_memory); 
+		while (shared_memory->message_ready == 0) { 
+		// Wait for child to send message 
+		} 
+		printf("Parent: Received message: %s\n", shared_memory->message);
+		// Reset the message_ready flag 
+		shared_memory->message_ready = 0;
+		
+		// Detach and remove shared memory segment 
+		shmdt(shared_memory); 
+		shmctl(shmid, IPC_RMID, NULL); 
+	} 
+}
+```
+Notice no syscall for read/write
+
+
 ## Unix sockets
 Sockets:
 	End point for communication 
@@ -358,7 +517,7 @@ Sockets:
 	Variety of domains like the internet
 Unix domain sockets:
 	Communication between processes on same Unix system
-	Special file in the system
+	Special file in the system (like FIFO)
 Mostly for client-server programming
 	Client sends a request for info (like API calls)
 	server waits for requests then does the request and sends info (updates, output) to client
@@ -368,14 +527,102 @@ Modes:
 		Slow
 	Connection-less: UDP
 		Faster, does not care for order/drops
+		Better for programs that don't care about packet loss (streaming, games)
 Syscalls:
 	socket(): make the Unix socket
 		int socket(int domain, int type, int protocol)
+		Domain = AF_UNIX for unix domain sockets
+		type specifies Connection based or connectionless 
 	bind(): Assign an address to a socket int bind(int sockfd, ... \*addr, adderlen)
-		A file. also what you connect to when you go to a website
+		Filepath is used as address for the socket
+		makes A file. also what you connect to when you go to a website
+		Connects the socket itself to a file
 	listen(): listen to incoming client requests
 		int listen(int sockfd, int backlog)
 	accept(): Create a new connected socket
+	send():
 	recv(): Receive messages from socket (message placed in buf)
 	close(): Closes the connection
-	
+	(Not read/write)
+Socket file descriptor:
+	Single file for read/write
+Unix vs Internet:
+	Unix uses file names as addresses
+	Internet uses IP addresses
+
+Server vs client:
+	Server has to use socket() listen() and accept() (and bind)
+		Server handles multiple clients by making a new fd for each connection
+		backlog in listen() specifies max number of pending connection
+	Client just uses connect() to connect to a server
+
+```c
+#define SOCKET_NAME "/tmp/example_socket"
+#define BUFFER_SIZE 256
+int main() {
+    int server_fd, client_fd;
+    struct sockaddr_un server_addr, client_addr;
+    char buffer[BUFFER_SIZE];
+    pid_t pid;
+
+    // Create socket
+    server_fd = socket(AF_UNIX, SOCK_STREAM, 0)
+
+    // Configure server address
+    memset(&server_addr, 0, sizeof(server_addr));
+    server_addr.sun_family = AF_UNIX;
+    strncpy(server_addr.sun_path, SOCKET_NAME, sizeof(server_addr.sun_path) - 1);
+
+    // Remove any existing socket file
+    unlink(SOCKET_NAME);
+
+    // Bind socket to address
+    if (bind(server_fd, (struct sockaddr*)&server_addr, sizeof(server_addr)) == -1) {
+        handle_error("bind");
+    }
+
+    // Listen for connections
+    if (listen(server_fd, 1) == -1) {
+        handle_error("listen");
+    }
+
+    pid = fork();
+
+    if (pid == 0) {  // Child process (client)
+        sleep(1);  // Ensure server is ready
+
+        int client_socket;
+        client_socket = socket(AF_UNIX, SOCK_STREAM, 0) 
+
+        connect(client_socket, (struct sockaddr*)&server_addr, sizeof(server_addr) 
+        const char *message = "Hello from child process!";
+        send(client_socket, message, strlen(message)
+
+        printf("Child: Message sent.\n");
+
+        close(client_socket);
+        exit(0);
+    } else {  // Parent process (server)
+        printf("Parent: Waiting for connection...\n");
+
+        socklen_t client_addr_len = sizeof(client_addr);
+        client_fd = accept(server_fd, (struct sockaddr*)&client_addr, &client_addr_len)
+
+        ssize_t bytes_received = recv(client_fd, buffer, BUFFER_SIZE - 1, 0);
+
+        buffer[bytes_received] = '\0';
+        printf("Parent: Received message: %s\n", buffer);
+
+        close(client_fd);
+        close(server_fd);
+
+        // Wait for child to finish
+        wait(NULL);
+
+        // Remove the socket file
+        unlink(SOCKET_NAME);
+    }
+
+    return 0;
+}
+```

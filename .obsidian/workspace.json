@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_678/3- Processes.md",
+                "file": "EECS_678/4- Threads.md",
                 "mode": "source",
                 "source": false
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_678/3- Processes.md",
+                "file": "EECS_678/4- Threads.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_678/3- Processes.md",
+                "file": "EECS_678/4- Threads.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_678/3- Processes.md"
+                "file": "EECS_678/4- Threads.md"
               }
             }
           }
@@ -197,8 +197,8 @@
   },
   "active": "b555efabddb954e7",
   "lastOpenFiles": [
-    "EECS_678/4- Threads.md",
     "EECS_678/3- Processes.md",
+    "EECS_678/4- Threads.md",
     "EECS_678/4.1 Quiz answers.md",
     "EECS_678/Pasted image 20241004143815.png",
     "EECS_678/Pasted image 20241004143708.png",

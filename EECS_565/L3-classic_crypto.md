@@ -44,7 +44,7 @@ Substitute one letter with another
 Monoalphabetic: each letter only used once
 Key is the mapping from one set of 26 letters to another
 
-$26! \approx 4 * 10^26$
+$26! \approx 4 * 10^{26}$ 
 How to crack:
 	Brute force doesn't really work
 	Freq analysis, most common letter is e, second is t, 3rd is a

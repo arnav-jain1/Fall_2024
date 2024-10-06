@@ -30,7 +30,7 @@ True, registers managed by the CPU
 (b) The user can directly manage the disk.  
 False, requires OS
 
-10. The OS provides a virtualization. Explain.  
+10. **The OS provides a virtualization. Explain.**  
 No it is a layer between OS and hardware
 # Chapter 2  
 1. Name a few OS services to help the user.  

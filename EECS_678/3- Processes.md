@@ -4,7 +4,7 @@ Process aka job:
 	Instance of a program that is being executed sequentially 
 	Must be executed sequentially
 Program
-	passive entity, not being executed
+	passive entity, not being executedi
 	Only contains text
 		Code, data, PC, heap, stack, registers
 	Programs become processes when loaded into memory
@@ -80,7 +80,7 @@ Implemented with **task_struct** in the linux kernel
 # Context switch
 Process of storing and restoring the state (*context*) of CPU so that multiple processes can share a CPU
 	Time shared, multiprogramming env
-	*Context* represented in PCB
+	*Context* represented in PCBi
 	Save current process then restore the next process
 	Switching from user <-> kernel is a mode switch
 	*Updates accounting information and other PCB data*

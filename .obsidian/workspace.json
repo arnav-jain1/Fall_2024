@@ -25,13 +25,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_678/1- Intro.md",
+                "file": "EECS_678/3- Processes.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -97,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_678/Exam Q.md",
+                "file": "EECS_678/3- Processes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_678/Exam Q.md",
+                "file": "EECS_678/3- Processes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_678/Exam Q.md"
+                "file": "EECS_678/3- Processes.md"
               }
             }
           }
@@ -158,11 +159,13 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "b555efabddb954e7",
+  "active": "dbdfc4e25a180ff8",
   "lastOpenFiles": [
-    "EECS_678/1- Intro.md",
+    "EECS_678/4- Threads.md",
     "EECS_678/Exam Q.md",
     "EECS_678/Exam_1.md",
+    "EECS_678/3- Processes.md",
+    "EECS_678/1- Intro.md",
     "EECS_678/4.1 Quiz answers.md",
     "EECS_678/Pasted image 20241006105236.png",
     "EECS_678/Pasted image 20241006104950.png",
@@ -173,8 +176,6 @@
     "EECS_565/L4-Classic Crypto 2.md",
     "EECS_565/L3-classic_crypto.md",
     "EECS_565/L2.md",
-    "EECS_678/4- Threads.md",
-    "EECS_678/3- Processes.md",
     "EECS_678/2-Services.md",
     "EECS_678/Pasted image 20241005203258.png",
     "latex guide.md",

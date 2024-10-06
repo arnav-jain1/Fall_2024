@@ -551,7 +551,7 @@ Unix vs Internet:
 	Internet uses IP addresses
 
 Server vs client:
-	Server has to use socket() listen() and accept() (and bind)
+	Server has to use socket() listen() and recieve() (and bind)
 		Server handles multiple clients by making a new fd for each connection
 		backlog in listen() specifies max number of pending connection
 	Client just uses connect() to connect to a server

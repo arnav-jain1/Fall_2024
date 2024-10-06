@@ -174,7 +174,68 @@ Bad for multicore programs because one thread freezing up will cause all of them
 6. What system call is used to create threads in Linux?  
 pthread_attr_init
 7. Write a simple program that contains two global variables num1 and num2. The program  then: (a) creates two threads, (b) Thread-1 performs num1+num2 and returns the result,  (c) Thread-2 performs num1-num2 and returns the result, (d) Main thread displays the two  returned results and exits.  
+```C
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
 
+// Global variables
+int num1 = 10;
+int num2 = 5;
+
+// Thread function for addition
+void* add_thread(void* arg) {
+    int* result = malloc(sizeof(int));
+    *result = num1 + num2;
+    return (void*)result;
+}
+
+// Thread function for subtraction
+void* subtract_thread(void* arg) {
+    int* result = malloc(sizeof(int));
+    *result = num1 - num2;
+    return (void*)result;
+}
+
+int main() {
+    pthread_t thread1, thread2;
+    int *result1, *result2;
+
+    // Create Thread-1 for addition
+    if (pthread_create(&thread1, NULL, add_thread, NULL) != 0) {
+        fprintf(stderr, "Error creating thread 1\n");
+        return 1;
+    }
+
+    // Create Thread-2 for subtraction
+    if (pthread_create(&thread2, NULL, subtract_thread, NULL) != 0) {
+        fprintf(stderr, "Error creating thread 2\n");
+        return 1;
+    }
+
+    // Wait for Thread-1 to complete and get its result
+    if (pthread_join(thread1, (void**)&result1) != 0) {
+        fprintf(stderr, "Error joining thread 1\n");
+        return 1;
+    }
+
+    // Wait for Thread-2 to complete and get its result
+    if (pthread_join(thread2, (void**)&result2) != 0) {
+        fprintf(stderr, "Error joining thread 2\n");
+        return 1;
+    }
+
+    // Display the results
+    printf("Addition result: %d\n", *result1);
+    printf("Subtraction result: %d\n", *result2);
+
+    // Free the dynamically allocated memory
+    free(result1);
+    free(result2);
+
+    return 0;
+}
+```
 8. How do system calls fork and exec operate if invoked from multi-threaded programs? (You  may use Linux as an example.)  
 forks clone only the main thread and exec overrides all threads
 

@@ -51,3 +51,44 @@ No way to check message is from right person
 
 Solution 1: Select permanent public and private numbers and publish public key
 Solution 2: Authenticate the communication parties and verify message is not modified
+
+# Public key cryptography (Asym enc)
+Each user has their own pair of keys (public, private)
+Key owner lets public key be public (private hard to infer)
+
+## Requirements:
+Computationally easy to encipher/decipher
+Computationally infeasible to determine private key from public
+Computationally infeasible to get private key from chosen plaintext attack
+
+## Components
+Easy to make public/private key $(pk, sk)$
+Encryption: Easy to encrypt given a public key $C=E(pk, M)$
+Decryption: Easy to decrypt given ciphertext and priv key
+
+
+# RSA
+Based off difficulty of factoring large composite numbers
+e = public key
+d = priv key
+Recommended is 2048 bits
+Encryption:
+$$c = m^{e} \space mod \space n$$
+Decryption:
+$$m = c^{d} \space mod \space n$$
+Signing is the same thing
+**Note:** Exponentiation is MUCH slower than AES
+
+
+## Key gen
+1. Find 2 large primes p and q (p =/= q)
+2. n = p * q  and $\phi(n) = (p-1)(q-1)$  
+3. Chose a random int e so that phi and e are relatively prime: gcd(e, $\phi(n)$)=1 public key is (e, n)
+4. d = $e^{-1}mod \phi(n)$ and then (d,n) becomes the private key
+This is then used in encryption and decryption
+This has confidentiality, integrity, and auth
+
+## Why good?
+Do NOT use same n among multiple users
+Factoring problem: Prime factorization is hard and takes a while
+Given 

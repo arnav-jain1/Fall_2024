@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "98d12da44767386d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "EECS_565/L8-part 1.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -159,10 +171,13 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "dbdfc4e25a180ff8",
+  "active": "98d12da44767386d",
   "lastOpenFiles": [
-    "EECS_565/L7-asymmetric encryption.md",
+    "EECS_565/L4-Classic Crypto 2.md",
+    "EECS_565/L5-Symmetric Encryption.md",
     "EECS_565/L6- Symmetric Encryption 2.md",
+    "EECS_565/L7-asymmetric encryption.md",
+    "EECS_565/L8-part 1.md",
     "EECS_658/daily_assignments/12-10-8.md",
     "EECS_678/Exam_1.md",
     "EECS_678/Exam Q.md",
@@ -175,9 +190,6 @@
     "EECS_678/1- Intro.md",
     "EECS_678/Pasted image 20241006105236.png",
     "EECS_678/Pasted image 20241006104950.png",
-    "EECS_565/L8-part 1.md",
-    "EECS_565/L5-Symmetric Encryption.md",
-    "EECS_565/L4-Classic Crypto 2.md",
     "EECS_565/L3-classic_crypto.md",
     "EECS_565/L2.md",
     "EECS_678/2-Services.md",

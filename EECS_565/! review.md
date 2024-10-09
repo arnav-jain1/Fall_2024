@@ -129,4 +129,24 @@ MAC
 	Collision resistant 
 
 CMAC: Cipher based MAC
-	Apply new key to 
+	Apply new key to last few bits of plaintext to verify
+
+
+
+# LAst one
+for n users, $\frac{n(n-1)}{2}$ keys are needed
+
+## Diffie Hellman
+Negotiate secret over insecure media
+One side shared g^a mod p and the other shares g^b mod p so they both have g^ab 
+Vulnerable to man in the middle because can intercept and exchange info with middleman without knowing
+Good because 
+	Given g^a hard to determine a
+	Given g^a and g^b hard to get g^ab unless you know a and b
+	Cant get difference between g^ab and r where r 
+
+## PKC
+Requirements
+1. Computationally easy to encipher and decipher
+2. Impossible to get private key from public key
+3. Impossible to get private key from chosen plaintext attack (can encrypt whatever you want)

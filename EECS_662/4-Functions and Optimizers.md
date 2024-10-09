@@ -1,3 +1,4 @@
+call by name vs call by value is on midterm
 # Important defn
 First order functions: Cannot take other funcs as arguments 
 	C technically but func pointers exist
@@ -249,7 +250,27 @@ evalM Bind i a s = do { va <- evalM a
 
 evalM Bind i a s = evalM (App (Lambda i s) a)
 ```
+Call by value means you evaluate it before you pass it in
+Call by name you straight up pass the param
+so like
+```python
+test(1+1,1)
+```
+for call by value you pass 2
+For call by name you pass 1+1
+### Call by name
+```haskell
+evalM Lambda i s = Just (Lambda i s)
+evalM (Id _) = Nothing
+evalM App f a = do { (Lambda i s) <- evalM f;
+					 evalM (subst a i s) }
+evalM Bind i a s = evalM (subst (evalM a) i s)
+```
 
+```
+ones = 1:ones
+```
+Good for modeling things that run forever (OS, clock) but only possible with call by name
 ### Small examples:
 ```
 bind f = (lambda x in x) in (f 2)
@@ -257,6 +278,20 @@ bind f = (lambda x in x) in (f 2)
 == (lambda x in x) 2
 == [x->2]x
 == 2
+```
+
+```
+bind f = (lambda x in x) in (f 2+1)
+== [f->lambda x in x] (f 2+1)
+== (lambda x in x) (2+1)
+-- call by name
+== [x->2+1]x
+== 2+1
+== 3
+-- call by value
+== (lambda x in x) (3)
+== [x->3]x
+== 3
 ```
 
 ```
@@ -275,3 +310,53 @@ bind n = 1 in
 
 
 Note: (f a) -> (App f a)
+
+```haskell
+Env = [(String, FBAE)]
+
+eval e (Lambda i s) = (Lambda i s)
+-- intuition comes from bind and app being similar for below
+eval e (App f a) = do {(Lambda i s) <- eval e f; 
+						va <- eval e a;
+						eval (i, va):e s; }
+-- Looks for i in current env, if found will return the value otherwise will return Nothing
+eval e (Id i) = (lookup i e)
+```
+**Lambda is a value**
+
+
+```
+bind n = 1 in                       [(n, 1)]
+	bind f = (lambda x in x + n) in [f, (lambda x in x+n), (n,1)]
+		bind n = 2 in               [(n, 2), (f, (lambda x in x+n)),(n,1)]
+			f 1                     
+
+== (lambda x in x + n) 1            [(n, 2), (f, (lambda x in x+n)),(n,1)]
+== x+n                          [(x,1),(n, 2),(f,(lambda x in x+n)),(n,1)]
+== 1+n                              [(n, 2), (f, (lambda x in x+n)),(n,1)]
+== 1+2                              [(f, (lambda x in x+n)),(n,1)]
+== 3
+```
+BUT THIS IS WRONG (because 2 got subst for where it shouldnt have)
+
+## Scoping
+Static scoping: Scope where lambda is *defined*, correct way
+Dynamic scoping: Scope where lambda is *used*
+```
+bind n = 1 in                       -- defined here for static
+	bind f = (lambda x in x + n) in 
+		bind n = 2 in               
+			f 1                     -- defined here for dynamic
+
+```
+
+```
+	bind n = 1 in                                                 [(n, 1)]
+	bind f = (lambda x in x + n) in  [f, (lambda x in x+n) [(n,1)], (n,1)]
+		bind n = 2 in      [(n, 2), (f, (lambda x in x+n) [(n,1)]), (n,1)]
+			f 1                     
+
+== (lambda x in x + n [(n, 1)]) 1
+== x+n               [(x, 1),(n, 2),(f, (lambda x in x+n) [(n,1)]), (n,1)]
+== 1+1
+```

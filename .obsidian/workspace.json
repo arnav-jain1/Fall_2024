@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_678/Exam Q.md",
+                "file": "EECS_662/4-Functions and Optimizers.md",
                 "mode": "source",
                 "source": false
               }
@@ -82,8 +82,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "4944d183f0e707ac",
@@ -162,8 +161,10 @@
   },
   "active": "98d12da44767386d",
   "lastOpenFiles": [
-    "EECS_565/L8-part 1.md",
+    "EECS_662/4-Functions and Optimizers.md",
+    "EECS_678/Exam Q.md",
     "EECS_565/! review.md",
+    "EECS_565/L8-part 1.md",
     "EECS_658/daily_assignments/12-10-8.md",
     "EECS_658/submissions/12-10-8.pdf",
     "EECS_565/L4-Classic Crypto 2.md",
@@ -171,7 +172,6 @@
     "EECS_565/L6- Symmetric Encryption 2.md",
     "EECS_565/L7-asymmetric encryption.md",
     "EECS_678/Exam_1.md",
-    "EECS_678/Exam Q.md",
     "EECS_678/4.1 Quiz answers.md",
     "EECS_678/Pasted image 20241006192857.png",
     "EECS_678/Pasted image 20241006192702.png",
@@ -192,7 +192,6 @@
     "EECS_678/Pasted image 20241004143708.png",
     "EECS_678/Pasted image 20241004143614.png",
     "EECS_678/Pasted image 20241004143546.png",
-    "EECS_662/4-Functions and Optimizers.md",
     "EECS_662/proj1/p1.hs~",
     "EECS_662/2- First language.md",
     "EECS_510/8-29.md",

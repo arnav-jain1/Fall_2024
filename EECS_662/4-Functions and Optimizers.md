@@ -360,3 +360,11 @@ bind n = 1 in                       -- defined here for static
 == x+n               [(x, 1),(n, 2),(f, (lambda x in x+n) [(n,1)]), (n,1)]
 == 1+1
 ```
+
+Watch backaroo bonsai
+
+Every question is 5 pts
+
+Except tf 15 or so
+
+Differed vs Immediate subst, types of vars

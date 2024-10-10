@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_662/4-Functions and Optimizers.md",
+                "file": "EECS_662/5- Post exam 1.md",
                 "mode": "source",
                 "source": false
               }
@@ -31,8 +31,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_565/! review.md",
+                "file": "EECS_662/5- Post exam 1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_565/! review.md",
+                "file": "EECS_662/5- Post exam 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_565/! review.md"
+                "file": "EECS_662/5- Post exam 1.md"
               }
             }
           }
@@ -159,11 +158,12 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "98d12da44767386d",
+  "active": "b555efabddb954e7",
   "lastOpenFiles": [
     "EECS_662/4-Functions and Optimizers.md",
-    "EECS_678/Exam Q.md",
+    "EECS_662/5- Post exam 1.md",
     "EECS_565/! review.md",
+    "EECS_678/Exam Q.md",
     "EECS_565/L8-part 1.md",
     "EECS_658/daily_assignments/12-10-8.md",
     "EECS_658/submissions/12-10-8.pdf",
@@ -205,7 +205,6 @@
     "EECS_565/miniproj/MP2/report.txt~",
     "EECS_678/!questions.md",
     "EECS_678/labs/eecs678_lab4/thread-1.c~",
-    "EECS_678/labs/eecs678_lab4/thread1",
-    "EECS_658/daily_assignments/10-10-3.md"
+    "EECS_678/labs/eecs678_lab4/thread1"
   ]
 }

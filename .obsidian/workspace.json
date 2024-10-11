@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_678/4- Threads.md",
+                "file": "EECS_678/5- Sync.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_678/4- Threads.md",
+                "file": "EECS_678/5- Sync.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_678/4- Threads.md",
+                "file": "EECS_678/5- Sync.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_678/4- Threads.md"
+                "file": "EECS_678/5- Sync.md"
               }
             }
           }
@@ -160,6 +160,11 @@
   },
   "active": "b555efabddb954e7",
   "lastOpenFiles": [
+    "EECS_678/Pasted image 20241011144617.png",
+    "EECS_678/Pasted image 20241011142306.png",
+    "EECS_678/Pasted image 20241011141516.png",
+    "EECS_678/4- Threads.md",
+    "EECS_678/5- Sync.md",
     "EECS_678/Pasted image 20241011132430.png",
     "EECS_678/Pasted image 20241011132212.png",
     "EECS_658/13-10-10.md",
@@ -179,9 +184,6 @@
     "EECS_678/labs/KUEECS678-Fall2024-main/projects/buddy/doc/html/search/mag_sel.png",
     "EECS_678/labs/KUEECS678-Fall2024-main/projects/buddy/doc/html/search/close.png",
     "EECS_678/labs/KUEECS678-Fall2024-main/projects/quash/doc/html/search/search_r.png",
-    "EECS_678/labs/KUEECS678-Fall2024-main/projects/quash/doc/html/search/search_m.png",
-    "EECS_678/labs/KUEECS678-Fall2024-main/projects/quash/doc/html/search/search_l.png",
-    "EECS_678/labs/KUEECS678-Fall2024-main/projects/quash/doc/html/search/mag_sel.png",
     "EECS_678/labs/KUEECS678-Fall2024-main/projects/buddy/README.md",
     "EECS_678/labs/KUEECS678-Fall2024-main/projects/quash/README.md",
     "EECS_565/L10  PKI.md",
@@ -199,12 +201,10 @@
     "EECS_678/Exam_1.md",
     "EECS_678/4.1 Quiz answers.md",
     "EECS_678/3- Processes.md",
-    "EECS_678/4- Threads.md",
     "EECS_678/1- Intro.md",
     "EECS_565/L3-classic_crypto.md",
     "EECS_565/L2.md",
     "EECS_678/2-Services.md",
-    "latex guide.md",
-    "Untitled.md"
+    "latex guide.md"
   ]
 }

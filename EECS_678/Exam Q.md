@@ -242,3 +242,8 @@ forks clone only the main thread and exec overrides all threads
 9. Explain the two mechanisms of thread cancellation.  
 
 10. How are synchronous and asynchronous signals handled in a multi-threaded program?
+
+
+![[Pasted image 20241016140328.png]]
+3. SHould be false, requires syscall but not privaleged mode, can do it from user
+9.  Need a wait for each child

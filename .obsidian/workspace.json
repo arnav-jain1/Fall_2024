@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_565/L10  PKI.md",
+                "file": "EECS_662/2- First language.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EECS_565/L10  PKI.md",
+                "file": "EECS_662/2- First language.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EECS_565/L10  PKI.md",
+                "file": "EECS_662/2- First language.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EECS_565/L10  PKI.md"
+                "file": "EECS_662/2- First language.md"
               }
             }
           }
@@ -160,6 +160,8 @@
   },
   "active": "b555efabddb954e7",
   "lastOpenFiles": [
+    "EECS_662/1- Intro.md",
+    "EECS_565/L10  PKI.md",
     "EECS_678/5- Sync.md",
     "EECS_658/ArnavJain_Assignment4/CompareFeatureSelection.py~",
     "EECS_658/ArnavJain_Assignment4/iris.csv",
@@ -185,7 +187,6 @@
     "EECS_678/labs/KUEECS678-Fall2024-main/projects/buddy/doc/html/search/close.png",
     "EECS_678/labs/KUEECS678-Fall2024-main/projects/buddy/README.md",
     "EECS_678/labs/KUEECS678-Fall2024-main/projects/quash/README.md",
-    "EECS_565/L10  PKI.md",
     "EECS_565/L9- auth.md",
     "EECS_662/4-Functions and Optimizers.md",
     "EECS_662/5- Post exam 1.md",

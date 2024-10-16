@@ -37,7 +37,7 @@ if redefined, do not substitute
 Example 3
 ```haskell
 bind x=5 in
-== bind x=6+x in x + x
+	bind x=6+x in x + x
 == (6+5) + (6+5)
 == (11) + (11)
 == 22

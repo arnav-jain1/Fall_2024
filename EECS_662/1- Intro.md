@@ -328,7 +328,7 @@ If A and B are true, then B is true
 ##### Note Notational convention
 v is a var for values
 t is for terms 
-$\pminus$ is an operation in concrete syntax while + is haskell 
+$\pm$ is an operation in concrete syntax while + is haskell 
 $t_{1}\Downarrow t_{2}$ t1 evaluates to t2
 
 `eval (Num v) = v` a number v in my language evalutes to v no matter what

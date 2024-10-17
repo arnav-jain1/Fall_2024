@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "10-17"
             }
+          },
+          {
+            "id": "b9cc19876beb1745",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "EECS_565/L10- PKI.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "L10- PKI"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -177,9 +191,12 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "28750cef7e9b0dea",
+  "active": "b9cc19876beb1745",
   "lastOpenFiles": [
     "EECS_510/10-17.md",
+    "EECS_510/Pasted image 20241017121357.png",
+    "EECS_510/Pasted image 20241017120742.png",
+    "EECS_510/Pasted image 20241017120722.png",
     "EECS_510/Pasted image 20241017083350.png",
     "EECS_510/Pasted image 20241017083346.png",
     "EECS_510/Pasted image 20241017082551.png",
@@ -194,7 +211,7 @@
     "EECS_678/Other.md",
     "EECS_678/Exam_1.md",
     "EECS_662/1- Intro.md",
-    "EECS_565/L10  PKI.md",
+    "EECS_565/L10- PKI.md",
     "EECS_678/5- Sync.md",
     "EECS_658/ArnavJain_Assignment4/CompareFeatureSelection.py~",
     "EECS_658/ArnavJain_Assignment4/iris.csv",
@@ -202,10 +219,7 @@
     "EECS_658/ArnavJain_Assignment4",
     "EECS_678/Pasted image 20241011144617.png",
     "EECS_678/Pasted image 20241011142306.png",
-    "EECS_678/Pasted image 20241011141516.png",
     "EECS_678/4- Threads.md",
-    "EECS_678/Pasted image 20241011132430.png",
-    "EECS_678/Pasted image 20241011132212.png",
     "EECS_658/13-10-10.md",
     "EECS_678/labs/Lab5/eecs678-pthreads_intro-lab/3097021-pthreads_intro-lab/ptcount_atomic-c.txt",
     "EECS_678/labs/Lab5/eecs678-pthreads_intro-lab/3097021-pthreads_intro-lab",

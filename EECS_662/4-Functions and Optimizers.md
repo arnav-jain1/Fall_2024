@@ -351,7 +351,7 @@ bind n = 1 in                       -- defined here for static
 ```
 
 ```
-	bind n = 1 in                                                 [(n, 1)]
+bind n = 1 in                                                     [(n, 1)]
 	bind f = (lambda x in x + n) in  [f, (lambda x in x+n) [(n,1)], (n,1)]
 		bind n = 2 in      [(n, 2), (f, (lambda x in x+n) [(n,1)]), (n,1)]
 			f 1                     
@@ -368,3 +368,6 @@ Every question is 5 pts
 Except tf 15 or so
 
 Differed vs Immediate subst, types of vars
+
+
+((Lambda i s) a) == bind i a s

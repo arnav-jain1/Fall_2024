@@ -371,3 +371,4 @@ Differed vs Immediate subst, types of vars
 
 
 ((Lambda i s) a) == bind i a s
+

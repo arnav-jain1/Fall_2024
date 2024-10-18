@@ -44,7 +44,7 @@ CA is a trusted third party that issues certificates
 	Can also be a CA for ourselves (self-signed certificates)
 	
 
-### Trust models
+#### Trust models
 Hierarchical CAs with cross-certification (Multiple roots that certify each other)
 Oligarchy model: 
 	Browsers and OSes come pre-configed with root CA's certificates
@@ -53,3 +53,42 @@ Distributed model:
 	No root, users certify each other for "web of trust"
 
 Trusted root authority helps make a certificate chain. User 1 certifies user 2 which certifies user 3...
+
+
+### Certificates
+When you connect to canvas, our browser certifies the KU canvas server
+SSL/TLS authenticates the server (makes sure it isnt the imposter) and then encrypts the traffic
+
+#### X.508
+Most widely accepted format for PK certs
+![[Pasted image 20241017171559.png]]
+
+There is a root CA (canvas), and intermediate CA that authorized canvas and an expiration for it
+![[Pasted image 20241017171655.png]]
+Canvas is trustable if you trust Lets Encrypt
+
+Certificate is a token with:
+	Identity of principal (bob in this case)
+	Public key
+	Timestamp, 
+	Signature (signing the hash of the first part)
+	Any other information like hash algo, key length
+![[Pasted image 20241017171903.png]]
+So when alice gets the certificate, Alice decrypts the sig using the public key. She then hashes the first half and if the output is the same as the decrypted message, then Bob is verified. This all depends on the fact that the CA is trusted.
+	"Bob is endorsed by the CA"
+![[Pasted image 20241017172207.png]]
+
+#### Revokation
+These certificates can expire or they can be revoked
+Reasons for recovations
+	User no longer authorized
+	User lost priv key
+	CA comprimized 
+	Hashing algorithm compromized (MD5)
+Revoking is important
+
+How to know which ones have been revoked?
+	Certificate Revocation List (CRL): Long list of revocations, would work but could get super big and annoying for browsers to save
+		Delta CRL only has the additions to the list making it shorter
+	Online Certificate Status Protocol (OCSP)
+		When a certificate is presented, recipient goes to online revokation service to ensure the certificate is still valid

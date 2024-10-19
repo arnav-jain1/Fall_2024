@@ -59,7 +59,7 @@ Trusted root authority helps make a certificate chain. User 1 certifies user 2 w
 When you connect to canvas, our browser certifies the KU canvas server
 SSL/TLS authenticates the server (makes sure it isnt the imposter) and then encrypts the traffic
 
-#### X.508
+#### X.509
 Most widely accepted format for PK certs
 ![[Pasted image 20241017171559.png]]
 
@@ -92,3 +92,11 @@ How to know which ones have been revoked?
 		Delta CRL only has the additions to the list making it shorter
 	Online Certificate Status Protocol (OCSP)
 		When a certificate is presented, recipient goes to online revokation service to ensure the certificate is still valid
+
+#### PKI Security
+If the root authority is compromised, then the certificate chain is corrupted
+Many challenges:
+	Hash collisions (due to weak algorithms like MD5)
+	Weak security at CAs (attacks causing malicious people to be authorized)
+	Users unaware of attacks
+

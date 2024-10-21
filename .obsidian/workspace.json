@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_565/miniproj/MP3/report.md",
+                "file": "EECS_658/daily_assignments/16-10-24.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "report"
+              "title": "16-10-24"
             }
           }
         ],
@@ -179,21 +179,23 @@
   },
   "active": "28750cef7e9b0dea",
   "lastOpenFiles": [
-    "EECS_565/miniproj/MP3/report.md~",
-    "EECS_565/miniproj/MP3/task3/printall",
-    "EECS_565/miniproj/MP3/task3/printall.c",
-    "EECS_565/miniproj/MP3/task3",
-    "EECS_565/miniproj/MP3/task2/mysystem_output.txt",
-    "EECS_565/miniproj/MP3/task2/mysystem",
-    "EECS_565/miniproj/MP3/task2/mysystem.c",
-    "EECS_565/miniproj/MP3/4913",
-    "EECS_565/miniproj/MP3/task2/myenv.c~",
-    "EECS_565/miniproj/MP3/task2/myenv",
-    "EECS_565/miniproj/MP3/task2/myenv.c",
+    "EECS_658/submissions/16-10-24.pdf",
+    "EECS_658/submissions/15-10-22.pdf",
+    "EECS_658/daily_assignments/16-10-24.pdf",
+    "EECS_658/daily_assignments/lu91172lud4z.tmp",
+    "EECS_658/daily_assignments/15-10-22.pdf",
+    "EECS_658/daily_assignments/lu91094lu8ys.tmp",
+    "EECS_658/daily_assignments/15-10-22.md",
+    "EECS_658/daily_assignments/16-10-24.md",
+    "EECS_565/miniproj/MP3/report.md",
+    "EECS_658/ArnavJain_Assignment4/ArnavJain_Assignment4.zip",
+    "EECS_658/ArnavJain_Assignment4.zip",
+    "EECS_658/zirrY1MO",
+    "EECS_658/ArnavJain_Assignment3/ArnavJain_Assignment3.zip",
+    "EECS_658/ArnavJain_Assignment4/CompareFeatureSelection.py~",
     "EECS_565/miniproj/MP3/Pasted image 20241018203502.png",
     "EECS_565/miniproj/MP3/Pasted image 20241018163639.png",
     "EECS_510/10-17.md",
-    "EECS_565/miniproj/MP3/report.md",
     "Untitled.md",
     "EECS_510/Pasted image 20241018155832.png",
     "EECS_565/L10- PKI.md",
@@ -215,15 +217,13 @@
     "EECS_678/Other.md",
     "EECS_678/Exam_1.md",
     "EECS_678/4- Threads.md",
-    "EECS_658/13-10-10.md",
+    "EECS_658/daily_assignments/13-10-10.md",
     "EECS_678/labs/KUEECS678-Fall2024-main/projects/buddy/README.md",
     "EECS_678/labs/KUEECS678-Fall2024-main/projects/quash/README.md",
     "EECS_565/L9- auth.md",
     "EECS_565/L8-part 1.md",
     "EECS_658/daily_assignments/12-10-8.md",
     "EECS_565/L4-Classic Crypto 2.md",
-    "EECS_565/L5-Symmetric Encryption.md",
-    "EECS_565/L6- Symmetric Encryption 2.md",
-    "EECS_565/L7-asymmetric encryption.md"
+    "EECS_565/L5-Symmetric Encryption.md"
   ]
 }

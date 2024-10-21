@@ -305,6 +305,7 @@ def main():
 
     
 
+    # Runs the Genetic algorithm function
     name = "Part 4"
     print(f"--------------------{name}--------------------")
 

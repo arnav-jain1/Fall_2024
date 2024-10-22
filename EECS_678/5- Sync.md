@@ -118,5 +118,46 @@ target is saved, then changed to true, then the old target is returned
 all in one step
 
 ![[Pasted image 20241018144047.png]]
-If mutex is false, it is set to true and will continue through the while loop since it returns false
+If mutex is false, it is set to true and will continue through the while loop since it returns false. 
 If it is true, then it will continue
+
+3 desirables:
+	Mutual exclusion: maintained because only at once
+	Progress is mantained because process gets access right away if critical section is free
+	Bounded waiting (fairness): Not guarenteed because one can be in critical section for any amount of time
+
+
+
+Getting fairness
+![[Pasted image 20241021141241.png]]
+Assumption: 
+	processes numbered 0..n
+	waiting is shared but one spot for each process
+Initially, the lock is false
+
+the while loops keep going until unlocked
+The j part checks (sequencially) if the other processes are waiting and then it will hand the lock over to another process (only unlocks if none are waiting)
+This gives fairness
+<mark style="background: #FF5582A6;">not entirely sure why</mark>
+
+
+## Semaphores
+Higher level solution than ISA instructions (provided by OS)
+Similar to locks but with different semantics
+Simple def:
+	int value accessed in init, wait, and signal
+	All are atomic
+Binary semaphores: 0,1 for mutex
+Counting semaphore: any int value with access to some finite value
+
+![[Pasted image 20241021142700.png]]
+Similar to before
+S should always be 1 or 0
+
+Desirables
+	Mutual exclusion: maintained because only at once
+	Progress is mantained because process gets access right away if critical section is free
+	Bounded waiting (fairness): Not guarenteed because one can be in critical section for any amount of time
+
+Spinlocks: Process spins forever
+Issues with the previous ones is that the processors are waiting and not doing work, they are spinning

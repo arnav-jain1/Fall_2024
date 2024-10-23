@@ -153,6 +153,7 @@ Counting semaphore: any int value with access to some finite value
 ![[Pasted image 20241021142700.png]]
 Similar to before
 S should always be 1 or 0
+Only one process waiting at a time, it will wait until the other process gets to the signal
 
 Desirables
 	Mutual exclusion: maintained because only at once
@@ -160,4 +161,57 @@ Desirables
 	Bounded waiting (fairness): Not guarenteed because one can be in critical section for any amount of time
 
 Spinlocks: Process spins forever
-Issues with the previous ones is that the processors are waiting and not doing work, they are spinning
+Issues with the previous ones is that the processors are waiting and not doing work, they are spinning and the wait could be forever
+	Note: Multiprocessors still use busy waiting
+
+
+### Semaphore w no busy waiting !!
+Associate waiting queue with each semaphore 
+```c
+typedef struct {
+	int value;
+	struct process *list
+} semaphore;
+```
+![[Pasted image 20241023141941.png]]
+wait will suspend the process entirely and signal will bring it from ready to execution
+These 2 still need atomicity
+	One way is to dissable interrupts
+	Another is to have spinlocks around wait and signal
+Spinning not entirely gone but shifted (and reduced)
+
+
+### Deadlock/Starvation
+2+ processes waiting for each other to do something that only the other can do
+Essentially both are just waiting for each other
+![[Pasted image 20241023142738.png]]
+If both S and Q are 1, then P0 is waiting for P1 (Q to become 0) to finish and and p1 is waiting for p0 (S to become 0) to finish.
+
+
+Starvation is when process is waiting indefinitely (will never be removed from semaphore queue)
+	caused by scheduling
+Priority inversion: Lower-priority process holds blocks a higher priority process from running
+	Example, 3 processes L < M < H
+	Let L be producer and H be consumer
+	Since M has higher priority, M preempts L this causes L to be after M and since H needs to wait for L, H has to wait for L and M
+	sols: 2 priorities max, give the producer that is lower priority higher priority
+
+#### Bounded buffer problem
+Set of resource buffers shared by producer and consumer
+Producer waits when buffer full and consumer waits when empty
+We want consumer to see each item EXACTLY one time
+SOlution (3 semaphores):
+	Mutex semaphore that allows exclusive access
+	Empty (counting semaphore) which counts empty buffers (initialize to num buff)
+	Full: same as empty but for full (initialize to 0)
+
+![[Pasted image 20241023144146.png]]
+
+#### Readers - Writers problem
+Some threads only read (not consumers, only read dont remove), others only write
+Readers can go at same time but writers can't go concurrently
+Want to make sure they don't overwrite each other and readers dont read while being written
+2 semaphores:
+	mutex: ensure mutual exclusion for readcount, initialized as 1 (readers block each other from updating a counter)
+	wrt: ensure mutual exclusion for writers and between writers and readers
+	

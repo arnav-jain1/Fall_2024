@@ -41,15 +41,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "latex guide.md",
+                "file": "EECS_678/5- Sync.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "latex guide"
+              "title": "5- Sync"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -190,8 +191,21 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "b555efabddb954e7",
+  "active": "5427cee4647206d3",
   "lastOpenFiles": [
+    "EECS_678/labs/pthreads_dp/dp_waiter.c",
+    "EECS_678/labs/pthreads_dp/dp_asymmetric.c",
+    "EECS_678/labs/pthreads_dp/dining_philosophers.c",
+    "EECS_678/labs/pthreads_dp/Makefile",
+    "EECS_678/labs/pthreads_dp",
+    "EECS_678/labs/eecs678-pthreads_dp-lab.tar.gz",
+    "EECS_678/eecs678-pthreads_dp-lab.tar.gz",
+    "eecs678-pthreads_dp-lab.tar.gz",
+    "EECS_678/Pasted image 20241023144146.png",
+    "EECS_678/Pasted image 20241023142738.png",
+    "EECS_678/Pasted image 20241023141941.png",
+    "latex guide.md",
+    "EECS_565/L12- OS Sec 2.md",
     "EECS_565/Pasted image 20241023121329.png",
     "EECS_565/Pasted image 20241023115423.png",
     "EECS_565/Pasted image 20241023114557.png",
@@ -199,19 +213,12 @@
     "EECS_565/Pasted image 20241023113107.png",
     "EECS_565/Pasted image 20241023112732.png",
     "EECS_565/L11-OS Sec.md",
-    "EECS_565/L12- OS Sec 2.md",
     "EECS_565/L10- PKI.md",
     "interview/System Design/1- Soft arch.md",
     "EECS_658/ArnavJain_Assignment5/a5.py~",
     "EECS_658/ArnavJain_Assignment5/imbalanced iris.csv",
     "EECS_658/imbalanced iris.csv",
-    "imbalanced iris.csv",
-    "EECS_658/ArnavJain_Assignment5/a5.py",
-    "EECS_658/ArnavJain_Assignment5",
     "EECS_662/5- Post exam 1.md",
-    "interview/System Design",
-    "interview",
-    "latex guide.md",
     "Untitled.md",
     "README.md",
     "jobs.md",
@@ -219,16 +226,10 @@
     "EECS_678/3- Processes.md",
     "EECS_678/5- Sync.md",
     "EECS_678/Pasted image 20241021142700.png",
-    "EECS_678/Pasted image 20241021141241.png",
     "EECS_658/daily_assignments/16-10-24.md",
-    "EECS_658/submissions/16-10-24.pdf",
-    "EECS_658/submissions/15-10-22.pdf",
     "EECS_658/daily_assignments/15-10-22.md",
     "EECS_565/miniproj/MP3/report.md",
-    "EECS_565/miniproj/MP3/Pasted image 20241018203502.png",
-    "EECS_565/miniproj/MP3/Pasted image 20241018163639.png",
     "EECS_510/10-17.md",
-    "EECS_510/Pasted image 20241018155832.png",
     "EECS_662/4-Functions and Optimizers.md",
     "EECS_662/3- type checking.md",
     "EECS_662/1- Intro.md",

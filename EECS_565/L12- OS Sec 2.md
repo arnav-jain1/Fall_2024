@@ -25,7 +25,7 @@ Access control modes:
 	Object: The entity trying to be accessed 
 	Access rights: how the subject is allowed to access the object
 
-### Discresionary Access Control (DAC)
+### Discretionary Access Control (DAC)
 Standard in OSes and very common in multiuser platforms like DBs, OS
 
 Concept: User protects what they own
@@ -81,4 +81,53 @@ In file has a set of bits that signify the permissions
 
 Usually, users wont make changes that will affect other users but sometimes, you need to install/fix things
 	Becomes superuser, account with more privileges (root for linux, administrator for windows)
+
+
+Modern OS have extended ACL (free BSD still has 9)
+	setfacl assigns list of perms for users/groups to a file
+	mask has maximum perms for any user, cant exceed those perms
+![[Pasted image 20241023115423.png]]
+
+#### Windows
+Uses ACLs:
+	each access control describes user/group and perms allowed/denied
+	Also audit permission that denotes logging
+	Same mechanism for registry 
+
+#### Implementation
+privalege lists
+	row of access control matricies that have access rights for a *subject*
+	easy to revoke
+	The point of this is to create unforgeable token that gives processes access rights to an object which the user recieves and then can pass down
+Protection domain: Collection of subjects that the user has access to 
+	All the capabilities is the domain (row of matrix), can include, IO, files, programs, etc
+	Can define new domain for any process that has a subset of access rights
+	There is *seperation* meaning different domains for different users/processes (unix has this with user and kernel mode)
+	Supports least priv by minimizing access rights that any user has at any time
 	
+### Problems with DAC
+No control on flow of perms
+Subordinate creates a file that only has write permissions tricking the owner and not allowing them to see
+
+Trojan horses try to bypass OS access control so someone tricked into granting a trojan perms will be screwed
+
+
+Defense: Trusted OS
+	Assign mandatory access control policy for the TCB with security levels to the files
+	Reference monitor to check all access requests
+	For example, making it so that you can't write to lower security level so you are not tricked into writing at the wrong spot
+
+No fine grained access control: Need multiple groups which can be complicated and large. 
+	Use extensions to enforce fine grained access control
+
+
+Setuid issues: If set, system will temporarily use program owner's priv so we need to watch the ones owned by superuser/root when setting the bit otherwise it could get bad
+
+Caused because:
+	Process has 2 UIDs, real and effective
+		Real identifies the owner of process
+		effective identifies priv of program, access control based on this
+	When you run a program, EUID = user who runs the program
+		EUID of user process is user no matter if you set owner to root
+	When SetUID, then  EUID is the owner of the program
+![[Pasted image 20241023121329.png]]

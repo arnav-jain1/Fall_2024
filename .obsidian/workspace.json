@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_565/L10- PKI.md",
+                "file": "EECS_565/L12- OS Sec 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "L10- PKI"
+              "title": "L12- OS Sec 2"
             }
           },
           {
@@ -49,8 +49,7 @@
               "title": "latex guide"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -191,10 +190,23 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "28750cef7e9b0dea",
+  "active": "b555efabddb954e7",
   "lastOpenFiles": [
-    "EECS_662/5- Post exam 1.md",
+    "EECS_565/Pasted image 20241023114557.png",
+    "EECS_565/Pasted image 20241023113719.png",
+    "EECS_565/Pasted image 20241023113107.png",
+    "EECS_565/Pasted image 20241023112732.png",
+    "EECS_565/L11-OS Sec.md",
+    "EECS_565/L12- OS Sec 2.md",
+    "EECS_565/L10- PKI.md",
     "interview/System Design/1- Soft arch.md",
+    "EECS_658/ArnavJain_Assignment5/a5.py~",
+    "EECS_658/ArnavJain_Assignment5/imbalanced iris.csv",
+    "EECS_658/imbalanced iris.csv",
+    "imbalanced iris.csv",
+    "EECS_658/ArnavJain_Assignment5/a5.py",
+    "EECS_658/ArnavJain_Assignment5",
+    "EECS_662/5- Post exam 1.md",
     "interview/System Design",
     "interview",
     "latex guide.md",
@@ -209,25 +221,15 @@
     "EECS_658/daily_assignments/16-10-24.md",
     "EECS_658/submissions/16-10-24.pdf",
     "EECS_658/submissions/15-10-22.pdf",
-    "EECS_658/daily_assignments/16-10-24.pdf",
-    "EECS_658/daily_assignments/lu91172lud4z.tmp",
-    "EECS_658/daily_assignments/15-10-22.pdf",
-    "EECS_658/daily_assignments/lu91094lu8ys.tmp",
     "EECS_658/daily_assignments/15-10-22.md",
     "EECS_565/miniproj/MP3/report.md",
-    "EECS_658/ArnavJain_Assignment4/ArnavJain_Assignment4.zip",
-    "EECS_658/ArnavJain_Assignment4.zip",
     "EECS_565/miniproj/MP3/Pasted image 20241018203502.png",
     "EECS_565/miniproj/MP3/Pasted image 20241018163639.png",
     "EECS_510/10-17.md",
     "EECS_510/Pasted image 20241018155832.png",
-    "EECS_565/L10- PKI.md",
     "EECS_662/4-Functions and Optimizers.md",
     "EECS_678/Pasted image 20241018144047.png",
     "EECS_678/Pasted image 20241018143842.png",
-    "EECS_565/Pasted image 20241017172207.png",
-    "EECS_565/Pasted image 20241017171903.png",
-    "EECS_565/Pasted image 20241017171655.png",
     "EECS_662/3- type checking.md",
     "EECS_662/1- Intro.md",
     "EECS_678/Exam Q.md",
@@ -235,9 +237,6 @@
     "EECS_565/! review.md",
     "EECS_678/Other.md",
     "EECS_678/Exam_1.md",
-    "EECS_658/daily_assignments/13-10-10.md",
-    "EECS_678/labs/KUEECS678-Fall2024-main/projects/buddy/README.md",
-    "EECS_678/labs/KUEECS678-Fall2024-main/projects/quash/README.md",
-    "EECS_565/L9- auth.md"
+    "EECS_658/daily_assignments/13-10-10.md"
   ]
 }

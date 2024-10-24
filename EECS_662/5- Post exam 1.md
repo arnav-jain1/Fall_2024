@@ -127,3 +127,102 @@ Type checking:
 typeofX t = typeof [] (elab t) 
 ```
 The issue with this is that it will produce errors for our embedded language. For example: getting assembly language for C which is obv wrong so we have to make a new type checker
+
+
+# Recursion
+## Dynamic scoping
+
+```haskell
+bind fact = 
+	lambda x in 
+		if x=0 then 1 else x * (fact x-1) [(fact, (lamnda x in x...))]
+	fact 3
+== (lambda x in if x=0 then 1 else x * (fact x-1)) 3
+			[(fact, (lambda...))]
+== if x=0 then 1 else x * (fact x-1)
+			[(x, 3), (fact, (lambda...))]
+== if 3=0 then 1 else 3 * (fact 3-1)) 
+			[(x, 3), (fact, (lambda...))]
+== 3 * (fact 2)  
+			[(x, 3), (fact, lambda...)]
+== 3 * (lambda x in if x=0 then 1 else x * (fact x-1))) 2  
+			[(x, 3), (fact, lambda...)]
+== 3 * if x=0 then 1 else x * (fact x-1) 
+			[(x, 2), (x, 3), (fact, lambda...)]
+== 3 * if 2=0 then 1 else 2 * (fact 2-1) 
+			[(x, 2), (x, 3), (fact, lambda...)]
+== 3 * 2 * (fact 1)
+			[(x, 2), (x, 3), (fact, lambda...)]
+== 3 * 2 *	(lambda x in if x=0 then 1 else x * (fact x-1)) 1
+			[(x, 2), (x, 3), (fact, lambda...)]
+== 3 * 2 *if x=0 then 1 else x * (fact x-1) 
+			[(x, 1), (x, 2), (x, 3), (fact, lambda...)]
+...
+== 3 * 2 * 1 * (fact 0)
+== 3 * 2 * 1 * 1
+== 6
+			[(fact, (lambda...))] 
+-- Becaus when your recursion completes it gets popped
+```
+
+## Static scoping
+
+```haskell
+bind fact = 
+	lambda x in 
+		if x=0 then 1 else x * (fact x-1) [(fact, (lamnda x in x...))]
+	fact 0
+== (fact 0) 
+		[(fact, closure x ... [])]
+== (closure x ... []) 0
+== if x = 0 then 1 else ... [(x, 0)]
+...
+== 1
+
+	fact 1
+== (fact 1) 
+		[(fact, closure x ... [])]
+== (closure x ... []) 1
+== if x = 0 then 1 else ... 1 
+		[(x, 1)]
+== if 1 = 0 then 1 else 1 * (fact 0)
+		[(x, 1)]
+== 1 * (fact 0) [(x, 1)]
+-- BUT FACT IS GONE NOOO
+-- PSYCH, just pull the lambda that had the closure into the new env
+
+	fact 1
+== (fact 1) 
+		[(fact, closure x ... [(fact, (closure ... [same]))])]
+== (closure x ... [(fact ...)]) 1
+== if x = 0 then 1 else ... 1 
+		[(x, 1), (fact, closure ... [])]
+== if 1 = 0 then 1 else 1 * (fact 0)
+		[(x, 1), (fact, closure ... [])]
+== 1 * (fact 0) [(x, 1)]
+		[(x, 1), (fact, closure ... [])]
+
+```
+
+## Omega
+### Dynamic
+```
+bind o = lambda x in x x
+o o 
+== (lambda x in x x) (lambda x in x x)
+== x x 
+		[(x, (lambda x in x x))]
+== (lambda x in x x) (lambda x in x x) 
+		[(x, (lambda x in x x)), (x, (lambda x in x x))]
+```
+
+### Static
+```
+bind o = lambda x in x x
+o o 
+== o o 
+		[(o, (closure x in x x []))]
+== (closure x in x x []) (closure x in x x []) [(o)]
+== (closure x in x x []) (closure x in x x []) []
+== 
+```

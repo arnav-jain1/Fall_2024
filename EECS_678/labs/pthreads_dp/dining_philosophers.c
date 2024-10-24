@@ -28,15 +28,11 @@
  * solutions.
  */
 typedef struct {
-  int            id;           /* Int ID number assigned by
-                                  set_table() */
+  int            id;           /* Int ID number assigned by set_table() */
   pthread_cond_t can_eat;      /* Condition var used in a WAITER SOLUTION */
-  int            prog;         /* Progress during current main()
-                                  accounting period */
-  int            prog_total;   /* Total progress across all
-                                  sessions  */
-  pthread_t      thread;       /* Thread structure for this
-                                  philosopher */
+  int            prog;         /* Progress during current main() accounting period */
+  int            prog_total;   /* Total progress across all sessions  */
+  pthread_t      thread;       /* Thread structure for this philosopher */
 } philosopher;
 
 /* GLOBALS */
@@ -278,7 +274,7 @@ void print_progress()
     i++;
   }
 
-out:
+  out:
   /*
    * Add an extra new line for a blank between data for each
    * accounting period.

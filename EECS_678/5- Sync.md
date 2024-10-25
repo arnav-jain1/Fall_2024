@@ -214,4 +214,59 @@ Want to make sure they don't overwrite each other and readers dont read while be
 2 semaphores:
 	mutex: ensure mutual exclusion for readcount, initialized as 1 (readers block each other from updating a counter)
 	wrt: ensure mutual exclusion for writers and between writers and readers
-	
+
+Signal always increments semaphore value
+## Drawbacks
+Essentially just shared global vars
+Very low level constructs, the connection between the semaphore and the data controlled by semaphores is non existent 
+Hard to use it 
+
+# Monitor
+Programming language construct that controls access to data
+	Sychronization code added by compiler but enforced at runtime
+Abstract data type that has:
+	Shared data structure
+	code that operate on shared data struct
+	Sync between concurrent code
+Guarentees that only the monitor code can update the data
+
+
+![[Pasted image 20241025140953.png]]
+Only one thread can execute at a time
+Other threads wait
+When one active thread exits, another enters
+
+For example in Java, the synchronized keyword indicates that only one thread can access it at a time
+
+The issue is when having to wait
+If consumer has to wait for producer and gets there first, then it is bad
+![[Pasted image 20241025142253.png]]
+To fix this then there is condition values that when the condition is met, the lock is reaquired and the critical section is reentered. 
+
+Condition vars have 2 vars:
+	wait(), if cond not met, thread moved to wait set, gives up lock
+	signal(), wakesup waiting thread (1), if no process suspended, then does nothing
+		Some programs have broadcast to send signal to all threads
+Another problem is that if there is an active thread that invokes a signal, what happens to the red suspended thread? It can't go in because it is locked already
+2 ways to handle:
+	Hoare monitors: signal switches from caller to waiting thread, waiter will have its condition met when it starts because the signal immediately swaps
+	Mesa monitors: waiter set to ready, signaler continues and the waiter is sent to the ready queue. Issue is condition might not be met when waiter starts
+Signaler should immediately leave and the waiter should start
+
+![[Pasted image 20241025143005.png]]
+Producer will add to buffer and then send the signal, if it is full then it waits
+Consumer will get the resource and then send the signal back, if it is empty then wait
+
+The conditions are not booleans, they are the signals
+Conditions $\ne$ semaphore
+	In semaphore wait blocks and signals increases global var count
+
+
+Sleep vs spin (wait)
+Spin: 
+	Occupies CPU, slows other threads
+Sleep:
+	issue wait and sleep, signals to sleeping thread to start and then wakeuping up thread involves lots of context switches
+
+Spin can be faster if critical section is small
+Spin waiting used on multiprocess systems, small critical sections, thread holding the lock is running

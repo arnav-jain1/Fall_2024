@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_565/L12- OS Sec 2.md",
+                "file": "EECS_678/5- Sync.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "L12- OS Sec 2"
+              "title": "5- Sync"
             }
           },
           {
@@ -27,16 +27,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_565/L13- OS Sec 3.md",
+                "file": "EECS_678/6- Scheduling.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "L13- OS Sec 3"
+              "title": "6- Scheduling"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -177,8 +176,15 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "28750cef7e9b0dea",
+  "active": "b555efabddb954e7",
   "lastOpenFiles": [
+    "EECS_678/Pasted image 20241025143005.png",
+    "EECS_678/Pasted image 20241025142253.png",
+    "EECS_678/Pasted image 20241025140953.png",
+    "EECS_565/L12- OS Sec 2.md",
+    "EECS_678/6- Scheduling.md",
+    "EECS_678/5- Sync.md",
+    "EECS_565/L13- OS Sec 3.md",
     "EECS_565/Pasted image 20241025115638.png",
     "EECS_565/Pasted image 20241025115543.png",
     "EECS_565/Pasted image 20241025115326.png",
@@ -187,11 +193,8 @@
     "EECS_565/Pasted image 20241025113323.png",
     "EECS_565/Pasted image 20241025113042.png",
     "EECS_565/Pasted image 20241025112622.png",
-    "EECS_565/Pasted image 20241025112229.png",
     "EECS_662/5- Post exam 1.md",
-    "EECS_565/L13- OS Sec 3.md",
     "interview/System Design/1- Soft arch.md",
-    "EECS_678/5- Sync.md",
     "EECS_678/labs/pthreads_dp/dp_waiter.c",
     "EECS_678/labs/pthreads_dp/dp_asymmetric.c",
     "EECS_678/labs/pthreads_dp/dining_philosophers.c",
@@ -200,10 +203,7 @@
     "EECS_678/labs/eecs678-pthreads_dp-lab.tar.gz",
     "EECS_678/eecs678-pthreads_dp-lab.tar.gz",
     "eecs678-pthreads_dp-lab.tar.gz",
-    "EECS_678/Pasted image 20241023144146.png",
-    "EECS_678/Pasted image 20241023142738.png",
     "latex guide.md",
-    "EECS_565/L12- OS Sec 2.md",
     "EECS_565/L11-OS Sec.md",
     "EECS_565/L10- PKI.md",
     "EECS_658/ArnavJain_Assignment5/a5.py~",
@@ -223,7 +223,6 @@
     "EECS_678/Exam Q.md",
     "EECS_662/2- First language.md",
     "EECS_565/! review.md",
-    "EECS_678/Other.md",
-    "EECS_678/Exam_1.md"
+    "EECS_678/Other.md"
   ]
 }

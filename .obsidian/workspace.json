@@ -11,12 +11,14 @@
             "id": "b555efabddb954e7",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "EECS_565/miniproj/MP3/report.pdf"
+                "file": "EECS_678/6- Scheduling.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "report"
+              "icon": "lucide-file",
+              "title": "6- Scheduling"
             }
           },
           {
@@ -176,8 +178,15 @@
   },
   "active": "b555efabddb954e7",
   "lastOpenFiles": [
-    "EECS_565/miniproj/MP3/report.md",
+    "EECS_678/5- Sync.md",
+    "EECS_678/6- Scheduling.md",
+    "EECS_678/Pasted image 20241028143840.png",
+    "EECS_678/Pasted image 20241028143342.png",
+    "EECS_678/Pasted image 20241028143022.png",
+    "EECS_678/Pasted image 20241028142738.png",
+    "EECS_678/Pasted image 20241028141703.png",
     "EECS_565/miniproj/MP3/report.pdf",
+    "EECS_565/miniproj/MP3/report.md",
     "EECS_565/miniproj/MP3/task2/my_env_null.txt",
     "EECS_565/miniproj/MP3/task2/myenv.c~",
     "EECS_565/miniproj/MP3/task2/my_env_environ.txt",
@@ -186,16 +195,9 @@
     "EECS_565/miniproj/MP3/Pasted image 20241028114955.png",
     "EECS_565/miniproj/MP3/Pasted image 20241028114006.png",
     "EECS_565/miniproj/MP3/Pasted image 20241028113734.png",
-    "EECS_565/miniproj/MP3/Pasted image 20241028105348.png",
     "interview/System Design/3- Networking basics.md",
-    "interview/System Design/Pasted image 20241026175448.png",
     "interview/System Design/2- Design req.md",
-    "EECS_678/5- Sync.md",
-    "EECS_678/Pasted image 20241025143005.png",
-    "EECS_678/Pasted image 20241025142253.png",
-    "EECS_678/Pasted image 20241025140953.png",
     "EECS_565/L12- OS Sec 2.md",
-    "EECS_678/6- Scheduling.md",
     "EECS_565/L13- OS Sec 3.md",
     "EECS_662/5- Post exam 1.md",
     "interview/System Design/1- Soft arch.md",

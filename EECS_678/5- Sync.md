@@ -270,3 +270,5 @@ Sleep:
 
 Spin can be faster if critical section is small
 Spin waiting used on multiprocess systems, small critical sections, thread holding the lock is running
+
+# 0 is lock

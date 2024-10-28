@@ -1,10 +1,8 @@
 # Task 1
-![[Pasted image 20241018163639.png]]
 
 # Task 2
 ## Question 2
-![[Pasted image 20241018203502.png]]
-Me unsetting foo
+![[Pasted image 20241028105348.png]]
 
 ## Question 3
 There are no differences, this is because env variables are shared across processes since they are derived from the shell
@@ -19,7 +17,7 @@ This shows that execve allows you to decide whether the envirornment vars for th
 
 ## Question 5
 The output of the mysystem program can be seen in mysystem_output.txt
-This program just calls the system syscall which calls execl which calls execv and since the parameter is /usr/bin/env which prints all the env vars since execve eventually ends up inheriting all the enviornment vars from the shell allowing for consistency.
+This program just calls the system syscall which calls execl which calls execve. The parameter is /usr/bin/env which prints all the env vars since execve was called by system which inherits the env from the shell. The new program eventually ends up inheriting all the enviornment vars from the shell.
 
 
 # Task 3 

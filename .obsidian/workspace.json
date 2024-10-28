@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interview/System Design/3- Networking basics.md",
+                "file": "EECS_565/miniproj/MP3/report.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3- Networking basics"
+              "title": "report"
             }
           },
           {
@@ -178,8 +178,10 @@
   },
   "active": "b555efabddb954e7",
   "lastOpenFiles": [
-    "interview/System Design/2- Design req.md",
+    "EECS_565/miniproj/MP3/Pasted image 20241028105348.png",
     "interview/System Design/3- Networking basics.md",
+    "interview/System Design/Pasted image 20241026175448.png",
+    "interview/System Design/2- Design req.md",
     "EECS_678/5- Sync.md",
     "EECS_678/Pasted image 20241025143005.png",
     "EECS_678/Pasted image 20241025142253.png",
@@ -193,7 +195,6 @@
     "EECS_565/Pasted image 20241025114924.png",
     "EECS_565/Pasted image 20241025114019.png",
     "EECS_565/Pasted image 20241025113323.png",
-    "EECS_565/Pasted image 20241025113042.png",
     "EECS_662/5- Post exam 1.md",
     "interview/System Design/1- Soft arch.md",
     "EECS_678/labs/pthreads_dp/dp_waiter.c",
@@ -222,7 +223,6 @@
     "EECS_662/3- type checking.md",
     "EECS_662/1- Intro.md",
     "EECS_678/Exam Q.md",
-    "EECS_662/2- First language.md",
-    "EECS_565/! review.md"
+    "EECS_662/2- First language.md"
   ]
 }

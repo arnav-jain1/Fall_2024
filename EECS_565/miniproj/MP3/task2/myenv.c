@@ -7,7 +7,7 @@ int main()
 	char *argv[2];
 	argv[0] = "/usr/bin/env";
 	argv[1] = NULL;
-    /*execve("/usr/bin/env", argv, NULL); // ➀*/
-    execve("/usr/bin/env", argv, environ);
+    execve("/usr/bin/env", argv, NULL); // ➀
+    /*execve("/usr/bin/env", argv, environ);*/
 	return 0 ;
 }

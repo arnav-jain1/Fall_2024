@@ -142,3 +142,27 @@ So
 $$S \rightarrow aXS \space | \space bYS \space | \space \lambda$$
 $$X \rightarrow aXX \space | \space bYX \space | \space b$$
 $$Y \rightarrow bYY \space | \space aXY \space | \space a$$
+## PDA to CFG General case 
+Stack trace of aaababbbbbaa:
+![[Pasted image 20241029121107.png]]
+How long were vars in the stack? 
+
+Stack var lifetime: The duration they were in the stack as well as their first and last appearance
+![[Pasted image 20241029121503.png]]
+Notice $X_{1}$, it appears and then 3 different Xs go through their lifetime and then X is gone. The 3 Xs $(X_{2}, X_{3}, X_{4})$ are the aftereffects of X
+
+The symbol $\langle pVq \rangle$ are actions of PDA that go from state p where V is at the top of the stack (in this case X1) to q after 1+ transitions such that V and all aftereffects are gone
+
+This is important because these symbols will be the vars of the resulting grammar 
+	They show all the steps it takes to remove and add vars to a stack
+
+
+At step 3, the stack is $X_{3}, X_{2}, X_{1}$ 
+To show the next step in pVq form:
+	Consume the first b with transition b, X -> $\lambda$  which takes is from state $q_{0} \rightarrow q_{0}$ since it is a self loop and the new resulting string abbbbbaa
+	The transition can be written as $(q_{0}, babbbbbaa, X_{3}X_{2}X_{1}) \vdash (q_{0}, abbbbbaa, X_{2}X_{1})$ 
+	The pVq form for X3 is then $q_{0}X_{3}q_{0}$ 
+
+To get X1 and steps 1-7:
+	$(q_{0}, babbbbbaa, X_{1}) \vdash^{*} (q_{0}, bbaa, \lambda)$ 
+	$q_{0}X_{1}q_{0}$ 

@@ -1,0 +1,75 @@
+  P-5 C-1   
+************
+  Sorted    
+************
+con 0:   0.
+con 0:   11.
+con 0:   22.
+con 0:   28.
+con 0:   29.
+con 0:   25.
+con 0:   26.
+con 0:   27.
+con 0:   28.
+con 0:   29.
+con 0:   25.
+con 0:   26.
+con 0:   27.
+con 0:   28.
+con 0:   29.
+con 0:   25.
+con 0:   26.
+con 0:   27.
+con 0:   28.
+con 0:   29.
+con 0:   25.
+con 0:   26.
+con 0:   27.
+con 0:   28.
+con 0:   29.
+con 0:   25.
+con 0:   26.
+con 0:   27.
+con 0:   28.
+con 0:   29.
+con 0:   exited
+    
+prod 0:  0.
+prod 0:  6.
+prod 0:  10.
+prod 0:  16.
+prod 0:  21.
+prod 0:  25.
+prod 0:  exited
+    
+prod 1:  1.
+prod 1:  5.
+prod 1:  11.
+prod 1:  17.
+prod 1:  23.
+prod 1:  29.
+prod 1:  exited
+    
+prod 2:  2.
+prod 2:  8.
+prod 2:  13.
+prod 2:  18.
+prod 2:  24.
+prod 2:  27.
+prod 2:  exited
+    
+prod 3:  3.
+prod 3:  7.
+prod 3:  12.
+prod 3:  15.
+prod 3:  20.
+prod 3:  26.
+prod 3:  exited
+    
+prod 4:  4.
+prod 4:  9.
+prod 4:  14.
+prod 4:  19.
+prod 4:  22.
+prod 4:  28.
+prod 4:  exited

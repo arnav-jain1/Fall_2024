@@ -221,8 +221,99 @@ o o
 bind o = lambda x in x x
 o o 
 == o o 
-		[(o, (closure x in x x []))]
-== (closure x in x x []) (closure x in x x []) [(o)]
-== (closure x in x x []) (closure x in x x []) []
-== 
+== [(o, (closure x in x x []))]
+== (closure x in x x []) (closure x in x x [])  
+			[(o, (closure x in x x []))]
+== x x
+			[(x, (closure x in x x []))]
+== (closure x in x x []) (closure x in x x [])
+			[(x, (closure x in x x []))]
+```
+Here x is the function and the argument
+
+
+## Y comb
+Gives us (a little too much) recursion
+	Dynamic and static scoping
+And doesnt do anything
+
+
+The Y comb does something (does a func) and has an off switch
+```
+bind Y = (lambda f (lambda x in (f (x x)))
+				   (lambda x in (f (x x)))) 
+	in (Y F)
+F is the work that we want to do
+== (Y F)           [(Y, ...)]
+== (lambda f (lambda x in (f (x x))) (lambda x in (f (x x))))    []
+== (lambda x in (f (x x))) (lambda x in (f (x x)))         [(f, F)]
+== (lambda x in (F (x x)) (lambda x in (F (x x))))               []
+== (F (x x))                             [(x, lambda x in F (x x))]
+== F (lambda x in (F (x x)) (lambda x in (F (x x))))               
+		[(x, lambda x in F (x x))]
+== (F (F (x x)))                [(x, lambda x in F (x x))]
+== (F (F (F (x x))))            [(x, lambda x in F (x x))]
+== (F (F (F (F (x x)))))        [(x, lambda x in F (x x))]
+...
+```
+We are doing a recursive function without any name!!
+
+Still doesnt terminate or do anything
+
+- `f` is the function being called recursively 
+- F is the function that we are *applying* doesn't have a name
+```
+F = (lambda z in if z=0 then z else z + g (z - 1))
+
+g is F for now (cheating a lil) bc F isnt defined yet
+F = (lambda g in (lambda z in if z=0 then z else z + g (z - 1)))
+```
+<mark style="background: #FF5582A6;">Ask why ^</mark>
+```
+== (lambda z in if z=0 then z else z + (F (z-1)))
+== (lambda z in if z=0 then z else z + ((lambda z in if z=0 then z else z + (F (z-1)))(z-1)))
+```
+
+
+Putting it in the y comb
+```
+bind F = (lambda g in (lambda z in if z=0 then z else z + (g (z-1)))) in
+	bind Y = (lambda f (lambda x in (f (x x)))
+						(lambda x in (f (x x))))
+	in ((Y F) 5)
+
+== (lambda x in (F (x x))) (lambda x in (F (x x)))) 5
+== (F (x x)) [(x, (lambda x in (F (x x))))]
+```
+<mark style="background: #FF5582A6;">Aaaaand Im lost</mark>
+
+
+
+# Typing functions
+```
+bind inc = lambda x in x + 1
+ (inc inc)
+== (inc inc) [(inc, lambda x ...)]
+== (lambda x in x+1) (lambda x in x + 1)    
+		[(inc, lambda x ...)]
+== x + 1    
+		[(x, lambda x...(inc, lambda x ...)]
+== (lambda x in x + 1) + 1
+```
+this is not a value cant do lambda + Int because TYPES
+
+```
+Eval:
+bind x=1 in           [(x,1)]
+	x+1
+== 1 + 1
+
+Type check:
+bind x=1 in           [(x,TNum)]
+	x+1
+== TNum + TNum
+== TNum
+```
+
+```
 ```

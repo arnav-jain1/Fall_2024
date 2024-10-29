@@ -103,3 +103,33 @@ $S \Rightarrow bSaS \Rightarrow b\lambda aS \Rightarrow baS \Rightarrow baaSbS \
 **Note that you only do one at a time, usually leftmost**
 
 can also do this $$S \rightarrow SS | aSb | bSa | \lambda$$ 
+## Simplifying
+You can simplify a CFG $\iff$ 
+	a rule is **NOT directly recursive**
+	Has an unreachable state
+	Has a non terminating state
+Directly recursive: A var representing a rule appears in the right side (body of the rule)
+Example:
+$$
+\begin{align} 
+A\rightarrow a \space | \space aaA \space | \space abBc \\ B \rightarrow abbA \space | \space b \quad\quad\space\space\space
+\end{align}$$
+A is directly recursive because in the rule of A, A appears
+B is not directly recursive because B does not appear meaning we can elimitate it
+Starting with the easy one, 
+$$A\rightarrow a \space | \space aaA \space | \space abBc \space | \space abbc$$
+we can sub b in for B leaving abbA
+then
+$$A\rightarrow a \space | \space aaA \space | \space ababbAc \space | \space abbc$$
+Another example of when to simplify is if you can never reach it. Simplify the following
+![[Pasted image 20241028183042.png]]
+Here B is unreachable so we can just remove it. Likewise, S is not directly recursive so we can eliminate it too so it becomes 
+$A\rightarrow aA \space | \space \lambda$ or $S \rightarrow aS \space | \space \lambda$ which a* 
+
+SImplify this
+![[Pasted image 20241028183300.png]]
+Notice that A will never end so we dont want that. the new grammar becomes
+$S\rightarrow aSb \space | \space A \space | \space \lambda$ 
+
+
+

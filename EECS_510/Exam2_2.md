@@ -166,3 +166,10 @@ To show the next step in pVq form:
 To get X1 and steps 1-7:
 	$(q_{0}, babbbbbaa, X_{1}) \vdash^{*} (q_{0}, bbaa, \lambda)$ 
 	$q_{0}X_{1}q_{0}$ 
+
+In summary the 2 we have are:
+![[Pasted image 20241029200956.png]]
+For referene, the first symbol means we start at q0, consume a b, and push X3 but resume end at q0 with the stack unchanged from when it was pushed
+The second symbol means: start at q0, consume aababbb, push X1 but then end at q0 with the stack being the same as where we started with
+
+Now look back at the first grammar rule $a, \lambda \rightarrow X$ which consumes an a, pops nothing from the stack and adds an X while staying at q0

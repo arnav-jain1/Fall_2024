@@ -24,7 +24,7 @@
 #define CONSUMER_CPU   25
 #define CONSUMER_BLOCK 10
 
-#define YOU_WILL_DETERMINE_FOR_PRODUCERS 30
+#define YOU_WILL_DETERMINE_FOR_PRODUCERS 5
 #define YOU_WILL_DETERMINE_FOR_CONSUMERS 0
 
 /*****************************************************
@@ -292,12 +292,14 @@ void *producer (void *parg)
      * If the queue is full, we have no place to put anything we
      * produce, so wait until it is not full. Use sem_wait on the
      * appropriate semaphore from the fifo queue, for the producer.
+
      */
     
       sem_wait(fifo->slotsToPut);
 	
 	/*
      * Check to see if the total produced by all producers has reached
+
      * the configured maximum, if so, we can quit. Before quitting, execute some
      * additional sem_post for the producers and consumers to free up ones
      * that are in the waiting queue for fifo->slotsToPut and fifo->slotsToGet respectively
@@ -545,4 +547,3 @@ int main (int argc, char *argv[])
 
   return 0;
 }
-

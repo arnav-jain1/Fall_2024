@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_510/Exam2_2.md",
+                "file": "EECS_565/L14_DBMS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Exam2_2"
+              "title": "L14_DBMS"
             }
           },
           {
@@ -64,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -205,10 +205,20 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "28750cef7e9b0dea",
+  "active": "9e9f3140b0367bed",
   "lastOpenFiles": [
-    "EECS_678/6- Scheduling.md",
+    "EECS_565/Pasted image 20241030121744.png",
+    "EECS_565/Pasted image 20241030121547.png",
+    "EECS_565/Pasted image 20241030121319.png",
+    "EECS_565/Pasted image 20241030115219.png",
+    "EECS_565/Pasted image 20241030113949.png",
+    "EECS_565/Pasted image 20241030113500.png",
     "EECS_510/Exam2_2.md",
+    "EECS_565/L14_DBMS.md",
+    "EECS_510/Pasted image 20241029200956.png",
+    "EECS_662/5- Post exam 1.md",
+    "EECS_678/labs/lab_7/producer_consumer.c~",
+    "EECS_678/6- Scheduling.md",
     "latex guide.md",
     "EECS_510/Pasted image 20241029121503.png",
     "EECS_510/Pasted image 20241029121107.png",
@@ -221,15 +231,8 @@
     "EECS_678/labs/lab_7/narrative1.sorted",
     "EECS_678/labs/lab_7/narrative1.raw",
     "EECS_678/labs/lab_7/Makefile~",
-    "EECS_678/labs/lab_7/producer_consumer",
     "EECS_510/Pasted image 20241028195215.png",
     "EECS_510/Pasted image 20241028194915.png",
-    "EECS_510/Pasted image 20241028194836.png",
-    "EECS_510/Pasted image 20241028194753.png",
-    "EECS_510/Pasted image 20241028193808.png",
-    "EECS_510/Pasted image 20241028193743.png",
-    "EECS_510/Pasted image 20241028193728.png",
-    "EECS_510/Pasted image 20241028193609.png",
     "EECS_510/Exam2_1.md",
     "EECS_510/9-17-Regular Grammars.md",
     "EECS_510/hw1.md",
@@ -239,7 +242,6 @@
     "interview/System Design/2- Design req.md",
     "EECS_565/L12- OS Sec 2.md",
     "EECS_565/L13- OS Sec 3.md",
-    "EECS_662/5- Post exam 1.md",
     "interview/System Design/1- Soft arch.md",
     "EECS_565/L11-OS Sec.md",
     "EECS_565/L10- PKI.md",
@@ -250,7 +252,6 @@
     "EECS_658/daily_assignments/16-10-24.md",
     "EECS_658/daily_assignments/15-10-22.md",
     "EECS_662/4-Functions and Optimizers.md",
-    "EECS_662/3- type checking.md",
-    "EECS_662/1- Intro.md"
+    "EECS_662/3- type checking.md"
   ]
 }

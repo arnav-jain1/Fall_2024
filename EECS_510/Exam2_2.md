@@ -203,4 +203,8 @@ $X \rightarrow aXX | bYX | bS$
 $Y \rightarrow bYY | aXY | aS$  
 
 
-# PDA to CFG (General Case)
+## PDA to CFG (General Case)
+1. Use normalized PDA 
+2. Form rules $S \rightarrow (s\lambda f)$ for the start state s and every accepting state f
+3. Form rules $(q\lambda q) \rightarrow \lambda$ for each state q
+4. For all PDA $c,V \rightarrow s$ from p to q

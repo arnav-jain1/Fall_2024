@@ -173,3 +173,5 @@ For referene, the first symbol means we start at q0, consume a b, and push X3 bu
 The second symbol means: start at q0, consume aababbb, push X1 but then end at q0 with the stack being the same as where we started with
 
 Now look back at the first grammar rule $a, \lambda \rightarrow X$ which consumes an a, pops nothing from the stack and adds an X while staying at q0
+
+

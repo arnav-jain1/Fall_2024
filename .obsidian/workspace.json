@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_678/6- Scheduling.md",
+                "file": "interview/System Design/6- HTTP.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "6- Scheduling"
+              "title": "6- HTTP"
             }
           },
           {
@@ -193,6 +193,16 @@
   },
   "active": "9e9f3140b0367bed",
   "lastOpenFiles": [
+    "interview/System Design/Pasted image 20241030193219.png",
+    "interview/System Design/5- DNS.md",
+    "interview/System Design/6- HTTP.md",
+    "interview/System Design/Pasted image 20241030182749.png",
+    "interview/System Design/Pasted image 20241030182743.png",
+    "interview/System Design/4- TCP UDP.md",
+    "interview/System Design/Pasted image 20241030174758.png",
+    "EECS_510/Exam2_2.md",
+    "EECS_510/hw1.md",
+    "EECS_678/6- Scheduling.md",
     "EECS_678/Pasted image 20241030143957.png",
     "EECS_678/Pasted image 20241030142407.png",
     "EECS_678/Pasted image 20241030141718.png",
@@ -202,13 +212,7 @@
     "EECS_565/Pasted image 20241030121744.png",
     "EECS_565/Pasted image 20241030121547.png",
     "EECS_565/Pasted image 20241030121319.png",
-    "EECS_565/Pasted image 20241030115219.png",
-    "EECS_565/Pasted image 20241030113949.png",
-    "EECS_565/Pasted image 20241030113500.png",
-    "EECS_510/Exam2_2.md",
-    "EECS_510/Pasted image 20241029200956.png",
     "EECS_678/labs/lab_7/producer_consumer.c~",
-    "EECS_678/6- Scheduling.md",
     "latex guide.md",
     "EECS_678/labs/lab_7/narrative4.sorted",
     "EECS_678/labs/lab_7/narrative4.raw",
@@ -221,7 +225,6 @@
     "EECS_678/labs/lab_7/Makefile~",
     "EECS_510/Exam2_1.md",
     "EECS_510/9-17-Regular Grammars.md",
-    "EECS_510/hw1.md",
     "EECS_678/5- Sync.md",
     "EECS_565/miniproj/MP3/report.md",
     "interview/System Design/3- Networking basics.md",
@@ -235,9 +238,6 @@
     "jobs.md",
     "EECS_678/4- Threads.md",
     "EECS_678/3- Processes.md",
-    "EECS_658/daily_assignments/16-10-24.md",
-    "EECS_658/daily_assignments/15-10-22.md",
-    "EECS_662/4-Functions and Optimizers.md",
-    "EECS_662/3- type checking.md"
+    "EECS_658/daily_assignments/16-10-24.md"
   ]
 }

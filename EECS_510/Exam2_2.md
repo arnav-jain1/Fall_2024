@@ -173,5 +173,34 @@ For referene, the first symbol means we start at q0, consume a b, and push X3 bu
 The second symbol means: start at q0, consume aababbb, push X1 but then end at q0 with the stack being the same as where we started with
 
 Now look back at the first grammar rule $a, \lambda \rightarrow X$ which consumes an a, pops nothing from the stack and adds an X while staying at q0
+	The pVq form is $\langle q_{0}\lambda p_{0} \rangle$  because starts at 0, pops nothing, and stays at 0
+	But the issue is we need to consume a (which involves pushing an X)
+
+The grammar rule thus becomes
+$$\langle q_{0}\lambda q_{0} \rangle \rightarrow a\langle q_{0}X q_{0}\rangle$$
+The left side means start at q0, stack is unchanged and end at q0 which is the goal of the PDA (start and end with stack empty) but is kinda useless 
+
+The first rule is now $S \rightarrow \langle q_{0}\lambda q_{0} \rangle$ because it represents the empty stack
+
+Now we have to **Normalize** the pda
+Normalization: Add equivalent transitions  for every lambda pop transition and every stack var (DO NOT DISREGARD THE ORIGINAL RULE)
+
+![[Pasted image 20241030204924.png]]
+Original, the additions are if there is an X/Y in the current stack
+
+We want all possibilities for the PDA 
+![[Pasted image 20241030205015.png]]
 
 
+So then the new grammar rules are:
+![[Pasted image 20241030205720.png]]
+
+Let $S = \langle q_{0}\lambda q_{0} \rangle, X = \langle q_{0}Xq_{0} \rangle, Y=\langle q_{0}Y q_{0} \rangle$   
+
+So the new grammar becomes 
+$S \rightarrow aX | bY | \lambda$ 
+$X \rightarrow aXX | bYX | bS$ 
+$Y \rightarrow bYY | aXY | aS$  
+
+
+# PDA to CFG (General Case)

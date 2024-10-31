@@ -7,6 +7,7 @@ Inputs: imbalanced_iris.csv
 Outputs: models and their performance
 Collaborators: None
 Sources: StackOverflow, ChatGPT
+
 '''
 import pandas as pd
 import numpy as np
@@ -140,7 +141,6 @@ def main():
     # Run the classifier for the regular set
     print(f"--------------------------PART 1--------------------------")
     run_classifier("Part 1", x, y, True)
-
 
     # Run it for each oversampling method, first is random then SMOTE then ADASYN
     print(f"\n\n--------------------------PART 2--------------------------")

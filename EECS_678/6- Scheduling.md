@@ -202,3 +202,83 @@ One of many models
 
 
 Adding preemption to SJF is when a new shorter process comes in
+
+### Preemptive SJF
+Previous one is not preemptive, once scheduled, it will run for full time slice
+With this one, if a new shorter process is scheduled, it might preempt 
+For review, prememptive if:
+	New process created
+	Time slice expired
+	IO done 
+	Higher priority process
+
+$WT(P_{1})$ = 12 - 0 - 8 = 4
+$WT(P_{2}) =$ 5 -1 - 4 = 0
+$WT(P_{3})$ = 26 - 2 - 9 = 15
+$WT(P_{4})$ = 10 - 3 - 5 = 2
+$WT(Av)$ = 6.5
+
+
+### Priority Scheduling
+Every process has a priority and CPU does highest priority 
+Externally assigned (someone else specifies, like I specify when I put it in)
+Internally assigned (intrinsic to the algo like SJF and FIFO)
+Preemptive or non preemptive 
+
+Lower number = higher priority 
+
+Advantages: Priorities made as general as needed
+Disadvantage: Lower priority might never exec
+Aging: Used to prevent starvation, Increase the priority of the process with time
+
+### Round Robin scheduling
+Each process given a fixed time quantum and then preempted and then next process runs
+	Ran in FCFS 
+	Allocate CPU to first job in queue until its time slice runs out and then it is put at the back of the queue
+Preemptive by def (Because it gets preemptive if done with time slice)
+	If you increase quantum to inf, becomes FCFS (essentially FCFS with preemption)
+Advantages:
+	Simple, no starvation
+Disadvantages
+	Likely a large overhead because context switch
+	Reducing the quantum will mean more overhead because of context switches
+	IO bound process will run slower on memory loaded system
+
+Essentially the multitasking OS
+
+Performance depends on length of time quantum
+	Large time quantum = FCFS like behavior 
+	small time quantum = large context switch overhead
+Time quantum is usually from 10-100ms
+Context switch time is usually 10microseconds
+RR has bigger wait time, but better response time for interactive systems
+Turnaround time depends on size of time quantum
+![[Pasted image 20241101143453.png]]
+
+### Lottery scheduling
+Address fairness problem
+Process is given some number of tickets based on priority or other properties
+OS knows how many tickets have been allocated and one is chosen as random. The process with that ticket is ran for its *time quantum* (not whole time)
+	To replicate SJF, shorter jobs get more tickets
+
+To avoid starvation, each process gets at least one ticket
+
+![[Pasted image 20241101144009.png]]
+Example 1: There is 1 short job and 1 long job so the ticket diff is 10/1 so 10/11 for short job and 1/11 for long job
+Example 2: 0 sj, 1 lj. 2 tix total. Both long jobs have 1 ticket each so 50% each
+Example 3: Same but 20 tix total
+Example 4: 10 sj, 1lj so 101 tickets total. Each short job has 10/101 chance to run while each long job has 1/101
+Example 5: 1 sj and 10lj so 20 tix total. The short job is 10/20 while each long job is 1/20
+
+### Multilevel queue
+Multiple queues: foreground and background with them having different scheduling algorithms
+	Foreground queue is for interactive
+	Background queue is for FCFS
+2 scheduling algorithms, one to pick the algorithm and then the algorithm runs
+
+Scheduling done between the queues:
+	Fixed priority scheduling: Select the higher priority process in the higher priority queue
+		Starvation possible
+	Time slice: Each queue gets certain amount of time on CPU to schedule its processes
+		aka 80% foreground in RR and 20% background in FCFS
+

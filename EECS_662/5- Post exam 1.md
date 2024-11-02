@@ -315,5 +315,91 @@ bind x=1 in           [(x,TNum)]
 == TNum
 ```
 
+Traditional typing is where we declare a var and give it a type. Then we make sure the value is the right type
+
+Here we *calculate* a type (type derivation) 
+
+
+What is the type of a function? TNum? TBool? 
 ```
+lambda x in x+1 [(x, ???)]
+We dont know what x is so we cant do type checking
+
+((lambda x in x+1) 1) 
+Now we know what x is so we can do type checking yay!
 ```
+The issue is that typechecking and eval happen at 2 different times. Type checking occurs before we run code while eval happens while running the code
+
+Lambda is kind of like a promise. If you give it a number, it will give you some type but that type always
+```
+NOTE T IS ANY TYPE, so ANY TYPE INPUT IS ANY TYPE OUTPUT
+T ::= TNum | TBool | T->T
+So T is either a num, a bool, or Something that takes a type and outputs a type where the inputs and outputs arent neccessarily the same but constant
+```
+Also T->T->T->... has to be finite but can be any number long
+Note that `->` is a type constructor, it creates types
+Examples:
+```
+TBool -> TNum: Input bool, ouptut num
+TNum -> TNum -> TNum: Input TNum output is a func that takes TNum and outputs TNum
+TNum -> TNum -> TBool: Input TNum output is a func that takes TNum and outputs TBool
+```
+Currying!
+
+Referred to `D->R` where D is the domain type and R is the range type
+
+
+Curry-Howard says function types are also theorems: The type def is like the statement and the function itself is the proof of it
+
+
+In `lambda x in t : D->R`, D is the param, R is the ouptut of the function when x is the input
+
+
+Starting with bind, what type is bind
+```
+bind x=1 in x+1 : TNum
+```
+
+$\Gamma = [ ]$  Gamma is a list of IDs and thier types (not values), called context
+`TNum` is the type of the body of the bind (what type the body will return)
+$\vdash$ or `|-` is the derivation operator
+
+`G |- t:T` is read gamma derives that t is of type T and is called a *__type judgement__*
+`G |- t:T` is a theorem where G is an assumption and t:T is the goal
+```
+Cont from above
+== [(x, Tnum)] |- x+1 : T
+== TNum + TNum
+== TNum
+```
+
+Now how do we do it for bind
+
+
+`bind x = 3 in x+1 == ((lambda x in x+1) 3)`
+D is TNum from value assigned to x
+R is TNum as well
+
+So then the type of bind is
+`TNum -> TNum`
+
+The issue is we dont know what value will be applied which is why lambdas are harder
+
+`(lambda x in x+1):D->R`
+
+So what we can do is "cheat" and force the input variable to be a specific type
+```
+[] |- lambda x:TNat in x+1 : TNat -> TNat
+== [(x,TNat)] |- x+1 : TNat
+```
+Now finding D and R is simple
+
+```
+This part the |- the context, we start with none
+[] |- lambda x:TNum in    [(x, TNum)]
+	x+1                   [(x, TNum)]
+== TNum + TNum
+== TNum
+So TNum -> TNum
+```
+Scope stays the same

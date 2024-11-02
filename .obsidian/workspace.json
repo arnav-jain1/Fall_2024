@@ -13,26 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_510/Exam2_2.md",
+                "file": "EECS_678/6- Scheduling.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Exam2_2"
-            }
-          },
-          {
-            "id": "9e9f3140b0367bed",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "interview/System Design/6- HTTP.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "6- HTTP"
+              "title": "6- Scheduling"
             }
           },
           {
@@ -192,26 +178,27 @@
   },
   "active": "b555efabddb954e7",
   "lastOpenFiles": [
+    "EECS_678/Pasted image 20241101144009.png",
+    "EECS_678/Pasted image 20241101143453.png",
+    "EECS_510/Exam2_2.md",
+    "interview/System Design/6- HTTP.md",
+    "EECS_678/6- Scheduling.md",
+    "EECS_662/5- Post exam 1.md",
     "EECS_658/ArnavJain_Assignment5/a5.py~",
     "EECS_510/Pasted image 20241030205720.png",
     "EECS_510/Pasted image 20241030205015.png",
     "EECS_510/Pasted image 20241030204924.png",
     "EECS_510/Exam2_1.md",
-    "interview/System Design/6- HTTP.md",
     "interview/System Design/Pasted image 20241030193219.png",
     "interview/System Design/5- DNS.md",
     "interview/System Design/Pasted image 20241030182749.png",
     "interview/System Design/Pasted image 20241030182743.png",
     "interview/System Design/4- TCP UDP.md",
     "interview/System Design/Pasted image 20241030174758.png",
-    "EECS_510/Exam2_2.md",
     "EECS_510/hw1.md",
-    "EECS_678/6- Scheduling.md",
     "EECS_678/Pasted image 20241030143957.png",
     "EECS_678/Pasted image 20241030142407.png",
-    "EECS_678/Pasted image 20241030141718.png",
     "EECS_565/L14_DBMS.md",
-    "EECS_662/5- Post exam 1.md",
     "EECS_678/labs/lab_7/producer_consumer.c~",
     "latex guide.md",
     "EECS_678/labs/lab_7/narrative4.sorted",
@@ -222,7 +209,6 @@
     "EECS_678/labs/lab_7/narrative2.raw",
     "EECS_678/labs/lab_7/narrative1.sorted",
     "EECS_678/labs/lab_7/narrative1.raw",
-    "EECS_678/labs/lab_7/Makefile~",
     "EECS_510/9-17-Regular Grammars.md",
     "EECS_678/5- Sync.md",
     "EECS_565/miniproj/MP3/report.md",

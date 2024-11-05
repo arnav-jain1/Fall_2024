@@ -69,15 +69,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_658/daily_assignments/19-11-5.md",
+                "file": "EECS_662/5- Post exam 1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "19-11-5"
+              "title": "5- Post exam 1"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -218,8 +219,10 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "b555efabddb954e7",
+  "active": "dff11b8f4a4d4042",
   "lastOpenFiles": [
+    "EECS_658/daily_assignments/19-11-5.md",
+    "EECS_678/6- Scheduling.md",
     "EECS_510/Exam2_3.md",
     "EECS_510/Pasted image 20241105091103.png",
     "EECS_510/Pasted image 20241105090919.png",
@@ -232,9 +235,7 @@
     "EECS_510/Pasted image 20241105083942.png",
     "EECS_510/Pasted image 20241105083331.png",
     "EECS_510/Exam2_2.md",
-    "EECS_658/daily_assignments/19-11-5.md",
     "EECS_658/submissions/19-11-5.pdf",
-    "EECS_678/6- Scheduling.md",
     "EECS_662/5- Post exam 1.md",
     "EECS_662/proj2/p2.hs~",
     "EECS_662/4-Functions and Optimizers.md",

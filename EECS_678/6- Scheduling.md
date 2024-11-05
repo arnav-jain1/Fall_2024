@@ -275,6 +275,8 @@ Multiple queues: foreground and background with them having different scheduling
 	Foreground queue is for interactive
 	Background queue is for FCFS
 2 scheduling algorithms, one to pick the algorithm and then the algorithm runs
+Queues themselves can have priorities and the processes within the queue can have priority
+![[Pasted image 20241104140426.png]]
 
 Scheduling done between the queues:
 	Fixed priority scheduling: Select the higher priority process in the higher priority queue
@@ -282,3 +284,49 @@ Scheduling done between the queues:
 	Time slice: Each queue gets certain amount of time on CPU to schedule its processes
 		aka 80% foreground in RR and 20% background in FCFS
 
+
+### Multilevel feedback queue scheduling
+Processes/jobs can move between the queues based on its features
+Example:
+	Multiple queues with different priorities
+	Round robin scheduling at each priority level
+	Highest priority queue first -> next highest -> etc
+	Jobs start in highest queue, if time slice expires, move it down, if it does not, then move it up
+	This allows the shortest bursts to finish before the highest 
+![[Pasted image 20241104141317.png]]
+A will run for 1 time and then priority lowered to 1
+Then B will run for 1 and then lowered to 1, same with C
+Since there are no more jobs in P0, we move to p1
+![[Pasted image 20241104141408.png]]
+A now runs for 1 and is done (lets say it waits for IO)
+Then B runs and finishes
+![[Pasted image 20241104141541.png]]
+Then lets say A comes back with time slice of 1, since A did not use its last time slice, it goes back to P0 and then runs first for 1 time unit.
+Then C runs for 2 out of 3 but then gets moved to P2. 
+C then runs in P2 where it finishes (will be moved back to P1 if returns)
+![[Pasted image 20241104142007.png]] time = 10
+<mark style="background: #FF5582A6;">Ask what happens if finishes at the same time as the time slice and preemption before time expires</mark>
+
+### Solaris dispatch
+![[Pasted image 20241104142217.png]]
+59 is highest, 0 is lowest. 
+Time quantum expired is where it is placed if time quantum is done
+return from sleep is where it is placed after being done
+
+Approximating Shortest remaining time first (SRTF) because the CPU bound jobs are lower priority while IO bound will be higher
+Unfair for long running jobs
+	Add aging: Longer the waiting process, it gets moved up
+<mark style="background: #FF5582A6;">Stavation?</mark>
+
+### Thread scheduling
+Contention scope: For user level threads (when mapped to one+ kernel threads)
+	PTHREAD_SCOPE_Process: Contend for time on kernel thread between user threads
+	PTHREAD_SCOPE_system: Assigned to kernel thread, contends with other kernel threads
+Lets say 4 user threads to 1 kernel thread and 4 user thread to 4 kernel thread
+So system sees 5 threads total. Each kernel gets 20% (system contention) and each user gets 25% on the kernel (process contention)
+
+When can also tell the thread to inherent the scheduling algo from parent thread or explicitly specify using attribute obj that we have
+	SCHED_RR (Round robin), SCHED_FIFO (fifo), and SCHED_OTHER (other)
+	Can also set param using schedparam
+
+	

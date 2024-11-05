@@ -62,9 +62,21 @@
               "icon": "lucide-file",
               "title": "19-11-5"
             }
+          },
+          {
+            "id": "8ce305e5a4721297",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.7.5"
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.7.5"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -205,7 +217,7 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "dff11b8f4a4d4042",
+  "active": "8ce305e5a4721297",
   "lastOpenFiles": [
     "EECS_658/submissions/19-11-5.pdf",
     "EECS_658/daily_assignments/Pasted image 20241104180739.png",

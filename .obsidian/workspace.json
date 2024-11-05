@@ -77,8 +77,7 @@
               "title": "19-11-5"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -219,8 +218,9 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "85cb00783b4dcc2d",
+  "active": "b555efabddb954e7",
   "lastOpenFiles": [
+    "EECS_510/Exam2_3.md",
     "EECS_510/Pasted image 20241105091103.png",
     "EECS_510/Pasted image 20241105090919.png",
     "EECS_510/Pasted image 20241105090641.png",
@@ -231,11 +231,9 @@
     "EECS_510/Pasted image 20241105085517.png",
     "EECS_510/Pasted image 20241105083942.png",
     "EECS_510/Pasted image 20241105083331.png",
-    "EECS_510/Pasted image 20241105083159.png",
     "EECS_510/Exam2_2.md",
     "EECS_658/daily_assignments/19-11-5.md",
     "EECS_658/submissions/19-11-5.pdf",
-    "EECS_510/Exam2_3.md",
     "EECS_678/6- Scheduling.md",
     "EECS_662/5- Post exam 1.md",
     "EECS_662/proj2/p2.hs~",

@@ -92,7 +92,7 @@ Workload model:
 	P2 arrived at 1 and burst for 4
 	P3 arrive at 1 (but exec after because P2 is first) and burst 10
 	P4 arrived at 6 and burst for 2
-<mark style="background: #FF5582A6;">Does this mean it happens at same time?</mark>
+
 Gantt chart:
 	For batch scheduling algorithm (non premp)
 	![[Pasted image 20241028143022.png]]
@@ -305,7 +305,6 @@ Then lets say A comes back with time slice of 1, since A did not use its last ti
 Then C runs for 2 out of 3 but then gets moved to P2. 
 C then runs in P2 where it finishes (will be moved back to P1 if returns)
 ![[Pasted image 20241104142007.png]] time = 10
-<mark style="background: #FF5582A6;">Ask what happens if finishes at the same time as the time slice and preemption before time expires</mark>
 
 ### Solaris dispatch
 ![[Pasted image 20241104142217.png]]
@@ -316,7 +315,6 @@ return from sleep is where it is placed after being done
 Approximating Shortest remaining time first (SRTF) because the CPU bound jobs are lower priority while IO bound will be higher
 Unfair for long running jobs
 	Add aging: Longer the waiting process, it gets moved up
-<mark style="background: #FF5582A6;">Stavation?</mark>
 
 ### Thread scheduling
 Contention scope: For user level threads (when mapped to one+ kernel threads)

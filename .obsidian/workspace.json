@@ -41,12 +41,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_510/Exam2_2.md",
+                "file": "EECS_510/Exam2_3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Exam2_2"
+              "title": "Exam2_3"
+            }
+          },
+          {
+            "id": "85cb00783b4dcc2d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "EECS_510/Exam2_3.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Exam2_3"
             }
           },
           {
@@ -62,21 +76,9 @@
               "icon": "lucide-file",
               "title": "19-11-5"
             }
-          },
-          {
-            "id": "8ce305e5a4721297",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.7.5"
-              },
-              "icon": "lucide-file",
-              "title": "Release Notes 1.7.5"
-            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -217,23 +219,24 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "8ce305e5a4721297",
+  "active": "85cb00783b4dcc2d",
   "lastOpenFiles": [
-    "EECS_658/submissions/19-11-5.pdf",
-    "EECS_658/daily_assignments/Pasted image 20241104180739.png",
-    "Exam 2_3.md",
-    "EECS_658/daily_assignments/19-11-5.md",
-    "Pasted image 20241104174408.png",
-    "Pasted image 20241104174333.png",
-    "Pasted image 20241104171650.png",
-    "Pasted image 20241104171630.png",
-    "Pasted image 20241104171508.png",
-    "Pasted image 20241104165521.png",
-    "Pasted image 20241104165450.png",
-    "Pasted image 20241104165252.png",
+    "EECS_510/Pasted image 20241105091103.png",
+    "EECS_510/Pasted image 20241105090919.png",
+    "EECS_510/Pasted image 20241105090641.png",
+    "EECS_510/Pasted image 20241105090629.png",
+    "EECS_510/Pasted image 20241105090611.png",
+    "EECS_510/Pasted image 20241105090512.png",
+    "EECS_510/Pasted image 20241105090403.png",
+    "EECS_510/Pasted image 20241105085517.png",
+    "EECS_510/Pasted image 20241105083942.png",
+    "EECS_510/Pasted image 20241105083331.png",
+    "EECS_510/Pasted image 20241105083159.png",
     "EECS_510/Exam2_2.md",
+    "EECS_658/daily_assignments/19-11-5.md",
+    "EECS_658/submissions/19-11-5.pdf",
+    "EECS_510/Exam2_3.md",
     "EECS_678/6- Scheduling.md",
-    "EECS_678/Pasted image 20241104142217.png",
     "EECS_662/5- Post exam 1.md",
     "EECS_662/proj2/p2.hs~",
     "EECS_662/4-Functions and Optimizers.md",
@@ -252,7 +255,6 @@
     "EECS_678/labs/lab_7/narrative4.raw",
     "EECS_678/labs/lab_7/narrative3.sorted",
     "EECS_678/labs/lab_7/narrative3.raw",
-    "EECS_678/labs/lab_7/narrative2.sorted",
     "EECS_510/9-17-Regular Grammars.md",
     "EECS_678/5- Sync.md",
     "EECS_565/miniproj/MP3/report.md",

@@ -173,3 +173,12 @@ Bypass by making more queries that generate small results
 Divide query into parts where each part returns acceptable size but their overlap is small enough to infer data
 ![[Pasted image 20241030121744.png]]
 
+### Prevent inference attacks
+Very difficult
+3 options
+1. Suppress: Hide more info, bad because less usable
+2. Track: Keep a log of what the user knows, costly
+3. Disguise: Modify the data using random perturb, rounding, swap. Data not very good
+Query controls: Limit overlap between queries 
+Item controls: Concealing, result is close to but not the exact answer or supression, limit the results, combine, random sample
+Partitioning: Cluster records into groups and only allow queries on groups

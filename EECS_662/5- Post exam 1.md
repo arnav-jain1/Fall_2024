@@ -403,3 +403,86 @@ This part the |- the context, we start with none
 So TNum -> TNum
 ```
 Scope stays the same
+
+
+This function takes in a function of TBool->TNum and then also takes a TBool and then applies the TBool to the function. This means the type of the inner lambda is TBool->TNum
+```
+lambda f:TBool->TNum in    [(f, TBool -> TNum)]
+	lambda a:TBool in      [(a, TBool), (f, TBool -> TNum)]
+		(f a)
+
+(TBool -> TNum) -> TBool -> TNum
+```
+
+```haskell 
+typeof c ( lambda x d t) do { r <- typeof (x,d):c t;
+		   Just (d:->:r)
+	
+}
+```
+c is the context (env)
+d is the domain type
+x is the var name
+t is the body
+`r <- typeof (x,d):c t` is finding the range of the lambda in its body then saving it
+	Does this by recursing through the body with the var added to the context
+`Just (d:->:r)` returns domain -> range 
+$$\frac{(x:D):\Gamma\vdash t:R}{\Gamma \vdash (lambda\space x:D\space in \space t):D\rightarrow R}$$
+Append x:D to gamma derives t is of type R
+
+Now how do we find the type of an App?
+App sort of eliminates a type
+So 
+```
+(lambda x:TNum in x+1) 1: TNum -> TNum
+2 : TNum
+```
+
+
+```
+(lambda x:TNum in x+1) True: TNum -> TNum
+Error!
+```
+
+
+```haskell
+--This gets the sig and stores it
+typeof c (App f a) = do { D:->:R <- typeof c f; 
+-- Calculate type of input
+						  A <- typeof c a; 
+-- You check to make sure the input and the Domain are the same, if so then return the Range otherwise (error)
+						  if A=D then Just R else Nothing 
+}
+```
+
+
+```
+[]
+bind inc = lambda x:TNum in x+1 in          [(inc, TNum->TNum)]
+	inc 3
+== inc : TNum-> TNum, 3:TNum
+== TNum
+```
+
+```
+The first lambda takes in a TNum
+bind plus = (lambda x:TNum in        [(x, TNum)]
+The second lambda takes in a TNum
+				(lambda y:TNum in    [(y, TNum), (x, TNum)]
+					x+y)) in
+So plus is TNum -> TNum -> TNum, because we are out of the definition of the function, the env is reset to before 
+	(plus 3) 4                       [(plus, TNum->TNum->TNum)]
+plus 3 is simply TNum->TNum and then applied to 4 so it becomes TNum
+
+	plus 3 4
+Can also leave out the parenthesis
+```
+
+
+```
+bind app = (lambda f:(TBool->TNum) in 
+				lambda a:TBool in 
+					f a:TNum) in 
+	app (lambda x:TBool in if x then 1 else 0) 3
+```
+

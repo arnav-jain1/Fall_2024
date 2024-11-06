@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_662/5- Post exam 1.md",
+                "file": "EECS_662/6- Post exam 1_2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "5- Post exam 1"
+              "title": "6- Post exam 1_2"
             }
           }
         ],
@@ -221,6 +221,10 @@
   },
   "active": "dff11b8f4a4d4042",
   "lastOpenFiles": [
+    "EECS_662/5- Post exam 1.md",
+    "EECS_662/6- Post exam 1_2.md",
+    "EECS_662/proj2/p2.hs~",
+    "EECS_662/proj2/4913",
     "EECS_658/daily_assignments/19-11-5.md",
     "EECS_678/6- Scheduling.md",
     "EECS_510/Exam2_3.md",
@@ -236,8 +240,6 @@
     "EECS_510/Pasted image 20241105083331.png",
     "EECS_510/Exam2_2.md",
     "EECS_658/submissions/19-11-5.pdf",
-    "EECS_662/5- Post exam 1.md",
-    "EECS_662/proj2/p2.hs~",
     "EECS_662/4-Functions and Optimizers.md",
     "EECS_510/hw1.md",
     "latex guide.md",
@@ -253,7 +255,6 @@
     "EECS_678/labs/lab_7/narrative4.sorted",
     "EECS_678/labs/lab_7/narrative4.raw",
     "EECS_678/labs/lab_7/narrative3.sorted",
-    "EECS_678/labs/lab_7/narrative3.raw",
     "EECS_510/9-17-Regular Grammars.md",
     "EECS_678/5- Sync.md",
     "EECS_565/miniproj/MP3/report.md",

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_565/L9- auth.md",
+                "file": "EECS_565/L13- OS Sec 3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "L9- auth"
+              "title": "L13- OS Sec 3"
             }
           }
         ]
@@ -164,6 +164,10 @@
   },
   "active": "b555efabddb954e7",
   "lastOpenFiles": [
+    "EECS_565/L12- OS Sec 2.md",
+    "EECS_565/L11-OS Sec.md",
+    "EECS_565/L10- PKI.md",
+    "EECS_565/L9- auth.md",
     "EECS_565/L14_DBMS.md",
     "EECS_678/6- Scheduling.md",
     "EECS_662/5- Post exam 1.md",
@@ -203,12 +207,8 @@
     "EECS_565/miniproj/MP3/report.md",
     "interview/System Design/3- Networking basics.md",
     "interview/System Design/2- Design req.md",
-    "EECS_565/L12- OS Sec 2.md",
     "EECS_565/L13- OS Sec 3.md",
     "interview/System Design/1- Soft arch.md",
-    "EECS_565/L11-OS Sec.md",
-    "EECS_565/L10- PKI.md",
-    "README.md",
-    "jobs.md"
+    "README.md"
   ]
 }

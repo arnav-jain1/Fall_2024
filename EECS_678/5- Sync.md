@@ -1,4 +1,4 @@
-# Sychronization
+# Ch 5 sync
 ## Why important
 One issue with parallel programs are race conditions
 2 major issues

@@ -151,6 +151,7 @@ Binary semaphores: 0,1 for mutex
 Counting semaphore: any int value with access to some finite value
 
 ![[Pasted image 20241021142700.png]]
+***SIGNAL INC, WAIT DEC***
 Similar to before
 S should always be 1 or 0
 Only one process waiting at a time, it will wait until the other process gets to the signal

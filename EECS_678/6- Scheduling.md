@@ -71,8 +71,8 @@ Maximize:
 	CPU Util: % of time CPU is busy (includes busy waiting)
 	Throughput: Number of processes that finish per time unit
 Minimize:
-	Turn around time: How long it takes to finish a process once submitted
-	Waiting time: How long a process is waiting in the ready queue
+	Turn around time: How long it takes to finish a process once submitted (finish-submit)
+	Waiting time: How long a process is waiting in the ready queue (time it is not running and not done)
 	Response time: Amount of time it takes from request submitted until resposne
 Also want to be fair to all processes and users
 

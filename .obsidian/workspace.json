@@ -13,44 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_678/4- Threads.md",
+                "file": "interview/Interview/1- Rate limiter.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "4- Threads"
-            }
-          },
-          {
-            "id": "adb5a464854b086d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "interview/System Design/15- NoSQL.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "15- NoSQL"
-            }
-          },
-          {
-            "id": "1fdc9bd18c2d4029",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "interview/System Design/19- Message queues.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "19- Message queues"
+              "title": "1- Rate limiter"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -191,24 +162,30 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "1fdc9bd18c2d4029",
+  "active": "b555efabddb954e7",
   "lastOpenFiles": [
+    "interview/Interview/Pasted image 20241110222830.png",
+    "interview/Interview/Pasted image 20241110221458.png",
+    "interview/Interview/Pasted image 20241110221208.png",
+    "interview/Interview/Pasted image 20241110221116.png",
+    "interview/Interview/Approach.md",
+    "EECS_678/4- Threads.md",
+    "interview/System Design/15- NoSQL.md",
+    "interview/Interview/Rate-Limiter.canvas",
+    "interview/Interview/1- Rate limiter.md",
+    "interview/Interview",
+    "interview/System Design/20- Map Reduce.md",
+    "interview/System Design/Pasted image 20241110203152.png",
+    "interview/System Design/19- Message queues.md",
     "interview/System Design/Pasted image 20241110193511.png",
     "interview/System Design/Pasted image 20241110192504.png",
     "interview/System Design/Pasted image 20241110192449.png",
     "interview/System Design/18- Object storage.md",
-    "interview/System Design/19- Message queues.md",
     "interview/System Design/17- CAP theorem.md",
     "interview/System Design/Pasted image 20241110184451.png",
     "interview/System Design/Pasted image 20241110183940.png",
     "interview/System Design/Pasted image 20241110183729.png",
     "interview/System Design/16 Replication and Sharding.md",
-    "interview/System Design/Pasted image 20241110175154.png",
-    "interview/System Design/Pasted image 20241110174719.png",
-    "interview/System Design/Pasted image 20241110174503.png",
-    "interview/System Design/Pasted image 20241110174243.png",
-    "interview/System Design/15- NoSQL.md",
-    "interview/System Design/Pasted image 20241110171802.png",
     "interview/System Design/14- SQL.md",
     "interview/System Design/13- Consistent Hashing.md",
     "interview/System Design/12- Proxies and Load Balancers.md",
@@ -223,13 +200,9 @@
     "EECS_678/Exam Q2.md",
     "EECS_678/5- Sync.md",
     "EECS_678/Exam Q.md",
-    "EECS_678/4- Threads.md",
     "EECS_678/4.1 Quiz answers.md",
     "EECS_565/L14_DBMS.md",
-    "EECS_658/daily_assignments/20-11-7.md",
     "EECS_658/submissions/20-11-7.pdf",
-    "EECS_662/6- Post exam 1_2.md",
-    "EECS_565/L13- OS Sec 3.md",
     "EECS_662/proj2/p2.hs~",
     "EECS_662/proj2/4913",
     "EECS_658/submissions/19-11-5.pdf",
@@ -237,7 +210,6 @@
     "EECS_678/labs/lab_7/Lab07_Arnav_Jain_3097021",
     "EECS_658/ArnavJain_Assignment5/a5.py~",
     "EECS_678/labs/lab_7/producer_consumer.c~",
-    "EECS_678/labs/lab_7/narrative4.sorted",
-    "EECS_678/labs/lab_7/narrative4.raw"
+    "EECS_678/labs/lab_7/narrative4.sorted"
   ]
 }

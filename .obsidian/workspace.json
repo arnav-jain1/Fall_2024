@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "fdbb43f0cbcf26c7",
+        "id": "b9a50465f0b407e6",
         "type": "tabs",
         "children": [
           {
-            "id": "b555efabddb954e7",
+            "id": "8b7361f60c0111c4",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "interview/Interview/1- Rate limiter.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "1- Rate limiter"
+              "title": "New tab"
             }
           }
         ]
@@ -162,8 +158,13 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "b555efabddb954e7",
+  "active": "8b7361f60c0111c4",
   "lastOpenFiles": [
+    "EECS_658/daily_assignments/22-11-14.md",
+    "EECS_658/submissions/22-11-14.pdf",
+    "EECS_658/daily_assignments/21-11-12.md",
+    "EECS_658/submissions/21-11-12.pdf",
+    "interview/Interview/1- Rate limiter.md",
     "interview/Interview/Pasted image 20241110222830.png",
     "interview/Interview/Pasted image 20241110221458.png",
     "interview/Interview/Pasted image 20241110221208.png",
@@ -172,7 +173,6 @@
     "EECS_678/4- Threads.md",
     "interview/System Design/15- NoSQL.md",
     "interview/Interview/Rate-Limiter.canvas",
-    "interview/Interview/1- Rate limiter.md",
     "interview/Interview",
     "interview/System Design/20- Map Reduce.md",
     "interview/System Design/Pasted image 20241110203152.png",
@@ -184,7 +184,6 @@
     "interview/System Design/17- CAP theorem.md",
     "interview/System Design/Pasted image 20241110184451.png",
     "interview/System Design/Pasted image 20241110183940.png",
-    "interview/System Design/Pasted image 20241110183729.png",
     "interview/System Design/16 Replication and Sharding.md",
     "interview/System Design/14- SQL.md",
     "interview/System Design/13- Consistent Hashing.md",
@@ -200,16 +199,12 @@
     "EECS_678/Exam Q2.md",
     "EECS_678/5- Sync.md",
     "EECS_678/Exam Q.md",
-    "EECS_678/4.1 Quiz answers.md",
-    "EECS_565/L14_DBMS.md",
     "EECS_658/submissions/20-11-7.pdf",
     "EECS_662/proj2/p2.hs~",
     "EECS_662/proj2/4913",
     "EECS_658/submissions/19-11-5.pdf",
     "EECS_678/labs/lab_7/Lab07_Arnav_Jain_3097021.tar.gz",
     "EECS_678/labs/lab_7/Lab07_Arnav_Jain_3097021",
-    "EECS_658/ArnavJain_Assignment5/a5.py~",
-    "EECS_678/labs/lab_7/producer_consumer.c~",
-    "EECS_678/labs/lab_7/narrative4.sorted"
+    "EECS_658/ArnavJain_Assignment5/a5.py~"
   ]
 }

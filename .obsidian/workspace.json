@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interview/Interview/3- Twitter.md",
+                "file": "interview/Interview/4- Discord.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3- Twitter"
+              "title": "4- Discord"
             }
           }
         ]
@@ -164,13 +164,15 @@
   },
   "active": "8b7361f60c0111c4",
   "lastOpenFiles": [
+    "interview/Interview/Pasted image 20241111210002.png",
+    "interview/Interview/3- Twitter.md",
+    "interview/Interview/4- Discord.md",
     "interview/Interview/Pasted image 20241111191105.png",
     "interview/Interview/Pasted image 20241111190824.png",
     "interview/Interview/Pasted image 20241111190809.png",
     "interview/Interview/Pasted image 20241111190515.png",
     "interview/Interview/Pasted image 20241111185707.png",
     "interview/System Design/11-CDN.md",
-    "interview/Interview/3- Twitter.md",
     "interview/Interview/Pasted image 20241111185327.png",
     "interview/Interview/2- Tiny URL.md",
     "interview/Interview/Pasted image 20241111171613.png",
@@ -179,7 +181,6 @@
     "interview/Interview/0- Approach.md",
     "EECS_678/8- Memory Management.md",
     "EECS_678/Pasted image 20241111143404.png",
-    "EECS_678/Pasted image 20241111141344.png",
     "EECS_658/daily_assignments/22-11-14.md",
     "EECS_658/submissions/22-11-14.pdf",
     "EECS_658/daily_assignments/21-11-12.md",
@@ -203,7 +204,6 @@
     "interview/System Design/6- Websockets.md",
     "interview/System Design/6- HTTP.md",
     "EECS_678/Exam_2.md",
-    "EECS_678/6- Scheduling.md",
     "EECS_658/submissions/20-11-7.pdf",
     "EECS_662/proj2/p2.hs~",
     "EECS_662/proj2/4913",

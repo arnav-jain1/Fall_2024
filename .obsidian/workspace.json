@@ -13,15 +13,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interview/Interview/4- Discord.md",
+                "file": "interview/Interview/5- Youtube.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "4- Discord"
+              "title": "5- Youtube"
+            }
+          },
+          {
+            "id": "3ab60b51b037a0b5",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.7.6"
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.7.6"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -162,11 +175,16 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "8b7361f60c0111c4",
+  "active": "3ab60b51b037a0b5",
   "lastOpenFiles": [
+    "interview/Interview/Pasted image 20241112170007.png",
+    "interview/Interview/Pasted image 20241112165817.png",
+    "interview/Interview/Pasted image 20241112165658.png",
+    "interview/Interview/Pasted image 20241112164359.png",
+    "interview/Interview/4- Discord.md",
+    "interview/Interview/5- Youtube.md",
     "interview/Interview/Pasted image 20241111210002.png",
     "interview/Interview/3- Twitter.md",
-    "interview/Interview/4- Discord.md",
     "interview/Interview/Pasted image 20241111191105.png",
     "interview/Interview/Pasted image 20241111190824.png",
     "interview/Interview/Pasted image 20241111190809.png",
@@ -175,12 +193,8 @@
     "interview/System Design/11-CDN.md",
     "interview/Interview/Pasted image 20241111185327.png",
     "interview/Interview/2- Tiny URL.md",
-    "interview/Interview/Pasted image 20241111171613.png",
-    "interview/Interview/Pasted image 20241111170406.png",
-    "interview/Interview/Pasted image 20241111170239.png",
     "interview/Interview/0- Approach.md",
     "EECS_678/8- Memory Management.md",
-    "EECS_678/Pasted image 20241111143404.png",
     "EECS_658/daily_assignments/22-11-14.md",
     "EECS_658/submissions/22-11-14.pdf",
     "EECS_658/daily_assignments/21-11-12.md",
@@ -203,7 +217,6 @@
     "interview/System Design/7- API Paradigms.md",
     "interview/System Design/6- Websockets.md",
     "interview/System Design/6- HTTP.md",
-    "EECS_678/Exam_2.md",
     "EECS_658/submissions/20-11-7.pdf",
     "EECS_662/proj2/p2.hs~",
     "EECS_662/proj2/4913",

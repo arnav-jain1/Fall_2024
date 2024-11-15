@@ -25,12 +25,14 @@
             "id": "3ab60b51b037a0b5",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.7.6"
+                "file": "EECS_658/ArnavJain_Assignment6/output.md",
+                "mode": "source",
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Release Notes 1.7.6"
+              "title": "output"
             }
           }
         ],
@@ -177,21 +179,21 @@
   },
   "active": "3ab60b51b037a0b5",
   "lastOpenFiles": [
+    "EECS_658/ArnavJain_Assignment6/output.pdf",
+    "EECS_658/ArnavJain_Assignment6/Screenshot from 2024-11-14 22-51-23.png",
+    "EECS_658/ArnavJain_Assignment6/Screenshot from 2024-11-14 22-51-07.png",
+    "EECS_658/ArnavJain_Assignment6/Screenshot from 2024-11-14 22-50-47.png",
+    "EECS_658/ArnavJain_Assignment6/Screenshot from 2024-11-14 22-50-24.png",
+    "EECS_658/ArnavJain_Assignment6/Screenshot from 2024-11-14 22-50-08.png",
+    "EECS_658/ArnavJain_Assignment6/Screenshot from 2024-11-14 22-49-51.png",
+    "EECS_658/ArnavJain_Assignment6/Screenshot from 2024-11-14 22-49-37.png",
+    "EECS_658/ArnavJain_Assignment6/Screenshot from 2024-11-14 22-49-31.png",
     "interview/Interview/Pasted image 20241112170007.png",
     "interview/Interview/Pasted image 20241112165817.png",
-    "interview/Interview/Pasted image 20241112165658.png",
-    "interview/Interview/Pasted image 20241112164359.png",
     "interview/Interview/4- Discord.md",
     "interview/Interview/5- Youtube.md",
-    "interview/Interview/Pasted image 20241111210002.png",
     "interview/Interview/3- Twitter.md",
-    "interview/Interview/Pasted image 20241111191105.png",
-    "interview/Interview/Pasted image 20241111190824.png",
-    "interview/Interview/Pasted image 20241111190809.png",
-    "interview/Interview/Pasted image 20241111190515.png",
-    "interview/Interview/Pasted image 20241111185707.png",
     "interview/System Design/11-CDN.md",
-    "interview/Interview/Pasted image 20241111185327.png",
     "interview/Interview/2- Tiny URL.md",
     "interview/Interview/0- Approach.md",
     "EECS_678/8- Memory Management.md",

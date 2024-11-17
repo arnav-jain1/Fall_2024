@@ -133,3 +133,27 @@ Overwhelms the target
 
 Combined with DNS to make DNS Amplification DDOS
 	Open recursive DNS attacked from botnet resulting in 1tbps 
+
+### DNS Water torture
+How Recursive queries work
+![[Pasted image 20241117121757.png]]
+
+DNS water torture is sending random DNS queries with not found domains
+The queries go all the way to the authoritative server
+![[Pasted image 20241117121953.png]]
+
+
+## DDoS pervention
+Hard to do because hard to tell whether traffic volume was legit or not
+Defenses:
+	Attack prevention: Don't let the attack happen in the first place
+		Block spoofed source addresses, IPs, servers
+		Use reverse filters
+		Manage attacks using CAPTCHA. rate limit, etc. Also use syn cookies and such
+		Overprovision: Get enough bandwidth that it is hard to overwhelm
+	Attack detection and filtering: During the attack, filter the packets
+		Capture and analyze packets to figure out attacks and then prevent (signature or abnormal patterns)
+	Source traceback and identification: During and after, try to find the source
+	Attack reaction: response after attack
+		Have the ISP trace the packet back to the source (hard and time consuming but needed for legal action)
+		Contigency/response plan

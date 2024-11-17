@@ -60,5 +60,131 @@ Static loading:
 Dynmaic loading:
 	Routine not loaded until called
 	Better util, unused routine never loaded (like with if else blocks)
-	Useful for edge cases
+	Useful for edge cases (used rarely but need a lot of code)
 	No support from OS, implemented through program design
+
+## Dynamic Linking
+Static Linking:
+	Links all files at compile time
+	Compiles libraries and into a binary and links it as compiles it at compile time
+	Increases binary size and multiple copies of the library may exist at a time
+Dynamic Linking:
+	Linking postponed until exec time
+	Library stored in memory, a small piece of code (stub) used to locate the location of the routine (pointer to the function pretty much)
+	Only one copy of the library at a time
+	*Shared* library
+
+## Swapping
+Swapping is when a process is moved from the memory to a *backing store (disk)* and then swapping another process to the freed space
+	Pages get swapped in and out
+Useful for when memory runs out
+Since it is stored on disk and disk is slow, it is very costly
+	Leads to memory thrashing if done a lot
+
+![[Pasted image 20241115130500.png]]
+
+
+# Contiguous memory allocation
+Effecient allocation of memory is important because it is limited and contains the OS/active processes
+Divided into 2 partitions: The OS in the lower region with intrurrupt vec table and user processes in higher memory
+
+Contiguous memory allocation is when each process is in a single continuous memory block
+	Allows for multiple processes to be there at the same time
+	Processes protected from each other
+
+
+## Hardware support for prot
+Limit registers used to make sure the address is less than the limit, if it is, then the relocation address is added
+	Protects processes from other processes and protects OS
+![[Pasted image 20241115131425.png]]
+Since relocation register is the lower bound, we dont have to check the lower bound
+
+
+Multiple parition method:
+	Holes are blocks of available memory and are scattered through address space
+	When a process arrives, it is allocated memory in the hole
+	The OS remembers (saves) info about the hole and allocated partitions
+	![[Pasted image 20241115131637.png]]
+
+The issue with this, is how does the OS allocate memory for a new process of size n
+	**First-fit scheme**: Allocate first hole that is big enough, fastest
+	**Best-fit**: Allocate the smallest hole that is big enough (searches the list unless ordered), produces smallest leftover hole
+	**Worst-fit**: Same thing but for biggest hole. Produces biggest leftover hole (not effecient)
+
+
+
+### Fragmentation
+External Fragmentation: There is enough memory to run the process but it isn't continuous
+Solutions:
+	Compaction: Move blocks to place the holes together, only possible if dynamic
+	Allow for non continuous allocation of address space
+Internal Fragmentation: 
+	Happens with blocks of memory where the size of the block is slightly larger than needed so that the hole isn't super small
+	Leads to memory loss
+
+# Paging
+Solution to external fragmenting and compaction
+Commonly used
+Depend on HW support
+Allows for noncontinuous address space blocks
+
+Scheme:
+	Divide the *physical memory* into fixed size blocks (frames), usually power of 2
+		Refer to the actual address
+	Divide the *logical address* into blocks of the same size (pages)
+	OS tracks all of the frames
+	A program that is **n** pages big, needs n free frames
+	Page table translates pages into frames
+Each of the pages matches up with a frame in the phsyical address space
+
+The size of the page == size of frame (specified by the hardware)
+The page size determines the amount of bits needed to specify the offset
+
+The offset is the number of data a page can hold
+
+So if our page size is n bytes, the offset will be $log_{2} n$  
+
+So lets say the page size is 32, the offset will be 5 
+Now lets say the total address bits is 12 (arb)
+then the page number is now 12 - 5 (offset) = 7 so then there are 2^7 pages
+
+Lets instead say address bits is 7, so then 7-5=2 so 4 pages
+![[Pasted image 20241115142238.png]]
+
+![[Pasted image 20241115142721.png]]
+So lets say finding logical address 1 to physical
+The page # is 00 (binary) and offset is 01 so the physical would be 10101=21
+
+Lets look at 5, it is on page 1 so 01 and offset is 01 so 0101. The physical would be 6 (page table) so 110 and offset stays same so 01 so 11001 which will become 25
+
+For 10, 1010 (write in binary is step 1) 10 regers to page 2 which refers to page 1 so 001 and then the offset carries over which is 10 so then it becomes 00110 which is 6
+
+For 15, 1111 so offset is 11 and page num is 11 (3) which corresponds to 2 which is 10. Then bring the offset back so 01011 which is 11
+
+
+### issues with page tables
+This still leaves internal fragmentation 
+Page size
+	Small page size reduces internal fragmentation but increases size of page table
+	Larger page size reduces size of page table
+	Larger transfers is more effecient 
+Each memory load/store operation goes through the page table
+	Page table has to be fast (hardware registers)
+	Only possible for small tables, 256 entries max
+Each process can have its own page table
+	Page table context switching should be fast
+Most computers have large page tables with pointers to the page table (in memory)
+
+
+### Implementation
+Page table base register (PTBR): Points to page table 
+	Only part affected with a context switch
+Every load/store requires 2 memory accesses
+	One for the page table and another for data/instruction
+Translation lookaside buffer (TLB):
+	Cache to hold popular page table entries
+	Should be fast, uses associative cache
+![[Pasted image 20241115144819.png]]
+Power hungry part but very important
+
+

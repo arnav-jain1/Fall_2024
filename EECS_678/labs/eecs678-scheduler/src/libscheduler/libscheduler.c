@@ -16,8 +16,30 @@
 */
 typedef struct _job_t
 {
+    int id;
+    int arrived_time;
+    int priority;
+    int burst_time;
+    int time_remaining;
 
 } job_t;
+
+typedef struct _dispatcher_t 
+{
+    int n_cores;
+    job_t* jobs;
+    scheme_t algorithm;
+    priqueue_t* queue;
+     
+
+
+    int wait_time;
+    int turnaround_time;
+    int response_time;
+
+    int finished_jobs;
+
+} dispatcher_t;
 
 
 /**

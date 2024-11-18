@@ -8,6 +8,7 @@
 #include "libscheduler.h"
 #include "../libpriqueue/libpriqueue.h"
 
+#define MAX_JOBS 50
 
 /**
   Stores information making up a job to be scheduled including any statistics.
@@ -26,8 +27,8 @@ typedef struct _job_t
 
 typedef struct _dispatcher_t 
 {
-    int n_cores;
-    job_t* jobs;
+    int cores;
+    job_t** jobs;
     scheme_t algorithm;
     priqueue_t* queue;
      
@@ -41,7 +42,45 @@ typedef struct _dispatcher_t
 
 } dispatcher_t;
 
+dispatcher_t dispatcher;
 
+
+int compare_fcfs(const void* a, const void* b) {
+    job_t* j1 = (job_t*) a;
+    job_t* j2 = (job_t*) b;
+
+    if (j1->arrived_time < j2->arrived_time) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+int compare_sjf(const void* a, const void* b) {
+    job_t* j1 = (job_t*) a;
+    job_t* j2 = (job_t*) b;
+
+    if (j1->time_remaining < j2->time_remaining) {
+        return 1;
+    } else if (j1->time_remaining > j2->time_remaining) {
+        return 0;
+    } else {
+        return compare_fcfs(a, b);
+    }
+}
+
+int compare_priority(const void* a, const void* b) {
+    job_t* j1 = (job_t*) a;
+    job_t* j2 = (job_t*) b;
+
+    if (j1->priority < j2->priority) {
+        return 1;
+    } else if (j1->priority > j2->priority) {
+        return 0;
+    } else {
+        return compare_fcfs(a, b);
+    }
+}
 /**
   Initalizes the scheduler.
  
@@ -56,6 +95,44 @@ typedef struct _dispatcher_t
 */
 void scheduler_start_up(int cores, scheme_t scheme)
 {
+    dispatcher.jobs = (job_t** ) malloc(sizeof(job_t*) * cores);
+    dispatcher.cores = cores;
+    dispatcher.algorithm = scheme;
+    dispatcher.finished_jobs = 0;
+    dispatcher.wait_time = 0;
+    dispatcher.response_time = 0;
+    dispatcher.turnaround_time = 0;
+
+    for (int i = 0; i < cores; i++) {
+        dispatcher.jobs[i] = NULL;
+    }
+
+    int (*comparer) (const void *, const void *);
+
+    dispatcher.queue = (priqueue_t *) malloc(sizeof(priqueue_t));
+
+    switch (scheme) {
+        case FCFS:
+            comparer = compare_fcfs;
+            break;
+        case RR:
+            comparer = compare_fcfs;
+            break;
+        case SJF:
+            comparer = compare_sjf;
+            break;
+        case PSJF:
+            comparer = compare_sjf;
+            break;
+        case PRI:
+            comparer = compare_priority;
+            break;
+        case PPRI:
+            comparer = compare_priority;
+            break;
+    }
+
+    priqueue_init(dispatcher.queue, comparer);
 
 }
 
@@ -82,6 +159,15 @@ void scheduler_start_up(int cores, scheme_t scheme)
  */
 int scheduler_new_job(int job_number, int time, int running_time, int priority)
 {
+    job_t* job = malloc(sizeof(job_t));
+    job->id = job_number;
+    job->arrived_time = time;
+    job->time_remaining = running_time;
+    job->priority = priority;
+
+    
+
+
 	return -1;
 }
 
@@ -172,6 +258,8 @@ float scheduler_average_response_time()
 */
 void scheduler_clean_up()
 {
+
+    free(dispatcher.jobs);
 
 }
 

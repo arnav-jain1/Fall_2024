@@ -20,21 +20,8 @@
               "icon": "lucide-file",
               "title": "5- Youtube"
             }
-          },
-          {
-            "id": "63d4e13b0e693336",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.7.7"
-              },
-              "icon": "lucide-file",
-              "title": "Release Notes 1.7.7"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -175,8 +162,9 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "63d4e13b0e693336",
+  "active": "8b7361f60c0111c4",
   "lastOpenFiles": [
+    "EECS_678/labs/eecs678-scheduler/src/libscheduler/libscheduler.c~",
     "EECS_658/daily_assignments/24-11-21.md",
     "EECS_658/submissions/24-11-21.pdf",
     "EECS_658/daily_assignments/23-11-19.md",

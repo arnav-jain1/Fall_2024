@@ -164,6 +164,8 @@
   },
   "active": "8b7361f60c0111c4",
   "lastOpenFiles": [
+    "EECS_678/labs/eecs678-scheduler/output2",
+    "EECS_678/labs/eecs678-scheduler/output1",
     "EECS_662/6- Post exam 1_2.md",
     "EECS_662/7- Post exam 1_3.md",
     "interview/Interview/5- Youtube.md",
@@ -176,7 +178,6 @@
     "EECS_678/labs/eecs678-scheduler/obj/simulator.o",
     "EECS_678/labs/eecs678-scheduler/obj/libscheduler",
     "EECS_678/labs/eecs678-scheduler/obj/libpriqueue",
-    "EECS_678/labs/eecs678-scheduler/obj",
     "EECS_658/daily_assignments/24-11-21.md",
     "EECS_658/daily_assignments/23-11-19.md",
     "EECS_565/L17- Net Sec.md",
@@ -209,7 +210,6 @@
     "interview/System Design/18- Object storage.md",
     "interview/System Design/17- CAP theorem.md",
     "interview/System Design/16 Replication and Sharding.md",
-    "interview/System Design/14- SQL.md",
-    "interview/System Design/13- Consistent Hashing.md"
+    "interview/System Design/14- SQL.md"
   ]
 }

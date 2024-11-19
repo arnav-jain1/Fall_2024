@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interview/Interview/5- Youtube.md",
+                "file": "EECS_662/7- Post exam 1_3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "5- Youtube"
+              "title": "7- Post exam 1_3"
             }
           }
         ]
@@ -164,6 +164,9 @@
   },
   "active": "8b7361f60c0111c4",
   "lastOpenFiles": [
+    "EECS_662/6- Post exam 1_2.md",
+    "EECS_662/7- Post exam 1_3.md",
+    "interview/Interview/5- Youtube.md",
     "EECS_678/labs/eecs678-scheduler/src/libscheduler/libscheduler.c~",
     "EECS_678/labs/eecs678-scheduler/src/libscheduler/4913",
     "EECS_678/labs/eecs678-scheduler/queuetest",
@@ -174,7 +177,6 @@
     "EECS_678/labs/eecs678-scheduler/obj/libscheduler",
     "EECS_678/labs/eecs678-scheduler/obj/libpriqueue",
     "EECS_678/labs/eecs678-scheduler/obj",
-    "EECS_678/labs/eecs678-scheduler/Makefile~",
     "EECS_658/daily_assignments/24-11-21.md",
     "EECS_658/daily_assignments/23-11-19.md",
     "EECS_565/L17- Net Sec.md",
@@ -192,7 +194,6 @@
     "EECS_678/8- Memory Management.md",
     "EECS_658/ArnavJain_Assignment6/output.md",
     "interview/Interview/4- Discord.md",
-    "interview/Interview/5- Youtube.md",
     "interview/Interview/3- Twitter.md",
     "interview/System Design/11-CDN.md",
     "interview/Interview/2- Tiny URL.md",
@@ -209,7 +210,6 @@
     "interview/System Design/17- CAP theorem.md",
     "interview/System Design/16 Replication and Sharding.md",
     "interview/System Design/14- SQL.md",
-    "interview/System Design/13- Consistent Hashing.md",
-    "interview/System Design/12- Proxies and Load Balancers.md"
+    "interview/System Design/13- Consistent Hashing.md"
   ]
 }

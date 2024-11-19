@@ -1,7 +1,7 @@
 # Change these lines before running `make tar`
-FIRST_NAME=Misbah
-LAST_NAME=Zarrar
-KUID=XXXXXXX
+FIRST_NAME=Arnav
+LAST_NAME=Jain
+KUID=3097021
 
 LAB=09
 TAR_BASENAME=Lab$(LAB)_$(FIRST_NAME)_$(LAST_NAME)_$(KUID)

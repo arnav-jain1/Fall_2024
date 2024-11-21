@@ -34,9 +34,18 @@
               "icon": "lucide-file",
               "title": "8- Memory Management"
             }
+          },
+          {
+            "id": "720a12e510875e90",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -177,8 +186,16 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "d1172bb41c8f9aa6",
+  "active": "8b7361f60c0111c4",
   "lastOpenFiles": [
+    "EECS_662/4-Functions and Optimizers.md",
+    "EECS_662/3- type checking.md",
+    "EECS_662/5- Post exam 1.md",
+    "EECS_662/proj3/p3.hs~",
+    "EECS_662/6- Post exam 1_2.md",
+    "EECS_678/8- Memory Management.md",
+    "EECS_662/proj3/p3.hs",
+    "EECS_662/proj3",
     "EECS_678/labs/lab9/VM_addr_map.c~",
     "EECS_678/labs/eecs678-scheduler/output2",
     "EECS_678/labs/eecs678-scheduler/output1",
@@ -186,17 +203,11 @@
     "EECS_678/labs/eecs678-scheduler/queuetest",
     "EECS_678/labs/eecs678-scheduler/simulator",
     "EECS_678/labs/eecs678-scheduler/obj/libpriqueue/libpriqueue.o",
-    "EECS_678/labs/eecs678-scheduler/obj/libscheduler/libscheduler.o",
-    "EECS_678/labs/eecs678-scheduler/obj/simulator.o",
-    "EECS_678/labs/eecs678-scheduler/obj/libscheduler",
-    "EECS_678/labs/eecs678-scheduler/obj/libpriqueue",
     "EECS_678/Pasted image 20241120145009.png",
     "EECS_678/Pasted image 20241120144833.png",
     "EECS_678/Pasted image 20241120143825.png",
     "EECS_678/Pasted image 20241120143646.png",
     "EECS_678/Exam_2.md",
-    "EECS_662/5- Post exam 1.md",
-    "EECS_662/6- Post exam 1_2.md",
     "EECS_662/7- Post exam 1_3.md",
     "interview/Interview/5- Youtube.md",
     "EECS_658/daily_assignments/24-11-21.md",
@@ -209,7 +220,6 @@
     "EECS_565/Pasted image 20241116204526.png",
     "EECS_565/Pasted image 20241116204212.png",
     "EECS_565/L15- Software Sec.md",
-    "EECS_678/8- Memory Management.md",
     "EECS_658/ArnavJain_Assignment6/output.md",
     "interview/Interview/4- Discord.md",
     "interview/Interview/3- Twitter.md",
@@ -223,8 +233,6 @@
     "interview/System Design/15- NoSQL.md",
     "interview/Interview/Rate-Limiter.canvas",
     "interview/System Design/20- Map Reduce.md",
-    "interview/System Design/19- Message queues.md",
-    "interview/System Design/18- Object storage.md",
-    "interview/System Design/17- CAP theorem.md"
+    "interview/System Design/19- Message queues.md"
   ]
 }

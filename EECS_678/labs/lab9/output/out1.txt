@@ -1,0 +1,18 @@
+Logical address: 0xd6334873
+Page Number: 1
+Page Fault!
+Frame Number: 0
+Physical address: 0x0
+Logical address: 0x74b0dc51
+Page Number: 0
+Page Fault!
+Frame Number: 1
+Physical address: 0x80000000
+Logical address: 0xa9495cff
+Page Number: 1
+Frame Number: 0
+Physical address: 0x0
+Logical address: 0x2ae8944a
+Page Number: 0
+Frame Number: 1
+Physical address: 0x80000000

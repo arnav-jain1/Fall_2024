@@ -181,11 +181,11 @@ int scheduler_new_job(int job_number, int time, int running_time, int priority)
     if (dispatcher.algorithm == PSJF) {
         for (int i = 0; i < dispatcher.cores; i++) {
             if (dispatcher.jobs[i] == NULL) {
-                continue;
+                break;
             }
             preempted_job = dispatcher.jobs[i];
             priqueue_remove(dispatcher.queue, preempted_job) ;
-            preempted_job->time_remaining = preempted_job->time_remaining - (time - preempted_job->started_time); 
+            preempted_job->time_remaining -= (time - preempted_job->started_time); 
             priqueue_offer(dispatcher.queue, preempted_job);
             preempted_job = NULL;
         }
@@ -206,7 +206,7 @@ int scheduler_new_job(int job_number, int time, int running_time, int priority)
 
 
     // If it is a preemptive and it needs to preempted, then preempt
-    if (position < dispatcher.cores && (dispatcher.algorithm == PPRI || dispatcher.algorithm == PSJF)) {
+    if (position < dispatcher.cores && (dispatcher.algorithm == PPRI)) {
         /*printf("Position: %d\n", position);*/
         int lowest = 0;
         for (int i = 0; i < dispatcher.cores; i++) {
@@ -214,33 +214,43 @@ int scheduler_new_job(int job_number, int time, int running_time, int priority)
                 lowest = i;
             }
         }
+        /*printf("Lowest: %d\n", lowest);*/
         preempted_job = dispatcher.jobs[lowest];
         dispatcher.jobs[lowest] = job;
+
+        //// this is mainly for psjf if the remaining time == the new job then continue the current job
+        /*int position_of_preempt;*/
+        /*priqueue_remove(dispatcher.queue, preempted_job);*/
+        /*preempted_job->time_remaining -= (time - preempted_job->started_time);*/
+        /*position_of_preempt = priqueue_offer(dispatcher.queue, preempted_job);*/
+        /*if (position_of_preempt <= position) {*/
+            /*dispatcher.jobs[position] = preempted_job;*/
+            /*return -1;*/
+        /*}*/
         
-        // the the preempted job start time is set to -1 and the new job first_scheduled time is set to current time
+        // if it doesnt stay, then the preempted job start time is set to -1 and the new job first_scheduled time is set to current time
         preempted_job->started_time = -1;
         job->first_scheduled = time;
         /*printf("Job %d preempted Job %d\n", preempted_job->id, job->id);*/
 
         return lowest;
 
-    } 
-    /*else if (position < dispatcher.cores && dispatcher.algorithm == PSJF) {*/
-        /*int lowest = 0;*/
-        /*for (int i = 0; i < dispatcher.cores; i++) {*/
-            /*if (dispatcher.jobs[lowest]->priority < dispatcher.jobs[i]->priority) {*/
-                /*lowest = i;*/
-            /*}*/
-        /*}*/
-        /*[>printf("Lowest: %d\n", lowest);<]*/
-        /*preempted_job = dispatcher.jobs[lowest];*/
-        /*dispatcher.jobs[lowest] = job;*/
-        /*preempted_job->started_time = -1;*/
-        /*job->first_scheduled = time;*/
+    } else if (position < dispatcher.cores && dispatcher.algorithm == PSJF) {
+        int lowest = 0;
+        for (int i = 0; i < dispatcher.cores; i++) {
+            if (dispatcher.jobs[lowest]->priority < dispatcher.jobs[i]->priority) {
+                lowest = i;
+            }
+        }
+        /*printf("Lowest: %d\n", lowest);*/
+        preempted_job = dispatcher.jobs[lowest];
+        dispatcher.jobs[lowest] = job;
+        preempted_job->started_time = -1;
+        job->first_scheduled = time;
 
-        /*return lowest;*/
+        return lowest;
 
-    /*}*/
+    }
 
 
 	return -1;

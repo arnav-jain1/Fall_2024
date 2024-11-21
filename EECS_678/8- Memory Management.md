@@ -187,4 +187,62 @@ Translation lookaside buffer (TLB):
 ![[Pasted image 20241115144819.png]]
 Power hungry part but very important
 
+#### Issues
+Small page size reduces internal fragmentation (less wasted space) but increases page table
+Large size does the opposite
 
+Each memory and stores goes through the page table so it has to be fast (registers) which means limited to 256 entries
+Each process has its own page table
+Most Computers allow large page tables (kept in memory) where register points to page table address
+
+
+
+Page-table Base register (PTBR) points to page table (only this register is affected when context switching)
+	Every load/store uses 2 memory access (1 for the page table and another for the actual data)
+Translation look-aside buffer (TLB) Cache that holds the most popular page table entries
+	Needs to be very fast (associative cache)
+	Since it an associative cache, it can search for everything at the same time (takes power)
+		But if it is too large then it takes too long and more power
+
+### Memory protection
+<mark style="background: #FF5582A6;">If CPU has 4 address bits, then the logical address space is 16 bytes, page size is 4 bytes</mark>
+	If there is are 2 processes P1 and P2 that are using 16 and 6 bytes respectively, both will have a page table that is 4 pages long
+	The unused one are set to invalid
+
+Associate protection bit to each frame
+	Valid is to show the address space maps to some frame which is good and allowed
+	Invalid shows that there is nothing is there and that it is not mapped to some frame (which is why you get a seg fault)
+
+Another example:
+	14 bit addy space where the program goes from 0-10468
+	Page size of 2kb 
+		So 8 pages total
+	Pages 6 and 7 exist but are invalid
+	![[Pasted image 20241120143646.png]]
+
+### Shared pages
+Allows the sharing of code
+	The code is set to read only and is shared
+	Each process has its own area as usual
+	reduces memory redundency
+Example
+	![[Pasted image 20241120143825.png]]
+	Frames 3 4 and 6 are shared 
+	All still have their own data though
+How dynamically linked libraries work
+
+Sometimes inadequate because the page table can become huge
+Limit used to be 4 gb because 2^32 (32 bit machines) is 4 gb 
+
+# Complex page tables
+## Hierarchical page tables
+Page tables divided into pieces (paged page table)
+Done in order to handle larger page tables (32 bit to 64 bit)
+Pages divided into 2 parts, p1 and p2
+![[Pasted image 20241120144833.png]]
+	p1 is an outer page table which points to their own page tables
+	2^10 page tables 
+	p2 points to the correct page table 
+	Offset normal 
+	2^32 points to 2^32 which has 12 bit offset
+![[Pasted image 20241120145009.png]]

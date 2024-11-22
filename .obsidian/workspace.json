@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_662/5- Post exam 1.md",
+                "file": "EECS_662/7- Post exam 1_3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "5- Post exam 1"
+              "title": "7- Post exam 1_3"
             }
           },
           {
@@ -188,9 +188,9 @@
   },
   "active": "8b7361f60c0111c4",
   "lastOpenFiles": [
+    "EECS_662/5- Post exam 1.md",
     "EECS_662/4-Functions and Optimizers.md",
     "EECS_662/3- type checking.md",
-    "EECS_662/5- Post exam 1.md",
     "EECS_662/proj3/p3.hs~",
     "EECS_662/6- Post exam 1_2.md",
     "EECS_678/8- Memory Management.md",

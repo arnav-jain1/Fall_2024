@@ -1,6 +1,7 @@
 {-# LANGUAGE GADTs #-}
 {-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
 {-# HLINT ignore "Redundant bracket" #-}
+{-# HLINT ignore "Redundant ==" #-}
 
 -- import Control.Monad
 
@@ -77,6 +78,7 @@ type Env = [(String,FBAEVal)]
 evalM :: Env -> FBAE -> (Maybe FBAEVal)
 evalM _ (Num n) = if n >=0 then Just (NumV n) else Nothing
 evalM _ (Boolean n) = if (n==True) || (n==False) then Just (BooleanV n) else Nothing
+
 evalM e (Plus l r) = do { NumV l' <- evalM e l;
                           NumV r' <- evalM e r;
                           Just (NumV (l' + r'))
@@ -94,11 +96,37 @@ evalM e (Div l r) = do { NumV l' <- evalM e l;
                           NumV r' <- evalM e r;
                           Just (NumV (l' `div` r'))
                         }
-eval e (Bind i a s) = do { NumV va <- evalM e a;
-                           evalM (i:va):e s
+
+evalM e (Lambda i t s) = Just (ClosureV i s e)
+evalM e (Bind i a s) = do { va <- evalM e a;
+                            evalM ((i,va):e) s
                          }
+evalM e (App f a) = do { (ClosureV i s e') <- evalM e f;
+                         va <- evalM e a;
+                         evalM ((i,va):e') s
+                       }
 
 
+evalM e (And l r) = do { BooleanV l' <- evalM e l;
+                          BooleanV r' <- evalM e r;
+                          Just (BooleanV (l' && r'))
+                        }
+evalM e (Or l r) = do { BooleanV l' <- evalM e l;
+                          BooleanV r' <- evalM e r;
+                          Just (BooleanV (l' || r'))
+                        }
+evalM e (Leq l r) = do { NumV l' <- evalM e l;
+                          NumV r' <- evalM e r;
+                          Just (BooleanV (l' <= r'))
+                        }
+evalM e (IsZero n) = do { NumV n' <- evalM e n;
+                         Just (BooleanV (n' == 0))
+                       }
+evalM e (If o t f) = do { BooleanV o' <- evalM e o;
+                         if o' then evalM e t else evalM e f;
+                        }
+evalM e (Id s) = lookup s e
+-- TODO: fix
 
 
 -- Type inference function
@@ -106,7 +134,50 @@ eval e (Bind i a s) = do { NumV va <- evalM e a;
 type Cont = [(String,TFBAE)]
 
 typeofM :: Cont -> FBAE -> (Maybe TFBAE)
-typeofM _ _ = Nothing
+typeofM _ (Num n) = if n >=0 then Just TNum else Nothing
+typeofM _ (Boolean n) = if n==True || n==False then Just TBool else Nothing
+typeofM e (Plus l r) = do { TNum <- typeofM e l;
+                            TNum <- typeofM e r;
+                            Just TNum
+                          }
+
+typeofM e (Minus l r) = do { TNum <- typeofM e l;
+                             TNum <- typeofM e r;
+                             Just TNum
+                          }
+typeofM e (Mult l r) = do { TNum <- typeofM e l;
+                            TNum <- typeofM e r;
+                            Just TNum
+                          }
+
+typeofM e (Div l r) = do { TNum <- typeofM e l;
+                             TNum <- typeofM e r;
+                             Just TNum
+                          }
+typeofM e (And l r) = do { TBool<- typeofM e l;
+                             TBool <- typeofM e r;
+                             Just TBool
+                          }
+typeofM e (Or l r) = do { TBool<- typeofM e l;
+                             TBool <- typeofM e r;
+                             Just TBool
+                          }
+typeofM e (Leq l r) = do { TNum <- typeofM e l;
+                            TNum <- typeofM e r;
+                            Just TBool
+                          }
+typeofM e (IsZero n) = do { TNum <- typeofM e n;
+                            Just TBool
+                          }
+typeofM e (If c t f) = do { TBool <- typeofM e c;
+                            t' <- typeofM e t;
+                            f' <- typeofM e f;
+                            if t' == f' then Just t' else Nothing 
+                          }
+typeofM e (Bind i a s) = do { va <- typeofM e a;
+                              typeofM ((i, va):e) s
+                            }
+-- TODO: Lambda, app, id fix
 
 
 -- Interpreter

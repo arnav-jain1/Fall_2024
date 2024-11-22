@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_662/7- Post exam 1_3.md",
+                "file": "EECS_662/3- type checking.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "7- Post exam 1_3"
+              "title": "3- type checking"
             }
           },
           {
@@ -188,11 +188,12 @@
   },
   "active": "8b7361f60c0111c4",
   "lastOpenFiles": [
+    "EECS_662/proj3/p3.hs~",
     "EECS_662/5- Post exam 1.md",
+    "EECS_662/6- Post exam 1_2.md",
+    "EECS_662/7- Post exam 1_3.md",
     "EECS_662/4-Functions and Optimizers.md",
     "EECS_662/3- type checking.md",
-    "EECS_662/proj3/p3.hs~",
-    "EECS_662/6- Post exam 1_2.md",
     "EECS_678/8- Memory Management.md",
     "EECS_662/proj3/p3.hs",
     "EECS_662/proj3",
@@ -208,7 +209,6 @@
     "EECS_678/Pasted image 20241120143825.png",
     "EECS_678/Pasted image 20241120143646.png",
     "EECS_678/Exam_2.md",
-    "EECS_662/7- Post exam 1_3.md",
     "interview/Interview/5- Youtube.md",
     "EECS_658/daily_assignments/24-11-21.md",
     "EECS_658/daily_assignments/23-11-19.md",

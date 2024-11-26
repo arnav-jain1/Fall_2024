@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
   page_table = (int *) malloc(sizeof(int) * num_pages);
   num_frames = pow(2, phy_size - page_size);
   mem_map = (int *) malloc(sizeof(int) * num_frames);
-  
+  printf("Number of Pages: %u, Number of Frames: %u\n\n", num_pages, num_frames);
 
   /* Initialize page table to indicate that no pages are currently mapped to
      physical memory */
@@ -73,16 +73,17 @@ int main(int argc, char *argv[])
     }
 
     fprintf(stdout, "Frame Number: %x\n", frame_num);
-    offset = logical_addr ^ (num_pages << page_size);
+    unsigned int mask = (1 << page_size) - 1;
+    offset = logical_addr & mask;
 
 
     
 
     /* Form corresponding physical address */
 
-    physical_addr = ((frame_num * page_size) << page_size) | offset;
+    physical_addr = (frame_num << page_size) | offset;
     
-    fprintf(stdout, "Physical address: 0x%x\n", physical_addr);
+    fprintf(stdout, "Physical address: 0x%x\n\n", physical_addr);
 
     /* Read next line */
     fgets(line, MAXSTR, stdin);    

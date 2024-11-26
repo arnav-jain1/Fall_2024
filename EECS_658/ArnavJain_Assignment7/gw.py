@@ -1,3 +1,13 @@
+'''
+Program: EECS 658 Assignment 7
+Description: Different RL to Gridworld
+Name: Arnav Jain
+Date: 11/25/24
+Inputs: None
+Outputs: Value/policy itereration algorithm results
+Collaborators: None
+Sources: StackOverflow, Google, ChatGPT, Anthropic Claude
+'''
 import numpy as np
 import matplotlib.pyplot as plt
 import time
@@ -327,11 +337,14 @@ if __name__ == "__main__":
     solver = PolicyIteration()
     solver.train()
     solver.show_policy()
+    # Q1
     print("The method I chose for measuring convergance was to remember the old value and then see the difference between the current and the old, then compare this with the threshold. If it was lower than the threshold then we have converged. The convergence method is to see whether the values had stopped changing a significant amount. I picked it because it made sense in my head and it was easy to implement. You keep track of how much it changed from the previous one and thats it. It was also in the slides")
 
     solver = ValueIteration()
     solver.train_and_visualize()
 
+    # Q2
     print("The convergence method was essentially the same. Go through each state and get the max change between each possible move. The change comes into play when checking against a threshold. Instead of checking against an arbitrary small number, we just see if the change was 0. If the change is 0, then no changes were made and we have converged. Again, I picked it because it made the most sense in my head, we go until no changes were made, and it was easy to implmenet.")
 
+    # Q3
     print("When running, the value iteration was unsurprisingly much faster taking about .0006 seconds to converge vs .01 (though this difference could be due to implementation details) as well as significatly less iterations. Policy iteration can be better because it was also a bit easier for me to implement compared to value iteration. It can also potentially be better for more complex tasks where convergence isnt as simple as no changes from the previous. According to google, it is also better when trying to getting intermediate policies and is generally more stable")

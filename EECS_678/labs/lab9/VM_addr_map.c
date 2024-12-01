@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
   int counter = 0;
   while(!(feof(stdin))){
     sscanf(line, "0x%x", &logical_addr);
-    fprintf(stdout, "Logical address: 0x%x\n", logical_addr);
+    fprintf(stdout, "Logical Address: 0x%x\n", logical_addr);
     
 	/* Calculate page number and offset from the logical address */
 
@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
 
     physical_addr = (frame_num << page_size) | offset;
     
-    fprintf(stdout, "Physical address: 0x%x\n\n", physical_addr);
+    fprintf(stdout, "Physical Address: 0x%x\n\n", physical_addr);
 
     /* Read next line */
     fgets(line, MAXSTR, stdin);    

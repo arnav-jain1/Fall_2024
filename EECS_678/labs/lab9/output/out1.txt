@@ -1,24 +1,24 @@
 Number of Pages: 2, Number of Frames: 2
 
-Logical address: 0xd6334873
+Logical Address: 0xd6334873
 Page Number: 1
 Page Fault!
 Frame Number: 0
-Physical address: 0x56334873
+Physical Address: 0x56334873
 
-Logical address: 0x74b0dc51
+Logical Address: 0x74b0dc51
 Page Number: 0
 Page Fault!
 Frame Number: 1
-Physical address: 0xf4b0dc51
+Physical Address: 0xf4b0dc51
 
-Logical address: 0xa9495cff
+Logical Address: 0xa9495cff
 Page Number: 1
 Frame Number: 0
-Physical address: 0x29495cff
+Physical Address: 0x29495cff
 
-Logical address: 0x2ae8944a
+Logical Address: 0x2ae8944a
 Page Number: 0
 Frame Number: 1
-Physical address: 0xaae8944a
+Physical Address: 0xaae8944a
 

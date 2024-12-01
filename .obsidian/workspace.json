@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8b7361f60c0111c4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "EECS_658/ArnavJain_Assignment7/output.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "output"
-            }
-          },
-          {
             "id": "d1172bb41c8f9aa6",
             "type": "leaf",
             "state": {
@@ -39,13 +25,18 @@
             "id": "720a12e510875e90",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "EECS_565/L18- netsec controls.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "L18- netsec controls"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -186,42 +177,44 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "8b7361f60c0111c4",
+  "active": "720a12e510875e90",
   "lastOpenFiles": [
-    "EECS_658/ArnavJain_Assignment7/output.pdf",
-    "EECS_658/ArnavJain_Assignment7/Screenshot from 2024-11-25 19-22-23.png",
-    "EECS_658/ArnavJain_Assignment7/Screenshot from 2024-11-25 19-22-08.png",
+    "EECS_678/labs/lab9/VM_addr_map.c~",
+    "EECS_678/labs/lab9/output/out2.txt",
+    "EECS_678/labs/lab9/output/out1.txt",
+    "EECS_678/labs/lab9/output",
+    "EECS_678/labs/lab9/VM_addr_map",
+    "EECS_565/Pasted image 20241126141718.png",
+    "EECS_565/Pasted image 20241126140748.png",
+    "EECS_565/Pasted image 20241126140315.png",
+    "EECS_565/Pasted image 20241126133700.png",
+    "EECS_565/Pasted image 20241126133630.png",
+    "EECS_565/Pasted image 20241126131843.png",
+    "EECS_565/Pasted image 20241126130355.png",
+    "EECS_565/Pasted image 20241126130316.png",
+    "EECS_565/Pasted image 20241126130007.png",
+    "EECS_565/Pasted image 20241126125009.png",
+    "EECS_565/L17- Net Sec.md",
+    "EECS_565/L18- netsec controls.md",
+    "EECS_678/labs/lab9/Lab10_Arnav_Jain_3097021.tar.gz",
+    "EECS_678/labs/lab9/Lab10_Arnav_Jain_3097021/input/inp2.txt",
+    "EECS_678/labs/lab9/Lab10_Arnav_Jain_3097021/input/inp1.txt",
+    "EECS_678/labs/lab9/Lab10_Arnav_Jain_3097021/input",
+    "EECS_678/labs/lab9/Lab10_Arnav_Jain_3097021/VM_addr_map.c",
+    "EECS_678/labs/lab9/Lab10_Arnav_Jain_3097021",
+    "EECS_565/L15- Software Sec.md",
+    "EECS_678/8- Memory Management.md",
+    "EECS_658/ArnavJain_Assignment7/output.md",
     "EECS_662/Untitled.md",
     "EECS_662/3- type checking.md",
-    "EECS_658/ArnavJain_Assignment7/gw.py~",
-    "EECS_658/ArnavJain_Assignment7/gw.py",
-    "EECS_658/ArnavJain_Assignment7/gridworld.py~",
-    "EECS_658/ArnavJain_Assignment7/gridworld.py",
-    "EECS_658/ArnavJain_Assignment7",
-    "EECS_662/proj3/p3.hs~",
     "EECS_662/5- Post exam 1.md",
     "EECS_662/6- Post exam 1_2.md",
     "EECS_662/7- Post exam 1_3.md",
     "EECS_662/4-Functions and Optimizers.md",
-    "EECS_678/8- Memory Management.md",
-    "EECS_662/proj3/p3.hs",
-    "EECS_662/proj3",
-    "EECS_678/labs/lab9/VM_addr_map.c~",
-    "EECS_678/labs/eecs678-scheduler/output2",
-    "EECS_678/Pasted image 20241120145009.png",
-    "EECS_678/Pasted image 20241120144833.png",
-    "EECS_678/Pasted image 20241120143825.png",
-    "EECS_678/Pasted image 20241120143646.png",
     "EECS_678/Exam_2.md",
     "interview/Interview/5- Youtube.md",
     "EECS_658/daily_assignments/24-11-21.md",
     "EECS_658/daily_assignments/23-11-19.md",
-    "EECS_565/L17- Net Sec.md",
-    "EECS_565/Pasted image 20241117121953.png",
-    "EECS_565/Pasted image 20241117121757.png",
-    "EECS_565/Pasted image 20241116211325.png",
-    "EECS_565/Pasted image 20241116210859.png",
-    "EECS_565/L15- Software Sec.md",
     "EECS_658/ArnavJain_Assignment6/output.md",
     "interview/Interview/4- Discord.md",
     "interview/Interview/3- Twitter.md",
@@ -232,8 +225,6 @@
     "EECS_658/daily_assignments/21-11-12.md",
     "interview/Interview/1- Rate limiter.md",
     "EECS_678/4- Threads.md",
-    "interview/System Design/15- NoSQL.md",
-    "interview/Interview/Rate-Limiter.canvas",
-    "interview/System Design/20- Map Reduce.md"
+    "interview/Interview/Rate-Limiter.canvas"
   ]
 }

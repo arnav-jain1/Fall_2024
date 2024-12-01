@@ -1,491 +1,491 @@
 Number of Pages: 4, Number of Frames: 4
 
-Logical address: 0xd6334873
+Logical Address: 0xd6334873
 Page Number: 3
 Page Fault!
 Frame Number: 0
-Physical address: 0x16334873
+Physical Address: 0x16334873
 
-Logical address: 0x74b0dc51
+Logical Address: 0x74b0dc51
 Page Number: 1
 Page Fault!
 Frame Number: 1
-Physical address: 0x74b0dc51
+Physical Address: 0x74b0dc51
 
-Logical address: 0xa9495cff
+Logical Address: 0xa9495cff
 Page Number: 2
 Page Fault!
 Frame Number: 2
-Physical address: 0xa9495cff
+Physical Address: 0xa9495cff
 
-Logical address: 0x2ae8944a
+Logical Address: 0x2ae8944a
 Page Number: 0
 Page Fault!
 Frame Number: 3
-Physical address: 0xeae8944a
+Physical Address: 0xeae8944a
 
-Logical address: 0x625558ec
+Logical Address: 0x625558ec
 Page Number: 1
 Frame Number: 1
-Physical address: 0x625558ec
+Physical Address: 0x625558ec
 
-Logical address: 0x238e1f29
+Logical Address: 0x238e1f29
 Page Number: 0
 Frame Number: 3
-Physical address: 0xe38e1f29
+Physical Address: 0xe38e1f29
 
-Logical address: 0x46e87ccd
+Logical Address: 0x46e87ccd
 Page Number: 1
 Frame Number: 1
-Physical address: 0x46e87ccd
+Physical Address: 0x46e87ccd
 
-Logical address: 0x3d1b58ba
+Logical Address: 0x3d1b58ba
 Page Number: 0
 Frame Number: 3
-Physical address: 0xfd1b58ba
+Physical Address: 0xfd1b58ba
 
-Logical address: 0x507ed7ab
+Logical Address: 0x507ed7ab
 Page Number: 1
 Frame Number: 1
-Physical address: 0x507ed7ab
+Physical Address: 0x507ed7ab
 
-Logical address: 0x2eb141f2
+Logical Address: 0x2eb141f2
 Page Number: 0
 Frame Number: 3
-Physical address: 0xeeb141f2
+Physical Address: 0xeeb141f2
 
-Logical address: 0x41b71efb
+Logical Address: 0x41b71efb
 Page Number: 1
 Frame Number: 1
-Physical address: 0x41b71efb
+Physical Address: 0x41b71efb
 
-Logical address: 0x79e2a9e3
+Logical Address: 0x79e2a9e3
 Page Number: 1
 Frame Number: 1
-Physical address: 0x79e2a9e3
+Physical Address: 0x79e2a9e3
 
-Logical address: 0x7545e146
+Logical Address: 0x7545e146
 Page Number: 1
 Frame Number: 1
-Physical address: 0x7545e146
+Physical Address: 0x7545e146
 
-Logical address: 0x515f007c
+Logical Address: 0x515f007c
 Page Number: 1
 Frame Number: 1
-Physical address: 0x515f007c
+Physical Address: 0x515f007c
 
-Logical address: 0x5bd062c2
+Logical Address: 0x5bd062c2
 Page Number: 1
 Frame Number: 1
-Physical address: 0x5bd062c2
+Physical Address: 0x5bd062c2
 
-Logical address: 0x12200854
+Logical Address: 0x12200854
 Page Number: 0
 Frame Number: 3
-Physical address: 0xd2200854
+Physical Address: 0xd2200854
 
-Logical address: 0x4db127f8
+Logical Address: 0x4db127f8
 Page Number: 1
 Frame Number: 1
-Physical address: 0x4db127f8
+Physical Address: 0x4db127f8
 
-Logical address: 0x216231b
+Logical Address: 0x216231b
 Page Number: 0
 Frame Number: 3
-Physical address: 0xc216231b
+Physical Address: 0xc216231b
 
-Logical address: 0x1f16e9e8
+Logical Address: 0x1f16e9e8
 Page Number: 0
 Frame Number: 3
-Physical address: 0xdf16e9e8
+Physical Address: 0xdf16e9e8
 
-Logical address: 0x1190cde7
+Logical Address: 0x1190cde7
 Page Number: 0
 Frame Number: 3
-Physical address: 0xd190cde7
+Physical Address: 0xd190cde7
 
-Logical address: 0x66ef438d
+Logical Address: 0x66ef438d
 Page Number: 1
 Frame Number: 1
-Physical address: 0x66ef438d
+Physical Address: 0x66ef438d
 
-Logical address: 0x140e0f76
+Logical Address: 0x140e0f76
 Page Number: 0
 Frame Number: 3
-Physical address: 0xd40e0f76
+Physical Address: 0xd40e0f76
 
-Logical address: 0x3352255a
+Logical Address: 0x3352255a
 Page Number: 0
 Frame Number: 3
-Physical address: 0xf352255a
+Physical Address: 0xf352255a
 
-Logical address: 0x109cf92e
+Logical Address: 0x109cf92e
 Page Number: 0
 Frame Number: 3
-Physical address: 0xd09cf92e
+Physical Address: 0xd09cf92e
 
-Logical address: 0xded7263
+Logical Address: 0xded7263
 Page Number: 0
 Frame Number: 3
-Physical address: 0xcded7263
+Physical Address: 0xcded7263
 
-Logical address: 0x7fdcc233
+Logical Address: 0x7fdcc233
 Page Number: 1
 Frame Number: 1
-Physical address: 0x7fdcc233
+Physical Address: 0x7fdcc233
 
-Logical address: 0x1befd79f
+Logical Address: 0x1befd79f
 Page Number: 0
 Frame Number: 3
-Physical address: 0xdbefd79f
+Physical Address: 0xdbefd79f
 
-Logical address: 0x41a7c4c9
+Logical Address: 0x41a7c4c9
 Page Number: 1
 Frame Number: 1
-Physical address: 0x41a7c4c9
+Physical Address: 0x41a7c4c9
 
-Logical address: 0x6b68079a
+Logical Address: 0x6b68079a
 Page Number: 1
 Frame Number: 1
-Physical address: 0x6b68079a
+Physical Address: 0x6b68079a
 
-Logical address: 0x4e6afb66
+Logical Address: 0x4e6afb66
 Page Number: 1
 Frame Number: 1
-Physical address: 0x4e6afb66
+Physical Address: 0x4e6afb66
 
-Logical address: 0x25e45d32
+Logical Address: 0x25e45d32
 Page Number: 0
 Frame Number: 3
-Physical address: 0xe5e45d32
+Physical Address: 0xe5e45d32
 
-Logical address: 0x519b500d
+Logical Address: 0x519b500d
 Page Number: 1
 Frame Number: 1
-Physical address: 0x519b500d
+Physical Address: 0x519b500d
 
-Logical address: 0x431bd7b7
+Logical Address: 0x431bd7b7
 Page Number: 1
 Frame Number: 1
-Physical address: 0x431bd7b7
+Physical Address: 0x431bd7b7
 
-Logical address: 0x3f2dba31
+Logical Address: 0x3f2dba31
 Page Number: 0
 Frame Number: 3
-Physical address: 0xff2dba31
+Physical Address: 0xff2dba31
 
-Logical address: 0x7c83e458
+Logical Address: 0x7c83e458
 Page Number: 1
 Frame Number: 1
-Physical address: 0x7c83e458
+Physical Address: 0x7c83e458
 
-Logical address: 0x257130a3
+Logical Address: 0x257130a3
 Page Number: 0
 Frame Number: 3
-Physical address: 0xe57130a3
+Physical Address: 0xe57130a3
 
-Logical address: 0x62bbd95a
+Logical Address: 0x62bbd95a
 Page Number: 1
 Frame Number: 1
-Physical address: 0x62bbd95a
+Physical Address: 0x62bbd95a
 
-Logical address: 0x436c6125
+Logical Address: 0x436c6125
 Page Number: 1
 Frame Number: 1
-Physical address: 0x436c6125
+Physical Address: 0x436c6125
 
-Logical address: 0x628c895d
+Logical Address: 0x628c895d
 Page Number: 1
 Frame Number: 1
-Physical address: 0x628c895d
+Physical Address: 0x628c895d
 
-Logical address: 0x333ab105
+Logical Address: 0x333ab105
 Page Number: 0
 Frame Number: 3
-Physical address: 0xf33ab105
+Physical Address: 0xf33ab105
 
-Logical address: 0x721da317
+Logical Address: 0x721da317
 Page Number: 1
 Frame Number: 1
-Physical address: 0x721da317
+Physical Address: 0x721da317
 
-Logical address: 0x2443a858
+Logical Address: 0x2443a858
 Page Number: 0
 Frame Number: 3
-Physical address: 0xe443a858
+Physical Address: 0xe443a858
 
-Logical address: 0x2d1d5ae9
+Logical Address: 0x2d1d5ae9
 Page Number: 0
 Frame Number: 3
-Physical address: 0xed1d5ae9
+Physical Address: 0xed1d5ae9
 
-Logical address: 0x6763845e
+Logical Address: 0x6763845e
 Page Number: 1
 Frame Number: 1
-Physical address: 0x6763845e
+Physical Address: 0x6763845e
 
-Logical address: 0x75a2a8d4
+Logical Address: 0x75a2a8d4
 Page Number: 1
 Frame Number: 1
-Physical address: 0x75a2a8d4
+Physical Address: 0x75a2a8d4
 
-Logical address: 0x8edbdab
+Logical Address: 0x8edbdab
 Page Number: 0
 Frame Number: 3
-Physical address: 0xc8edbdab
+Physical Address: 0xc8edbdab
 
-Logical address: 0x79838cb2
+Logical Address: 0x79838cb2
 Page Number: 1
 Frame Number: 1
-Physical address: 0x79838cb2
+Physical Address: 0x79838cb2
 
-Logical address: 0x4353d0cd
+Logical Address: 0x4353d0cd
 Page Number: 1
 Frame Number: 1
-Physical address: 0x4353d0cd
+Physical Address: 0x4353d0cd
 
-Logical address: 0xb03e0c6
+Logical Address: 0xb03e0c6
 Page Number: 0
 Frame Number: 3
-Physical address: 0xcb03e0c6
+Physical Address: 0xcb03e0c6
 
-Logical address: 0x189a769b
+Logical Address: 0x189a769b
 Page Number: 0
 Frame Number: 3
-Physical address: 0xd89a769b
+Physical Address: 0xd89a769b
 
-Logical address: 0x54e49eb4
+Logical Address: 0x54e49eb4
 Page Number: 1
 Frame Number: 1
-Physical address: 0x54e49eb4
+Physical Address: 0x54e49eb4
 
-Logical address: 0x71f32454
+Logical Address: 0x71f32454
 Page Number: 1
 Frame Number: 1
-Physical address: 0x71f32454
+Physical Address: 0x71f32454
 
-Logical address: 0x2ca88611
+Logical Address: 0x2ca88611
 Page Number: 0
 Frame Number: 3
-Physical address: 0xeca88611
+Physical Address: 0xeca88611
 
-Logical address: 0x836c40e
+Logical Address: 0x836c40e
 Page Number: 0
 Frame Number: 3
-Physical address: 0xc836c40e
+Physical Address: 0xc836c40e
 
-Logical address: 0x2901d82
+Logical Address: 0x2901d82
 Page Number: 0
 Frame Number: 3
-Physical address: 0xc2901d82
+Physical Address: 0xc2901d82
 
-Logical address: 0x3a95f874
+Logical Address: 0x3a95f874
 Page Number: 0
 Frame Number: 3
-Physical address: 0xfa95f874
+Physical Address: 0xfa95f874
 
-Logical address: 0x8138641
+Logical Address: 0x8138641
 Page Number: 0
 Frame Number: 3
-Physical address: 0xc8138641
+Physical Address: 0xc8138641
 
-Logical address: 0x1e7ff521
+Logical Address: 0x1e7ff521
 Page Number: 0
 Frame Number: 3
-Physical address: 0xde7ff521
+Physical Address: 0xde7ff521
 
-Logical address: 0x7c3dbd3d
+Logical Address: 0x7c3dbd3d
 Page Number: 1
 Frame Number: 1
-Physical address: 0x7c3dbd3d
+Physical Address: 0x7c3dbd3d
 
-Logical address: 0x737b8ddc
+Logical Address: 0x737b8ddc
 Page Number: 1
 Frame Number: 1
-Physical address: 0x737b8ddc
+Physical Address: 0x737b8ddc
 
-Logical address: 0x6ceaf087
+Logical Address: 0x6ceaf087
 Page Number: 1
 Frame Number: 1
-Physical address: 0x6ceaf087
+Physical Address: 0x6ceaf087
 
-Logical address: 0x22221a70
+Logical Address: 0x22221a70
 Page Number: 0
 Frame Number: 3
-Physical address: 0xe2221a70
+Physical Address: 0xe2221a70
 
-Logical address: 0x4516dde9
+Logical Address: 0x4516dde9
 Page Number: 1
 Frame Number: 1
-Physical address: 0x4516dde9
+Physical Address: 0x4516dde9
 
-Logical address: 0x3006c83e
+Logical Address: 0x3006c83e
 Page Number: 0
 Frame Number: 3
-Physical address: 0xf006c83e
+Physical Address: 0xf006c83e
 
-Logical address: 0x614fd4a1
+Logical Address: 0x614fd4a1
 Page Number: 1
 Frame Number: 1
-Physical address: 0x614fd4a1
+Physical Address: 0x614fd4a1
 
-Logical address: 0x419ac241
+Logical Address: 0x419ac241
 Page Number: 1
 Frame Number: 1
-Physical address: 0x419ac241
+Physical Address: 0x419ac241
 
-Logical address: 0x5577f8e1
+Logical Address: 0x5577f8e1
 Page Number: 1
 Frame Number: 1
-Physical address: 0x5577f8e1
+Physical Address: 0x5577f8e1
 
-Logical address: 0x440badfc
+Logical Address: 0x440badfc
 Page Number: 1
 Frame Number: 1
-Physical address: 0x440badfc
+Physical Address: 0x440badfc
 
-Logical address: 0x5072367
+Logical Address: 0x5072367
 Page Number: 0
 Frame Number: 3
-Physical address: 0xc5072367
+Physical Address: 0xc5072367
 
-Logical address: 0x3804823e
+Logical Address: 0x3804823e
 Page Number: 0
 Frame Number: 3
-Physical address: 0xf804823e
+Physical Address: 0xf804823e
 
-Logical address: 0x77465f01
+Logical Address: 0x77465f01
 Page Number: 1
 Frame Number: 1
-Physical address: 0x77465f01
+Physical Address: 0x77465f01
 
-Logical address: 0x7724c67e
+Logical Address: 0x7724c67e
 Page Number: 1
 Frame Number: 1
-Physical address: 0x7724c67e
+Physical Address: 0x7724c67e
 
-Logical address: 0x5c482a97
+Logical Address: 0x5c482a97
 Page Number: 1
 Frame Number: 1
-Physical address: 0x5c482a97
+Physical Address: 0x5c482a97
 
-Logical address: 0x2463b9ea
+Logical Address: 0x2463b9ea
 Page Number: 0
 Frame Number: 3
-Physical address: 0xe463b9ea
+Physical Address: 0xe463b9ea
 
-Logical address: 0x5e884adc
+Logical Address: 0x5e884adc
 Page Number: 1
 Frame Number: 1
-Physical address: 0x5e884adc
+Physical Address: 0x5e884adc
 
-Logical address: 0x51ead36b
+Logical Address: 0x51ead36b
 Page Number: 1
 Frame Number: 1
-Physical address: 0x51ead36b
+Physical Address: 0x51ead36b
 
-Logical address: 0x2d517796
+Logical Address: 0x2d517796
 Page Number: 0
 Frame Number: 3
-Physical address: 0xed517796
+Physical Address: 0xed517796
 
-Logical address: 0x580bd78f
+Logical Address: 0x580bd78f
 Page Number: 1
 Frame Number: 1
-Physical address: 0x580bd78f
+Physical Address: 0x580bd78f
 
-Logical address: 0x153ea438
+Logical Address: 0x153ea438
 Page Number: 0
 Frame Number: 3
-Physical address: 0xd53ea438
+Physical Address: 0xd53ea438
 
-Logical address: 0x3855585c
+Logical Address: 0x3855585c
 Page Number: 0
 Frame Number: 3
-Physical address: 0xf855585c
+Physical Address: 0xf855585c
 
-Logical address: 0x70a64e2a
+Logical Address: 0x70a64e2a
 Page Number: 1
 Frame Number: 1
-Physical address: 0x70a64e2a
+Physical Address: 0x70a64e2a
 
-Logical address: 0x6a2342ec
+Logical Address: 0x6a2342ec
 Page Number: 1
 Frame Number: 1
-Physical address: 0x6a2342ec
+Physical Address: 0x6a2342ec
 
-Logical address: 0x2a487cb0
+Logical Address: 0x2a487cb0
 Page Number: 0
 Frame Number: 3
-Physical address: 0xea487cb0
+Physical Address: 0xea487cb0
 
-Logical address: 0x1d4ed43b
+Logical Address: 0x1d4ed43b
 Page Number: 0
 Frame Number: 3
-Physical address: 0xdd4ed43b
+Physical Address: 0xdd4ed43b
 
-Logical address: 0x725a06fb
+Logical Address: 0x725a06fb
 Page Number: 1
 Frame Number: 1
-Physical address: 0x725a06fb
+Physical Address: 0x725a06fb
 
-Logical address: 0x2cd89a32
+Logical Address: 0x2cd89a32
 Page Number: 0
 Frame Number: 3
-Physical address: 0xecd89a32
+Physical Address: 0xecd89a32
 
-Logical address: 0x57e4ccaf
+Logical Address: 0x57e4ccaf
 Page Number: 1
 Frame Number: 1
-Physical address: 0x57e4ccaf
+Physical Address: 0x57e4ccaf
 
-Logical address: 0x7a6d8d3c
+Logical Address: 0x7a6d8d3c
 Page Number: 1
 Frame Number: 1
-Physical address: 0x7a6d8d3c
+Physical Address: 0x7a6d8d3c
 
-Logical address: 0x4b588f54
+Logical Address: 0x4b588f54
 Page Number: 1
 Frame Number: 1
-Physical address: 0x4b588f54
+Physical Address: 0x4b588f54
 
-Logical address: 0x542289ec
+Logical Address: 0x542289ec
 Page Number: 1
 Frame Number: 1
-Physical address: 0x542289ec
+Physical Address: 0x542289ec
 
-Logical address: 0x6de91b18
+Logical Address: 0x6de91b18
 Page Number: 1
 Frame Number: 1
-Physical address: 0x6de91b18
+Physical Address: 0x6de91b18
 
-Logical address: 0x38437fdb
+Logical Address: 0x38437fdb
 Page Number: 0
 Frame Number: 3
-Physical address: 0xf8437fdb
+Physical Address: 0xf8437fdb
 
-Logical address: 0x7644a45c
+Logical Address: 0x7644a45c
 Page Number: 1
 Frame Number: 1
-Physical address: 0x7644a45c
+Physical Address: 0x7644a45c
 
-Logical address: 0x32fff902
+Logical Address: 0x32fff902
 Page Number: 0
 Frame Number: 3
-Physical address: 0xf2fff902
+Physical Address: 0xf2fff902
 
-Logical address: 0x684a481a
+Logical Address: 0x684a481a
 Page Number: 1
 Frame Number: 1
-Physical address: 0x684a481a
+Physical Address: 0x684a481a
 
-Logical address: 0x579478fe
+Logical Address: 0x579478fe
 Page Number: 1
 Frame Number: 1
-Physical address: 0x579478fe
+Physical Address: 0x579478fe
 
-Logical address: 0x749abb43
+Logical Address: 0x749abb43
 Page Number: 1
 Frame Number: 1
-Physical address: 0x749abb43
+Physical Address: 0x749abb43
 

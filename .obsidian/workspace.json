@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "L18- netsec controls"
             }
+          },
+          {
+            "id": "1800fdf762a6e694",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "L19- netsec.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "L19- netsec"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -177,8 +191,17 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "720a12e510875e90",
+  "active": "1800fdf762a6e694",
   "lastOpenFiles": [
+    "Pasted image 20241201161223.png",
+    "Pasted image 20241201160942.png",
+    "Pasted image 20241201155531.png",
+    "Pasted image 20241201153328.png",
+    "Pasted image 20241201152410.png",
+    "Pasted image 20241201152330.png",
+    "Pasted image 20241201151144.png",
+    "EECS_565/L18- netsec controls.md",
+    "L19- netsec.md",
     "EECS_678/labs/lab9/VM_addr_map.c~",
     "EECS_678/labs/lab9/output/out2.txt",
     "EECS_678/labs/lab9/output/out1.txt",
@@ -188,20 +211,12 @@
     "EECS_565/Pasted image 20241126140748.png",
     "EECS_565/Pasted image 20241126140315.png",
     "EECS_565/Pasted image 20241126133700.png",
-    "EECS_565/Pasted image 20241126133630.png",
-    "EECS_565/Pasted image 20241126131843.png",
-    "EECS_565/Pasted image 20241126130355.png",
-    "EECS_565/Pasted image 20241126130316.png",
-    "EECS_565/Pasted image 20241126130007.png",
-    "EECS_565/Pasted image 20241126125009.png",
     "EECS_565/L17- Net Sec.md",
-    "EECS_565/L18- netsec controls.md",
     "EECS_678/labs/lab9/Lab10_Arnav_Jain_3097021.tar.gz",
     "EECS_678/labs/lab9/Lab10_Arnav_Jain_3097021/input/inp2.txt",
     "EECS_678/labs/lab9/Lab10_Arnav_Jain_3097021/input/inp1.txt",
     "EECS_678/labs/lab9/Lab10_Arnav_Jain_3097021/input",
     "EECS_678/labs/lab9/Lab10_Arnav_Jain_3097021/VM_addr_map.c",
-    "EECS_678/labs/lab9/Lab10_Arnav_Jain_3097021",
     "EECS_565/L15- Software Sec.md",
     "EECS_678/8- Memory Management.md",
     "EECS_658/ArnavJain_Assignment7/output.md",
@@ -224,7 +239,6 @@
     "EECS_658/daily_assignments/22-11-14.md",
     "EECS_658/daily_assignments/21-11-12.md",
     "interview/Interview/1- Rate limiter.md",
-    "EECS_678/4- Threads.md",
     "interview/Interview/Rate-Limiter.canvas"
   ]
 }

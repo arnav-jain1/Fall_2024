@@ -104,3 +104,67 @@ x has to be a var, thats all
 ```
 Asn :: FBAE -> FBAE -> FBAE
 ```
+
+
+
+# Errors
+Errors are a value, make it a new type
+`eval _ bang = bang`
+
+
+`x+y == eval x + eval y`
+`== (bang "message") + 3`
+but what if eval x returns a bang?
+
+Then we want to return bang, so for every operation we need to make sure to return bang if any operands are bang
+
+
+# Sums and products
+Products (pair)
+	(a,b) is `a and b` (like conjugation)
+	Always 2 total functions (called Projection functions) 
+		1: `(a,b)->a` 
+		2: `(a,b)->b`
+	Type is `A*B`
+Sum (or a varient)
+	`match x with (left a) -> s | (right b) -> t`
+	read `a or b` 
+	Injection functions take `a-> left a` and `b -> right b`
+	type is `a+b` 
+
+Algebraic type is a *sum* of products 
+	Cause like every element (Plus, mult, bind, etc) is 1 or the other
+	Products are like pieces of the constructs
+
+Records ( like but not lists) are products
+Case statements are sum
+
+
+Records: `(1,(2,(3,4)))`
+Trees: `(1, ((2, (3,4), (4, 5))`
+Lists: `(1,(2,3,nil))` and `case x of left (v, L) | right nil`
+<mark style="background: #FF5582A6;">^ this </mark>
+
+### Concrete syntax 
+- `(t1, t2)` builds a pair
+```
+bind p = (1,2) in
+bind p = (3, p) in                  (3, (1,2))
+bind p = (p, 4)                     ((3, (1, 2)), p)
+```
+- `fst` and `snd` to return the first and second element respectfully
+
+```
+bind p = (1,2) in
+bind p = (3, p) in                  (3, (1,2))
+bind p = (p, 4)                     ((3, (1, 2)), p)
+```
+
+
+```
+t ::= (t,t) | fst t | snd t
+v ::= (v,v)
+T ::= T*T
+```
+
+#### Abstract syntax

@@ -1,0 +1,447 @@
+from gw import Gridworld
+
+import numpy as np
+import matplotlib.pyplot as plt
+from collections import defaultdict
+
+class MonteCarloFirstVisit:
+    def __init__(self, ):
+        # Make a gridworld
+        self.gridworld = Gridworld()
+        self.gridworld.gamma = .9
+        self.size = 5
+        # N(s) array (number of visits)
+        self.N = np.zeros((5, 5))  
+        # S(s) array (total return)
+        self.S = np.zeros((5, 5))  
+        # V(s) value matrix
+        self.V = np.zeros((5, 5))
+
+
+        # The convergence threshold
+        self.epsilon = .001
+
+        # Errors to be graphed
+        self.errors = []
+        
+    def generate_episode(self):
+        # Start from random state
+        state = self.gridworld.rand_non_final_state()
+                
+        episode = []
+        while True:
+            # Get the next state and the corresp move
+            next_state, move = self.gridworld.next_move(state)
+            
+            # Get reward based on the move
+            reward = self.gridworld.get_reward(next_state)
+            
+            # Add to episode
+            episode.append((state, reward))
+            
+            # The next state is now the current state
+            state = next_state
+            
+            # Check if the old next state is in the end, if it is then break (done)
+            if state in self.gridworld.end:
+                break
+                
+        # Return the episode
+        return episode
+    
+    # Function to calculate the returns S(s)
+    def calculate_returns(self, episode):
+        # Create a dict that defaults the keys to 0.0 to keep track of G(s)
+        G = defaultdict(float)
+        returns = []
+        G_s = 0
+        
+        # Calculate returns for each state in the episode by looping through them backwards
+        for index in range(len(episode)-1, -1, -1):
+            # Get the state and the corresp reward for each episode
+            state, reward = episode[index]
+            # Update the running G(t) var by multiplying gamma by the previous G(s) (equivalent to exponenting gamma for the previous ones) and then adding the current reward
+            G_s = self.gridworld.gamma * G_s + reward
+            # Update teh dict
+            G[state] = G_s
+            # Add it to the returns to be printed, gamma is always the same so just ignore that for now
+            returns.append((index+1, state, reward, G_s))
+            
+        # Reverse the returns list and return it so it is in numerical order
+        return list(reversed(returns))
+    
+    def train(self):
+        # Keep track of epochs and make a converged variable to loop
+        epoch = 0
+        converged = False
+        
+        # Keep looping until converged
+        while not converged:
+            # Do an episode
+            episode = self.generate_episode()
+            
+            # Calculate returns
+            returns = self.calculate_returns(episode)
+            
+            # Track first visits, done by tracking all the visited states in a set so that lookup is shorter and we dont repeat
+            visited_states = set()
+            
+            # Store old V(s) so that we can check for convergence later
+            old_V = self.V.copy()
+            
+            # Update v(s) for first visits ONLY
+            # Done by going through each of the returns and checking to se
+            for t, state, reward, G_t in returns:
+                # Check to see if the state was in visited states, if it isnt then 
+                if state not in visited_states:
+                    # Add it, update the S(s), N(s), and V(s) accordingly
+                    visited_states.add(state)
+                    self.N[state[0]][state[1]] += 1
+                    self.S[state[0]][state[1]] += G_t
+                    # V(s) is updated acc the eq on the slides
+                    self.V[state[0]][state[1]] = self.S[state[0]][state[1]] / self.N[state[0]][state[1]]
+            
+            # Calculate error by taking current V - old V for convergence check
+            error = np.max(np.abs(self.V - old_V))
+            self.errors.append(error)
+            
+            # Check if the error was lower than the epsilon we set, if it is we are done
+            if error < self.epsilon:
+                converged = True
+                
+            # Print required epochs (and the last one)
+            if epoch in [0, 1, 10] or converged:
+                # Just print the returns
+                print(f"\nEpoch {epoch}")
+                print("N(s):")
+                print(self.N)
+                print("S(s):")
+                print(self.S)
+                print("V(s):")
+                print(self.V)
+                
+                print("\nReturns for this episode:")
+                print("k\t s\t r\t Y\t G(s)")
+                for k, s, r, g in returns:
+                    print(f"{k}\t {s}\t {r}\t {self.gridworld.gamma}\t {g:.3f}")
+            
+            # Increment the epoch
+            epoch += 1
+            
+        return epoch
+    
+    def plot_convergence(self):
+        plt.figure(figsize=(10, 6))
+        plt.plot(self.errors, label='Error')
+
+        # THis is the line for the threshold 
+        plt.axhline(y=self.epsilon, color='r', linestyle='--', label='ε threshold')
+
+        plt.xlabel('Epoch')
+        plt.ylabel('Errors (e)')
+        plt.title('Convergence')
+        plt.legend()
+        plt.yscale('log')
+        plt.grid(True)
+        plt.show()
+
+# This is literally the same thing exvept for one change. That change is denoted with NOTE
+class MonteCarloEveryVisit:
+    def __init__(self, ):
+        # Make a gridworld
+        self.gridworld = Gridworld()
+        self.gridworld.gamma = .9
+        self.size = 5
+        # N(s) array (number of visits)
+        self.N = np.zeros((5, 5))  
+        # S(s) array (total return)
+        self.S = np.zeros((5, 5))  
+        # V(s) value matrix
+        self.V = np.zeros((5, 5))
+
+
+        # The convergence threshold
+        self.epsilon = .001
+
+        # Errors to be graphed
+        self.errors = []
+        
+    def generate_episode(self):
+        # Start from random state
+        state = self.gridworld.rand_non_final_state()
+                
+        episode = []
+        while True:
+            # Get the next state and the corresp move
+            next_state, move = self.gridworld.next_move(state)
+            
+            # Get reward based on the move
+            reward = self.gridworld.get_reward(next_state)
+            
+            # Add to episode
+            episode.append((state, reward))
+            
+            # The next state is now the current state
+            state = next_state
+            
+            # Check if the old next state is in the end, if it is then break (done)
+            if state in self.gridworld.end:
+                break
+                
+        # Return the episode
+        return episode
+    
+    # Function to calculate the returns S(s)
+    def calculate_returns(self, episode):
+        # Create a dict that defaults the keys to 0.0 to keep track of G(s)
+        G = defaultdict(float)
+        returns = []
+        G_s = 0
+        
+        # Calculate returns for each state in the episode by looping through them backwards
+        for index in range(len(episode)-1, -1, -1):
+            # Get the state and the corresp reward for each episode
+            state, reward = episode[index]
+            # Update the running G(t) var by multiplying gamma by the previous G(s) (equivalent to exponenting gamma for the previous ones) and then adding the current reward
+            G_s = self.gridworld.gamma * G_s + reward
+            # Update teh dict
+            G[state] = G_s
+            # Add it to the returns to be printed, gamma is always the same so just ignore that for now
+            returns.append((index+1, state, reward, G_s))
+            
+        # Reverse the returns list and return it so it is in numerical order
+        return list(reversed(returns))
+    
+    def train(self):
+        # Keep track of epochs and make a converged variable to loop
+        epoch = 0
+        converged = False
+        
+        # Keep looping until converged
+        while not converged:
+            # Do an episode
+            episode = self.generate_episode()
+            
+            # Calculate returns
+            returns = self.calculate_returns(episode)
+            
+            
+            # Store old V(s) so that we can check for convergence later
+            old_V = self.V.copy()
+            
+            # NOTE THIS IS THE ONLY CHANGE. The visited states is not kept track of because we are not only doing first visits
+            # Update v(s) for ALL visits
+            for t, state, reward, G_t in returns:
+                # update the S(s), N(s), and V(s) accordingly
+                self.N[state[0]][state[1]] += 1
+                self.S[state[0]][state[1]] += G_t
+                # V(s) is updated acc the eq on the slides
+                self.V[state[0]][state[1]] = self.S[state[0]][state[1]] / self.N[state[0]][state[1]]
+            
+            # Calculate error by taking current V - old V for convergence check
+            error = np.max(np.abs(self.V - old_V))
+            self.errors.append(error)
+            
+            # Check if the error was lower than the epsilon we set, if it is we are done
+            if error < self.epsilon:
+                converged = True
+                
+            # Print required epochs (and the last one)
+            if epoch in [0, 1, 10] or converged:
+                # Just print the returns
+                print(f"\nEpoch {epoch}")
+                print("N(s):")
+                print(self.N)
+                print("S(s):")
+                print(self.S)
+                print("V(s):")
+                print(self.V)
+                
+                print("\nReturns for this episode:")
+                print("k\t s\t r\t Y\t G(s)")
+                for k, s, r, g in returns:
+                    print(f"{k}\t {s}\t {r}\t {self.gridworld.gamma}\t {g:.3f}")
+            
+            # Increment the epoch
+            epoch += 1
+            
+        return epoch
+    
+    def plot_convergence(self):
+        plt.figure(figsize=(10, 6))
+        plt.plot(self.errors, label='Error')
+
+        # THis is the line for the threshold 
+        plt.axhline(y=self.epsilon, color='r', linestyle='--', label='ε threshold')
+
+        plt.xlabel('Epoch')
+        plt.ylabel('Errors (e)')
+        plt.title('Convergence')
+        plt.legend()
+        plt.yscale('log')
+        plt.grid(True)
+        plt.show()
+
+class MonteCarloEveryVisitOnPolicy:
+    def __init__(self):
+        # Make a gridworld
+        self.gridworld = Gridworld()
+        self.gridworld.gamma = .9
+        self.size = 5
+        
+        # N(s) array (number of visits)
+        self.N = np.zeros((5, 5))
+        # S(s) array (total return)
+        self.S = np.zeros((5, 5))
+        # V(s) value matrix
+        self.V = np.zeros((5, 5))
+        
+        # Policy matrix with preferred action for each state (init random)
+        # 0: up, 1: right, 2: down, 3: left
+        self.policy = np.random.randint(0, 4, (5, 5))
+        
+        # How often the program will take the optimal or random policy
+        self.exploration_epsilon = 0.1
+        
+        # The convergence threshold
+        self.epsilon = .001
+        
+        # Errors to be graphed
+        self.errors = []
+    
+    
+    def generate_episode(self):
+        # Start from random state
+        state = self.gridworld.rand_non_final_state()
+        
+        episode = []
+        while True:
+            # Epsilon-greedy action selection, if the random number is lower than the threshold pick something at random,
+            if np.random.random() < self.exploration_epsilon:
+                next_state, move = self.gridworld.next_move(state)[0]
+            else:
+                print(state)
+                move = self.gridworld.moves[self.policy[state[0]][state[1]]]
+                next_state = (state[0] + move[0], state[1] + move[1])
+
+            
+            # Get reward based on the move
+            reward = self.gridworld.get_reward(next_state)
+            
+            # Add to episode (now including move)
+            episode.append((state, move, reward))
+            
+            # The next state is now the current state
+            state = next_state
+            
+            # Check if terminal state reached
+            if state in self.gridworld.end:
+                break
+        
+        return episode
+    
+    def calculate_returns(self, episode):
+        G = defaultdict(float)
+        returns = []
+        G_s = 0
+        
+        # Calculate returns for each state
+        for index in range(len(episode)-1, -1, -1):
+            state, action, reward = episode[index]
+            G_s = self.gridworld.gamma * G_s + reward
+            G[state] = G_s
+            returns.append((index+1, state, reward, G_s))
+            
+        return list(reversed(returns))
+    
+    def improve_policy(self, state):
+        # Try all actions and pick the best one
+        best_value = float('-inf')
+        best_action = 0
+        
+        for action_idx, action in enumerate(self.gridworld.moves):
+            next_state = self.gridworld.get_next_state(state, action)
+            value = self.gridworld.get_reward(next_state)
+            if next_state != state:  # If not hitting a wall
+                value += self.gridworld.gamma * self.V[next_state[0]][next_state[1]]
+            
+            if value > best_value:
+                best_value = value
+                best_action = action_idx
+        
+        return best_action
+    
+    def train(self):
+        epoch = 0
+        converged = False
+        
+        while not converged:
+            # Generate episode using current policy
+            episode = self.generate_episode()
+            
+            # Calculate returns
+            returns = self.calculate_returns(episode)
+            
+            # Store old V(s) for convergence check
+            old_V = self.V.copy()
+            
+            # Update value function for EVERY visit
+            for t, state, reward, G_t in returns:
+                # Update counts and values for every occurrence
+                self.N[state[0]][state[1]] += 1
+                self.S[state[0]][state[1]] += G_t
+                self.V[state[0]][state[1]] = self.S[state[0]][state[1]] / self.N[state[0]][state[1]]
+                
+                # Policy improvement for this state
+                self.policy[state[0]][state[1]] = self.improve_policy(state)
+            
+            # Calculate error for convergence check
+            error = np.max(np.abs(self.V - old_V))
+            self.errors.append(error)
+            
+            # Check convergence
+            if error < self.epsilon:
+                converged = True
+            
+            # Print required epochs
+            if epoch in [0, 1, 10] or converged:
+                print(f"\nEpoch {epoch}")
+                print("N(s):")
+                print(self.N)
+                print("S(s):")
+                print(self.S)
+                print("V(s):")
+                print(self.V)
+                
+                print("\nReturns for this episode:")
+                print("k\t s\t r\t Y\t G(s)")
+                for k, s, r, g in returns:
+                    print(f"{k}\t {s}\t {r}\t {self.gridworld.gamma}\t {g:.3f}")
+            
+            epoch += 1
+        
+        return epoch
+    
+    def plot_convergence(self):
+        plt.figure(figsize=(10, 6))
+        plt.plot(self.errors, label='Error')
+        plt.axhline(y=self.epsilon, color='r', linestyle='--', label='ε threshold')
+        plt.xlabel('Epoch')
+        plt.ylabel('Errors (e)')
+        plt.title('Convergence')
+        plt.legend()
+        plt.yscale('log')
+        plt.grid(True)
+        plt.show()
+# Start it
+mcfv = MonteCarloFirstVisit()
+mcfv.train()
+mcfv.plot_convergence()
+
+mcev = MonteCarloEveryVisit()
+mcev.train()
+mcev.plot_convergence()
+
+mcev = MonteCarloEveryVisitOnPolicy()
+mcev.train()
+mcev.plot_convergence()

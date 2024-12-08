@@ -246,3 +246,72 @@ Pages divided into 2 parts, p1 and p2
 	Offset normal 
 	2^32 points to 2^32 which has 12 bit offset
 ![[Pasted image 20241120145009.png]]
+Its literally the same otherwise
+
+Two level is not big enough for 64 bit
+	We can increase to 3 level but that sucks because it is more memory accesses (slow)
+	n levels require n+1 accesses
+
+## Hashed page table
+Used for >32 bit address spaces
+Each entry has a linked list of elements with
+	virtual page number
+	page frame num
+	next pointer
+Algorithm
+	Hash the page number into hash table
+	Compare each element with each elem in the linked list until found 
+	Form the physical address from the page frame
+![[Pasted image 20241206133841.png]]
+
+
+## Inverted page table
+Tries to overcome drawbacks of big virtual address spaces like huge page tables and lots of memory
+
+Aproach:
+	Table has one entry for each physical page
+	each entry has virtual page number for that frame (frame i has page number associated with it)
+	![[Pasted image 20241206134442.png]]
+	The process ID maps to a page and the index that the process id is at is the frame number
+
+Lowers memory (does not store each page table) but uses O(n) search to find the pid, more there are the more time it takes
+	Can use hashtable
+
+# Segmentation
+A way to manage memory that mimics the user view
+	stack, heap, data, text all seperate "segments" 
+![[Pasted image 20241206140210.png]]
+Logical address is comprised of <segment num, offset>
+Segment table maps logical addresses to physical addresses
+	Base: Starting physical address where segments start in memory
+	Limit: Length of the segment
+
+Segment table base register (STBR): points to where the segment table is in memory
+Segment table length register (STLR): number of segments being used by a program
+	IF segment number >= s, then illegal segment
+
+![[Pasted image 20241206140134.png]]
+
+# Example Intel pentium
+Uses both segmentation and segmentation with paging
+CPU gen logical address -> segmentation unit -> linear address -> paging unit -> physical address
+
+32-bit architecture 
+Max number of segments is 16k
+	8k in local descriptor table
+	8k in global descriptor table
+
+Max size of segment is 4gb ($2^{32}$ bytes)
+Each segment descriptor is 8 bytes (has base and limit)
+Each logical address is 48bit (16 to select segment, 32 offset)
+	Selector has 13 bits of segment number, 1 bit table identifier, and 2 for perms
+	48bit linear becomes 32bit logical
+	![[Pasted image 20241206141153.png]]
+
+Page size size is 4kb or 4mb
+4kb:
+	2 level paging scheme, p1 and p2 are 10 bits, offset is 12 bits
+	Base of page directory pointed by CR3, accessed by first 10 bits
+	Page directory gives base of inner page table, accessed by second 10 bits
+	Final 12 bits is the offset
+![[Pasted image 20241206141502.png]]

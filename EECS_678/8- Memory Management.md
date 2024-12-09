@@ -393,3 +393,154 @@ Counter of how many times a page is referenced
 Least freq used: Replace the page with the smallest count
 Most freq used: Replace the page with the largest count
 Neither are very good
+
+## Page buffering algorithms
+Optimizes by Maintains list of victim frame
+There is a buffer for the victim frames so that the new page is loaded immediately (both are in memory at the same time)
+Scheme 1:
+	Essentially, start running the program while the replaced page is being written to memory
+	Don't need to wait until the replaced page is saved (async)
+	(The victim page is copy-out)
+	Page A gets buffered and then written into disk while page B is running
+Scheme 2:
+	The victim pages buffered until idle and that's when they are written
+	(copy out when idle)
+Scheme 3:
+	Remember which page is in each victim frame (buffer them)
+	If process wants a page that was a victim frame, it can just fetch it (useful for when a victim frame is used right after becoming the victim)
+
+## Allocation of frames
+How many frames does the OS need to allocate? Min? Max?
+Min:
+	Min depends on the max number of pages any instruction in the ISA can reference at once
+		For direct addressing, this is 2 (one for the instruction, another for data)
+		For indirect, 3 (instruction, address of data, data)
+		Others might need more
+	If min not provided, then it can't run properly
+No real max, but don't want to give too much because it will slow down others
+
+### Algorithm
+Equal allocations:
+	If there are *n* processes and *m* frames each process gets m/n frames
+Proportional allocations:
+	Get total number of frames (sum all frames), divide the process frame req with the total then mult by total number of frames
+	![[Pasted image 20241209124247.png]]
+
+Global replacement: Process selects one frame to replace from ALL frames 
+	Process can take from another process
+	Can't control its own page fault rate 
+Local replacement: Selects process from its own frames to replace
+	May be slower, but can control page fault rate
+
+Non-uniform memory access:
+	Processor has memory that is "closer" (not shared) which is lower latency and faster
+
+## Thrashing
+Process spends more time paging than executing
+	Process keeps swapping pages in and out, high page fault rate
+Usually because there aren't enough frames allocated to it
+
+Cycle:
+	Not having enough frames causes page faults
+	This lowers CPU util
+	OS will think it needs more compute so another process is added
+	Even less frames for the processes so the cycle continues
+
+Can prevent by reducing the number of active processes (so the process gets more frames)
+Or by just allocating more frames
+
+Multiprogramming leads to more thrashing
+![[Pasted image 20241209125432.png]]
+
+### Prevention
+
+Prevent by just giving more frames (increase physical memory)
+Working-set model:
+	Estimates how much memory a process needs
+	Based on locality model: Each process uses a small set of memory ref/frames, exec moves from one phase to another
+		During one phase, the program is doing something similar
+	The number of frames for each set is the *working-set*
+Implementation:
+	Assume a working set window $\Delta$ (moving window that can be 5ms for example, number of distinct pages used for each window is WSSi)
+	WSSi (Working set size of process Pi) = total pages referenced in most recent $\Delta$
+	Total demand is the sum of WSS(i)
+	If D > m (frames) then thrashing is likely, suspend a process
+	Working set has to be estimated
+
+![[Pasted image 20241209141009.png]]
+The page fault rate will spike at the start of the working set then fall until the next
+
+
+Page-Fault Frequency scheme:
+	Working set is complex and makes assumption
+	Contrary to the previous cycle, instead of using CPU util for deciding more processes, use page fault rate (PFR)
+	If PFR is too high, then lower the processes and/or increase the frames
+	If PFR is too low, then increase the processes and/or decrease the frames
+	![[Pasted image 20241209141952.png]]
+
+# Memory mapped files
+Rather than using syscalls to read/write to file, we map the disk to memory 
+	Removes the syscalls
+	Converts disk to memory access (faster)
+	Simplifies disk
+
+Mechanism:
+	File read first using demand paging
+	Page size chunk of file is read from file system into a physical frame
+	After that the read/writes are just ordinary memory accesses
+
+This allows several processes to map to the same file so the pages are shared
+	![[Pasted image 20241209142730.png]]
+	This is the method to share memory in some OS
+
+There may be special IO instructions to transfer and control data to the IO controller (CISC)
+Memory Mapped IO (RISC)
+	IO device registers mapped to logical address spaces 
+	Fast and good
+		Fewer instructions (less IO complexity)
+	Worse because you give up logical address space to IO devices
+	Address spaces where you read/write that will go to IO device
+May be control bit to know if data is available or not
+	If CPU polls the control bit (checks regularly) then programmed IO
+	If device sends interrupt then interrupt driven IO
+
+
+# Allocating Kernel memory
+Kernel memory is allocated from free memory pool
+Does not use paging
+	Some memory needs to be continuous 
+	Want to minimize waste due to internal fragmentation
+	Kernel requests memory for structures of very different sizes
+Strats for managing memory (having contiguous without wasting)
+	Buddy system
+	Slab allocator
+
+## Buddy system
+Satisfies requests in units that are power of 2
+Request rounded up to the next highest power of 2	
+When smaller chunk is available, then split the chunk into two buddies of same size (div by 2)
+	Continue until splitting would make it too small
+21kb requested from 256kb
+![[Pasted image 20241209144155.png]]
+11kb of internal fragmentation
+
+When done, the blocks will be combined
+
+
+## Slab Allocator
+Slab: Several physically contiguous pages
+Cache has >=1 slabs
+Single cache for each unique kernel DS
+	Cache filled with instantiations (objects) of the DS
+Slab allocation algorithm:
+	Create cache of obj in cont space (mark as free)
+	Store objects in free slots (mark as used)
+	If the current slab is full, then allocate the next object from empty slab
+	If no empty slab, go to free slots in next cache
+Pros:
+	No fragmentation
+	Fast memory
+![[Pasted image 20241209144932.png]]
+
+
+

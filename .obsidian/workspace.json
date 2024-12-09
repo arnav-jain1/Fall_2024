@@ -35,8 +35,7 @@
               "title": "28-12-10"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -177,10 +176,18 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "720a12e510875e90",
+  "active": "d1172bb41c8f9aa6",
   "lastOpenFiles": [
-    "EECS_565/L18- netsec controls.md",
+    "EECS_678/Pasted image 20241208184511.png",
+    "EECS_678/Pasted image 20241208184059.png",
+    "EECS_678/Pasted image 20241208183417.png",
+    "EECS_678/Pasted image 20241208183252.png",
+    "EECS_678/Pasted image 20241208183250.png",
+    "EECS_678/Pasted image 20241208182606.png",
+    "EECS_678/Pasted image 20241208182206.png",
+    "EECS_678/Pasted image 20241208181905.png",
     "EECS_658/daily_assignments/28-12-10.md",
+    "EECS_565/L18- netsec controls.md",
     "EECS_658/ArnavJain_Assignment8/output.md",
     "EECS_658/ArnavJain_Assignment8/output.pdf",
     "EECS_658/ArnavJain_Assignment8/Pasted image 20241207235231.png",
@@ -189,16 +196,9 @@
     "EECS_658/ArnavJain_Assignment8/main.py~",
     "EECS_658/ArnavJain_Assignment8/Screenshot from 2024-12-07 23-05-52.png",
     "EECS_658/ArnavJain_Assignment8/Screenshot from 2024-12-07 23-05-40.png",
-    "EECS_658/ArnavJain_Assignment8/Screenshot from 2024-12-07 23-05-35.png",
-    "EECS_658/ArnavJain_Assignment8/Screenshot from 2024-12-07 23-05-31.png",
-    "EECS_658/ArnavJain_Assignment8/Screenshot from 2024-12-07 23-05-26.png",
-    "EECS_658/ArnavJain_Assignment8/Screenshot from 2024-12-07 23-05-22.png",
-    "EECS_658/ArnavJain_Assignment8/Screenshot from 2024-12-07 23-05-13.png",
     "EECS_678/9- Virtual memory.md",
     "EECS_658/ArnavJain_Assignment8/qlearning.py~",
     "EECS_658/ArnavJain_Assignment8/montecarlo.py~",
-    "EECS_658/ArnavJain_Assignment8/Screenshot from 2024-12-07 22-36-28.png",
-    "EECS_658/ArnavJain_Assignment8/Screenshot from 2024-12-07 22-36-17 1.png",
     "EECS_565/L19- netsec.md",
     "EECS_678/8- Memory Management.md",
     "EECS_662/Untitled.md",
@@ -224,7 +224,6 @@
     "interview/Interview/4- Discord.md",
     "interview/Interview/3- Twitter.md",
     "interview/System Design/11-CDN.md",
-    "interview/Interview/2- Tiny URL.md",
     "interview/Interview/Rate-Limiter.canvas"
   ]
 }

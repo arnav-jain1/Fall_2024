@@ -315,3 +315,81 @@ Page size size is 4kb or 4mb
 	Page directory gives base of inner page table, accessed by second 10 bits
 	Final 12 bits is the offset
 ![[Pasted image 20241206141502.png]]
+
+1. Find the location of the page that you want on the disk
+2. If there is a free frame, use it. Otherwise use an algorithm to find a frame to replace (called the victim frame)
+3. Bring the page into the frame that was freed up
+4. Restart the process
+To reduce the page fault overhead, use a modify bit that will only copy the page to memory if modified
+![[Pasted image 20241208181905.png]]
+
+# Page replacement algorithm
+Goal: get the lowest page fault rate
+Schemes:
+	FIFO 
+	Optimal page replacement
+	Least recently used
+	LRU approx
+	Counting based replacement
+
+To evaluate, we can simulate replacement on a string of memory page references and calculate the page faults
+
+Expected graph ![[Pasted image 20241208182206.png]]
+**Belady's anomaly**: Page fault rate sometimes increases when number of frames increases
+## FIFO
+Simple algorithm
+	Each page has a time it was brought in, the one brought in first (oldest) is the one that gets removed first
+	Replaced at head of queue, new page at tail of queue
+
+Prone to belady's anomaly
+![[Pasted image 20241208182606.png]]
+
+## Optimal page replacement
+Algorithm with the lowest fault rate
+	Replace the page that won't be used for the longest amount of time
+	No Belady's anomaly
+	Provably optimal but needs future info
+![[Pasted image 20241208183252.png]]
+## Least Recently Used (LRU)
+Approximates the optimal page replacement algorithm by keeping track of when each page is used and replacing the one that hasn't been used for the longest time
+	Very good policy
+	Requires hardware support in order to be fast and accurate
+	No Belady anomaly	
+![[Pasted image 20241208183417.png]]	
+Multiple ways to implement
+
+Counter Implementation
+	Every page table entry has a field for *time of use*
+	Copy the clock into the time of use field on every access
+	Then when replacing, find the entry with the smallest value
+	Requires full search and a memory write every time accessed
+	COunter could overflow or take a lot of space
+
+Stack implementation:
+	Keep a stack of the page numbers in a linkedlist
+	Move page to the top when it is referenced
+	Remove bottom of stack
+	No search required
+
+Reference bit implementation:
+	Associate reference bit with each page
+	When referenced, set the bit. Clear it periodically
+	Replace the one that has bit = 0 (if exists)
+	Can't store the order of accesses
+
+Record ref bit algorithm:
+	Each page has ref bit and 8 additional bits
+	Periodically, shift the 9 additional bits right and set ref bit as 0
+	![[Pasted image 20241208184059.png]]
+
+Second chance algorithm:
+	Single ref bit as well as a basic FIFO (actually a circular LL but clsoe enough)
+	The pointer goes through the FIFO looking for a ref bit 0, if there is one then the victim frame is found. Otherwise, if it is 1, then it is set to 0 and given "a second chance"
+	If all are set to 1, then the first one checked would have been set to 0 first thus be used
+	![[Pasted image 20241208184511.png]]
+
+## Counting based algorithms
+Counter of how many times a page is referenced
+Least freq used: Replace the page with the smallest count
+Most freq used: Replace the page with the largest count
+Neither are very good

@@ -1,15 +1,16 @@
 # Part 1
- I am creating a language that parses and approves strings in what is called algebraic chess notation. Algebraic chess notation is a way of tracking moves being played allowing games to be recorded without the board itself. The most basic form of the notation involves the letter of the piece for the first character, then the location of where it will move to.
+ I am creating a language that parses and approves strings in what is called algebraic chess notation. Algebraic chess notation is a way of tracking moves being played allowing games to be recorded in just plain text. The most basic form of the notation involves the letter of the piece for the first character, then the location of where it will move to.
  For example Nf3 means knight to space f3 and e4 means pawn to space e4
- Note that these are very basic moves and my language will be able to parse more complex terms.
+ Note that these are very basic moves and my language will be able to parse more complex terms such as castling.
 
  I chose this language because I enjoy playing chess a lot and the chess world championships are currently going on right now.
 
 The language will be represented by an NFA
 Alphabet: {\[1-8], x, +, #, \[a-h], O-O, O-O-O, R, N, B, Q, K}
+
 An acceptable string is as follows
 (\[R, N, B, Q, K, $\lambda$]\[a-h, 1-8, $\lambda$]\[x, $\lambda$]\[a-h]\[1-8]\[+, #, $\lambda$])  |  O-O  |  O-O-O
-For a quick breakdown, either you can castle king-side (O-O) or queen-side (O-O-O) or you can make an actual move. An actual move consists of a piece or lambda if its a pawn. Then, if and only if there are multiple pieces that can make the same move, you add either the rank (1-8) or file (a-h). After that, if a piece is being captured put an x. After that add the file and the rank in that order (mandatory) and finally, if it's a check then put +, if it is checkmate put #, and if it is neither then we are already done.
+For a quick breakdown, either you can castle king-side (O-O) or queen-side (O-O-O) or you can make an actual move. An actual move consists of a piece--Rook, kNight, Bishop, Queen, or King (or lambda if its a pawn). Then, if there are multiple pieces that can make the same move, you add either the rank (1-8) or file (a-h) of the piece making the move. After that, if a piece is being captured put an x. After that, add the file and the rank of where the piece will move in that order (mandatory). Finally, if it's a check then put +, if it is checkmate put #, and if it is neither then we are already done.
 
 # Part 2 regular grammar
 $$
@@ -21,12 +22,13 @@ $$
 & \delta \rightarrow + \space | \space \# \space 
 \end{aligned}
 $$
+# Part 3: NFA
 ```tikz
 \usetikzlibrary{automata, positioning}
 
 \begin{document}
 
-\begin{tikzpicture}[shorten >=1pt, node distance=5cm, on grid, auto]
+\begin{tikzpicture}[shorten >=1pt, node distance=4cm, on grid, auto]
 
 \node[state, initial] (S) {$S$};
 \node[state] (alpha) [right=of S] {$\alpha$};
@@ -50,7 +52,5 @@ $$
 
 \end{document}
 ```
-
-
 
 

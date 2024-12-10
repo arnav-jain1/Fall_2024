@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_678/8- Memory Management.md",
+                "file": "EECS_510/! Proj.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "8- Memory Management"
+              "title": "! Proj"
             }
           },
           {
@@ -178,6 +178,8 @@
   },
   "active": "d1172bb41c8f9aa6",
   "lastOpenFiles": [
+    "EECS_678/8- Memory Management.md",
+    "EECS_510/! Proj.md",
     "EECS_678/Pasted image 20241209144932.png",
     "EECS_678/Pasted image 20241209144155.png",
     "EECS_678/Pasted image 20241209142730.png",
@@ -188,7 +190,6 @@
     "EECS_678/Pasted image 20241208184511.png",
     "EECS_678/Pasted image 20241208184059.png",
     "EECS_678/Pasted image 20241208183417.png",
-    "EECS_678/Pasted image 20241208183252.png",
     "EECS_658/daily_assignments/28-12-10.md",
     "EECS_565/L18- netsec controls.md",
     "EECS_658/ArnavJain_Assignment8/output.md",
@@ -200,7 +201,6 @@
     "EECS_658/ArnavJain_Assignment8/qlearning.py~",
     "EECS_658/ArnavJain_Assignment8/montecarlo.py~",
     "EECS_565/L19- netsec.md",
-    "EECS_678/8- Memory Management.md",
     "EECS_662/Untitled.md",
     "EECS_662/8- Post exam 1_4.md",
     "EECS_662/7- Post exam 1_3.md",

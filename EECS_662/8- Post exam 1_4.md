@@ -168,3 +168,47 @@ T ::= T*T
 ```
 
 #### Abstract syntax
+3 new operations, 1 for creating 2 for accessing 
+	`fst` and `snd` for accessing
+
+```
+Pair :: FBAE -> FBAE -> FBAE
+Fst :: FBAE -> FBAE
+Snd :: FBAE -> FBAE
+```
+
+eval
+```
+PairV :: FBAEVal -> FBAEVal -> FBAEVal
+eval e :: env -> FBAE -> Maybe FBAEVal
+eval e (Pair l r)= do {l' <- eval e l;
+					   r' <- eval e r;
+					   Just (PairV l' r')
+					   }
+
+eval Fst t = do { (PairV l _) <- eval e t;
+				  Just l}
+eval Snd t = do { (PairV _ r) <- eval e t;
+				  Just r}
+```
+
+
+#### Sums
+```
+left 1
+right "!"
+
+match t with (left x) -> (f x) | (right x) -> print x
+```
+
+```
+Left t :: (LeftV FBAEVal)
+Right t :: (RightV FBAEVal)
+
+Match :: FBAE -> FBAE -> FBAE
+Match e (Match t l r) = do { t' eval e t; 
+							   match t' with 
+							   (left x) = eval e l 
+							   (right x) = eval e r}
+```
+

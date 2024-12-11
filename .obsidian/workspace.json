@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_510/! Proj.md",
+                "file": "EECS_662/8- Post exam 1_4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "! Proj"
+              "title": "8- Post exam 1_4"
             }
           },
           {
@@ -178,10 +178,14 @@
   },
   "active": "d1172bb41c8f9aa6",
   "lastOpenFiles": [
+    "EECS_662/proj4/p4.hs~",
+    "EECS_662/Untitled.md",
+    "EECS_662/7- Post exam 1_3.md",
+    "EECS_662/8- Post exam 1_4.md",
+    "EECS_510/! Proj.md",
     "EECS_662/proj4/p4.hs",
     "EECS_662/proj4",
     "EECS_678/8- Memory Management.md",
-    "EECS_510/! Proj.md",
     "EECS_678/Pasted image 20241209144932.png",
     "EECS_678/Pasted image 20241209144155.png",
     "EECS_678/Pasted image 20241209142730.png",
@@ -203,16 +207,11 @@
     "EECS_658/ArnavJain_Assignment8/qlearning.py~",
     "EECS_658/ArnavJain_Assignment8/montecarlo.py~",
     "EECS_565/L19- netsec.md",
-    "EECS_662/Untitled.md",
-    "EECS_662/8- Post exam 1_4.md",
-    "EECS_662/7- Post exam 1_3.md",
     "EECS_662/6- Post exam 1_2.md",
     "EECS_565/L17- Net Sec.md",
     "EECS_565/L15- Software Sec.md",
     "L19- netsec.md",
     "EECS_678/labs/lab9/VM_addr_map.c~",
-    "EECS_678/labs/lab9/output/out2.txt",
-    "EECS_678/labs/lab9/output/out1.txt",
     "EECS_658/ArnavJain_Assignment7/output.md",
     "EECS_662/3- type checking.md",
     "EECS_662/5- Post exam 1.md",

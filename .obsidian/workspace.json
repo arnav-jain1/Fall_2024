@@ -22,20 +22,33 @@
             }
           },
           {
+            "id": "7494f9e8c905133f",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "EECS_510/Pasted image 20241212091854.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20241212091854"
+            }
+          },
+          {
             "id": "720a12e510875e90",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_658/daily_assignments/28-12-10.md",
+                "file": "EECS_662/9- REview.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "28-12-10"
+              "title": "9- REview"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -176,8 +189,12 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "d1172bb41c8f9aa6",
+  "active": "7494f9e8c905133f",
   "lastOpenFiles": [
+    "EECS_510/! Proj.md",
+    "EECS_662/9- REview.md",
+    "EECS_662/8- Post exam 1_4.md",
+    "EECS_658/daily_assignments/28-12-10.md",
     "EECS_510/proj/code.py~",
     "EECS_510/Pasted image 20241212091854.png",
     "EECS_510/proj/4913",
@@ -195,17 +212,13 @@
     "EECS_565/miniproj/MP4/Pasted image 20241211185519.png",
     "EECS_565/miniproj/MP4/Pasted image 20241211185427.png",
     "EECS_565/miniproj/MP4",
-    "EECS_510/! Proj.md",
     "EECS_678/labs/lab10/3097021-procfs-lab.zip",
     "EECS_678/labs/lab10/3097021-procfs-lab/dine.c",
     "EECS_678/labs/lab10/3097021-procfs-lab/Makefile",
     "EECS_678/labs/lab10/3097021-procfs-lab",
     "EECS_510/hw1.md",
     "EECS_678/8- Memory Management.md",
-    "EECS_662/8- Post exam 1_4.md",
-    "EECS_662/Untitled.md",
     "EECS_662/7- Post exam 1_3.md",
-    "EECS_658/daily_assignments/28-12-10.md",
     "EECS_565/L18- netsec controls.md",
     "EECS_658/ArnavJain_Assignment8/output.md",
     "EECS_678/9- Virtual memory.md",

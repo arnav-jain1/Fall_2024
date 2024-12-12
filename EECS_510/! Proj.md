@@ -140,27 +140,12 @@ return False, "Fails, either not in rank or too many chars"
 ```
 
 # Part 6
-As a small little bonus I turned the NFA to a DFA but its messy
-\[R, N, B, Q, K]\alpha, \alpha
+As a small little bonus I turned the NFA to a DFA but its messy. (each line is a different option)
 
-\[R, N, B, Q, K]\[1-8,a-h]x\[a-h]\[1-8]#
-\[R, N, B, Q, K]\[1-8,a-h]x\[a-h]\[1-8]+
-\[R, N, B, Q, K]\[1-8,a-h]x\[a-h]\[1-8]
-
-\[R, N, B, Q, K]\[1-8,a-h]\[a-h]\[1-8]#
-\[R, N, B, Q, K]\[1-8,a-h]\[a-h]\[1-8]+
-\[R, N, B, Q, K]\[1-8,a-h]\[a-h]\[1-8]
-
-\[R, N, B, Q, K]x\[a-h]\[1-8]#
-\[R, N, B, Q, K]x\[a-h]\[1-8]+
-\[R, N, B, Q, K]x\[a-h]\[1-8]
-
-\[R, N, B, Q, K]\[a-h]\[1-8]#
-\[R, N, B, Q, K]\[a-h]\[1-8]+
-\[R, N, B, Q, K]\[a-h]\[1-8]
-\[R, N, B, Q, K]\[1-8,a-h]x\[a-h]\[1-8]#
-\[R, N, B, Q, K]\[1-8,a-h]x\[a-h]\[1-8]+
-\[R, N, B, Q, K]\[1-8,a-h]x\[a-h]\[1-8]
+S -> O-O | O-O-O |
+\[R, N, B, Q, K]\[1-8,a-h]x\[a-h]\[1-8]# 
+\[R, N, B, Q, K]\[1-8,a-h]x\[a-h]\[1-8]+ 
+\[R, N, B, Q, K]\[1-8,a-h]x\[a-h]\[1-8] 
 
 \[R, N, B, Q, K]\[1-8,a-h]\[a-h]\[1-8]#
 \[R, N, B, Q, K]\[1-8,a-h]\[a-h]\[1-8]+
@@ -173,13 +158,20 @@ As a small little bonus I turned the NFA to a DFA but its messy
 \[R, N, B, Q, K]\[a-h]\[1-8]#
 \[R, N, B, Q, K]\[a-h]\[1-8]+
 \[R, N, B, Q, K]\[a-h]\[1-8]
-$$
-\begin{aligned}
-& S \rightarrow O-O \space | \space O-O-O | \space [R, N, B, Q, K]\alpha \space | \space \alpha \space \\
-& \alpha \rightarrow [1-8]\beta \space | \space [a-h]\beta \space | \space \beta \\
-& \beta \rightarrow x\gamma \space | \space \gamma \\
-& \gamma \rightarrow [a-h][1-8]\delta \space | \space [a-h][1-8] \\
-& \delta \rightarrow + \space | \space \# \space 
-\end{aligned}
-$$
 
+
+\[1-8,a-h]x\[a-h]\[1-8]#
+\[1-8,a-h]x\[a-h]\[1-8]+
+\[1-8,a-h]x\[a-h]\[1-8]
+
+\[1-8,a-h]\[a-h]\[1-8]#
+\[1-8,a-h]\[a-h]\[1-8]+
+\[1-8,a-h]\[a-h]\[1-8]
+
+x\[a-h]\[1-8]#
+x\[a-h]\[1-8]+
+x\[a-h]\[1-8]
+
+\[a-h]\[1-8]#
+\[a-h]\[1-8]+
+\[a-h]\[1-8]

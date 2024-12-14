@@ -25,12 +25,14 @@
             "id": "7494f9e8c905133f",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "EECS_510/Pasted image 20241212091854.png"
+                "file": "EECS_662/8- Post exam 1_4.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20241212091854"
+              "icon": "lucide-file",
+              "title": "8- Post exam 1_4"
             }
           },
           {
@@ -191,12 +193,12 @@
   },
   "active": "7494f9e8c905133f",
   "lastOpenFiles": [
+    "EECS_510/Pasted image 20241212091854.png",
     "EECS_510/! Proj.md",
     "EECS_662/9- REview.md",
     "EECS_662/8- Post exam 1_4.md",
     "EECS_658/daily_assignments/28-12-10.md",
     "EECS_510/proj/code.py~",
-    "EECS_510/Pasted image 20241212091854.png",
     "EECS_510/proj/4913",
     "EECS_510/proj/code.py",
     "EECS_510/proj",

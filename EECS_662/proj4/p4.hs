@@ -43,11 +43,10 @@ data FBAEVal where
   NumV :: Int -> FBAEVal
   BooleanV :: Bool -> FBAEVal
   ClosureV :: String -> FBAE -> Env -> FBAEVal
-  LocV :: Int -> FBAEVal
+  Loc :: Int -> FBAEVal
   deriving (Show,Eq)
 
 type Sto = Loc -> Maybe FBAEVal
-
 type Loc = Int
 type Store = (Loc, Sto)
 
@@ -57,21 +56,21 @@ initSto :: Sto
 initSto _ = Nothing
 
 setSto :: Sto -> Loc -> FBAEVal -> Sto
-setSto s l v = \m -> if l==m then Just v else (s m)
+setSto s l v = \m -> if m==l then Just v else (s m)
 
 initStore :: Store
-initStore = (-1, initSto)
+initStore = (0, initSto)
 
 derefStore :: Store -> Loc -> Maybe FBAEVal
-derefStore (i, s) l = derefSto s l
+derefStore (_, s) l = s l
 
 setStore :: Store -> Loc -> FBAEVal -> Store
 setStore (i, s) l v = (i, setSto s l v)
 
-newStore :: Store -> FBAEVal -> Store
-newStore (i, s) v = (i+1, (setSto s i v))
+newStore :: Store -> Store
+newStore (l, s) = (l+1, s)
 
-
+type Retval = (FBAEVal, Store)
 
 -- Substitution
 
@@ -108,228 +107,203 @@ type Env = [(String,FBAEVal)]
 
 -- Statically scoped eval
          
-evalM :: Env -> Store -> FBAE -> (Maybe FBAEVal)
-evalM _ _ (Num n) = if n >=0 then Just (NumV n) else Nothing
-evalM _ _ (Boolean n) = if (n==True) || (n==False) then Just (BooleanV n) else Nothing
+evalM :: Env -> Store -> FBAE -> Maybe Retval
+evalM _ st (Num n) = if n >=0 then Just (NumV n, st) else Nothing
+evalM _ st (Boolean n) = if (n==True) || (n==False) then Just (BooleanV n, st) else Nothing
 
-evalM e st (Plus l r) = do { NumV l' <- evalM e st l;
-                          NumV r' <- evalM e st r;
-                          Just (NumV (l' + r'))
-                        }
-
-evalM e st (Minus l r) = do { NumV l' <- evalM e st l;
-                          NumV r' <- evalM e st r;
-                          if l' >= r' then Just (NumV (l' - r')) else Nothing
-                        }
-evalM e st (Mult l r) = do { NumV l' <- evalM e st l;
-                          NumV r' <- evalM e st r;
-                          Just (NumV (l' * r'))
-                        }
-evalM e st (Div l r) = do { NumV l' <- evalM e st l;
-                         NumV r' <- evalM e st r;
-                         if r' == 0 then Nothing else Just (NumV (l' `div` r'))
+evalM e st (Plus l r) = do { (NumV l', st') <- evalM e st l;
+                             (NumV r', st'') <- evalM e st' r;
+                             Just (NumV (l' + r'), st'')
                         }
 
-evalM e st (Lambda i t s) = Just (ClosureV i s e)
-evalM e st (Bind i a s) = do { va <- evalM e st a;
-                            evalM ((i,va):e) st s
+evalM e st (Minus l r) = do { (NumV l', st') <- evalM e st l;
+                              (NumV r', st'') <- evalM e st r;
+                              if l' >= r' then Just (NumV (l' - r'), st'') else Nothing
+                        }
+evalM e st (Mult l r) = do { (NumV l', st') <- evalM e st l;
+                             (NumV r', st'') <- evalM e st' r;
+                             Just (NumV (l' * r'), st'')
+                        }
+evalM e st (Div l r) = do { (NumV l', st') <- evalM e st l;
+                            (NumV r', st'') <- evalM e st' r;
+                            if r' == 0 then Nothing else Just (NumV (l' `div` r'), st'')
+                        }
+
+evalM e st (Lambda i t s) = Just ((ClosureV i s e), st)
+
+evalM e st (Bind i a s) = do { (va, st') <- evalM e st a;
+                            evalM ((i,va):e) st' s
                          }
-evalM e st (App f a) = do { (ClosureV i s e') <- evalM e st f;
-                         va <- evalM e st a;
-                         evalM ((i,va):e') st s
+evalM e st (App f a) = do { ((ClosureV i s e'), st') <- evalM e st f;
+                            (va, st'') <- evalM e st' a;
+                            evalM ((i,va):e') st'' s
                        }
 
 
-evalM e st (And l r) = do { BooleanV l' <- evalM e st l;
-                          BooleanV r' <- evalM e st r;
-                          Just (BooleanV (l' && r'))
+evalM e st (And l r) = do { (BooleanV l', st') <- evalM e st l;
+                            (BooleanV r', st'') <- evalM e st' r;
+                          Just (BooleanV (l' && r'), st'')
                         }
-evalM e st (Or l r) = do { BooleanV l' <- evalM e st l;
-                          BooleanV r' <- evalM e st r;
-                          Just (BooleanV (l' || r'))
+evalM e st (Or l r) = do { (BooleanV l', st') <- evalM e st l;
+                           (BooleanV r', st'') <- evalM e st' r;
+                           Just (BooleanV (l' || r'), st'')
                         }
-evalM e st (Leq l r) = do { NumV l' <- evalM e st l;
-                          NumV r' <- evalM e st r;
-                          Just (BooleanV (l' <= r'))
+evalM e st (Leq l r) = do { (NumV l', st')  <- evalM e st l;
+                            (NumV r', st'') <- evalM e st' r;
+                          Just (BooleanV (l' <= r'), st'')
                         }
-evalM e st (IsZero n) = do { NumV n' <- evalM e st n;
-                         Just (BooleanV (n' == 0))
+evalM e st (IsZero n) = do { (NumV n', st') <- evalM e st n;
+                         Just (BooleanV (n' == 0), st')
                        }
-evalM e st (If o t f) = do { BooleanV o' <- evalM e st o;
-                         if o' then evalM e st t else evalM e st f;
-                        }
-evalM e st (Id s) = lookup s e
 
-evalM e st (Fix f) = do { (ClosureV i s e') <- evalM e st f;
-                       evalM e' st (subst i (Fix (Lambda i TNum s)) s)
+evalM e st (If o t f) = do { (BooleanV o', st') <- evalM e st o;
+                             if o' then evalM e st' t else evalM e st' f;
+                        }
+evalM e st (Id s) = do {  (Loc v) <- lookup s e;
+                          va <- (derefStore st v);
+                          Just (va, st)
+                       }
+
+evalM e st (Fix f) = do { (ClosureV i va e', st') <- evalM e st f;
+                       evalM e' st' (subst i (Fix (Lambda i TNum va)) va)
                      }
+evalM e st (Set l v) = do { (va, st') <- evalM e st v;
+                            (Loc l', st') <- evalM e st l;
+                            Just (Loc l', (setStore st' l' va))
+                          }
 
-evalM e st (New v) = do { va <- evalM e st v;
-                          newStore st va
+evalM e st (New v) = do { (va, (l, st')) <- evalM e st v;
+                          Just ((Loc (l+1)), (setStore (newStore (l, st')) l va))
                         }
-
--- TODO: fix
-
-
--- Type inference function
-
-type Cont = [(String,TFBAE)]
-
-typeofM :: Cont -> FBAE -> (Maybe TFBAE)
-typeofM _ (Num n) = Just TNum
-typeofM _ (Boolean n) = if n==True || n==False then Just TBool else Nothing
-typeofM e (Plus l r) = do { TNum <- typeofM e l;
-                            TNum <- typeofM e r;
-                            Just TNum
+evalM e st (Deref l) = do { ((Loc l'), st') <- evalM e st l;
+                            
+                            v <- derefStore st l';
+                            Just (v, st')
                           }
 
-typeofM e (Minus l r) = do { TNum <- typeofM e l;
-                             TNum <- typeofM e r;
-                             Just TNum
-                          }
-typeofM e (Mult l r) = do { TNum <- typeofM e l;
-                            TNum <- typeofM e r;
-                            Just TNum
-                          }
 
-typeofM e (Div l r) = do { TNum <- typeofM e l;
-                             TNum <- typeofM e r;
-                             Just TNum
-                          }
-typeofM e (And l r) = do { TBool<- typeofM e l;
-                             TBool <- typeofM e r;
-                             Just TBool
-                          }
-typeofM e (Or l r) = do { TBool<- typeofM e l;
-                             TBool <- typeofM e r;
-                             Just TBool
-                          }
-typeofM e (Leq l r) = do { TNum <- typeofM e l;
-                            TNum <- typeofM e r;
-                            Just TBool
-                          }
-typeofM e (IsZero n) = do { TNum <- typeofM e n;
-                            Just TBool
-                          }
-typeofM e (If c t f) = do { TBool <- typeofM e c;
-                            t' <- typeofM e t;
-                            f' <- typeofM e f;
-                            if t' == f' then Just t' else Nothing 
-                          }
-typeofM e (Bind i a s) = do { va <- typeofM e a;
-                              typeofM ((i, va):e) s
-                            }
-typeofM e (Id s) = lookup s e
-
-typeofM e (Lambda i t s) = do { s' <- typeofM ((i, t):e) s;
-                                Just (t:->:s')
-                              }
-
-typeofM e (App f a) = do { (t:->:s) <- typeofM e f;
-                            a' <- typeofM e a;
-                            if a' == t then Just s else Nothing
-                         }
-typeofM e (Fix f) = do { (t:->:s) <- typeofM e f;
-                         Just s
-                       }
-
-
--- TODO: fix
-
-
--- Interpreter
-interp :: FBAE -> Maybe FBAEVal
-interp a = do { _ <- typeofM [] a;
-                evalM [] initStore a
-              }
-
--- Factorial function for testing evalM and typeofM.  the type of test1 should
--- be TNum and the result of evaluating test1`should be (NumV 6).  Remember
--- that Just is used to return both the value and type.
-testFix = Bind "f" (Lambda "g" ((:->:) TNum TNum)
-                    (Lambda "x" TNum (If (IsZero (Id "x")) (Num 1)
-                                         (Mult (Id "x")
-                                               (App (Id "g")
-                                                    (Minus (Id "x")
-                                                           (Num 1)))))))
-         (App (Fix (Id "f")) (Num 3))
-
---
 -- Helper function to run the evaluator
 runEval :: FBAE -> Maybe FBAEVal
-runEval expr = evalM [] initStore expr
-
--- Test 1: Basic use of `New` to create a new location in the store
-test1 :: FBAE
-test1 = New (Num 42)
-
--- Expected Output: A `LocV` value representing the allocated location.
-
--- Test 2: Using `Deref` to retrieve the value from a location
-test2 :: FBAE
-test2 = Deref (New (Num 99))
-
--- Expected Output: `NumV 99`
-
--- Test 3: Combination of `New`, `Deref`, and binding
-test3 :: FBAE
-test3 = Bind "x" (New (Num 5)) (Deref (Id "x"))
-
--- Expected Output: `NumV 5`
-
--- Test 4: `New` with arithmetic operations
-test4 :: FBAE
-test4 = Bind "x" (New (Num 8)) (Plus (Deref (Id "x")) (Num 2))
-
--- Expected Output: `NumV 10`
-
--- Test 5: `Deref` on an invalid location
-test5 :: FBAE
-test5 = Deref (Num 1) -- Using a non-location value with `Deref`
-
--- Expected Output: `Nothing` (invalid dereference)
-
--- Test 6: `New` with a boolean value
-test6 :: FBAE
-test6 = Deref (New (Boolean True))
-
--- Expected Output: `BooleanV True`
-
--- Test 7: Nested `New` and `Deref`
-test7 :: FBAE
-test7 = Bind "x" (New (Num 10))
-          (Bind "y" (New (Deref (Id "x")))
-            (Deref (Id "y")))
-
--- Expected Output: `NumV 10`
-
--- Test 8: Updating a value using `Set` and retrieving it with `Deref`
-test8 :: FBAE
-test8 = Bind "x" (New (Num 15))
-          (Bind "y" (Set (Id "x") (Num 20))
-            (Deref (Id "x")))
-
--- Expected Output: `NumV 20`
-
--- Test 9: Using `Set` to modify a value and `Deref` to confirm the change
-test9 :: FBAE
-test9 = Bind "x" (New (Num 7))
-          (Bind "y" (Set (Id "x") (Plus (Deref (Id "x")) (Num 3)))
-            (Deref (Id "x")))
-
--- Expected Output: `NumV 10`
-
--- Test 10: Sequential use of `New` to ensure unique locations
-test10 :: FBAE
-test10 = Bind "x" (New (Num 1))
-            (Bind "y" (New (Num 2))
-              (Plus (Deref (Id "x")) (Deref (Id "y"))))
-
--- Expected Output: `NumV 3`
+runEval expr = do { (a, _) <- evalM [] initStore expr;
+                    Just a
+                  }
 
 
-main :: IO ()
-main = do
-  let tests = [test1, test2, test3, test4, test5, test6, test7, test8, test9, test10]
-      results = map runEval tests
-  mapM_ print results
+
+-- Basic store allocation tests
+test1 = runEval (New (Num 5))  -- Should create location 0 with value 5
+test2 = runEval (Deref (New (Num 5)))  -- Should return value 5 from store
+
+-- Basic arithmetic tests (with store allocation)
+test3 = runEval (
+  Bind "x" (New (Num 3)) (
+    Bind "y" (New (Num 4)) (
+      Plus (Deref (Id "x")) (Deref (Id "y"))
+    )
+  ))  -- Should return 7, with two locations allocated
+
+test4 = runEval (
+  Bind "x" (New (Num 10)) (
+    Bind "y" (New (Num 3)) (
+      Minus (Deref (Id "x")) (Deref (Id "y"))
+    )
+  ))  -- Should return 7, with two locations allocated
+
+test5 = runEval (
+  Bind "x" (New (Num 6)) (
+    Bind "y" (New (Num 7)) (
+      Mult (Deref (Id "x")) (Deref (Id "y"))
+    )
+  ))  -- Should return 42, with two locations allocated
+
+-- Store manipulation tests
+test6 = runEval (
+  Bind "x" (New (Num 5)) (
+    Bind "y" (New (Num 10)) (
+      Set (Id "x") (Deref (Id "y"))  -- Set x to y's value
+    )
+  ))  -- Should update location of x to contain 10
+
+-- Boolean and comparison tests
+test7 = runEval (
+  Bind "x" (New (Num 5)) (
+    Bind "y" (New (Num 10)) (
+      Leq (Deref (Id "x")) (Deref (Id "y"))
+    )
+  ))  -- Should return True, with two locations allocated
+
+test8 = runEval (
+  Bind "x" (New (Num 0)) (
+    IsZero (Deref (Id "x"))
+  ))  -- Should return True, with one location allocated
+
+-- Conditional tests with store
+test9 = runEval (
+  Bind "x" (New (Num 0)) (
+    If (IsZero (Deref (Id "x")))
+      (New (Num 42))
+      (New (Num 0))
+  ))  -- Should allocate location for 0, then 42
+
+-- Complex test with multiple store operations
+test10 = runEval (
+  Bind "x" (New (Num 5)) (
+    Bind "y" (New (Num 10)) (
+      If (Leq (Deref (Id "x")) (Deref (Id "y")))
+        (Set (Id "x") (Plus (Deref (Id "x")) (Deref (Id "y"))))  -- Set x to x + y
+        (Set (Id "x") (Minus (Deref (Id "x")) (Deref (Id "y"))))  -- Set x to x - y
+    )
+  ))  -- Should set x to 15
+
+-- Factorial with store allocation
+test11 = runEval (
+  Bind "n" (New (Num 5)) (
+    App (
+      Fix (
+        Lambda "f" (TNum :->: TNum) (
+          Lambda "x" TNum (
+            If (IsZero (Deref (Id "x")))
+              (New (Num 1))
+              (Bind "temp" (New (Num 1)) (
+                Mult (Deref (Id "x")) 
+                     (Deref (App (Id "f") (Minus (Deref (Id "x")) (Deref (New (Num 1))))))
+              ))
+          )
+        )
+      )
+    ) (Id "n")
+  ))  -- Should compute factorial of 5 (120), with multiple locations allocated
+
+-- Error cases
+test12 = runEval (
+  Bind "x" (New (Num 5)) (
+    Bind "y" (New (Num 0)) (
+      Div (Deref (Id "x")) (Deref (Id "y"))  -- Division by zero
+    )
+  ))  -- Should return Nothing
+
+test13 = runEval (
+  Bind "x" (New (Num 3)) (
+    Bind "y" (New (Num 5)) (
+      Minus (Deref (Id "x")) (Deref (Id "y"))  -- Would result in negative number
+    )
+  ))  -- Should return Nothing
+
+-- Test runner helper
+runTests = do
+  putStrLn "Running tests..."
+  putStrLn $ "Test 1 (Basic store allocation): " ++ show test1
+  putStrLn $ "Test 2 (Store dereference): " ++ show test2
+  putStrLn $ "Test 3 (Addition with store): " ++ show test3
+  putStrLn $ "Test 4 (Subtraction with store): " ++ show test4
+  putStrLn $ "Test 5 (Multiplication with store): " ++ show test5
+  putStrLn $ "Test 6 (Store update): " ++ show test6
+  putStrLn $ "Test 7 (Comparison with store): " ++ show test7
+  putStrLn $ "Test 8 (IsZero with store): " ++ show test8
+  putStrLn $ "Test 9 (Conditional with store): " ++ show test9
+  putStrLn $ "Test 10 (Complex store operations): " ++ show test10
+  putStrLn $ "Test 11 (Factorial with store): " ++ show test11
+  putStrLn $ "Test 12 (Division by zero error): " ++ show test12
+  putStrLn $ "Test 13 (Negative result error): " ++ show test13
+
+test_simple = runEval (Plus (New (Num 5)) (New (Num 6)))

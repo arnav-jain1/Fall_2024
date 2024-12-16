@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_678/1- Intro.md",
+                "file": "EECS_662/8- Post exam 1_4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1- Intro"
+              "title": "8- Post exam 1_4"
             }
           }
         ],
@@ -207,17 +207,18 @@
   },
   "active": "26d7f12b611138c7",
   "lastOpenFiles": [
-    "EECS_678/2-Services.md",
+    "EECS_662/proj2/p2.hs~",
+    "EECS_662/9- REview.md",
+    "EECS_662/8- Post exam 1_4.md",
+    "EECS_678/9- Virtual memory.md",
     "EECS_678/1- Intro.md",
+    "EECS_678/2-Services.md",
     "EECS_678/4.1 Quiz answers.md",
     "EECS_678/4- Threads.md",
     "EECS_678/Pasted image 20241216142048.png",
     "EECS_678/3- Processes.md",
     "EECS_678/Exam Q3.md",
-    "EECS_678/9- Virtual memory.md",
     "EECS_678/8- Memory Management.md",
-    "EECS_662/8- Post exam 1_4.md",
-    "EECS_662/9- REview.md",
     "EECS_510/! Proj.md",
     "EECS_510/proj/Proj.pdf",
     "EECS_510/9-17-Regular Grammars.md",
@@ -252,7 +253,6 @@
     "L19- netsec.md",
     "EECS_658/ArnavJain_Assignment7/output.md",
     "EECS_662/3- type checking.md",
-    "EECS_662/5- Post exam 1.md",
     "interview/Interview/Rate-Limiter.canvas"
   ]
 }

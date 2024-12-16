@@ -91,6 +91,8 @@ elabFBAE (BindD i a s) = App (Lambda i (elabFBAE s)) (elabFBAE a)
 evalFBAE :: Env' -> FBAE -> (Maybe FAEValue)
 evalFBAE _ f = evalStatFAE [] (elabFBAE f);
 
+-- evalFBAE _ (BindD (IdD "x") (NumD 4) (BindD (IdD "i") (LambdaD (IdD "n") (Plus (Id "n") (IdD "x"))) (BindD (IdD "x") (AppD (IdD "i") (IdD "x")) (AppD (IdD "i") (IdD "x")))))
+
 -- FBAEC AST and Type Definitions
 
 --data FBAEC where

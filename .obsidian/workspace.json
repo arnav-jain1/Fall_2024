@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EECS_510/! Proj.md",
+                "file": "EECS_678/Exam Q3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "! Proj"
+              "title": "Exam Q3"
             }
           },
           {
@@ -64,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -205,11 +205,14 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "26d7f12b611138c7",
+  "active": "7494f9e8c905133f",
   "lastOpenFiles": [
+    "EECS_678/Exam Q2.md",
+    "EECS_510/! Proj.md",
+    "EECS_678/8- Memory Management.md",
+    "EECS_662/8- Post exam 1_4.md",
     "EECS_662/proj2/p2.hs~",
     "EECS_662/9- REview.md",
-    "EECS_662/8- Post exam 1_4.md",
     "EECS_678/9- Virtual memory.md",
     "EECS_678/1- Intro.md",
     "EECS_678/2-Services.md",
@@ -218,8 +221,6 @@
     "EECS_678/Pasted image 20241216142048.png",
     "EECS_678/3- Processes.md",
     "EECS_678/Exam Q3.md",
-    "EECS_678/8- Memory Management.md",
-    "EECS_510/! Proj.md",
     "EECS_510/proj/Proj.pdf",
     "EECS_510/9-17-Regular Grammars.md",
     "EECS_510/Pasted image 20241212091854.png",
@@ -241,7 +242,6 @@
     "EECS_565/miniproj/MP4",
     "EECS_678/labs/lab10/3097021-procfs-lab.zip",
     "EECS_678/labs/lab10/3097021-procfs-lab/dine.c",
-    "EECS_678/labs/lab10/3097021-procfs-lab/Makefile",
     "EECS_510/hw1.md",
     "EECS_662/7- Post exam 1_3.md",
     "EECS_565/L18- netsec controls.md",
